@@ -1,0 +1,2265 @@
+"$s6binary5parse4textAA8DateInfoVSS_tF":
+  "hlil": |-
+    int64_t var_48
+    memset(&var_48, 0, 0x10)
+    uint64_t var_50
+    memset(&var_50, 0, 8)
+    char var_60
+    memset(&var_60, 0, 0x10)
+    var_48 = arg1
+    int64_t rax_1
+    int64_t rdx_1
+    rax_1, rdx_1 = $s10Foundation13DateFormatterCMa(0)
+    int64_t* rax_2 = $s10Foundation13DateFormatterCACycfC()
+    int64_t rax_3
+    int64_t rdx_2
+    rax_3, rdx_2 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("yyyy-MM-dd", 0xa, 1)
+    *(*rax_2 + 0x2e0)(rax_3, rdx_2)
+    int64_t rdx_3 = *rax_2
+    int64_t rax_6
+    char rdx_4
+    rax_6, rdx_4 = *(rdx_3 + 0x288)(arg1, arg2, rdx_3)
+    int64_t var_d8
+    if ((rdx_4 & 1) != 0)
+        $ss17_assertionFailure__...verOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0xc, 1)
+    else
+        var_d8 = rax_6.q
+    var_50 = var_d8
+    char rax_8
+    char rcx
+    int64_t rdx_5
+    rax_8, rcx, rdx_5 = $s10Foundation8CalendarV10identifierA2C10IdentifierO_tcfC(0)
+    var_60 = rax_8 & 1
+    int64_t rax_9
+    int64_t rcx_1
+    rax_9, rcx_1 = $s10Foundation8CalendarV...onent_4fromSiAC9ComponentO_AA4DateVtF(2, zx.q(rax_8))
+    rcx_1.b = rax_8
+    int64_t rax_10
+    int64_t rcx_2
+    rax_10, rcx_2 = $s10Foundation8CalendarV...onent_4fromSiAC9ComponentO_AA4DateVtF(7, zx.q(rcx_1.b), rdx_5, rcx_1)
+    rcx_2.b = rax_8
+    int64_t rax_11
+    bool rcx_3
+    rax_11, rcx_3 = $s10Foundation8CalendarV...onent_4fromSiAC9ComponentO_AA4DateVtF(3, zx.q(rcx_2.b), rdx_5, rcx_2)
+    int64_t rdx_9 = rax_9 - 1
+    if ((add_overflow(rax_9, -1) & 1) != 0)
+        trap(6)
+    int64_t rax_13 = *(*rax_2 + 0x470)()
+    int64_t rax_14
+    int64_t rdx_10
+    bool r8
+    rax_14, rdx_10, r8 = $sSayxSicigSS_Tg5(rdx_9, rax_13)
+    int64_t rax_16 = rax_10 - 1
+    if ((add_overflow(rax_10, -1) & 1) != 0)
+        trap(6)
+    int64_t rax_18 = *(*rax_2 + 0x4d0)(rax_14, rdx_10)
+    int64_t rax_19
+    int64_t rdx_11
+    rax_19, rdx_11 = $sSayxSicigSS_Tg5(rax_16, rax_18)
+    uint128_t var_38
+    $s6binary8DateInfoV5month7weekday3dayACSS_SSSitcfC(rax_14, rdx_10, rax_19, rdx_11, rax_11, &var_38)
+    swift_release(rax_18, rdx_10, rax_19, rdx_11, rax_11)
+    swift_release(rax_13)
+    swift_release(rdx_5)
+    swift_release(rax_2)
+    int64_t var_18
+    *(arg3 + 0x20) = var_18
+    uint128_t zmm0 = var_38
+    int128_t var_28
+    *(arg3 + 0x10) = var_28
+    *arg3 = zmm0
+    return rax_11
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(r13)
+      rsp = rsp - 0x158
+      ecx = 0
+      edx = ecx
+      ecx = 0
+      r8 = rbp - 0x40 {var_48}
+      [rbp - 0x80 {var_88}].q = rdi
+      rdi = r8 {var_48}
+      [rbp - 0x88 {var_90}].q = rsi
+      esi = ecx
+      r8d = 0x10
+      [rbp - 0x90 {var_98}].q = rdx
+      rdx = r8
+      [rbp - 0x98 {var_a0}].q = rax
+      [rbp - 0x9c {var_a4}].d = ecx
+      [rbp - 0xa8 {var_b0}].q = r8
+      call(memset)
+      rax = rbp - 0x48 {var_50}
+      rdi = rax {var_50}
+      esi = [rbp - 0x9c {var_a4}].d
+      edx = 8
+      call(memset)
+      rax = rbp - 0x58 {var_60}
+      rdi = rax {var_60}
+      esi = [rbp - 0x9c {var_a4}].d
+      rdx = [rbp - 0xa8 {var_b0}].q
+      call(memset)
+      rax = [rbp - 0x80 {var_88}].q
+      [rbp - 0x40 {var_48}].q = rax
+      rdx = [rbp - 0x88 {var_90}].q
+      [rbp - 0x38 {var_40}].q = rdx
+      rdi = [rbp - 0x90 {var_98}].q
+      call($s10Foundation13DateFormatterCMa)
+      r13 = rax
+      [rbp - 0xb0 {var_b8}].q = rdx
+      call($s10Foundation13DateFormatterCACycfC)
+      rdx = rax
+      rdi = 0x313b
+      esi = 0xa
+      edx = 1
+      [rbp - 0xb8 {var_c0}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [rbp - 0xb8 {var_c0}].q
+      rdi = [rsi].q
+      [rbp - 0xc0 {var_c8}].q = rdi
+      rdi = rax
+      rsi = rdx
+      r13 = [rbp - 0xb8 {var_c0}].q
+      rax = [rbp - 0xc0 {var_c8}].q
+      call([rax + 0x2e0].q)
+      rax = [rbp - 0xb8 {var_c0}].q
+      rdx = [rax].q
+      rdi = [rbp - 0x80 {var_88}].q
+      rsi = [rbp - 0x88 {var_90}].q
+      r13 = rax
+      call([rdx + 0x288].q)
+      rsi = [rbp - 0xb8 {var_c0}].q
+      cond:0 = dl & 0x1 != 0
+      [rbp - 0xc8 {var_d0}].q = rax
+      if (cond:0) block2 else block3
+    block2:
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xb8].q
+      rdi = 0x312f
+      esi = 0xb
+      eax = 2
+      edx = eax
+      rcx = 0x3180
+      r8d = 0x39
+      r9d = eax
+      r10 = 0x3124
+      [rsp {var_168}].q = r10
+      [rsp + 8 {var_160}].q = 0xa
+      [rsp + 0x10 {var_158}].d = 2
+      [rsp + 0x18 {var_150}].q = 0xc
+      [rsp + 0x20 {var_148}].d = 1
+      call($ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF)
+      rcx = [rbp - 0xb8 {var_c0}].q
+      goto block4
+    block3:
+      rax = [rbp - 0xc8 {var_d0}].q
+      xmm0 = rax
+      [rbp - 0xd0 {var_d8}].q = xmm0.q
+      goto block4
+    block4:
+      xmm0 = zx.o([rbp - 0xd0 {var_d8}].q)
+      edi = 0
+      [rbp - 0x48 {var_50}].q = xmm0.q
+      [rbp - 0xd8 {var_e0}].q = xmm0.q
+      call($s10Foundation8CalendarV10identifierA2C10IdentifierO_tcfC)
+      cl = al
+      cl = cl & 0x1
+      [rbp - 0x58 {var_60}].b = cl
+      [rbp - 0x50 {var_58}].q = rdx
+      esi = zx.d(al)
+      edi = 2
+      xmm0 = zx.o([rbp - 0xd8 {var_e0}].q)
+      [rbp - 0xe0 {var_e8}].q = rdx
+      [rbp - 0xe1 {var_e9}].b = al
+      call($s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF)
+      rdx = rax
+      cl = [rbp - 0xe1 {var_e9}].b
+      esi = zx.d(cl)
+      edi = 7
+      xmm0 = zx.o([rbp - 0xd8 {var_e0}].q)
+      rdx = [rbp - 0xe0 {var_e8}].q
+      [rbp - 0xf0 {var_f8}].q = rax
+      call($s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF)
+      rdx = rax
+      cl = [rbp - 0xe1 {var_e9}].b
+      esi = zx.d(cl)
+      edi = 3
+      xmm0 = zx.o([rbp - 0xd8 {var_e0}].q)
+      rdx = [rbp - 0xe0 {var_e8}].q
+      [rbp - 0xf8 {var_100}].q = rax
+      call($s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF)
+      rdx = rax
+      rdx = [rbp - 0xf0 {var_f8}].q
+      temp0.q = rdx
+      rdx = rdx - 1
+      flag:o = add_overflow(temp0.q, -1)
+      cl = flag:o
+      cond:2 = cl & 0x1 != 0
+      [rbp - 0x100 {var_108}].q = rax
+      [rbp - 0x108 {var_110}].q = rdx
+      if (cond:2) block5 else block6
+    block5:
+      trap(6)
+    block6:
+      rax = [rbp - 0xb8 {var_c0}].q
+      rcx = [rax].q
+      r13 = rax
+      call([rcx + 0x470].q)
+      rdi = [rbp - 0x108 {var_110}].q
+      rsi = rax
+      [rbp - 0x110 {var_118}].q = rax
+      call($sSayxSicigSS_Tg5)
+      [rbp - 0x68 {var_70}].q = rax
+      [rbp - 0x60 {var_68}].q = rdx
+      rdi = [rbp - 0x68 {var_70}].q
+      rsi = [rbp - 0x60 {var_68}].q
+      rax = [rbp - 0xf8 {var_100}].q
+      temp1.q = rax
+      rax = rax - 1
+      flag:o = add_overflow(temp1.q, -1)
+      r8b = flag:o
+      cond:1 = r8b & 0x1 != 0
+      [rbp - 0x118 {var_120}].q = rdi
+      [rbp - 0x120 {var_128}].q = rsi
+      [rbp - 0x128 {var_130}].q = rax
+      if (cond:1) block7 else block8
+    block7:
+      trap(6)
+    block8:
+      rax = [rbp - 0xb8 {var_c0}].q
+      rcx = [rax].q
+      rcx = [rcx + 0x4d0].q
+      r13 = rax
+      call(rcx)
+      rdi = [rbp - 0x128 {var_130}].q
+      rsi = rax
+      [rbp - 0x130 {var_138}].q = rax
+      call($sSayxSicigSS_Tg5)
+      [rbp - 0x78 {var_80}].q = rax
+      [rbp - 0x70 {var_78}].q = rdx
+      rdx = [rbp - 0x78 {var_80}].q
+      rcx = [rbp - 0x70 {var_78}].q
+      rax = rbp - 0x30 {var_38}
+      rdi = [rbp - 0x118 {var_120}].q
+      rsi = [rbp - 0x120 {var_128}].q
+      r8 = [rbp - 0x100 {var_108}].q
+      call($s6binary8DateInfoV5month7weekday3dayACSS_SSSitcfC)
+      rdi = [rbp - 0x130 {var_138}].q
+      call(swift_release)
+      rdi = [rbp - 0x110 {var_118}].q
+      call(swift_release)
+      rdi = [rbp - 0xe0 {var_e8}].q
+      call(swift_release)
+      rdi = [rbp - 0xb8 {var_c0}].q
+      call(swift_release)
+      rax = [rbp - 0x10 {var_18}].q
+      rcx = [rbp - 0x98 {var_a0}].q
+      [rcx + 0x20].q = rax
+      xmm0 = [rbp - 0x30 {var_38}].o
+      xmm1 = [rbp - 0x20 {var_28}].o
+      [rcx + 0x10].o = xmm1
+      [rcx].o = xmm0
+      rax = [rbp - 0xb8].q
+      rax = [rbp - 0xf0].q
+      rax = [rbp - 0xf8].q
+      rax = [rbp - 0x100 {var_108}].q
+      rsp = rsp + 0x158
+      r13 = pop
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_88 = arg1
+      rdi = &var_48
+      var_90 = arg2
+      var_a0 = arg3
+      memset(rdi, 0, 0x10)
+      rdi_1 = &var_50
+      memset(rdi_1, 0, 8)
+      rdi_2 = &var_60
+      memset(rdi_2, 0, 0x10)
+      rax = var_88
+      var_48 = rax
+      rdx = var_90
+      var_40 = rdx
+      $s10Foundation13DateFormatterCMa(0)
+      r13 = rax_1
+      var_b8 = rdx_1
+      $s10Foundation13DateFormatterCACycfC()
+      var_c0 = rax_2
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("yyyy-MM-dd", 0xa, 1)
+      rsi = var_c0
+      rdi_3 = [rsi].q
+      var_c8 = rdi_3
+      rdi_4 = rax_3
+      rsi_1 = rdx_2
+      r13_1 = var_c0
+      rax_4 = var_c8
+      [rax_4 + 0x2e0].q(rdi_4, rsi_1)
+      rax_5 = var_c0
+      rdx_3 = [rax_5].q
+      rdi_5 = var_88
+      rsi_2 = var_90
+      r13_2 = rax_5
+      [rdx_3 + 0x288].q(rdi_5, rsi_2, rdx_3)
+      cond:0 = (rdx_4 & 1) != 0
+      var_d0 = rax_6
+      if (cond:0) block2 else block3
+    block2:
+      $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0xc, 1)
+      goto block4
+    block3:
+      rax_7 = var_d0
+      zmm0 = rax_7
+      var_d8 = zmm0.q
+      goto block4
+    block4:
+      zmm0 = zx.o(var_d8)
+      var_50 = zmm0.q
+      var_e0 = zmm0.q
+      $s10Foundation8CalendarV10identifierA2C10IdentifierO_tcfC(0)
+      rcx = rax_8
+      rcx = rcx & 1
+      var_60 = rcx
+      var_58 = rdx_5
+      rsi_3 = zx.q(zx.d(rax_8))
+      zmm0 = zx.o(var_e0)
+      var_e8 = rdx_5
+      var_e9 = rax_8
+      $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF(2, rsi_3)
+      rcx_1.cl = var_e9
+      rsi_4 = zx.q(zx.d(rcx_1.cl))
+      zmm0 = zx.o(var_e0)
+      rdx_6 = var_e8
+      var_f8 = rax_9
+      $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF(7, rsi_4, rdx_6, rcx_1)
+      rcx_2.cl = var_e9
+      rsi_5 = zx.q(zx.d(rcx_2.cl))
+      zmm0 = zx.o(var_e0)
+      rdx_7 = var_e8
+      var_100 = rax_10
+      $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF(3, rsi_5, rdx_7, rcx_2)
+      rdx_8 = var_f8
+      temp0 = rdx_8
+      rdx_9 = rdx_8 - 1
+      o = add_overflow(temp0, -1)
+      rcx_3 = o
+      cond:2 = (rcx_3 & 1) != 0
+      var_108 = rax_11
+      var_110 = rdx_9
+      if (cond:2) block5 else block6
+    block5:
+      trap(6)
+    block6:
+      rax_12 = var_c0
+      rcx_4 = [rax_12].q
+      r13_3 = rax_12
+      [rcx_4 + 0x470].q()
+      rdi_6 = var_110
+      rsi_6 = rax_13
+      var_118 = rax_13
+      $sSayxSicigSS_Tg5(rdi_6, rsi_6)
+      var_70 = rax_14
+      var_68 = rdx_10
+      rdi_7 = var_70
+      rsi_7 = var_68
+      rax_15 = var_100
+      temp1 = rax_15
+      rax_16 = rax_15 - 1
+      o_1 = add_overflow(temp1, -1)
+      r8 = o_1
+      cond:1 = (r8 & 1) != 0
+      var_120 = rdi_7
+      var_128 = rsi_7
+      var_130 = rax_16
+      if (cond:1) block7 else block8
+    block7:
+      trap(6)
+    block8:
+      rax_17 = var_c0
+      rcx_5 = [rax_17].q
+      rcx_6 = [rcx_5 + 0x4d0].q
+      r13_4 = rax_17
+      rcx_6(rdi_7, rsi_7)
+      rdi_8 = var_130
+      rsi_8 = rax_18
+      var_138 = rax_18
+      $sSayxSicigSS_Tg5(rdi_8, rsi_8)
+      var_80 = rax_19
+      var_78 = rdx_11
+      rdx_12 = var_80
+      rcx_7 = var_78
+      rax_20 = &var_38
+      rdi_9 = var_120
+      rsi_9 = var_128
+      r8_1 = var_108
+      $s6binary8DateInfoV5month7weekday3dayACSS_SSSitcfC(rdi_9, rsi_9, rdx_12, rcx_7, r8_1, rax_20)
+      rdi_10 = var_138
+      swift_release(rdi_10, rsi_9, rdx_12, rcx_7, r8_1)
+      rdi_11 = var_118
+      swift_release(rdi_11)
+      rdi_12 = var_e8
+      swift_release(rdi_12)
+      rdi_13 = var_c0
+      swift_release(rdi_13)
+      rax_21 = var_18
+      rcx_8 = var_a0
+      [rcx_8 + 0x20].q = rax_21
+      zmm0 = var_38
+      zmm1 = var_28
+      [rcx_8 + 0x10].o = zmm1
+      [rcx_8].o = zmm0
+      rax_22 = var_108
+      return rax_22
+"$s6binary5reply4dateyAA8DateInfoV_tF":
+  "hlil": |-
+    int64_t* var_40
+    memset(&var_40, 0, 8)
+    var_40 = arg1
+    int64_t rax_1
+    int64_t* rdx
+    rax_1, rdx = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+    int64_t rax_2
+    int64_t rdx_1
+    rax_2, rdx_1 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("That's a ", 9, 1, 1)
+    int64_t rdi_1 = *(arg1 + 0x10)
+    int64_t r8 = *(arg1 + 0x18)
+    swift_bridgeObjectRetain(r8, arg1)
+    int64_t rax_4
+    int64_t rdx_3
+    rax_4, rdx_3 = $sSS1poiyS2S_SStFZ(rax_2, rdx_1, rdi_1, r8)
+    swift_bridgeObjectRelease(r8)
+    swift_bridgeObjectRelease(rdx_1)
+    int64_t rax_5
+    int64_t rdx_4
+    rax_5, rdx_4 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(" in ", 4, 1)
+    int64_t rax_6
+    int64_t rdx_6
+    rax_6, rdx_6 = $sSS1poiyS2S_SStFZ(rax_4, rdx_3, rax_5, rdx_4)
+    swift_bridgeObjectRelease(rdx_4)
+    swift_bridgeObjectRelease(rdx_3)
+    int64_t rdx_7 = *arg1
+    int64_t rcx_2 = *(arg1 + 8)
+    swift_bridgeObjectRetain(rcx_2)
+    int64_t rax_9
+    int64_t rdx_9
+    rax_9, rdx_9 = $sSS1poiyS2S_SStFZ(rax_6, rdx_6, rdx_7, rcx_2)
+    swift_bridgeObjectRelease(rcx_2)
+    swift_bridgeObjectRelease(rdx_6)
+    int64_t rax_10
+    int64_t rdx_10
+    rax_10, rdx_10 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x3155, 1, 1)
+    int64_t rax_11
+    int64_t rdx_12
+    rax_11, rdx_12 = $sSS1poiyS2S_SStFZ(rax_9, rdx_9, rax_10, rdx_10)
+    swift_bridgeObjectRelease(rdx_10)
+    swift_bridgeObjectRelease(rdx_9)
+    *(rdx + 0x18) = $sSSN
+    *rdx = rax_11
+    *(rdx + 8) = rdx_12
+    int64_t rax_14
+    int64_t rdx_13
+    rax_14, rdx_13 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+    int64_t rax_15
+    int64_t rdx_14
+    rax_15, rdx_14 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+    $ss5print_9separator10terminatoryypd_S2StF(rax_1, rax_14, rdx_13, rax_15, rdx_14)
+    swift_bridgeObjectRelease(rdx_14)
+    swift_bridgeObjectRelease(rdx_13)
+    swift_release(rax_1)
+    int64_t rdi_20 = *arg1
+    int64_t rcx_8 = *(arg1 + 8)
+    swift_bridgeObjectRetain(rcx_8)
+    int64_t rax_18
+    int64_t rdx_16
+    rax_18, rdx_16 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("February", 8, 1)
+    char rax_19 = $sSS2eeoiySbSS_SStFZ(rdi_20, rcx_8, rax_18, rdx_16)
+    swift_bridgeObjectRelease(rdx_16)
+    int64_t rdx_18
+    int64_t rsi_7
+    rdx_18, rsi_7 = swift_bridgeObjectRelease(rcx_8)
+    int64_t rdx_19
+    int64_t rsi_8
+    char r9
+    rdx_19, rsi_8, r9 = $s6binary8DateInfoVWOr(arg1, rsi_7, rdx_18)
+    char var_122
+    if ((rax_19 & 1) != 0)
+        rdx_19.b = *(arg1 + 0x20) == 0x19
+        var_122 = rdx_19.b
+    else
+        var_122 = 0
+    int64_t* rax_20
+    rax_20.b = var_122
+    $s6binary8DateInfoVWOs(arg1, rsi_8, rdx_19)
+    int64_t rax_25
+    if ((rax_20.b & 1) != 0)
+        int64_t rax_21
+        int64_t* rdx_20
+        rax_21, rdx_20 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+        int64_t rax_22
+        int64_t rdx_21
+        rax_22, rdx_21 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's George's birthday!", 0x17, 1, 1)
+        *(rdx_20 + 0x18) = $sSSN
+        *rdx_20 = rax_22
+        *(rdx_20 + 8) = rdx_21
+        int64_t rax_23
+        int64_t rdx_22
+        rax_23, rdx_22 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+        int64_t rax_24
+        int64_t rdx_23
+        rax_24, rdx_23 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+        $ss5print_9separator10terminatoryypd_S2StF(rax_21, rax_23, rdx_22, rax_24, rdx_23)
+        swift_bridgeObjectRelease(rdx_23)
+        swift_bridgeObjectRelease(rdx_22)
+        rax_25 = swift_release(rax_21)
+    else
+        int64_t rdi_32 = *arg1
+        int64_t rcx_13 = *(arg1 + 8)
+        swift_bridgeObjectRetain(rcx_13)
+        int64_t rax_28
+        int64_t rdx_25
+        rax_28, rdx_25 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("June", 4, 1)
+        char rax_29 = $sSS2eeoiySbSS_SStFZ(rdi_32, rcx_13, rax_28, rdx_25)
+        swift_bridgeObjectRelease(rdx_25)
+        swift_bridgeObjectRelease(rcx_13)
+        if ((rax_29 & 1) == 0)
+            int64_t rdi_52 = *arg1
+            int64_t rcx_20 = *(arg1 + 8)
+            swift_bridgeObjectRetain(rcx_20)
+            int64_t rax_47
+            int64_t rdx_42
+            rax_47, rdx_42 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("July", 4, 1)
+            char rax_48 = $sSS2eeoiySbSS_SStFZ(rdi_52, rcx_20, rax_47, rdx_42)
+            swift_bridgeObjectRelease(rdx_42)
+            int64_t rdx_44
+            int64_t rsi_15
+            rdx_44, rsi_15 = swift_bridgeObjectRelease(rcx_20)
+            int64_t rdx_45
+            int64_t rsi_16
+            char r8_10
+            rdx_45, rsi_16, r8_10 = $s6binary8DateInfoVWOr(arg1, rsi_15, rdx_44)
+            char var_212_1
+            if ((rax_48 & 1) != 0)
+                rdx_45.b = *(arg1 + 0x20) == 7
+                var_212_1 = rdx_45.b
+            else
+                var_212_1 = 0
+            int64_t* rax_49
+            rax_49.b = var_212_1
+            $s6binary8DateInfoVWOs(arg1, rsi_16, rdx_45)
+            if ((rax_49.b & 1) != 0)
+                int64_t rax_50
+                int64_t* rdx_46
+                rax_50, rdx_46 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+                int64_t rax_51
+                int64_t rdx_47
+                rax_51, rdx_47 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Ringo's birthday!", 0x16, 1, 1)
+                *(rdx_46 + 0x18) = $sSSN
+                *rdx_46 = rax_51
+                *(rdx_46 + 8) = rdx_47
+                int64_t rax_52
+                int64_t rdx_48
+                rax_52, rdx_48 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+                int64_t rax_53
+                int64_t rdx_49
+                rax_53, rdx_49 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+                $ss5print_9separator10terminatoryypd_S2StF(rax_50, rax_52, rdx_48, rax_53, rdx_49)
+                swift_bridgeObjectRelease(rdx_49)
+                swift_bridgeObjectRelease(rdx_48)
+                rax_25 = swift_release(rax_50)
+            else
+                int64_t rdi_64 = *arg1
+                int64_t rcx_25 = *(arg1 + 8)
+                swift_bridgeObjectRetain(rcx_25)
+                int64_t rax_56
+                int64_t rdx_51
+                rax_56, rdx_51 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("October", 7, 1)
+                char rax_57 = $sSS2eeoiySbSS_SStFZ(rdi_64, rcx_25, rax_56, rdx_51)
+                swift_bridgeObjectRelease(rdx_51)
+                int64_t rdx_53
+                int64_t rsi_19
+                rdx_53, rsi_19 = swift_bridgeObjectRelease(rcx_25)
+                int64_t rdx_54
+                int64_t rsi_20
+                char r8_13
+                rdx_54, rsi_20, r8_13 = $s6binary8DateInfoVWOr(arg1, rsi_19, rdx_53)
+                char var_262_1
+                if ((rax_57 & 1) != 0)
+                    rdx_54.b = *(arg1 + 0x20) == 9
+                    var_262_1 = rdx_54.b
+                else
+                    var_262_1 = 0
+                int64_t* rax_58
+                rax_58.b = var_262_1
+                $s6binary8DateInfoVWOs(arg1, rsi_20, rdx_54)
+                if ((rax_58.b & 1) != 0)
+                    int64_t rax_59
+                    int64_t* rdx_55
+                    rax_59, rdx_55 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+                    int64_t rax_60
+                    int64_t rdx_56
+                    rax_60, rdx_56 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's John's birthday!", 0x15, 1, 1)
+                    *(rdx_55 + 0x18) = $sSSN
+                    *rdx_55 = rax_60
+                    *(rdx_55 + 8) = rdx_56
+                    int64_t rax_61
+                    int64_t rdx_57
+                    rax_61, rdx_57 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+                    int64_t rax_62
+                    int64_t rdx_58
+                    rax_62, rdx_58 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+                    $ss5print_9separator10terminatoryypd_S2StF(rax_59, rax_61, rdx_57, rax_62, rdx_58)
+                    swift_bridgeObjectRelease(rdx_58)
+                    swift_bridgeObjectRelease(rdx_57)
+                    rax_25 = swift_release(rax_59)
+                else
+                    int64_t rdi_76 = *arg1
+                    int64_t rcx_30 = *(arg1 + 8)
+                    swift_bridgeObjectRetain(rcx_30)
+                    int64_t rax_65
+                    int64_t rdx_60
+                    rax_65, rdx_60 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("November", 8, 1)
+                    char rax_66 = $sSS2eeoiySbSS_SStFZ(rdi_76, rcx_30, rax_65, rdx_60)
+                    swift_bridgeObjectRelease(rdx_60)
+                    int64_t rdx_62
+                    int64_t rsi_23
+                    rdx_62, rsi_23 = swift_bridgeObjectRelease(rcx_30)
+                    int64_t rdx_63
+                    int64_t rsi_24
+                    char r8_16
+                    rdx_63, rsi_24, r8_16 = $s6binary8DateInfoVWOr(arg1, rsi_23, rdx_62)
+                    char var_2b2_1
+                    if ((rax_66 & 1) != 0)
+                        rdx_63.b = *(arg1 + 0x20) == 0x18
+                        var_2b2_1 = rdx_63.b
+                    else
+                        var_2b2_1 = 0
+                    int64_t* rax_67
+                    rax_67.b = var_2b2_1
+                    $s6binary8DateInfoVWOs(arg1, rsi_24, rdx_63)
+                    if ((rax_67.b & 1) != 0)
+                        int64_t rax_68
+                        int64_t* rdx_64
+                        rax_68, rdx_64 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+                        int64_t rax_69
+                        int64_t rdx_65
+                        rax_69, rdx_65 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Pete's birthday!", 0x15, 1, 1)
+                        *(rdx_64 + 0x18) = $sSSN
+                        *rdx_64 = rax_69
+                        *(rdx_64 + 8) = rdx_65
+                        int64_t rax_70
+                        int64_t rdx_66
+                        rax_70, rdx_66 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+                        int64_t rax_71
+                        int64_t rdx_67
+                        rax_71, rdx_67 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+                        $ss5print_9separator10terminatoryypd_S2StF(rax_68, rax_70, rdx_66, rax_71, rdx_67)
+                        swift_bridgeObjectRelease(rdx_67)
+                        swift_bridgeObjectRelease(rdx_66)
+                        rax_25 = swift_release(rax_68)
+                    else
+                        int64_t rax_72
+                        int64_t* rdx_69
+                        rax_72, rdx_69 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+                        int64_t rax_73
+                        int64_t rdx_70
+                        rax_73, rdx_70 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("What a boring day.", 0x12, 1, 1)
+                        *(rdx_69 + 0x18) = $sSSN
+                        *rdx_69 = rax_73
+                        *(rdx_69 + 8) = rdx_70
+                        int64_t rax_74
+                        int64_t rdx_71
+                        rax_74, rdx_71 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+                        int64_t rax_75
+                        int64_t rdx_72
+                        rax_75, rdx_72 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+                        $ss5print_9separator10terminatoryypd_S2StF(rax_72, rax_74, rdx_71, rax_75, rdx_72)
+                        swift_bridgeObjectRelease(rdx_72)
+                        swift_bridgeObjectRelease(rdx_71)
+                        rax_25 = swift_release(rax_72)
+        else if (*(arg1 + 0x20) == 0x12)
+            int64_t rax_32
+            int64_t* rdx_27
+            rax_32, rdx_27 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+            int64_t rax_33
+            int64_t rdx_28
+            rax_33, rdx_28 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Paul's birthday!", 0x15, 1, 1)
+            *(rdx_27 + 0x18) = $sSSN
+            *rdx_27 = rax_33
+            *(rdx_27 + 8) = rdx_28
+            int64_t rax_34
+            int64_t rdx_29
+            rax_34, rdx_29 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+            int64_t rax_35
+            int64_t rdx_30
+            rax_35, rdx_30 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+            $ss5print_9separator10terminatoryypd_S2StF(rax_32, rax_34, rdx_29, rax_35, rdx_30)
+            swift_bridgeObjectRelease(rdx_30)
+            swift_bridgeObjectRelease(rdx_29)
+            rax_25 = swift_release(rax_32)
+        else if (*(arg1 + 0x20) != 0x17)
+            int64_t rax_41
+            int64_t* rdx_37
+            rax_41, rdx_37 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+            int64_t rax_42
+            int64_t rdx_38
+            rax_42, rdx_38 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("June is a good month.", 0x15, 1, 1)
+            *(rdx_37 + 0x18) = $sSSN
+            *rdx_37 = rax_42
+            *(rdx_37 + 8) = rdx_38
+            int64_t rax_43
+            int64_t rdx_39
+            rax_43, rdx_39 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+            int64_t rax_44
+            int64_t rdx_40
+            rax_44, rdx_40 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+            $ss5print_9separator10terminatoryypd_S2StF(rax_41, rax_43, rdx_39, rax_44, rdx_40)
+            swift_bridgeObjectRelease(rdx_40)
+            swift_bridgeObjectRelease(rdx_39)
+            rax_25 = swift_release(rax_41)
+        else
+            int64_t rax_37
+            int64_t* rdx_32
+            rax_37, rdx_32 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+            int64_t rax_38
+            int64_t rdx_33
+            rax_38, rdx_33 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Stuart's birthday!", 0x17, 1, 1)
+            *(rdx_32 + 0x18) = $sSSN
+            *rdx_32 = rax_38
+            *(rdx_32 + 8) = rdx_33
+            int64_t rax_39
+            int64_t rdx_34
+            rax_39, rdx_34 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+            int64_t rax_40
+            int64_t rdx_35
+            rax_40, rdx_35 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+            $ss5print_9separator10terminatoryypd_S2StF(rax_37, rax_39, rdx_34, rax_40, rdx_35)
+            swift_bridgeObjectRelease(rdx_35)
+            swift_bridgeObjectRelease(rdx_34)
+            rax_25 = swift_release(rax_37)
+    return rax_25
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x300
+      esi = 0
+      rax = rbp - 0x38 {var_40}
+      [rbp - 0x40 {var_48}].q = rdi
+      rdi = rax {var_40}
+      edx = 8
+      call(memset)
+      rax = [rbp - 0x40 {var_48}].q
+      [rbp - 0x38 {var_40}].q = rax
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3146
+      esi = 9
+      ecx = 1
+      [rbp - 0x48 {var_50}].q = rdx
+      edx = ecx
+      [rbp - 0x50 {var_58}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [rbp - 0x40 {var_48}].q
+      rdi = [rsi + 0x10].q
+      r8 = [rsi + 0x18].q
+      [rbp - 0x58 {var_60}].q = rdi
+      rdi = r8
+      [rbp - 0x60 {var_68}].q = rax
+      [rbp - 0x68 {var_70}].q = rdx
+      [rbp - 0x70 {var_78}].q = r8
+      call(swift_bridgeObjectRetain)
+      rdi = [rbp - 0x60 {var_68}].q
+      rsi = [rbp - 0x68 {var_70}].q
+      rdx = [rbp - 0x58 {var_60}].q
+      rcx = [rbp - 0x70 {var_78}].q
+      [rbp - 0x78 {var_80}].q = rax
+      call($sSS1poiyS2S_SStFZ)
+      rdi = [rbp - 0x70 {var_78}].q
+      [rbp - 0x80 {var_88}].q = rax
+      [rbp - 0x88 {var_90}].q = rdx
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x68 {var_70}].q
+      call(swift_bridgeObjectRelease)
+      rdi = 0x3150
+      esi = 4
+      edx = 1
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x80 {var_88}].q
+      rsi = [rbp - 0x88 {var_90}].q
+      [rbp - 0x90 {var_98}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x90 {var_98}].q
+      call($sSS1poiyS2S_SStFZ)
+      rdi = [rbp - 0x90 {var_98}].q
+      [rbp - 0x98 {var_a0}].q = rax
+      [rbp - 0xa0 {var_a8}].q = rdx
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x88 {var_90}].q
+      call(swift_bridgeObjectRelease)
+      rax = [rbp - 0x40 {var_48}].q
+      rdx = [rax].q
+      rcx = [rax + 8].q
+      rdi = rcx
+      [rbp - 0xa8 {var_b0}].q = rdx
+      [rbp - 0xb0 {var_b8}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = [rbp - 0x98 {var_a0}].q
+      rsi = [rbp - 0xa0 {var_a8}].q
+      rdx = [rbp - 0xa8 {var_b0}].q
+      rcx = [rbp - 0xb0 {var_b8}].q
+      [rbp - 0xb8 {var_c0}].q = rax
+      call($sSS1poiyS2S_SStFZ)
+      rdi = [rbp - 0xb0 {var_b8}].q
+      [rbp - 0xc0 {var_c8}].q = rax
+      [rbp - 0xc8 {var_d0}].q = rdx
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0xa0 {var_a8}].q
+      call(swift_bridgeObjectRelease)
+      rdi = 0x3155
+      esi = 1
+      edx = 1
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0xc0 {var_c8}].q
+      rsi = [rbp - 0xc8 {var_d0}].q
+      [rbp - 0xd0 {var_d8}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0xd0 {var_d8}].q
+      call($sSS1poiyS2S_SStFZ)
+      rdi = [rbp - 0xd0 {var_d8}].q
+      [rbp - 0xd8 {var_e0}].q = rax
+      [rbp - 0xe0 {var_e8}].q = rdx
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0xc8 {var_d0}].q
+      call(swift_bridgeObjectRelease)
+      rax = [0x7fd8].q
+      rcx = [rbp - 0x48 {var_50}].q
+      [rcx + 0x18].q = rax
+      rax = [rbp - 0xd8 {var_e0}].q
+      [rcx].q = rax
+      rax = [rbp - 0xe0 {var_e8}].q
+      [rcx + 8].q = rax
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0xe8 {var_f0}].q = rax
+      [rbp - 0xf0 {var_f8}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x50 {var_58}].q
+      rsi = [rbp - 0xe8 {var_f0}].q
+      rcx = [rbp - 0xf0 {var_f8}].q
+      [rbp - 0xf8 {var_100}].q = rdx
+      rdx = rcx
+      rcx = rax
+      r8 = [rbp - 0xf8 {var_100}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0xf8 {var_100}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0xf0 {var_f8}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x50 {var_58}].q
+      call(swift_release)
+      rax = [rbp - 0x40 {var_48}].q
+      rdi = [rax].q
+      rcx = [rax + 8].q
+      [rbp - 0x100 {var_108}].q = rdi
+      rdi = rcx
+      [rbp - 0x108 {var_110}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = 0x3157
+      esi = 8
+      edx = 1
+      [rbp - 0x110 {var_118}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x100 {var_108}].q
+      rsi = [rbp - 0x108 {var_110}].q
+      [rbp - 0x118 {var_120}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x118 {var_120}].q
+      call($sSS2eeoiySbSS_SStFZ)
+      rdi = [rbp - 0x118 {var_120}].q
+      [rbp - 0x119 {var_121}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x108 {var_110}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x40 {var_48}].q
+      call($s6binary8DateInfoVWOr)
+      r9b = [rbp - 0x119 {var_121}].b
+      if (r9b & 0x1 != 0) block2 else block3
+    block2:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 8 {var_10_1}].q = rcx
+      dl = [rbp - 8 {var_10_1}].q == 0x19
+      [rbp - 0x11a {var_122}].b = dl
+      goto block4
+    block3:
+      goto block5
+    block4:
+      al = [rbp - 0x11a {var_122}].b
+      rdi = [rbp - 0x40 {var_48}].q
+      [rbp - 0x11b {var_123}].b = al
+      call($s6binary8DateInfoVWOs)
+      cl = [rbp - 0x11b {var_123}].b
+      if (cl & 0x1 != 0) block6 else block7
+    block5:
+      eax = 0
+      [rbp - 0x11a {var_122}].b = al
+      goto block4
+    block6:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x32d0
+      esi = 0x17
+      ecx = 1
+      [rbp - 0x128 {var_130_1}].q = rdx
+      edx = ecx
+      [rbp - 0x130 {var_138_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x128 {var_130_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x138 {var_140_1}].q = rax
+      [rbp - 0x140 {var_148_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x130 {var_138_1}].q
+      rsi = [rbp - 0x138 {var_140_1}].q
+      r8 = [rbp - 0x140 {var_148_1}].q
+      [rbp - 0x148 {var_150_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x148 {var_150_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x148 {var_150_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x140 {var_148_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x130 {var_138_1}].q
+      call(swift_release)
+      goto block8
+    block7:
+      goto block9
+    block8:
+      rsp = rsp + 0x300
+      rbp = pop
+      <return> jump(pop)
+    block9:
+      rax = [rbp - 0x40 {var_48}].q
+      rdi = [rax].q
+      rcx = [rax + 8].q
+      [rbp - 0x150 {var_158_1}].q = rdi
+      rdi = rcx
+      [rbp - 0x158 {var_160_1}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = 0x3160
+      esi = 4
+      edx = 1
+      [rbp - 0x160 {var_168_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x150 {var_158_1}].q
+      rsi = [rbp - 0x158 {var_160_1}].q
+      [rbp - 0x168 {var_170_1}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x168 {var_170_1}].q
+      call($sSS2eeoiySbSS_SStFZ)
+      rdi = [rbp - 0x168 {var_170_1}].q
+      [rbp - 0x169 {var_171_1}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x158 {var_160_1}].q
+      call(swift_bridgeObjectRelease)
+      al = [rbp - 0x169 {var_171_1}].b
+      if (al & 0x1 != 0) block10 else block11
+    block10:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 0x28 {var_30_1}].q = rcx
+      if ([rbp - 0x28].q != 0x12) block12 else block13
+    block11:
+      goto block14
+    block12:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 0x30 {var_38_1}].q = rcx
+      if ([rbp - 0x30].q != 0x17) block15 else block16
+    block13:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x32b0
+      esi = 0x15
+      ecx = 1
+      [rbp - 0x178 {var_180_1}].q = rdx
+      edx = ecx
+      [rbp - 0x180 {var_188_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x178 {var_180_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x188 {var_190_1}].q = rax
+      [rbp - 0x190 {var_198_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x180 {var_188_1}].q
+      rsi = [rbp - 0x188 {var_190_1}].q
+      r8 = [rbp - 0x190 {var_198_1}].q
+      [rbp - 0x198 {var_1a0_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x198 {var_1a0_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x198 {var_1a0_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x190 {var_198_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x180 {var_188_1}].q
+      call(swift_release)
+      goto block17
+    block14:
+      rax = [rbp - 0x40 {var_48}].q
+      rdi = [rax].q
+      rcx = [rax + 8].q
+      [rbp - 0x1f0 {var_1f8_1}].q = rdi
+      rdi = rcx
+      [rbp - 0x1f8 {var_200_1}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = 0x3165
+      esi = 4
+      edx = 1
+      [rbp - 0x200 {var_208_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x1f0 {var_1f8_1}].q
+      rsi = [rbp - 0x1f8 {var_200_1}].q
+      [rbp - 0x208 {var_210_1}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x208 {var_210_1}].q
+      call($sSS2eeoiySbSS_SStFZ)
+      rdi = [rbp - 0x208 {var_210_1}].q
+      [rbp - 0x209 {var_211_1}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x1f8 {var_200_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x40 {var_48}].q
+      call($s6binary8DateInfoVWOr)
+      r8b = [rbp - 0x209 {var_211_1}].b
+      if (r8b & 0x1 != 0) block18 else block19
+    block15:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3270
+      esi = 0x15
+      ecx = 1
+      [rbp - 0x1c8 {var_1d0_1}].q = rdx
+      edx = ecx
+      [rbp - 0x1d0 {var_1d8_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x1c8 {var_1d0_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x1d8 {var_1e0_1}].q = rax
+      [rbp - 0x1e0 {var_1e8_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x1d0 {var_1d8_1}].q
+      rsi = [rbp - 0x1d8 {var_1e0_1}].q
+      r8 = [rbp - 0x1e0 {var_1e8_1}].q
+      [rbp - 0x1e8 {var_1f0_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x1e8 {var_1f0_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x1e8 {var_1f0_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x1e0 {var_1e8_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x1d0 {var_1d8_1}].q
+      call(swift_release)
+      goto block20
+    block16:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3290
+      esi = 0x17
+      ecx = 1
+      [rbp - 0x1a0 {var_1a8_1}].q = rdx
+      edx = ecx
+      [rbp - 0x1a8 {var_1b0_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x1a0 {var_1a8_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x1b0 {var_1b8_1}].q = rax
+      [rbp - 0x1b8 {var_1c0_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x1a8 {var_1b0_1}].q
+      rsi = [rbp - 0x1b0 {var_1b8_1}].q
+      r8 = [rbp - 0x1b8 {var_1c0_1}].q
+      [rbp - 0x1c0 {var_1c8_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x1c0 {var_1c8_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x1c0 {var_1c8_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x1b8 {var_1c0_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x1a8 {var_1b0_1}].q
+      call(swift_release)
+      goto block20
+    block17:
+      goto block21
+    block18:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 0x10 {var_18_1}].q = rcx
+      dl = [rbp - 0x10 {var_18_1}].q == 7
+      [rbp - 0x20a {var_212_1}].b = dl
+      goto block22
+    block19:
+      goto block23
+    block20:
+      goto block17
+    block21:
+      goto block8
+    block22:
+      al = [rbp - 0x20a {var_212_1}].b
+      rdi = [rbp - 0x40 {var_48}].q
+      [rbp - 0x20b {var_213_1}].b = al
+      call($s6binary8DateInfoVWOs)
+      cl = [rbp - 0x20b {var_213_1}].b
+      if (cl & 0x1 != 0) block24 else block25
+    block23:
+      eax = 0
+      [rbp - 0x20a {var_212_1}].b = al
+      goto block22
+    block24:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3250
+      esi = 0x16
+      ecx = 1
+      [rbp - 0x218 {var_220_1}].q = rdx
+      edx = ecx
+      [rbp - 0x220 {var_228_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x218 {var_220_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x228 {var_230_1}].q = rax
+      [rbp - 0x230 {var_238_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x220 {var_228_1}].q
+      rsi = [rbp - 0x228 {var_230_1}].q
+      r8 = [rbp - 0x230 {var_238_1}].q
+      [rbp - 0x238 {var_240_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x238 {var_240_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x238 {var_240_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x230 {var_238_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x220 {var_228_1}].q
+      call(swift_release)
+      goto block26
+    block25:
+      goto block27
+    block26:
+      goto block21
+    block27:
+      rax = [rbp - 0x40 {var_48}].q
+      rdi = [rax].q
+      rcx = [rax + 8].q
+      [rbp - 0x240 {var_248_1}].q = rdi
+      rdi = rcx
+      [rbp - 0x248 {var_250_1}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = 0x316a
+      esi = 7
+      edx = 1
+      [rbp - 0x250 {var_258_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x240 {var_248_1}].q
+      rsi = [rbp - 0x248 {var_250_1}].q
+      [rbp - 0x258 {var_260_1}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x258 {var_260_1}].q
+      call($sSS2eeoiySbSS_SStFZ)
+      rdi = [rbp - 0x258 {var_260_1}].q
+      [rbp - 0x259 {var_261_1}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x248 {var_250_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x40 {var_48}].q
+      call($s6binary8DateInfoVWOr)
+      r8b = [rbp - 0x259 {var_261_1}].b
+      if (r8b & 0x1 != 0) block28 else block29
+    block28:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 0x18 {var_20_1}].q = rcx
+      dl = [rbp - 0x18 {var_20_1}].q == 9
+      [rbp - 0x25a {var_262_1}].b = dl
+      goto block30
+    block29:
+      goto block31
+    block30:
+      al = [rbp - 0x25a {var_262_1}].b
+      rdi = [rbp - 0x40 {var_48}].q
+      [rbp - 0x25b {var_263_1}].b = al
+      call($s6binary8DateInfoVWOs)
+      cl = [rbp - 0x25b {var_263_1}].b
+      if (cl & 0x1 != 0) block32 else block33
+    block31:
+      eax = 0
+      [rbp - 0x25a {var_262_1}].b = al
+      goto block30
+    block32:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3230
+      esi = 0x15
+      ecx = 1
+      [rbp - 0x268 {var_270_1}].q = rdx
+      edx = ecx
+      [rbp - 0x270 {var_278_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x268 {var_270_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x278 {var_280_1}].q = rax
+      [rbp - 0x280 {var_288_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x270 {var_278_1}].q
+      rsi = [rbp - 0x278 {var_280_1}].q
+      r8 = [rbp - 0x280 {var_288_1}].q
+      [rbp - 0x288 {var_290_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x288 {var_290_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x288 {var_290_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x280 {var_288_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x270 {var_278_1}].q
+      call(swift_release)
+      goto block34
+    block33:
+      goto block35
+    block34:
+      goto block26
+    block35:
+      rax = [rbp - 0x40 {var_48}].q
+      rdi = [rax].q
+      rcx = [rax + 8].q
+      [rbp - 0x290 {var_298_1}].q = rdi
+      rdi = rcx
+      [rbp - 0x298 {var_2a0_1}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = 0x3172
+      esi = 8
+      edx = 1
+      [rbp - 0x2a0 {var_2a8_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rdi = [rbp - 0x290 {var_298_1}].q
+      rsi = [rbp - 0x298 {var_2a0_1}].q
+      [rbp - 0x2a8 {var_2b0_1}].q = rdx
+      rdx = rax
+      rcx = [rbp - 0x2a8 {var_2b0_1}].q
+      call($sSS2eeoiySbSS_SStFZ)
+      rdi = [rbp - 0x2a8 {var_2b0_1}].q
+      [rbp - 0x2a9 {var_2b1_1}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x298 {var_2a0_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x40 {var_48}].q
+      call($s6binary8DateInfoVWOr)
+      r8b = [rbp - 0x2a9 {var_2b1_1}].b
+      if (r8b & 0x1 != 0) block36 else block37
+    block36:
+      rax = [rbp - 0x40 {var_48}].q
+      rcx = [rax + 0x20].q
+      [rbp - 0x20 {var_28_1}].q = rcx
+      dl = [rbp - 0x20 {var_28_1}].q == 0x18
+      [rbp - 0x2aa {var_2b2_1}].b = dl
+      goto block38
+    block37:
+      goto block39
+    block38:
+      al = [rbp - 0x2aa {var_2b2_1}].b
+      rdi = [rbp - 0x40 {var_48}].q
+      [rbp - 0x2ab {var_2b3_1}].b = al
+      call($s6binary8DateInfoVWOs)
+      cl = [rbp - 0x2ab {var_2b3_1}].b
+      if (cl & 0x1 != 0) block40 else block41
+    block39:
+      eax = 0
+      [rbp - 0x2aa {var_2b2_1}].b = al
+      goto block38
+    block40:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x3210
+      esi = 0x15
+      ecx = 1
+      [rbp - 0x2b8 {var_2c0_1}].q = rdx
+      edx = ecx
+      [rbp - 0x2c0 {var_2c8_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x2b8 {var_2c0_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x2c8 {var_2d0_1}].q = rax
+      [rbp - 0x2d0 {var_2d8_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x2c0 {var_2c8_1}].q
+      rsi = [rbp - 0x2c8 {var_2d0_1}].q
+      r8 = [rbp - 0x2d0 {var_2d8_1}].q
+      [rbp - 0x2d8 {var_2e0_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x2d8 {var_2e0_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x2d8 {var_2e0_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x2d0 {var_2d8_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x2c0 {var_2c8_1}].q
+      call(swift_release)
+      goto block42
+    block41:
+      goto block43
+    block42:
+      goto block34
+    block43:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x31f0
+      esi = 0x12
+      ecx = 1
+      [rbp - 0x2e0 {var_2e8_1}].q = rdx
+      edx = ecx
+      [rbp - 0x2e8 {var_2f0_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0x2e0 {var_2e8_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x2f0 {var_2f8_1}].q = rax
+      [rbp - 0x2f8 {var_300_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x2e8 {var_2f0_1}].q
+      rsi = [rbp - 0x2f0 {var_2f8_1}].q
+      r8 = [rbp - 0x2f8 {var_300_1}].q
+      [rbp - 0x300 {var_308_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x300 {var_308_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x300 {var_308_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x2f8 {var_300_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x2e8 {var_2f0_1}].q
+      call(swift_release)
+      goto block42
+  "mlil": |-
+    block1:
+      var_48 = arg1
+      rdi = &var_40
+      memset(rdi, 0, 8)
+      rax = var_48
+      var_40 = rax
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_50 = rdx
+      var_58 = rax_1
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("That's a ", 9, 1, 1)
+      rsi = var_48
+      rdi_1 = [rsi + 0x10].q
+      r8 = [rsi + 0x18].q
+      var_60 = rdi_1
+      rdi_2 = r8
+      var_68 = rax_2
+      var_70 = rdx_1
+      var_78 = r8
+      swift_bridgeObjectRetain(rdi_2, rsi)
+      rdi_3 = var_68
+      rsi_1 = var_70
+      rdx_2 = var_60
+      rcx = var_78
+      var_80 = rax_3
+      $sSS1poiyS2S_SStFZ(rdi_3, rsi_1, rdx_2, rcx)
+      rdi_4 = var_78
+      var_88 = rax_4
+      var_90 = rdx_3
+      swift_bridgeObjectRelease(rdi_4)
+      rdi_5 = var_70
+      swift_bridgeObjectRelease(rdi_5)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(" in ", 4, 1)
+      rdi_6 = var_88
+      rsi_2 = var_90
+      var_98 = rdx_4
+      rdx_5 = rax_5
+      rcx_1 = var_98
+      $sSS1poiyS2S_SStFZ(rdi_6, rsi_2, rdx_5, rcx_1)
+      rdi_7 = var_98
+      var_a0 = rax_6
+      var_a8 = rdx_6
+      swift_bridgeObjectRelease(rdi_7)
+      rdi_8 = var_90
+      swift_bridgeObjectRelease(rdi_8)
+      rax_7 = var_48
+      rdx_7 = [rax_7].q
+      rcx_2 = [rax_7 + 8].q
+      rdi_9 = rcx_2
+      var_b0 = rdx_7
+      var_b8 = rcx_2
+      swift_bridgeObjectRetain(rdi_9)
+      rdi_10 = var_a0
+      rsi_3 = var_a8
+      rdx_8 = var_b0
+      rcx_3 = var_b8
+      var_c0 = rax_8
+      $sSS1poiyS2S_SStFZ(rdi_10, rsi_3, rdx_8, rcx_3)
+      rdi_11 = var_b8
+      var_c8 = rax_9
+      var_d0 = rdx_9
+      swift_bridgeObjectRelease(rdi_11)
+      rdi_12 = var_a8
+      swift_bridgeObjectRelease(rdi_12)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x3155, 1, 1)
+      rdi_13 = var_c8
+      rsi_4 = var_d0
+      var_d8 = rdx_10
+      rdx_11 = rax_10
+      rcx_4 = var_d8
+      $sSS1poiyS2S_SStFZ(rdi_13, rsi_4, rdx_11, rcx_4)
+      rdi_14 = var_d8
+      var_e0 = rax_11
+      var_e8 = rdx_12
+      swift_bridgeObjectRelease(rdi_14)
+      rdi_15 = var_d0
+      swift_bridgeObjectRelease(rdi_15)
+      rcx_5 = var_50
+      [rcx_5 + 0x18].q = $sSSN
+      rax_12 = var_e0
+      [rcx_5].q = rax_12
+      rax_13 = var_e8
+      [rcx_5 + 8].q = rax_13
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_f0 = rax_14
+      var_f8 = rdx_13
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_16 = var_58
+      rsi_5 = var_f0
+      rcx_6 = var_f8
+      var_100 = rdx_14
+      rdx_15 = rcx_6
+      rcx_7 = rax_15
+      r8_1 = var_100
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_16, rsi_5, rdx_15, rcx_7, r8_1)
+      rdi_17 = var_100
+      swift_bridgeObjectRelease(rdi_17)
+      rdi_18 = var_f8
+      swift_bridgeObjectRelease(rdi_18)
+      rdi_19 = var_58
+      swift_release(rdi_19)
+      rax_16 = var_48
+      rdi_20 = [rax_16].q
+      rcx_8 = [rax_16 + 8].q
+      var_108 = rdi_20
+      rdi_21 = rcx_8
+      var_110 = rcx_8
+      swift_bridgeObjectRetain(rdi_21)
+      var_118 = rax_17
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("February", 8, 1)
+      rdi_22 = var_108
+      rsi_6 = var_110
+      var_120 = rdx_16
+      rdx_17 = rax_18
+      rcx_9 = var_120
+      $sSS2eeoiySbSS_SStFZ(rdi_22, rsi_6, rdx_17, rcx_9)
+      rdi_23 = var_120
+      var_121 = rax_19
+      swift_bridgeObjectRelease(rdi_23)
+      rdi_24 = var_110
+      swift_bridgeObjectRelease(rdi_24)
+      rdi_25 = var_48
+      $s6binary8DateInfoVWOr(rdi_25, rsi_7, rdx_18)
+      r9 = var_121
+      if ((r9 & 1) != 0) block2 else block3
+    block2:
+      rax_20 = var_48
+      rcx_10 = [rax_20 + 0x20].q
+      var_10_1 = rcx_10
+      rdx_19.dl = var_10_1 == 0x19
+      var_122 = rdx_19.dl
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax_20.al = var_122
+      rdi_26 = var_48
+      var_123 = rax_20.al
+      $s6binary8DateInfoVWOs(rdi_26, rsi_8, rdx_19)
+      rcx_11 = var_123
+      if ((rcx_11 & 1) != 0) block6 else block7
+    block5:
+      rax_20 = nullptr
+      var_122 = 0
+      goto block4
+    block6:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_130_1 = rdx_20
+      var_138_1 = rax_21
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's George's birthday!", 0x17, 1, 1)
+      rdi_27 = var_130_1
+      [rdi_27 + 0x18].q = $sSSN
+      [rdi_27].q = rax_22
+      [rdi_27 + 8].q = rdx_21
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_140_1 = rax_23
+      var_148_1 = rdx_22
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_28 = var_138_1
+      rsi_9 = var_140_1
+      r8_2 = var_148_1
+      var_150_1 = rdx_23
+      rdx_24 = r8_2
+      rcx_12 = rax_24
+      r8_3 = var_150_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_28, rsi_9, rdx_24, rcx_12, r8_3)
+      rdi_29 = var_150_1
+      swift_bridgeObjectRelease(rdi_29)
+      rdi_30 = var_148_1
+      swift_bridgeObjectRelease(rdi_30)
+      rdi_31 = var_138_1
+      swift_release(rdi_31)
+      goto block8
+    block7:
+      goto block9
+    block8:
+      return rax_25
+    block9:
+      rax_26 = var_48
+      rdi_32 = [rax_26].q
+      rcx_13 = [rax_26 + 8].q
+      var_158_1 = rdi_32
+      rdi_33 = rcx_13
+      var_160_1 = rcx_13
+      swift_bridgeObjectRetain(rdi_33)
+      var_168_1 = rax_27
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("June", 4, 1)
+      rdi_34 = var_158_1
+      rsi_10 = var_160_1
+      var_170_1 = rdx_25
+      rdx_26 = rax_28
+      rcx_14 = var_170_1
+      $sSS2eeoiySbSS_SStFZ(rdi_34, rsi_10, rdx_26, rcx_14)
+      rdi_35 = var_170_1
+      var_171_1 = rax_29
+      swift_bridgeObjectRelease(rdi_35)
+      rdi_36 = var_160_1
+      swift_bridgeObjectRelease(rdi_36)
+      rax_30 = var_171_1
+      if ((rax_30 & 1) != 0) block10 else block11
+    block10:
+      rax_31 = var_48
+      rcx_15 = [rax_31 + 0x20].q
+      var_30_1 = rcx_15
+      if (var_30_1 != 0x12) block12 else block13
+    block11:
+      goto block14
+    block12:
+      rax_36 = var_48
+      rcx_17 = [rax_36 + 0x20].q
+      var_38_1 = rcx_17
+      if (var_38_1 != 0x17) block15 else block16
+    block13:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_180_1 = rdx_27
+      var_188_1 = rax_32
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Paul's birthday!", 0x15, 1, 1)
+      rdi_37 = var_180_1
+      [rdi_37 + 0x18].q = $sSSN
+      [rdi_37].q = rax_33
+      [rdi_37 + 8].q = rdx_28
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_190_1 = rax_34
+      var_198_1 = rdx_29
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_38 = var_188_1
+      rsi_11 = var_190_1
+      r8_4 = var_198_1
+      var_1a0_1 = rdx_30
+      rdx_31 = r8_4
+      rcx_16 = rax_35
+      r8_5 = var_1a0_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_38, rsi_11, rdx_31, rcx_16, r8_5)
+      rdi_39 = var_1a0_1
+      swift_bridgeObjectRelease(rdi_39)
+      rdi_40 = var_198_1
+      swift_bridgeObjectRelease(rdi_40)
+      rdi_41 = var_188_1
+      swift_release(rdi_41)
+      goto block17
+    block14:
+      rax_45 = var_48
+      rdi_52 = [rax_45].q
+      rcx_20 = [rax_45 + 8].q
+      var_1f8_1 = rdi_52
+      rdi_53 = rcx_20
+      var_200_1 = rcx_20
+      swift_bridgeObjectRetain(rdi_53)
+      var_208_1 = rax_46
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("July", 4, 1)
+      rdi_54 = var_1f8_1
+      rsi_14 = var_200_1
+      var_210_1 = rdx_42
+      rdx_43 = rax_47
+      rcx_21 = var_210_1
+      $sSS2eeoiySbSS_SStFZ(rdi_54, rsi_14, rdx_43, rcx_21)
+      rdi_55 = var_210_1
+      var_211_1 = rax_48
+      swift_bridgeObjectRelease(rdi_55)
+      rdi_56 = var_200_1
+      swift_bridgeObjectRelease(rdi_56)
+      rdi_57 = var_48
+      $s6binary8DateInfoVWOr(rdi_57, rsi_15, rdx_44)
+      r8_10 = var_211_1
+      if ((r8_10 & 1) != 0) block18 else block19
+    block15:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_1d0_1 = rdx_37
+      var_1d8_1 = rax_41
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("June is a good month.", 0x15, 1, 1)
+      rdi_47 = var_1d0_1
+      [rdi_47 + 0x18].q = $sSSN
+      [rdi_47].q = rax_42
+      [rdi_47 + 8].q = rdx_38
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_1e0_1 = rax_43
+      var_1e8_1 = rdx_39
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_48 = var_1d8_1
+      rsi_13 = var_1e0_1
+      r8_8 = var_1e8_1
+      var_1f0_1 = rdx_40
+      rdx_41 = r8_8
+      rcx_19 = rax_44
+      r8_9 = var_1f0_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_48, rsi_13, rdx_41, rcx_19, r8_9)
+      rdi_49 = var_1f0_1
+      swift_bridgeObjectRelease(rdi_49)
+      rdi_50 = var_1e8_1
+      swift_bridgeObjectRelease(rdi_50)
+      rdi_51 = var_1d8_1
+      swift_release(rdi_51)
+      goto block20
+    block16:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_1a8_1 = rdx_32
+      var_1b0_1 = rax_37
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Stuart's birthday!", 0x17, 1, 1)
+      rdi_42 = var_1a8_1
+      [rdi_42 + 0x18].q = $sSSN
+      [rdi_42].q = rax_38
+      [rdi_42 + 8].q = rdx_33
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_1b8_1 = rax_39
+      var_1c0_1 = rdx_34
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_43 = var_1b0_1
+      rsi_12 = var_1b8_1
+      r8_6 = var_1c0_1
+      var_1c8_1 = rdx_35
+      rdx_36 = r8_6
+      rcx_18 = rax_40
+      r8_7 = var_1c8_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_43, rsi_12, rdx_36, rcx_18, r8_7)
+      rdi_44 = var_1c8_1
+      swift_bridgeObjectRelease(rdi_44)
+      rdi_45 = var_1c0_1
+      swift_bridgeObjectRelease(rdi_45)
+      rdi_46 = var_1b0_1
+      swift_release(rdi_46)
+      goto block20
+    block17:
+      goto block21
+    block18:
+      rax_49 = var_48
+      rcx_22 = [rax_49 + 0x20].q
+      var_18_1 = rcx_22
+      rdx_45.dl = var_18_1 == 7
+      var_212_1 = rdx_45.dl
+      goto block22
+    block19:
+      goto block23
+    block20:
+      goto block17
+    block21:
+      goto block8
+    block22:
+      rax_49.al = var_212_1
+      rdi_58 = var_48
+      var_213_1 = rax_49.al
+      $s6binary8DateInfoVWOs(rdi_58, rsi_16, rdx_45)
+      rcx_23 = var_213_1
+      if ((rcx_23 & 1) != 0) block24 else block25
+    block23:
+      rax_49 = nullptr
+      var_212_1 = 0
+      goto block22
+    block24:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_220_1 = rdx_46
+      var_228_1 = rax_50
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Ringo's birthday!", 0x16, 1, 1)
+      rdi_59 = var_220_1
+      [rdi_59 + 0x18].q = $sSSN
+      [rdi_59].q = rax_51
+      [rdi_59 + 8].q = rdx_47
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_230_1 = rax_52
+      var_238_1 = rdx_48
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_60 = var_228_1
+      rsi_17 = var_230_1
+      r8_11 = var_238_1
+      var_240_1 = rdx_49
+      rdx_50 = r8_11
+      rcx_24 = rax_53
+      r8_12 = var_240_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_60, rsi_17, rdx_50, rcx_24, r8_12)
+      rdi_61 = var_240_1
+      swift_bridgeObjectRelease(rdi_61)
+      rdi_62 = var_238_1
+      swift_bridgeObjectRelease(rdi_62)
+      rdi_63 = var_228_1
+      swift_release(rdi_63)
+      goto block26
+    block25:
+      goto block27
+    block26:
+      goto block21
+    block27:
+      rax_54 = var_48
+      rdi_64 = [rax_54].q
+      rcx_25 = [rax_54 + 8].q
+      var_248_1 = rdi_64
+      rdi_65 = rcx_25
+      var_250_1 = rcx_25
+      swift_bridgeObjectRetain(rdi_65)
+      var_258_1 = rax_55
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("October", 7, 1)
+      rdi_66 = var_248_1
+      rsi_18 = var_250_1
+      var_260_1 = rdx_51
+      rdx_52 = rax_56
+      rcx_26 = var_260_1
+      $sSS2eeoiySbSS_SStFZ(rdi_66, rsi_18, rdx_52, rcx_26)
+      rdi_67 = var_260_1
+      var_261_1 = rax_57
+      swift_bridgeObjectRelease(rdi_67)
+      rdi_68 = var_250_1
+      swift_bridgeObjectRelease(rdi_68)
+      rdi_69 = var_48
+      $s6binary8DateInfoVWOr(rdi_69, rsi_19, rdx_53)
+      r8_13 = var_261_1
+      if ((r8_13 & 1) != 0) block28 else block29
+    block28:
+      rax_58 = var_48
+      rcx_27 = [rax_58 + 0x20].q
+      var_20_1 = rcx_27
+      rdx_54.dl = var_20_1 == 9
+      var_262_1 = rdx_54.dl
+      goto block30
+    block29:
+      goto block31
+    block30:
+      rax_58.al = var_262_1
+      rdi_70 = var_48
+      var_263_1 = rax_58.al
+      $s6binary8DateInfoVWOs(rdi_70, rsi_20, rdx_54)
+      rcx_28 = var_263_1
+      if ((rcx_28 & 1) != 0) block32 else block33
+    block31:
+      rax_58 = nullptr
+      var_262_1 = 0
+      goto block30
+    block32:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_270_1 = rdx_55
+      var_278_1 = rax_59
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's John's birthday!", 0x15, 1, 1)
+      rdi_71 = var_270_1
+      [rdi_71 + 0x18].q = $sSSN
+      [rdi_71].q = rax_60
+      [rdi_71 + 8].q = rdx_56
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_280_1 = rax_61
+      var_288_1 = rdx_57
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_72 = var_278_1
+      rsi_21 = var_280_1
+      r8_14 = var_288_1
+      var_290_1 = rdx_58
+      rdx_59 = r8_14
+      rcx_29 = rax_62
+      r8_15 = var_290_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_72, rsi_21, rdx_59, rcx_29, r8_15)
+      rdi_73 = var_290_1
+      swift_bridgeObjectRelease(rdi_73)
+      rdi_74 = var_288_1
+      swift_bridgeObjectRelease(rdi_74)
+      rdi_75 = var_278_1
+      swift_release(rdi_75)
+      goto block34
+    block33:
+      goto block35
+    block34:
+      goto block26
+    block35:
+      rax_63 = var_48
+      rdi_76 = [rax_63].q
+      rcx_30 = [rax_63 + 8].q
+      var_298_1 = rdi_76
+      rdi_77 = rcx_30
+      var_2a0_1 = rcx_30
+      swift_bridgeObjectRetain(rdi_77)
+      var_2a8_1 = rax_64
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("November", 8, 1)
+      rdi_78 = var_298_1
+      rsi_22 = var_2a0_1
+      var_2b0_1 = rdx_60
+      rdx_61 = rax_65
+      rcx_31 = var_2b0_1
+      $sSS2eeoiySbSS_SStFZ(rdi_78, rsi_22, rdx_61, rcx_31)
+      rdi_79 = var_2b0_1
+      var_2b1_1 = rax_66
+      swift_bridgeObjectRelease(rdi_79)
+      rdi_80 = var_2a0_1
+      swift_bridgeObjectRelease(rdi_80)
+      rdi_81 = var_48
+      $s6binary8DateInfoVWOr(rdi_81, rsi_23, rdx_62)
+      r8_16 = var_2b1_1
+      if ((r8_16 & 1) != 0) block36 else block37
+    block36:
+      rax_67 = var_48
+      rcx_32 = [rax_67 + 0x20].q
+      var_28_1 = rcx_32
+      rdx_63.dl = var_28_1 == 0x18
+      var_2b2_1 = rdx_63.dl
+      goto block38
+    block37:
+      goto block39
+    block38:
+      rax_67.al = var_2b2_1
+      rdi_82 = var_48
+      var_2b3_1 = rax_67.al
+      $s6binary8DateInfoVWOs(rdi_82, rsi_24, rdx_63)
+      rcx_33 = var_2b3_1
+      if ((rcx_33 & 1) != 0) block40 else block41
+    block39:
+      rax_67 = nullptr
+      var_2b2_1 = 0
+      goto block38
+    block40:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_2c0_1 = rdx_64
+      var_2c8_1 = rax_68
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("It's Pete's birthday!", 0x15, 1, 1)
+      rdi_83 = var_2c0_1
+      [rdi_83 + 0x18].q = $sSSN
+      [rdi_83].q = rax_69
+      [rdi_83 + 8].q = rdx_65
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_2d0_1 = rax_70
+      var_2d8_1 = rdx_66
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_84 = var_2c8_1
+      rsi_25 = var_2d0_1
+      r8_17 = var_2d8_1
+      var_2e0_1 = rdx_67
+      rdx_68 = r8_17
+      rcx_34 = rax_71
+      r8_18 = var_2e0_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_84, rsi_25, rdx_68, rcx_34, r8_18)
+      rdi_85 = var_2e0_1
+      swift_bridgeObjectRelease(rdi_85)
+      rdi_86 = var_2d8_1
+      swift_bridgeObjectRelease(rdi_86)
+      rdi_87 = var_2c8_1
+      swift_release(rdi_87)
+      goto block42
+    block41:
+      goto block43
+    block42:
+      goto block34
+    block43:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_2e8_1 = rdx_69
+      var_2f0_1 = rax_72
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("What a boring day.", 0x12, 1, 1)
+      rdi_88 = var_2e8_1
+      [rdi_88 + 0x18].q = $sSSN
+      [rdi_88].q = rax_73
+      [rdi_88 + 8].q = rdx_70
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_2f8_1 = rax_74
+      var_300_1 = rdx_71
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_89 = var_2f0_1
+      rsi_26 = var_2f8_1
+      r8_19 = var_300_1
+      var_308_1 = rdx_72
+      rdx_73 = r8_19
+      rcx_35 = rax_75
+      r8_20 = var_308_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_89, rsi_26, rdx_73, rcx_35, r8_20)
+      rdi_90 = var_308_1
+      swift_bridgeObjectRelease(rdi_90)
+      rdi_91 = var_300_1
+      swift_bridgeObjectRelease(rdi_91)
+      rdi_92 = var_2f0_1
+      swift_release(rdi_92)
+      goto block42
+"main":
+  "hlil": |-
+    int64_t rax = $ss11CommandLineO9argumentsSaySSGvgZ()
+    int64_t rax_1 = $sSa5countSivgSS_Tg5(rax)
+    swift_release(rax)
+    if (((rax_1 == 2 ^ 0xff) & 1) != 0)
+        int64_t rax_3
+        int64_t* rdx
+        rax_3, rdx = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+        int64_t rax_4
+        int64_t rdx_1
+        rax_4, rdx_1 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("USAGE: ./bandate [date]", 0x17, 1, 1)
+        *(rdx + 0x18) = $sSSN
+        *rdx = rax_4
+        *(rdx + 8) = rdx_1
+        int64_t rax_5
+        int64_t rdx_2
+        rax_5, rdx_2 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+        int64_t rax_6
+        int64_t rdx_3
+        rax_6, rdx_3 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+        $ss5print_9separator10terminatoryypd_S2StF(rax_3, rax_5, rdx_2, rax_6, rdx_3)
+        swift_bridgeObjectRelease(rdx_3)
+        swift_bridgeObjectRelease(rdx_2)
+        swift_release(rax_3)
+        exit(1)
+        noreturn
+    int64_t rax_7 = $ss11CommandLineO9argumentsSaySSGvgZ()
+    int64_t var_80 = rax_7
+    int64_t var_78
+    $sSKsE4last7ElementQzSgvg(__swift_instantiateConcreteTypeFromMangledName($sSaySSGMD), $sSaySSGSayxGSKsWl(), &var_78, &var_80)
+    int64_t rax_11 = var_78
+    swift_release(rax_7)
+    int64_t var_108
+    int64_t var_100
+    int64_t var_70
+    if (var_70 != 0)
+        var_100 = rax_11
+        var_108 = var_70
+    else
+        $ss17_assertionFailure__...verOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0x3f, 1)
+    void var_60
+    $s6binary5parse4textAA8DateInfoVSS_tF(var_100, var_108, &var_60)
+    swift_bridgeObjectRelease(var_108)
+    memcpy($s6binary4dateAA8DateInfoVvp, &var_60, 0x28)
+    void var_38
+    memcpy(&var_38, $s6binary4dateAA8DateInfoVvp, 0x28)
+    $s6binary5reply4dateyAA8DateInfoV_tF(&var_38)
+    return 0
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(r13)
+      rsp = rsp - 0x148
+      [rbp - 0x7c {var_84}].d = edi
+      [rbp - 0x88 {var_90}].q = rsi
+      call($ss11CommandLineO9argumentsSaySSGvgZ)
+      rdi = rax
+      [rbp - 0x90 {var_98}].q = rax
+      call($sSa5countSivgSS_Tg5)
+      rdi = [rbp - 0x90 {var_98}].q
+      [rbp - 0x98 {var_a0}].q = rax
+      call(swift_release)
+      rax = [rbp - 0x98 {var_a0}].q
+      cl = rax == 2
+      cl = cl ^ 0xff
+      if (cl & 0x1 != 0) block2 else block3
+    block2:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x31d0
+      esi = 0x17
+      ecx = 1
+      [rbp - 0xa0 {var_a8}].q = rdx
+      edx = ecx
+      [rbp - 0xa8 {var_b0}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x7fd8].q
+      rdi = [rbp - 0xa0 {var_a8}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0xb0 {var_b8}].q = rax
+      [rbp - 0xb8 {var_c0}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0xa8 {var_b0}].q
+      rsi = [rbp - 0xb0 {var_b8}].q
+      r8 = [rbp - 0xb8 {var_c0}].q
+      [rbp - 0xc0 {var_c8}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0xc0 {var_c8}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0xc0 {var_c8}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0xb8 {var_c0}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0xa8 {var_b0}].q
+      call(swift_release)
+      edi = 1
+      call(exit)
+      noreturn
+    block3:
+      goto block4
+    block4:
+      call($ss11CommandLineO9argumentsSaySSGvgZ)
+      [rbp - 0x60 {var_68}].q = rax
+      rcx = [rbp - 0x60 {var_68}].q
+      [rbp - 0x78 {var_80}].q = rcx
+      rcx = rbp - 0x70 {var_78}
+      rdi = 0x80e0
+      [rbp - 0xc8 {var_d0}].q = rax
+      [rbp - 0xd0 {var_d8}].q = rcx {var_78}
+      call(__swift_instantiateConcreteTypeFromMangledName)
+      [rbp - 0xd8 {var_e0}].q = rax
+      call($sSaySSGSayxGSKsWl)
+      rcx = rbp - 0x78 {var_80}
+      rdx = [rbp - 0xd0 {var_d8}].q {var_78}
+      [rbp - 0xe0 {var_e8}].q = rax
+      rax = rdx {var_78}
+      rdi = [rbp - 0xd8 {var_e0}].q
+      rsi = [rbp - 0xe0 {var_e8}].q
+      r13 = rcx {var_80}
+      call($sSKsE4last7ElementQzSgvg)
+      rax = [rbp - 0x70 {var_78}].q
+      rcx = [rbp - 0x68 {var_70}].q
+      rdi = [rbp - 0xc8 {var_d0}].q
+      [rbp - 0xe8 {var_f0}].q = rax
+      [rbp - 0xf0 {var_f8}].q = rcx
+      call(swift_release)
+      rax = [rbp - 0xf0 {var_f8}].q
+      if (rax == 0) block5 else block6
+    block5:
+      goto block7
+    block6:
+      rax = [rbp - 0xe8 {var_f0}].q
+      rcx = [rbp - 0xf0 {var_f8}].q
+      [rbp - 0xf8 {var_100}].q = rax
+      [rbp - 0x100 {var_108}].q = rcx
+      goto block8
+    block7:
+      goto block9
+    block8:
+      rax = [rbp - 0x100 {var_108}].q
+      rcx = [rbp - 0xf8 {var_100}].q
+      rdx = rbp - 0x58 {var_60}
+      [rbp - 0x108 {var_110}].q = rax
+      rax = rdx {var_60}
+      rdi = rcx
+      rsi = [rbp - 0x108 {var_110}].q
+      call($s6binary5parse4textAA8DateInfoVSS_tF)
+      rdi = [rbp - 0x108 {var_110}].q
+      call(swift_bridgeObjectRelease)
+      rax = 0x8228
+      rcx = rax
+      rdx = rbp - 0x58 {var_60}
+      rdi = rcx
+      rsi = rdx {var_60}
+      ecx = 0x28
+      rdx = rcx
+      [rbp - 0x110 {var_118}].q = rax
+      [rbp - 0x118 {var_120}].q = rcx
+      call(memcpy)
+      rax = rbp - 0x30 {var_38}
+      rcx = rax {var_38}
+      rdx = [rbp - 0x110 {var_118}].q
+      rdi = rcx {var_38}
+      rsi = rdx
+      rdx = [rbp - 0x118 {var_120}].q
+      [rbp - 0x120 {var_128}].q = rax {var_38}
+      call(memcpy)
+      rdi = [rbp - 0x120 {var_128}].q {var_38}
+      call($s6binary5reply4dateyAA8DateInfoV_tF)
+      eax = 0
+      rsp = rsp + 0x148
+      r13 = pop
+      rbp = pop
+      <return> jump(pop)
+    block9:
+      goto block10
+    block10:
+      goto block11
+    block11:
+      goto block12
+    block12:
+      goto block13
+    block13:
+      rdi = 0x312f
+      esi = 0xb
+      eax = 2
+      edx = eax
+      rcx = 0x3180
+      r8d = 0x39
+      r9d = eax
+      r10 = 0x3124
+      [rsp {var_158}].q = r10
+      [rsp + 8 {var_150}].q = 0xa
+      [rsp + 0x10 {var_148}].d = 2
+      [rsp + 0x18 {var_140}].q = 0x3f
+      [rsp + 0x20 {var_138}].d = 1
+      call($ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF)
+      goto block8
+  "mlil": |-
+    block1:
+      var_84 = arg1
+      var_90 = arg2
+      $ss11CommandLineO9argumentsSaySSGvgZ()
+      rdi = rax
+      var_98 = rax
+      $sSa5countSivgSS_Tg5(rdi)
+      rdi_1 = var_98
+      var_a0 = rax_1
+      swift_release(rdi_1)
+      rax_2 = var_a0
+      rcx = rax_2 == 2
+      rcx = rcx ^ 0xff
+      if ((rcx & 1) != 0) block2 else block3
+    block2:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_a8 = rdx
+      var_b0 = rax_3
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("USAGE: ./bandate [date]", 0x17, 1, 1)
+      rdi_2 = var_a8
+      [rdi_2 + 0x18].q = $sSSN
+      [rdi_2].q = rax_4
+      [rdi_2 + 8].q = rdx_1
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_b8 = rax_5
+      var_c0 = rdx_2
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_3 = var_b0
+      rsi = var_b8
+      r8 = var_c0
+      var_c8 = rdx_3
+      rdx_4 = r8
+      rcx_1 = rax_6
+      r8_1 = var_c8
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_3, rsi, rdx_4, rcx_1, r8_1)
+      rdi_4 = var_c8
+      swift_bridgeObjectRelease(rdi_4)
+      rdi_5 = var_c0
+      swift_bridgeObjectRelease(rdi_5)
+      rdi_6 = var_b0
+      swift_release(rdi_6)
+      exit(1)
+      noreturn
+    block3:
+      goto block4
+    block4:
+      $ss11CommandLineO9argumentsSaySSGvgZ()
+      var_68 = rax_7
+      rcx_2 = var_68
+      var_80 = rcx_2
+      var_d0 = rax_7
+      var_d8 = &var_78
+      __swift_instantiateConcreteTypeFromMangledName(0x80e0)
+      var_e0 = rax_8
+      $sSaySSGSayxGSKsWl()
+      rcx_3 = &var_80
+      rdx_5 = var_d8
+      var_e8 = rax_9
+      rax_10 = rdx_5
+      rdi_7 = var_e0
+      rsi_1 = var_e8
+      $sSKsE4last7ElementQzSgvg(rdi_7, rsi_1, rdx_5, rcx_3)
+      rax_11 = var_78
+      rcx_4 = var_70
+      rdi_8 = var_d0
+      var_f0 = rax_11
+      var_f8 = rcx_4
+      swift_release(rdi_8)
+      rax_12 = var_f8
+      if (rax_12 == 0) block5 else block6
+    block5:
+      goto block7
+    block6:
+      rax_13 = var_f0
+      rcx_5 = var_f8
+      var_100 = rax_13
+      var_108 = rcx_5
+      goto block8
+    block7:
+      goto block9
+    block8:
+      rax_14 = var_108
+      rcx_6 = var_100
+      var_110 = rax_14
+      rax_15 = &var_60
+      rdi_9 = rcx_6
+      rsi_2 = var_110
+      $s6binary5parse4textAA8DateInfoVSS_tF(rdi_9, rsi_2, rax_15)
+      rdi_10 = var_110
+      swift_bridgeObjectRelease(rdi_10)
+      rsi_3 = &var_60
+      memcpy(0x8228, rsi_3, 0x28)
+      rdi_11 = &var_38
+      var_128 = &var_38
+      memcpy(rdi_11, 0x8228, 0x28)
+      rdi_12 = var_128
+      $s6binary5reply4dateyAA8DateInfoV_tF(rdi_12)
+      rax_16 = 0
+      return 0
+    block9:
+      goto block10
+    block10:
+      goto block11
+    block11:
+      goto block12
+    block12:
+      goto block13
+    block13:
+      $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0x3f, 1)
+      goto block8

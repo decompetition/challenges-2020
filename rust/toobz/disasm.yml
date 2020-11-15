@@ -1,0 +1,405 @@
+"_ZN46_$LT$source..ISpew$u20$as$u20$source..Spew$GT$4spewE":
+  "asm": |
+    _ZN46_$LT$source..ISpew$u20$as$u20$source..Spew$GT$4spewE:
+      sub     rsp, 0x88
+      mov     [rsp+0x30], rsi
+      mov     [rsp+0x38], rdx
+      mov     rax, [mem1]; "0\u0001\u0004"
+      lea     rcx, [rsp+0x30]
+      mov     [rsp+0x80], rcx
+      mov     rcx, [rsp+0x80]
+      mov     [rsp+0x28], rdi
+      mov     rdi, rcx
+      lea     rsi, [_ZN44_$LT$$RF$T$u20$as$u20$core..fmt..Display$GT$3fmtE]
+      mov     [rsp+0x20], rax
+      call    _ZN4core3fmt10ArgumentV13newE
+      mov     [rsp+0x18], rax
+      mov     [rsp+0x10], rdx
+      mov     rax, [rsp+0x18]
+      mov     [rsp+0x70], rax
+      mov     rcx, [rsp+0x10]
+      mov     [rsp+0x78], rcx
+      lea     rdx, [rsp+0x70]
+      lea     rdi, [rsp+0x40]
+      mov     rsi, [rsp+0x20]
+      mov     r8d, 1
+      mov     [rsp+8], rdx
+      mov     rdx, r8
+      mov     rcx, [rsp+8]
+      call    _ZN4core3fmt9Arguments6new_v1E
+      lea     rdi, [rsp+0x40]
+      call    [mem2]
+      add     rsp, 0x88
+      ret
+"_ZN46_$LT$source..ISuck$u20$as$u20$source..Suck$GT$4suckE":
+  "asm": |
+    _ZN46_$LT$source..ISuck$u20$as$u20$source..Suck$GT$4suckE:
+      sub     rsp, 0x68
+      mov     rax, rdi
+      lea     rcx, [rsp+0x20]
+      mov     [rsp+0x18], rdi
+      mov     rdi, rcx
+      mov     [rsp+0x10], rax
+      call    _ZN5alloc6string6String3newE
+      jmp     block2
+    block1:
+      mov     rdi, [rsp+0x58]
+      call    _Unwind_Resume@plt
+      ud2
+    block2:
+      lea     rax, [_ZN3std2io5stdio5stdinE]
+      call    rax
+      mov     [rsp+8], rax
+      jmp     block3
+    block3:
+      mov     rax, [rsp+8]
+      mov     [rsp+0x50], rax
+      lea     rcx, [_ZN55_$LT$std..io..stdio..Stdin$u20$as$u20$std..io..Read$GT$14read_to_stringE]
+      lea     rdi, [rsp+0x38]
+      lea     rsi, [rsp+0x50]
+      lea     rdx, [rsp+0x20]
+      call    rcx
+      jmp     block5
+    block4:
+      lea     rdi, [rsp+0x20]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block1
+    block5:
+      lea     rsi, [mem1]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x38]
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      jmp     block7
+    block6:
+      lea     rdi, [rsp+0x50]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block4
+    block7:
+      lea     rdi, [rsp+0x50]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block8
+    block8:
+      mov     rax, [rsp+0x20]
+      mov     rcx, [rsp+0x18]
+      mov     [rcx], rax
+      mov     rax, [rsp+0x28]
+      mov     [rcx+8], rax
+      mov     rax, [rsp+0x30]
+      mov     [rcx+0x10], rax
+      mov     rax, [rsp+0x10]
+      add     rsp, 0x68
+      ret
+      mov     [rsp+0x58], rax
+      mov     [rsp+0x60], edx
+      jmp     block4
+    block9:
+      mov     [rsp+0x58], rax
+      mov     [rsp+0x60], edx
+      jmp     block6
+    block10:
+"_ZN46_$LT$source..TSpew$u20$as$u20$source..Spew$GT$4spewE":
+  "asm": |
+    _ZN46_$LT$source..TSpew$u20$as$u20$source..Spew$GT$4spewE:
+      sub     rsp, 0x88
+      lea     rax, [rsp+0x38]
+      mov     [rsp+0x28], rdi
+      mov     rdi, rax
+      mov     rax, [rsp+0x28]
+      mov     [rsp+0x20], rsi
+      mov     rsi, rax
+      mov     [rsp+0x18], rdx
+      call    _ZN3std3net3tcp9TcpStream7connectE
+      jmp     block2
+    block1:
+      mov     rdi, [rsp+0x68]
+      call    _Unwind_Resume@plt
+      ud2
+    block2:
+      lea     rax, [mem1]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x38]
+      mov     rsi, rax
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      mov     [rsp+0x34], eax
+      mov     rax, [rsp+0x20]
+      mov     [rsp+0x78], rax
+      mov     rcx, [rsp+0x18]
+      mov     [rsp+0x80], rcx
+      mov     rdx, [rsp+0x78]
+      mov     rcx, [rsp+0x80]
+      mov     [rsp+0x10], rdx
+      mov     [rsp+8], rcx
+      lea     rax, [_ZN59_$LT$std..net..tcp..TcpStream$u20$as$u20$std..io..Write$GT$5writeE]
+      lea     rdi, [rsp+0x50]
+      lea     rsi, [rsp+0x34]
+      mov     rdx, [rsp+0x10]
+      mov     rcx, [rsp+8]
+      call    rax
+      jmp     block4
+    block3:
+      lea     rdi, [rsp+0x34]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block1
+    block4:
+      lea     rsi, [mem2]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x50]
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      jmp     block5
+    block5:
+      lea     rdi, [rsp+0x34]
+      call    _ZN4core3ptr13drop_in_placeE
+      add     rsp, 0x88
+      ret
+      mov     [rsp+0x68], rax
+      mov     [rsp+0x70], edx
+      jmp     block3
+    block6:
+"_ZN46_$LT$source..TSuck$u20$as$u20$source..Suck$GT$4suckE":
+  "asm": |
+    _ZN46_$LT$source..TSuck$u20$as$u20$source..Suck$GT$4suckE:
+      sub     rsp, 0xa8
+      mov     rax, rdi
+      lea     rcx, [rsp+0x40]
+      mov     [rsp+8], rdi
+      mov     rdi, rcx
+      mov     [rsp], rax
+      call    [mem1]
+      jmp     block2
+    block1:
+      mov     rdi, [rsp+0x98]
+      call    _Unwind_Resume@plt
+      ud2
+    block2:
+      lea     rax, [mem2]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x18]
+      lea     rsi, [rsp+0x40]
+      mov     rdx, rax
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      mov     eax, [rsp+0x18]
+      mov     [rsp+0x14], eax
+      lea     rdi, [rsp+0x68]
+      call    _ZN5alloc6string6String3newE
+      jmp     block4
+    block3:
+      lea     rdi, [rsp+0x14]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block1
+    block4:
+      lea     rdi, [rsp+0x80]
+      lea     rsi, [rsp+0x14]
+      lea     rdx, [rsp+0x68]
+      call    _ZN3std2io4Read14read_to_stringE
+      jmp     block5
+    block5:
+      lea     rsi, [mem3]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x80]
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      jmp     block7
+    block6:
+      lea     rdi, [rsp+0x68]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block3
+    block7:
+      mov     rax, [rsp+0x68]
+      mov     rcx, [rsp+8]
+      mov     [rcx], rax
+      mov     rax, [rsp+0x70]
+      mov     [rcx+8], rax
+      mov     rax, [rsp+0x78]
+      mov     [rcx+0x10], rax
+      lea     rdi, [rsp+0x14]
+      call    _ZN4core3ptr13drop_in_placeE
+      mov     rax, [rsp]
+      add     rsp, 0xa8
+      ret
+      mov     [rsp+0x98], rax
+      mov     [rsp+0xa0], edx
+      jmp     block3
+    block8:
+      mov     [rsp+0x98], rax
+      mov     [rsp+0xa0], edx
+      jmp     block6
+"_ZN6source5ISpew3newE":
+  "asm": |
+    _ZN6source5ISpew3newE:
+      ret
+"_ZN6source5ISuck3newE":
+  "asm": |
+    _ZN6source5ISuck3newE:
+      ret
+"_ZN6source5TSpew3newE":
+  "asm": |
+    _ZN6source5TSpew3newE:
+      sub     rsp, 0x58
+      mov     rax, rdi
+      lea     rcx, [mem1]; "127.0.0.1:/mnt/source.rs-/usr..."
+      lea     r8, [rsp+0x40]
+      mov     [rsp+0x20], rdi
+      mov     rdi, r8
+      mov     [rsp+0x18], rsi
+      mov     rsi, rcx
+      mov     ecx, 0xa
+      mov     [rsp+0x10], rdx
+      mov     rdx, rcx
+      mov     [rsp+8], rax
+      call    _ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_ownedE
+      lea     rdi, [rsp+0x28]
+      lea     rsi, [rsp+0x40]
+      mov     rdx, [rsp+0x18]
+      mov     rcx, [rsp+0x10]
+      call    _ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3addE
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x20]
+      mov     [rcx], rax
+      mov     rax, [rsp+0x30]
+      mov     [rcx+8], rax
+      mov     rax, [rsp+0x38]
+      mov     [rcx+0x10], rax
+      mov     rax, [rsp+8]
+      add     rsp, 0x58
+      ret
+"_ZN6source5TSuck3newE":
+  "asm": |
+    _ZN6source5TSuck3newE:
+      sub     rsp, 0x88
+      lea     rax, [mem1]; "127.0.0.1:/mnt/source.rs-/usr..."
+      lea     rcx, [rsp+0x40]
+      mov     [rsp+0x18], rdi
+      mov     rdi, rcx
+      mov     [rsp+0x10], rsi
+      mov     rsi, rax
+      mov     edx, 0xa
+      call    _ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_ownedE
+      lea     rdi, [rsp+0x28]
+      lea     rsi, [rsp+0x40]
+      mov     rdx, [rsp+0x18]
+      mov     rcx, [rsp+0x10]
+      call    _ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3addE
+      mov     rax, [rsp+0x28]
+      mov     [rsp+0x70], rax
+      mov     rax, [rsp+0x30]
+      mov     [rsp+0x78], rax
+      mov     rax, [rsp+0x38]
+      mov     [rsp+0x80], rax
+      lea     rdi, [rsp+0x58]
+      lea     rsi, [rsp+0x70]
+      call    _ZN3std3net3tcp11TcpListener4bindE
+      lea     rax, [mem2]; "/mnt/source.rs"
+      lea     rdi, [rsp+0x58]
+      mov     rsi, rax
+      call    _ZN4core6result19Result$LT$T$C$E$GT$6unwrapE
+      mov     [rsp+0xc], eax
+      mov     eax, [rsp+0xc]
+      mov     [rsp+0x24], eax
+      mov     eax, [rsp+0x24]
+      add     rsp, 0x88
+      ret
+"_ZN6source8new_spewE":
+  "asm": |
+    _ZN6source8new_spewE:
+      sub     rsp, 0x58
+      mov     [rsp+0x20], rdi
+      mov     [rsp+0x28], rsi
+      mov     rsi, [mem1]; "0\u0001\u0004"
+      lea     rdi, [rsp+0x20]
+      call    _ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eqE
+      mov     [rsp+0x1f], al
+      mov     al, [rsp+0x1f]
+      test    al, 1
+      jne     block3
+    block1:
+      jmp     block2
+    block2:
+      mov     rsi, [rsp+0x20]
+      mov     rdx, [rsp+0x28]
+      lea     rdi, [rsp+0x40]
+      call    _ZN6source5TSpew3newE
+      jmp     block5
+    block3:
+      mov     rdi, [rsp+0x20]
+      mov     rsi, [rsp+0x28]
+      call    _ZN6source5ISpew3newE
+      xor     eax, eax
+      mov     edi, eax
+      mov     esi, 1
+      call    _ZN5alloc5alloc15exchange_mallocE
+      mov     [rsp+0x10], rax
+      lea     rax, [mem2]
+      mov     rcx, [rsp+0x10]
+      mov     [rsp+0x30], rcx
+      mov     [rsp+0x38], rax
+    block4:
+      mov     rax, [rsp+0x30]
+      mov     rdx, [rsp+0x38]
+      add     rsp, 0x58
+      ret
+    block5:
+      mov     edi, 0x18
+      mov     esi, 8
+      call    _ZN5alloc5alloc15exchange_mallocE
+      mov     rcx, rax
+      mov     rdx, [rsp+0x40]
+      mov     [rax], rdx
+      mov     rdx, [rsp+0x48]
+      mov     [rax+8], rdx
+      mov     rdx, [rsp+0x50]
+      mov     [rax+0x10], rdx
+      mov     [rsp+8], rcx
+      lea     rax, [mem3]
+      mov     rcx, [rsp+8]
+      mov     [rsp+0x30], rcx
+      mov     [rsp+0x38], rax
+      jmp     block4
+    block6:
+"_ZN6source8new_suckE":
+  "asm": |
+    _ZN6source8new_suckE:
+      sub     rsp, 0x38
+      mov     [rsp+0x18], rdi
+      mov     [rsp+0x20], rsi
+      mov     rsi, [mem1]; "0\u0001\u0004"
+      lea     rdi, [rsp+0x18]
+      call    _ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eqE
+      mov     [rsp+0x17], al
+      mov     al, [rsp+0x17]
+      test    al, 1
+      jne     block3
+    block1:
+      jmp     block2
+    block2:
+      mov     rdi, [rsp+0x18]
+      mov     rsi, [rsp+0x20]
+      call    _ZN6source5TSuck3newE
+      mov     [rsp+0x10], eax
+      jmp     block5
+    block3:
+      mov     rdi, [rsp+0x18]
+      mov     rsi, [rsp+0x20]
+      call    _ZN6source5ISuck3newE
+      xor     eax, eax
+      mov     edi, eax
+      mov     esi, 1
+      call    _ZN5alloc5alloc15exchange_mallocE
+      mov     [rsp+8], rax
+      lea     rax, [mem2]
+      mov     rcx, [rsp+8]
+      mov     [rsp+0x28], rcx
+      mov     [rsp+0x30], rax
+    block4:
+      mov     rax, [rsp+0x28]
+      mov     rdx, [rsp+0x30]
+      add     rsp, 0x38
+      ret
+    block5:
+      mov     eax, 4
+      mov     rdi, rax
+      mov     rsi, rax
+      call    _ZN5alloc5alloc15exchange_mallocE
+      mov     rcx, rax
+      mov     edx, [rsp+0x10]
+      mov     [rax], edx
+      mov     [rsp], rcx
+      lea     rax, [mem3]
+      mov     rcx, [rsp]
+      mov     [rsp+0x28], rcx
+      mov     [rsp+0x30], rax
+      jmp     block4
+    block6:

@@ -1,0 +1,518 @@
+"main.main":
+  "hlil": |-
+    void* var_8
+    int64_t rsi
+    int64_t* rdi
+    void* fsbase
+    while (&var_8 u<= *(*(fsbase - 8) + 0x10))
+        rsi, rdi = runtime.morestack_noctxt(rdi, rsi, arg1)
+    var_8 = arg1
+    int64_t* rbp = &var_8
+    char* rdx = *os.Args
+    if (*0x560588 u<= 1)
+        runtime.panicIndex(rbp)
+        noreturn
+    *(rdx + 0x18)
+    int64_t rdx_1
+    int64_t rsi_1
+    void* rdi_1
+    int64_t r8
+    int128_t zmm0
+    rdx_1, rsi_1, rdi_1, r8, zmm0 = strconv.Atoi(rdi, rsi, rbp, rdx, *(rdx + 0x10))
+    int64_t var_78
+    int64_t rax_1 = var_78
+    int64_t var_48 = rax_1
+    int64_t var_70
+    if (var_70 != 0)
+        int128_t var_18
+        var_18.q = 0x4a0240
+        var_18:8.q = 0x4db3e0
+        int64_t rdx_5
+        int64_t rsi_4
+        int32_t rdi_4
+        rdx_5, rsi_4, rdi_4 = fmt.Fprintln(rdi_1, rsi_1, rdx_1, *os.Stdout, r8)
+        os.Exit(rdi_4, rsi_4, rdx_5)
+        noreturn
+    int64_t rcx_3 = 0
+    while (rcx_3 s< 0x10)
+        int64_t rcx_4
+        int64_t rdx_3
+        int64_t rsi_2
+        void* rdi_2
+        int64_t r8_1
+        rcx_4, rdx_3, rsi_2, rdi_2, r8_1 = runtime.convTstring(rdi_1, rsi_1)
+        int128_t var_28
+        var_28.q = 0x4a0240
+        var_28:8.q = var_78
+        *os.Stdout
+        int64_t rcx_5
+        int64_t rdx_4
+        void* rsi_3
+        uint64_t rdi_3
+        rcx_5, rdx_4, rsi_3, rdi_3, zmm0 = fmt.Fprintln(rdi_2, rsi_2, rdx_3, rcx_4, r8_1)
+        var_78 = var_48
+        rsi_1, rdi_1 = main.step(rdi_3, rsi_3, rdx_4, rcx_5)
+        rcx_3 = rcx_3 + 1
+        rax_1 = var_48
+    return rax_1
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      rax = rsp - 8 {var_8}
+      if (rax u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x88
+      [rsp + 0x80 {var_8}].q = rbp
+      rbp = rsp + 0x80 {var_8}
+      rdx = [0x560580].q
+      rcx = [0x560588].q
+      if (rcx u<= 1) block4 else block5
+    block4:
+      eax = 1
+      call(runtime.panicIndex)
+      noreturn
+    block5:
+      rax = [rdx + 0x18].q
+      rcx = [rdx + 0x10].q
+      [rsp {var_88}].q = rcx
+      [rsp + 8 {var_80}].q = rax
+      call(strconv.Atoi)
+      rax = [rsp + 0x10 {var_78}].q
+      [rsp + 0x40 {var_48}].q = rax
+      if ([rsp + 0x18].q != 0) block6 else block7
+    block6:
+      xmm0 = 0
+      [rsp + 0x70 {var_18}].o = xmm0
+      rax = 0x4a0240
+      [rsp + 0x70 {var_18}].q = rax
+      rcx = 0x4db3e0
+      [rsp + 0x78 {var_18+0x8}].q = rcx
+      rcx = [0x5601d0].q
+      rdx = 0x4dc9e0
+      [rsp {var_88_4}].q = rdx
+      [rsp + 8 {var_80_4}].q = rcx
+      rcx = rsp + 0x70 {var_18}
+      [rsp + 0x10 {var_78}].q = rcx {var_18}
+      [rsp + 0x18 {var_70_1}].q = 1
+      [rsp + 0x20 {var_68}].q = 1
+      call(fmt.Fprintln)
+      [rsp {var_88_5}].q = 1
+      call(os.Exit)
+      noreturn
+    block7:
+      ecx = 0
+      rdx = 0x4c78e2
+      ebx = 0x1f
+      goto block8
+    block8:
+      if (rcx s< 0x10) block9 else block10
+    block9:
+      [rsp + 0x58 {var_30_1}].q = rdx
+      [rsp + 0x50 {var_38_1}].q = rcx
+      [rsp + 0x48 {var_40_1}].q = rbx
+      [rsp {var_88_1}].q = rdx
+      [rsp + 8 {var_80_1}].q = rbx
+      call(runtime.convTstring)
+      rax = [rsp + 0x10 {var_78}].q
+      xmm0 = 0
+      [rsp + 0x60 {var_28}].o = xmm0
+      rcx = 0x4a0240
+      [rsp + 0x60 {var_28}].q = rcx
+      [rsp + 0x68 {var_28+0x8}].q = rax
+      rax = [0x5601d0].q
+      rdx = 0x4dc9e0
+      [rsp {var_88_2}].q = rdx
+      [rsp + 8 {var_80_2}].q = rax
+      rax = rsp + 0x60 {var_28}
+      [rsp + 0x10 {var_78}].q = rax {var_28}
+      [rsp + 0x18 {var_70}].q = 1
+      [rsp + 0x20].q = 1
+      call(fmt.Fprintln)
+      rax = [rsp + 0x58 {var_30_1}].q
+      [rsp {var_88_3}].q = rax
+      rax = [rsp + 0x48 {var_40_1}].q
+      [rsp + 8 {var_80_3}].q = rax
+      rax = [rsp + 0x40 {var_48}].q
+      [rsp + 0x10 {var_78}].q = rax
+      call(main.step)
+      rax = [rsp + 0x50 {var_38_1}].q
+      rcx = rax + 1
+      rdx = [rsp + 0x18 {var_70}].q
+      rbx = [rsp + 0x20].q
+      rax = [rsp + 0x40 {var_48}].q
+      goto block8
+    block10:
+      rbp = [rsp + 0x80 {var_8}].q
+      rsp = rsp + 0x88
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rcx_7 = [fsbase - 8].q
+      if (&var_8 u<= [rcx_7 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(rdi, rsi, arg1)
+      goto block1
+    block3:
+      var_8 = arg1
+      rbp = &var_8
+      rdx = [0x560580].q
+      rcx_1 = [0x560588].q
+      if (rcx_1 u<= 1) block4 else block5
+    block4:
+      rax_8 = 1
+      runtime.panicIndex(rbp)
+      noreturn
+    block5:
+      rax = [rdx + 0x18].q
+      rcx_2 = [rdx + 0x10].q
+      var_88 = rcx_2
+      var_80 = rax
+      strconv.Atoi(rdi, rsi, rbp, rdx, rcx_2)
+      rax_1 = var_78
+      var_48 = rax_1
+      if (var_70 != 0) block6 else block7
+    block6:
+      zmm0 = 0
+      var_18 = zmm0
+      var_18:0.q = 0x4a0240
+      var_18:8.q = 0x4db3e0
+      rcx_6 = [0x5601d0].q
+      var_88_4 = 0x4dc9e0
+      var_80_4 = rcx_6
+      var_70_1 = 1
+      var_68 = 1
+      fmt.Fprintln(rdi_1, rsi_1, rdx_1, rcx_6, r8)
+      var_88_5 = 1
+      os.Exit(rdi_4, rsi_4, rdx_5)
+      noreturn
+    block7:
+      rcx_3 = 0
+      rdx_2 = "               #               )…"
+      rbx = 0x1f
+      goto block8
+    block8:
+      if (rcx_3 s< 0x10) block9 else block10
+    block9:
+      var_30_1 = rdx_2
+      var_38_1 = rcx_3
+      var_40_1 = rbx
+      var_88_1 = rdx_2
+      var_80_1 = rbx
+      runtime.convTstring(rdi_1, rsi_1)
+      rax_2 = var_78
+      zmm0 = 0
+      var_28 = zmm0
+      var_28:0.q = 0x4a0240
+      var_28:8.q = rax_2
+      rax_3 = [0x5601d0].q
+      var_88_2 = 0x4dc9e0
+      var_80_2 = rax_3
+      fmt.Fprintln(rdi_2, rsi_2, rdx_3, rcx_4, r8_1)
+      rax_4 = var_30_1
+      var_88_3 = rax_4
+      rax_5 = var_40_1
+      var_80_3 = rax_5
+      rax_6 = var_48
+      var_78 = rax_6
+      main.step(rdi_3, rsi_3, rdx_4, rcx_5)
+      rax_7 = var_38_1
+      rcx_3 = rax_7 + 1
+      rdx_2 = 1
+      rbx = 1
+      rax_1 = var_48
+      goto block8
+    block10:
+      rbp_1 = var_8
+      return rax_1
+"main.step":
+  "hlil": |-
+    void* fsbase
+    while (&__return_addr u<= *(*(fsbase - 8) + 0x10))
+        void* rbp
+        int64_t rsi
+        rsi, arg1 = runtime.morestack_noctxt(arg1, rsi, rbp)
+    int32_t var_58 = 0x4c31e0
+    runtime.concatstring2(arg1)
+    int64_t var_40
+    int64_t rax_2 = var_40
+    arg3 = rax_2
+    void* var_48
+    void* rcx_1 = var_48
+    arg2 = rcx_1
+    void* rdx = nullptr
+    int64_t rbx = 0
+    int64_t rsi_1 = 0
+    void* rdi = nullptr
+    while (rdx s< rax_2)
+        uint64_t r8_1 = zx.q(*(rcx_1 + rdx))
+        void* r9_1
+        if (r8_1.d s>= 0x80)
+            runtime.decoderune(rdi.b, rsi_1, rdx, rcx_1, r8_1)
+            r8_1 = zx.q(var_58)
+            r9_1 = 1
+            rax_2 = arg3
+            rcx_1 = arg2
+            rdx = rdx
+            rbx = rbx
+            rsi_1 = rsi_1
+            rdi = rdi
+        else
+            r9_1 = rdx + 1
+        rbx = rbx << 1
+        int64_t rbx_1 = rbx & 7
+        int64_t r10_1 = rbx_1
+        int64_t rbx_2 = rbx_1 | 1
+        if (r8_1.d == 0x23)
+            r10_1 = rbx_2
+        if (rdx != 0)
+            r10_1 - 0x40
+            void* rax_3
+            int64_t rcx_3
+            if ((arg4 & ((1 << r10_1.b) & sbb.q(rdx, rdx, r10_1 u< 0x40))) == 0)
+                var_58 = 0x4c31e0
+                runtime.concatstring2(rdi)
+                rax_3 = var_48
+                rcx_3 = var_40
+            else
+                var_58 = 0x4c31e1
+                runtime.concatstring2(rdi)
+                rax_3 = var_48
+                rcx_3 = var_40
+            r9_1 = r9_1
+            r10_1 = r10_1
+            rsi_1 = rcx_3
+            rdi = rax_3
+            rax_2 = arg3
+            rcx_1 = arg2
+        rdx = r9_1
+        rbx = r10_1
+    return rax_2
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      if (rsp u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x70
+      [rsp + 0x68 {var_8}].q = rbp
+      rbp = rsp + 0x68
+      [rsp {var_70}].q = 0
+      rax = [rsp + 0x78 {arg2}].q
+      [rsp + 8 {var_68}].q = rax
+      rax = [rsp + 0x80 {arg3}].q
+      [rsp + 0x10 {var_60}].q = rax
+      rax = 0x4c31e0
+      [rsp + 0x18 {var_58}].q = rax
+      [rsp + 0x20 {var_50}].q = 1
+      call(runtime.concatstring2)
+      rax = [rsp + 0x30 {var_40}].q
+      [rsp + 0x80 {arg3}].q = rax
+      rcx = [rsp + 0x28 {var_48}].q
+      [rsp + 0x78 {arg2}].q = rcx
+      edx = 0
+      ebx = 0
+      esi = 0
+      edi = 0
+      goto block4
+    block4:
+      if (rdx s>= rax) block5 else block6
+    block5:
+      [rsp + 0x90 {arg_20}].q = rdi
+      [rsp + 0x98 {arg_28}].q = rsi
+      rbp = [rsp + 0x68 {var_8}].q
+      rsp = rsp + 0x70
+      <return> jump(pop)
+    block6:
+      r8d = zx.d([rcx + rdx].b)
+      if (r8d s>= 0x80) block7 else block8
+    block7:
+      [rsp + 0x40 {var_30_1}].q = rdx
+      [rsp + 0x38 {var_38_1}].q = rsi
+      [rsp + 0x50 {var_20_1}].q = rbx
+      [rsp + 0x60 {var_10_1}].q = rdi
+      [rsp {var_70_3}].q = rcx
+      [rsp + 8 {var_68_3}].q = rax
+      [rsp + 0x10 {var_60_3}].q = rdx
+      call(runtime.decoderune)
+      r8d = [rsp + 0x18 {var_58}].d
+      r9 = [rsp + 0x20 {var_50}].q
+      rax = [rsp + 0x80 {arg3}].q
+      rcx = [rsp + 0x78 {arg2}].q
+      rdx = [rsp + 0x40 {var_30_1}].q
+      rbx = [rsp + 0x50 {var_20_1}].q
+      rsi = [rsp + 0x38 {var_38_1}].q
+      rdi = [rsp + 0x60 {var_10_1}].q
+      goto block9
+    block8:
+      r9 = rdx + 1
+      goto block9
+    block9:
+      rbx = rbx << 1
+      rbx = rbx & 0x7
+      r10 = rbx
+      rbx = rbx | 0x1
+      if (r8d == 0x23) block10 else block11
+    block10:
+      r10 = rbx
+      goto block11
+    block11:
+      if (rdx == 0) block12 else block13
+    block12:
+      rdx = r9
+      rbx = r10
+      goto block4
+    block13:
+      [rsp + 0x48 {var_28_1}].q = r10
+      [rsp + 0x58 {var_18_1}].q = r9
+      r10 - 0x40
+      flag:c = r10 u< 0x40
+      rdx = sbb.q(rdx, rdx, flag:c)
+      rcx = r10
+      r8d = 1
+      r8 = r8 << cl
+      r8 = r8 & rdx
+      rdx = [rsp + 0x88 {arg4}].q
+      if (rdx & r8 == 0) block14 else block15
+    block14:
+      [rsp {var_70_2}].q = 0
+      [rsp + 8 {var_68_2}].q = rdi
+      [rsp + 0x10 {var_60_2}].q = rsi
+      rax = 0x4c31e0
+      [rsp + 0x18 {var_58}].q = rax
+      [rsp + 0x20 {var_50}].q = 1
+      call(runtime.concatstring2)
+      rax = [rsp + 0x28 {var_48}].q
+      rcx = [rsp + 0x30 {var_40}].q
+      goto block16
+    block15:
+      [rsp {var_70_1}].q = 0
+      [rsp + 8 {var_68_1}].q = rdi
+      [rsp + 0x10 {var_60_1}].q = rsi
+      rax = 0x4c31e1
+      [rsp + 0x18 {var_58}].q = rax
+      [rsp + 0x20 {var_50}].q = 1
+      call(runtime.concatstring2)
+      rax = [rsp + 0x28 {var_48}].q
+      rcx = [rsp + 0x30 {var_40}].q
+      goto block16
+    block16:
+      r9 = [rsp + 0x58 {var_18_1}].q
+      r10 = [rsp + 0x48 {var_28_1}].q
+      rsi = rcx
+      rdi = rax
+      rax = [rsp + 0x80 {arg3}].q
+      rcx = [rsp + 0x78 {arg2}].q
+      goto block12
+  "mlil": |-
+    block1:
+      rcx_4 = [fsbase - 8].q
+      if (&__return_addr u<= [rcx_4 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(arg1, rsi, rbp)
+      goto block1
+    block3:
+      var_8 = rbp
+      var_70 = 0
+      rax = arg2
+      var_68 = rax
+      rax_1 = arg3
+      var_60 = rax_1
+      var_58 = 0x4c31e0
+      runtime.concatstring2(arg1)
+      rax_2 = var_40
+      arg3 = rax_2
+      rcx_1 = var_48
+      arg2 = rcx_1
+      rdx = nullptr
+      rbx = 0
+      rsi_1 = 0
+      rdi = nullptr
+      goto block4
+    block4:
+      if (rdx s>= rax_2) block5 else block6
+    block5:
+      arg_20 = rdi
+      arg_28 = rsi_1
+      rbp_1 = var_8
+      return rax_2
+    block6:
+      r8_1 = zx.q(zx.d([rcx_1 + rdx].b))
+      if (r8_1.r8d s>= 0x80) block7 else block8
+    block7:
+      var_30_1 = rdx
+      var_38_1 = rsi_1
+      var_20_1 = rbx
+      var_10_1 = rdi
+      var_70_3 = rcx_1
+      var_68_3 = rax_2
+      var_60_3 = rdx
+      runtime.decoderune(rdi.dil, rsi_1, rdx, rcx_1, r8_1)
+      r8_1 = zx.q(var_58)
+      r9_1 = 1
+      rax_2 = arg3
+      rcx_1 = arg2
+      rdx = var_30_1
+      rbx = var_20_1
+      rsi_1 = var_38_1
+      rdi = var_10_1
+      goto block9
+    block8:
+      r9_1 = rdx + 1
+      goto block9
+    block9:
+      rbx = rbx << 1
+      rbx_1 = rbx & 7
+      r10_1 = rbx_1
+      rbx_2 = rbx_1 | 1
+      if (r8_1.r8d == 0x23) block10 else block11
+    block10:
+      r10_1 = rbx_2
+      goto block11
+    block11:
+      if (rdx == 0) block12 else block13
+    block12:
+      rdx = r9_1
+      rbx = r10_1
+      goto block4
+    block13:
+      var_28_1 = r10_1
+      var_18_1 = r9_1
+      r10_1 - 0x40
+      c_1 = r10_1 u< 0x40
+      rdx_1 = sbb.q(rdx, rdx, c_1)
+      rcx_2 = r10_1.r10b
+      r8_2 = 1 << rcx_2
+      r8_3 = r8_2 & rdx_1
+      rdx_2 = arg4
+      if ((rdx_2 & r8_3) == 0) block14 else block15
+    block14:
+      var_70_2 = 0
+      var_68_2 = rdi
+      var_60_2 = rsi_1
+      var_58 = 0x4c31e0
+      runtime.concatstring2(rdi)
+      rax_3 = var_48
+      rcx_3 = var_40
+      goto block16
+    block15:
+      var_70_1 = 0
+      var_68_1 = rdi
+      var_60_1 = rsi_1
+      var_58 = 0x4c31e1
+      runtime.concatstring2(rdi)
+      rax_3 = var_48
+      rcx_3 = var_40
+      goto block16
+    block16:
+      r9_1 = var_18_1
+      r10_1 = var_28_1
+      rsi_1 = rcx_3
+      rdi = rax_3
+      rax_2 = arg3
+      rcx_1 = arg2
+      goto block12

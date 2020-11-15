@@ -1,0 +1,161 @@
+"foo":
+  "hlil": |-
+    int32_t var_c = arg1
+    int32_t var_10 = arg2
+    while (var_c != var_10)
+        if (var_c s> var_10)
+            var_c = var_c - var_10
+        else if (var_c s< var_10)
+            var_10 = var_10 - var_c
+    return zx.q(var_c)
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      [rbp - 4 {var_c}].d = edi
+      [rbp - 8 {var_10}].d = esi
+      goto block2
+    block2:
+      eax = [rbp - 4 {var_c}].d
+      if (eax != [rbp - 8].d) block3 else block4
+    block3:
+      eax = [rbp - 4 {var_c}].d
+      if (eax s<= [rbp - 8].d) block5 else block6
+    block4:
+      eax = [rbp - 4 {var_c}].d
+      rbp = pop
+      <return> jump(pop)
+    block5:
+      eax = [rbp - 4 {var_c}].d
+      if (eax s>= [rbp - 8].d) block2 else block7
+    block6:
+      eax = [rbp - 8 {var_10}].d
+      [rbp - 4 {var_c}].d = [rbp - 4 {var_c}].d - eax
+      goto block2
+    block7:
+      eax = [rbp - 4 {var_c}].d
+      [rbp - 8 {var_10}].d = [rbp - 8 {var_10}].d - eax
+      goto block2
+  "mlil": |-
+    block1:
+      var_c = arg1
+      var_10 = arg2
+      goto block2
+    block2:
+      rax_5 = var_c
+      if (rax_5 != var_10) block3 else block4
+    block3:
+      rax_1 = var_c
+      if (rax_1 s<= var_10) block5 else block6
+    block4:
+      rax_6 = zx.q(var_c)
+      return rax_6
+    block5:
+      rax_3 = var_c
+      if (rax_3 s>= var_10) block2 else block7
+    block6:
+      rax_2 = var_10
+      var_c = var_c - rax_2
+      goto block2
+    block7:
+      rax_4 = var_c
+      var_10 = var_10 - rax_4
+      goto block2
+"main":
+  "hlil": |-
+    if (arg1 == 3)
+        int32_t rax_6 = atoi(*(arg2 + 8))
+        int32_t rax_10 = atoi(*(arg2 + 0x10))
+        printf("foo(%d, %d) = %d\n", zx.q(rax_6), zx.q(rax_10), zx.q(foo(rax_6, rax_10)))
+        return 0
+    fprintf(*stderr, "USAGE: %s <num1> <num2>\n", *arg2)
+    exit(1)
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x20
+      [rbp - 0x14 {var_1c}].d = edi
+      [rbp - 0x20 {var_28}].q = rsi
+      if ([rbp - 0x14].d == 3) block2 else block3
+    block2:
+      rax = [rbp - 0x20 {var_28}].q
+      rax = rax + 8
+      rax = [rax].q
+      rdi = rax
+      call(atoi)
+      [rbp - 8 {var_10}].d = eax
+      rax = [rbp - 0x20 {var_28}].q
+      rax = rax + 0x10
+      rax = [rax].q
+      rdi = rax
+      call(atoi)
+      [rbp - 4 {var_c}].d = eax
+      edx = [rbp - 4 {var_c}].d
+      eax = [rbp - 8 {var_10}].d
+      esi = edx
+      edi = eax
+      call(foo)
+      ecx = eax
+      edx = [rbp - 4 {var_c}].d
+      eax = [rbp - 8 {var_10}].d
+      esi = eax
+      rdi = 0x201d
+      eax = 0
+      call(printf)
+      eax = 0
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block3:
+      rax = [rbp - 0x20 {var_28}].q
+      rdx = [rax].q
+      rax = [0x4020].q
+      rsi = 0x2004
+      rdi = rax
+      eax = 0
+      call(fprintf)
+      edi = 1
+      call(exit)
+      noreturn
+  "mlil": |-
+    block1:
+      var_1c = arg1
+      var_28 = arg2
+      if (var_1c == 3) block2 else block3
+    block2:
+      rax_3 = var_28
+      rax_4 = rax_3 + 8
+      rax_5 = [rax_4].q
+      rdi_1 = rax_5
+      atoi(rdi_1)
+      var_10 = rax_6
+      rax_7 = var_28
+      rax_8 = rax_7 + 0x10
+      rax_9 = [rax_8].q
+      rdi_2 = rax_9
+      atoi(rdi_2)
+      var_c = rax_10
+      rdx_1 = var_c
+      rax_11 = var_10
+      rsi = rdx_1
+      rdi_3 = rax_11
+      foo(rdi_3, rsi)
+      rcx = zx.q(rax_12)
+      rdx_2 = zx.q(var_c)
+      rax_13 = var_10
+      rsi_1 = zx.q(rax_13)
+      rax_14 = 0
+      printf("foo(%d, %d) = %d\n", rsi_1, rdx_2, rcx)
+      rax_15 = 0
+      return 0
+    block3:
+      rax = var_28
+      rdx = [rax].q
+      rax_1 = [0x4020].q
+      rdi = rax_1
+      rax_2 = 0
+      fprintf(rdi, "USAGE: %s <num1> <num2>\n", rdx)
+      exit(1)
+      noreturn

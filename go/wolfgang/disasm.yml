@@ -1,0 +1,216 @@
+"main.main":
+  "asm": |
+    main.main:
+      mov     rcx, fs:[-8]
+      lea     rax, [rsp-8]
+      cmp     rax, [rcx+0x10]
+      jbe     block9
+    block1:
+      sub     rsp, 0x88
+      mov     [rsp+0x80], rbp
+      lea     rbp, [rsp+0x80]
+      mov     rdx, [os.Args]
+      mov     rcx, [mem1]
+      cmp     rcx, 1
+      jbe     block8
+    block2:
+      mov     rax, [rdx+0x18]
+      mov     rcx, [rdx+0x10]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      call    strconv.Atoi
+      mov     rax, [rsp+0x10]
+      mov     [rsp+0x40], rax
+      cmp     [rsp+0x18], 0
+      jne     block7
+    block3:
+      xor     ecx, ecx
+      lea     rdx, [mem2]; "               #             ..."
+      mov     ebx, 0x1f
+      jmp     block5
+    block4:
+      mov     [rsp+0x58], rdx
+      mov     [rsp+0x50], rcx
+      mov     [rsp+0x48], rbx
+      mov     [rsp], rdx
+      mov     [rsp+8], rbx
+      call    runtime.convTstring
+      mov     rax, [rsp+0x10]
+      xorps   xmm0, xmm0
+      movups  [rsp+0x60], xmm0
+      lea     rcx, [mem3]
+      mov     [rsp+0x60], rcx
+      mov     [rsp+0x68], rax
+      mov     rax, [os.Stdout]
+      lea     rdx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rdx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x60]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      mov     rax, [rsp+0x58]
+      mov     [rsp], rax
+      mov     rax, [rsp+0x48]
+      mov     [rsp+8], rax
+      mov     rax, [rsp+0x40]
+      mov     [rsp+0x10], rax
+      call    main.step
+      mov     rax, [rsp+0x50]
+      lea     rcx, [rax+1]
+      mov     rdx, [rsp+0x18]
+      mov     rbx, [rsp+0x20]
+      mov     rax, [rsp+0x40]
+    block5:
+      cmp     rcx, 0x10
+      jl      block4
+    block6:
+      mov     rbp, [rsp+0x80]
+      add     rsp, 0x88
+      ret
+    block7:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x70], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x70], rax
+      lea     rcx, [mem4]; "USAGE: ./wolfgang [rule]"
+      mov     [rsp+0x78], rcx
+      mov     rcx, [os.Stdout]
+      lea     rdx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rdx
+      mov     [rsp+8], rcx
+      lea     rcx, [rsp+0x70]
+      mov     [rsp+0x10], rcx
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      mov     [rsp], 1
+      call    os.Exit
+      mov     rax, [rsp+0x40]
+      jmp     block3
+    block8:
+      mov     eax, 1
+      call    runtime.panicIndex
+    block9:
+      call    runtime.morestack_noctxt
+      jmp     main.main
+"main.step":
+  "asm": |
+    main.step:
+      mov     rcx, fs:[-8]
+      cmp     rsp, [rcx+0x10]
+      jbe     block13
+    block1:
+      sub     rsp, 0x70
+      mov     [rsp+0x68], rbp
+      lea     rbp, [rsp+0x68]
+      mov     [rsp], 0
+      mov     rax, [rsp+0x78]
+      mov     [rsp+8], rax
+      mov     rax, [rsp+0x80]
+      mov     [rsp+0x10], rax
+      lea     rax, [go.string.*]; " #()*+,-./05:<=?CLMNPSZ[\n\t]`h..."
+      mov     [rsp+0x18], rax
+      mov     [rsp+0x20], 1
+      call    runtime.concatstring2
+      mov     rax, [rsp+0x30]
+      mov     [rsp+0x80], rax
+      mov     rcx, [rsp+0x28]
+      mov     [rsp+0x78], rcx
+      xor     edx, edx
+      xor     ebx, ebx
+      xor     esi, esi
+      xor     edi, edi
+      jmp     block3
+    block2:
+      mov     rdx, r9
+      mov     rbx, r10
+    block3:
+      cmp     rdx, rax
+      jge     block12
+    block4:
+      movzx   r8d, [rcx+rdx]
+      cmp     r8d, 0x80
+      jge     block11
+    block5:
+      lea     r9, [rdx+1]
+    block6:
+      shl     rbx, 1
+      and     rbx, 7
+      mov     r10, rbx
+      or      rbx, 1
+      cmp     r8d, 0x23
+      cmove   r10, rbx
+      test    rdx, rdx
+      je      block2
+    block7:
+      mov     [rsp+0x48], r10
+      mov     [rsp+0x58], r9
+      cmp     r10, 0x40
+      sbb     rdx, rdx
+      mov     rcx, r10
+      mov     r8d, 1
+      shl     r8, cl
+      and     r8, rdx
+      mov     rdx, [rsp+0x88]
+      test    rdx, r8
+      je      block10
+    block8:
+      mov     [rsp], 0
+      mov     [rsp+8], rdi
+      mov     [rsp+0x10], rsi
+      lea     rax, [mem1]; "#()*+,-./05:<=?CLMNPSZ[\n\t]`hm..."
+      mov     [rsp+0x18], rax
+      mov     [rsp+0x20], 1
+      call    runtime.concatstring2
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x30]
+    block9:
+      mov     r9, [rsp+0x58]
+      mov     r10, [rsp+0x48]
+      mov     rsi, rcx
+      mov     rdi, rax
+      mov     rax, [rsp+0x80]
+      mov     rcx, [rsp+0x78]
+      jmp     block2
+    block10:
+      mov     [rsp], 0
+      mov     [rsp+8], rdi
+      mov     [rsp+0x10], rsi
+      lea     rax, [go.string.*]; " #()*+,-./05:<=?CLMNPSZ[\n\t]`h..."
+      mov     [rsp+0x18], rax
+      mov     [rsp+0x20], 1
+      call    runtime.concatstring2
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x30]
+      jmp     block9
+    block11:
+      mov     [rsp+0x40], rdx
+      mov     [rsp+0x38], rsi
+      mov     [rsp+0x50], rbx
+      mov     [rsp+0x60], rdi
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      mov     [rsp+0x10], rdx
+      call    runtime.decoderune
+      mov     r8d, [rsp+0x18]
+      mov     r9, [rsp+0x20]
+      mov     rax, [rsp+0x80]
+      mov     rcx, [rsp+0x78]
+      mov     rdx, [rsp+0x40]
+      mov     rbx, [rsp+0x50]
+      mov     rsi, [rsp+0x38]
+      mov     rdi, [rsp+0x60]
+      jmp     block6
+    block12:
+      mov     [rsp+0x90], rdi
+      mov     [rsp+0x98], rsi
+      mov     rbp, [rsp+0x68]
+      add     rsp, 0x70
+      ret
+    block13:
+      call    runtime.morestack_noctxt
+      jmp     main.step
+    block14:
+      int3

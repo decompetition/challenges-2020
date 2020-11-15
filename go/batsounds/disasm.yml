@@ -1,0 +1,297 @@
+"main.echo":
+  "asm": |
+    main.echo:
+      mov     rcx, fs:[-8]
+      lea     rax, [rsp-0x50]
+      cmp     rax, [rcx+0x10]
+      jbe     block14
+    block1:
+      sub     rsp, 0xd0
+      mov     [rsp+0xc8], rbp
+      lea     rbp, [rsp+0xc8]
+      mov     rax, [rsp+0xd8]
+      test    [rax], al
+      mov     [rsp+0x40], 0x18
+      lea     rcx, [rax+0x18]
+      mov     [rsp+0x58], rcx
+      mov     rcx, [rsp+0xe0]
+      mov     [rsp+0x70], rcx
+      lea     rdx, [rsp+0x40]
+      mov     [rsp], rdx
+      call    runtime.deferprocStack
+      test    eax, eax
+      jne     block12
+    block2:
+      lea     rax, [mem1]
+      mov     [rsp], rax
+      mov     [rsp+8], 0x14
+      mov     [rsp+0x10], 0x14
+      call    runtime.makeslice
+      mov     rax, [rsp+0x18]
+      mov     [rsp+0x90], rax
+      jmp     block4
+    block3:
+      mov     rax, [rsp+0x90]
+    block4:
+      mov     rcx, [rsp+0xd8]
+      mov     rdx, [rcx+0x28]
+      mov     rbx, [rsp+0xe0]
+      mov     [rsp], rbx
+      mov     [rsp+8], rax
+      mov     [rsp+0x10], 0x14
+      mov     [rsp+0x18], 0x14
+      call    rdx
+      mov     rcx, [rsp+0x20]
+      mov     [rsp+0x38], rcx
+      mov     rax, [rsp+0x30]
+      mov     rdx, [rsp+0x28]
+      cmp     [io.EOF], rdx
+      je      block9
+    block5:
+      cmp     rcx, 0x14
+      ja      block13
+    block6:
+      mov     [rsp], rcx
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      mov     [rsp+0x88], rax
+      mov     [rsp], 0
+      mov     rcx, [rsp+0x90]
+      mov     [rsp+8], rcx
+      mov     rdx, [rsp+0x38]
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 0x14
+      call    runtime.slicebytetostring
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x20]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      call    runtime.convTstring
+      mov     rax, [rsp+0x10]
+      xorps   xmm0, xmm0
+      movups  [rsp+0xa8], xmm0
+      movups  [rsp+0xb8], xmm0
+      lea     rcx, [mem2]
+      mov     [rsp+0xa8], rcx
+      mov     rdx, [rsp+0x88]
+      mov     [rsp+0xb0], rdx
+      lea     rdx, [mem3]
+      mov     [rsp+0xb8], rdx
+      mov     [rsp+0xc0], rax
+      lea     rax, [mem4]; "Received %d bytes: %s_cgo_uns..."
+      mov     [rsp], rax
+      mov     [rsp+8], 0x15
+      lea     rbx, [rsp+0xa8]
+      mov     [rsp+0x10], rbx
+      mov     [rsp+0x18], 2
+      mov     [rsp+0x20], 2
+      call    log.Printf
+      mov     rax, [rsp+0x38]
+      mov     [rsp], rax
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      xorps   xmm0, xmm0
+      movups  [rsp+0x98], xmm0
+      lea     rcx, [mem2]
+      mov     [rsp+0x98], rcx
+      mov     [rsp+0xa0], rax
+      lea     rax, [mem5]; "Writing %d bytes of data\", re..."
+      mov     [rsp], rax
+      mov     [rsp+8], 0x18
+      lea     rdx, [rsp+0x98]
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    log.Printf
+      mov     rax, [rsp+0xd8]
+      mov     rcx, [rax+0x50]
+      mov     rdx, [rsp+0xe0]
+      mov     [rsp], rdx
+      mov     rbx, [rsp+0x90]
+      mov     [rsp+8], rbx
+      mov     rsi, [rsp+0x38]
+      mov     [rsp+0x10], rsi
+      mov     [rsp+0x18], 0x14
+      call    rcx
+      cmp     [rsp+0x28], 0
+      je      block3
+    block7:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x98], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x98], rax
+      lea     rax, [mem6]; "Unable to write data"
+      mov     [rsp+0xa0], rax
+      lea     rax, [rsp+0x98]
+      mov     [rsp], rax
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Println
+    block8:
+      call    runtime.deferreturn
+      mov     rbp, [rsp+0xc8]
+      add     rsp, 0xd0
+      ret
+    block9:
+      mov     [rsp], rdx
+      mov     [rsp+8], rax
+      mov     rax, [mem7]
+      mov     [rsp+0x10], rax
+      call    runtime.ifaceeq
+      cmp     [rsp+0x18], 0
+      jne     block11
+    block10:
+      mov     rcx, [rsp+0x38]
+      jmp     block5
+    block11:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x98], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x98], rax
+      lea     rax, [mem8]; "Client disconnected"
+      mov     [rsp+0xa0], rax
+      lea     rax, [rsp+0x98]
+      mov     [rsp], rax
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Println
+      jmp     block8
+    block12:
+      call    runtime.deferreturn
+      mov     rbp, [rsp+0xc8]
+      add     rsp, 0xd0
+      ret
+    block13:
+      mov     edx, 0x14
+      call    runtime.panicSliceAcap
+    block14:
+      call    runtime.morestack_noctxt
+      jmp     main.echo
+    block15:
+      int3
+"main.main":
+  "asm": |
+    main.main:
+      mov     rcx, fs:[-8]
+      cmp     rsp, [rcx+0x10]
+      jbe     block8
+    block1:
+      add     rsp, -0x80
+      mov     [rsp+0x78], rbp
+      lea     rbp, [rsp+0x78]
+      lea     rax, [mem1]; "tcpudp\u00b5s\u03bcs <== \r\t\n at  fp= in..."
+      mov     [rsp], rax
+      mov     [rsp+8], 3
+      lea     rax, [mem2]; ":20080<-chanAnswerArabicAugus..."
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 6
+      call    net.Listen
+      mov     rax, [rsp+0x28]
+      mov     [rsp+0x58], rax
+      mov     rcx, [rsp+0x20]
+      mov     [rsp+0x40], rcx
+      cmp     [rsp+0x30], 0
+      jne     block6
+    block2:
+      lea     rdx, [go.itab.*net.TCPListener,net.Listener]
+      cmp     rcx, rdx
+      jne     block7
+    block3:
+      call    time.Now
+      mov     [rsp+0x18], 0x5f5e100
+      call    time.Time.Add
+      mov     rax, [rsp+0x20]
+      mov     rcx, [rsp+0x28]
+      mov     rdx, [rsp+0x30]
+      mov     rbx, [rsp+0x58]
+      mov     [rsp], rbx
+      mov     [rsp+8], rax
+      mov     [rsp+0x10], rcx
+      mov     [rsp+0x18], rdx
+      call    net.(*TCPListener).SetDeadline
+      xorps   xmm0, xmm0
+      movups  [rsp+0x68], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x68], rax
+      lea     rcx, [mem4]; "Listening on 0.0.0.0:20080"
+      mov     [rsp+0x70], rcx
+      lea     rcx, [rsp+0x68]
+      mov     [rsp], rcx
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Println
+      mov     rax, [rsp+0x40]
+      mov     rax, [rax+0x18]
+      mov     rcx, [rsp+0x58]
+      mov     [rsp], rcx
+      call    rax
+      mov     rax, [rsp+8]
+      mov     [rsp+0x48], rax
+      mov     rcx, [rsp+0x10]
+      mov     [rsp+0x60], rcx
+      mov     rdx, [rsp+0x18]
+      mov     [rsp+0x50], rdx
+      cmp     rdx, 0
+      xorps   xmm0, xmm0
+      movups  [rsp+0x68], xmm0
+      lea     rbx, [mem3]
+      mov     [rsp+0x68], rbx
+      lea     rsi, [mem5]; "Received connection..."
+      mov     [rsp+0x70], rsi
+      lea     rsi, [rsp+0x68]
+      mov     [rsp], rsi
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Println
+      mov     rax, [rsp+0x50]
+      cmp     rax, 0
+      jne     block5
+    block4:
+      mov     rax, [rsp+0x48]
+      mov     [rsp], rax
+      mov     rax, [rsp+0x60]
+      mov     [rsp+8], rax
+      call    main.echo
+      mov     rbp, [rsp+0x78]
+      sub     rsp, -0x80
+      ret
+    block5:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x68], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x68], rax
+      lea     rax, [mem6]; "Unable to accept connection"
+      mov     [rsp+0x70], rax
+      lea     rax, [rsp+0x68]
+      mov     [rsp], rax
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Fatalln
+      jmp     block4
+    block6:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x68], xmm0
+      lea     rax, [mem3]
+      mov     [rsp+0x68], rax
+      lea     rcx, [mem7]; "Unable to bind to port"
+      mov     [rsp+0x70], rcx
+      lea     rcx, [rsp+0x68]
+      mov     [rsp], rcx
+      mov     [rsp+8], 1
+      mov     [rsp+0x10], 1
+      call    log.Fatalln
+      mov     rax, [rsp+0x58]
+      mov     rcx, [rsp+0x40]
+      jmp     block2
+    block7:
+      mov     [rsp], rcx
+      lea     rax, [mem8]
+      mov     [rsp+8], rax
+      lea     rax, [mem9]
+      mov     [rsp+0x10], rax
+      call    runtime.panicdottypeI
+    block8:
+      call    runtime.morestack_noctxt
+      jmp     main.main
+    block9:
+      int3

@@ -1,0 +1,87 @@
+"main":
+  "asm": |
+    main:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x10
+      mov     [rbp-4], edi
+      mov     [rbp-0x10], rsi
+      cmp     [rbp-4], 2
+      jg      block2
+    block1:
+      mov     eax, 0
+      jmp     block3
+    block2:
+      mov     rdx, [rbp-0x10]
+      mov     eax, [rbp-4]
+      mov     rsi, rdx
+      mov     edi, eax
+      call    sum
+      mov     eax, 0
+    block3:
+      leave
+      ret
+"sum":
+  "asm": |
+    sum:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x110
+      mov     [rbp-0x104], edi
+      mov     [rbp-0x110], rsi
+      mov     rax, [rbp-0x110]
+      add     rax, 8
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    atoi@plt.sec
+      mov     [rbp-1], al
+      movzx   eax, [rbp-1]
+      mov     esi, eax
+      lea     rdi, [mem1]; "SIZE: %d\n"
+      mov     eax, 0
+      call    printf@plt.sec
+      cmp     [rbp-1], 0xf7
+      jbe     block2
+    block1:
+      lea     rdi, [mem2]; "Too long!"
+      call    puts@plt.sec
+      jmp     block3
+    block2:
+      lea     rax, [rbp-0x100]
+      mov     edx, 0xf7
+      mov     esi, 0
+      mov     rdi, rax
+      call    memset@plt.sec
+      mov     rax, [rbp-0x110]
+      add     rax, 8
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    atoi@plt.sec
+      movsxd  rdx, eax
+      mov     rax, [rbp-0x110]
+      add     rax, 0x10
+      mov     rcx, [rax]
+      lea     rax, [rbp-0x100]
+      mov     rsi, rcx
+      mov     rdi, rax
+      call    memcpy@plt.sec
+      lea     rax, [rbp-0x100]
+      mov     rsi, rax
+      lea     rdi, [mem3]; "Got: %s\n"
+      mov     eax, 0
+      call    printf@plt.sec
+    block3:
+      leave
+      ret
+"win":
+  "asm": |
+    win:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      lea     rdi, [mem1]; "How did you get here??"
+      call    puts@plt.sec
+      mov     edi, 0x2a
+      call    exit@plt.sec

@@ -1,0 +1,159 @@
+"main.compute":
+  "asm": |
+    main.compute:
+      mov     rcx, fs:[-8]
+      cmp     rsp, [rcx+0x10]
+      jbe     block2
+    block1:
+      sub     rsp, 0x60
+      mov     [rsp+0x58], rbp
+      lea     rbp, [rsp+0x58]
+      lea     rax, [rsp+0x38]
+      mov     [rsp], rax
+      mov     rax, [rsp+0x68]
+      mov     [rsp+8], rax
+      mov     rax, [rsp+0x70]
+      mov     [rsp+0x10], rax
+      call    runtime.stringtoslicebyte
+      mov     rax, [rsp+0x18]
+      mov     rcx, [rsp+0x20]
+      mov     rdx, [rsp+0x28]
+      lea     rbx, [mem1]
+      mov     [rsp], rbx
+      mov     [rsp+8], rax
+      mov     [rsp+0x10], rcx
+      mov     [rsp+0x18], rdx
+      call    bytes.Map
+      mov     rax, [rsp+0x20]
+      mov     rcx, [rsp+0x28]
+      mov     rdx, [rsp+0x30]
+      mov     [rsp+0x78], rax
+      mov     [rsp+0x80], rcx
+      mov     [rsp+0x88], rdx
+      mov     rbp, [rsp+0x58]
+      add     rsp, 0x60
+      ret
+    block2:
+      call    runtime.morestack_noctxt
+      jmp     main.compute
+    block3:
+      int3
+"main.compute.func1":
+  "asm": |
+    main.compute.func1:
+      mov     eax, [rsp+8]
+      cmp     eax, 0x41
+      jl      block2
+    block1:
+      cmp     eax, 0x5a
+      jle     block6
+    block2:
+      cmp     eax, 0x61
+      jl      block4
+    block3:
+      cmp     eax, 0x7a
+      jle     block5
+    block4:
+      add     eax, -0xa
+      mov     [rsp+0x10], eax
+      ret
+    block5:
+      add     eax, -0x44
+      movsxd  rcx, eax
+      mov     edx, 0x9d89d89e
+      imul    rdx, rcx
+      sar     rdx, 0x24
+      sar     rcx, 0x3f
+      sub     edx, ecx
+      imul    ecx, edx, 0x1a
+      sub     eax, ecx
+      add     eax, 0x61
+      mov     [rsp+0x10], eax
+      ret
+    block6:
+      add     eax, -0x34
+      movsxd  rcx, eax
+      mov     rdx, rcx
+      sar     rcx, 0x3f
+      mov     ebx, 0x9d89d89e
+      imul    rbx, rdx
+      sar     rbx, 0x24
+      sub     ebx, ecx
+      imul    ecx, ebx, 0x1a
+      sub     eax, ecx
+      add     eax, 0x41
+      mov     [rsp+0x10], eax
+      ret
+"main.main":
+  "asm": |
+    main.main:
+      mov     rcx, fs:[-8]
+      cmp     rsp, [rcx+0x10]
+      jbe     block5
+    block1:
+      sub     rsp, 0x68
+      mov     [rsp+0x60], rbp
+      lea     rbp, [rsp+0x60]
+      mov     rax, [os.Args]
+      cmp     [mem1], 2
+      jge     block4
+    block2:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x50], xmm0
+      lea     rax, [mem2]
+      mov     [rsp+0x50], rax
+      lea     rax, [mem3]; "method requires an arg"
+      mov     [rsp+0x58], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x50]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+    block3:
+      mov     rbp, [rsp+0x60]
+      add     rsp, 0x68
+      ret
+    block4:
+      mov     rcx, [rax+0x18]
+      mov     rax, [rax+0x10]
+      mov     [rsp], rax
+      mov     [rsp+8], rcx
+      call    main.compute
+      mov     rax, [rsp+0x18]
+      mov     rcx, [rsp+0x10]
+      mov     rdx, [rsp+0x20]
+      mov     [rsp], 0
+      mov     [rsp+8], rcx
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], rdx
+      call    runtime.slicebytetostring
+      mov     rax, [rsp+0x20]
+      mov     rcx, [rsp+0x28]
+      mov     [rsp], rax
+      mov     [rsp+8], rcx
+      call    runtime.convTstring
+      mov     rax, [rsp+0x10]
+      xorps   xmm0, xmm0
+      movups  [rsp+0x40], xmm0
+      lea     rcx, [mem2]
+      mov     [rsp+0x40], rcx
+      mov     [rsp+0x48], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x40]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      jmp     block3
+    block5:
+      call    runtime.morestack_noctxt
+      jmp     main.main
+    block6:
+      int3

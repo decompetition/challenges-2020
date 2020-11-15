@@ -1,0 +1,680 @@
+"main.echo":
+  "hlil": |-
+    void var_50
+    void* fsbase
+    while (&var_50 u<= *(*(fsbase - 8) + 0x10))
+        arg2, arg1 = runtime.morestack_noctxt(arg1, arg2)
+    int64_t __saved_rbp
+    int64_t* rbp = &__saved_rbp
+    *arg_8 & arg_8.b
+    int32_t var_90 = 0x18
+    runtime.deferprocStack(arg1, arg2, &var_90, arg_10)
+    runtime.makeslice(rbp)
+    char* var_b8
+    char* rax_1 = var_b8
+    char* var_40 = rax_1
+    int64_t rax_8
+    int16_t* rsi_8
+    void* rdi_7
+    while (true)
+        char* var_c8_1 = rax_1
+        int64_t rsi
+        uint64_t rdi
+        rsi, rdi = *(arg_8 + 0x28)()
+        int64_t var_a8
+        int128_t var_38
+        if (*io.EOF == var_a8)
+            *0x6130d8
+            int64_t rcx_11
+            int64_t rdx_2
+            int64_t r8_5
+            int64_t r9_2
+            int128_t zmm0_2
+            rcx_11, rdx_2, rsi, rdi, r8_5, r9_2, zmm0_2 = runtime.ifaceeq(rdi, rsi, rbp)
+            var_38.q = 0x4fb5e0
+            var_38:8.q = 0x550b00
+            rax_8, rsi_8, rdi_7 = log.Println(rdi, rsi, rdx_2, rcx_11, r8_5, r9_2)
+            break
+        int64_t var_b0
+        if (var_b0 u> 0x14)
+            runtime.panicSliceAcap()
+            noreturn
+        int16_t* rsi_1
+        int64_t* rdi_1
+        int64_t r8_1
+        rsi_1, rdi_1, r8_1 = runtime.convT64(rdi, rsi, var_a8)
+        int64_t rsi_2
+        int64_t rdi_2
+        int64_t tsc
+        int128_t zmm0_1
+        int512_t zmm2
+        rsi_2, rdi_2, zmm0_1, zmm2 = runtime.slicebytetostring(rdi_1, rsi_1, tsc, zmm2, var_b0, var_40, r8_1)
+        int64_t rcx_7
+        int64_t rsi_3
+        int64_t rdi_3
+        int64_t r8_2
+        rcx_7, rsi_3, rdi_3, r8_2 = runtime.convTstring(rdi_2, rsi_2)
+        int128_t var_28
+        var_28.q = 0x4fab20
+        var_28:8.q = var_c8_1
+        int128_t var_18_1
+        var_18_1.q = 0x4fb5e0
+        var_18_1:8.q = var_b0
+        int64_t rdx_5
+        int64_t rsi_4
+        int64_t* rdi_4
+        rdx_5, rsi_4, rdi_4 = log.Printf(rdi_3, rsi_3, var_c8_1, rcx_7, r8_2)
+        int64_t rcx_8
+        int64_t rdx_6
+        int64_t rsi_5
+        int64_t rdi_5
+        int64_t r8_3
+        rcx_8, rdx_6, rsi_5, rdi_5, r8_3 = runtime.convT64(rdi_4, rsi_4, rdx_5)
+        var_38.q = 0x4fab20
+        var_38:8.q = 0x15
+        var_b0 = 1
+        log.Printf(rdi_5, rsi_5, rdx_6, rcx_8, r8_3)
+        int64_t rcx_10
+        int64_t rdx_8
+        int64_t rsi_7
+        int64_t* rdi_6
+        int64_t r8_4
+        int64_t r9_1
+        rcx_10, rdx_8, rsi_7, rdi_6, r8_4, r9_1 = *(arg_8 + 0x50)()
+        if (var_a8 != 0)
+            var_38.q = 0x4fb5e0
+            var_38:8.q = 0x550b10
+            rax_8, rsi_8, rdi_7 = log.Println(rdi_6, rsi_7, rdx_8, rcx_10, r8_4, r9_1)
+            break
+        rax_1 = var_40
+    return runtime.deferreturn(rdi_7, rsi_8, rax_8.b)
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      rax = rsp - 0x50 {var_50}
+      if (rax u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0xd0
+      [rsp + 0xc8 {__saved_rbp}].q = rbp
+      rbp = rsp + 0xc8 {__saved_rbp}
+      rax = [rsp + 0xd8 {arg_8}].q
+      [rax].b & al
+      [rsp + 0x40 {var_90}].d = 0x18
+      rcx = rax + 0x18
+      [rsp + 0x58 {var_78}].q = rcx
+      rcx = [rsp + 0xe0 {arg_10}].q
+      [rsp + 0x70 {var_60}].q = rcx
+      rdx = rsp + 0x40 {var_90}
+      [rsp].q = rdx {var_90}
+      call(runtime.deferprocStack)
+      if (eax != 0) block4 else block5
+    block4:
+      call(runtime.deferreturn)
+      rbp = [rsp + 0xc8 {__saved_rbp}].q
+      rsp = rsp + 0xd0
+      <return> jump(pop)
+    block5:
+      rax = 0x4fb760
+      [rsp {var_d0}].q = rax
+      [rsp + 8 {var_c8}].q = 0x14
+      [rsp + 0x10 {var_c0}].q = 0x14
+      call(runtime.makeslice)
+      rax = [rsp + 0x18 {var_b8}].q
+      [rsp + 0x90 {var_40}].q = rax
+      goto block6
+    block6:
+      rcx = [rsp + 0xd8 {arg_8}].q
+      rdx = [rcx + 0x28].q
+      rbx = [rsp + 0xe0 {arg_10}].q
+      [rsp {var_d0_1}].q = rbx
+      [rsp + 8 {var_c8_1}].q = rax
+      [rsp + 0x10 {var_c0_1}].q = 0x14
+      [rsp + 0x18 {var_b8_4}].q = 0x14
+      call(rdx)
+      rcx = [rsp + 0x20 {var_b0}].q
+      [rsp + 0x38 {var_98_1}].q = rcx
+      rax = [rsp + 0x30 {var_a0}].q
+      rdx = [rsp + 0x28 {var_a8}].q
+      if ([0x6130d0].q == rdx) block7 else block8
+    block7:
+      [rsp {var_d0_9}].q = rdx
+      [rsp + 8 {var_c8_1}].q = rax
+      rax = [0x6130d8].q
+      [rsp + 0x10 {var_c0_5}].q = rax
+      call(runtime.ifaceeq)
+      if ([rsp + 0x18].b != 0) block9 else block10
+    block8:
+      if (rcx u> 0x14) block11 else block12
+    block9:
+      xmm0 = 0
+      [rsp + 0x98 {var_38}].o = xmm0
+      rax = 0x4fb5e0
+      [rsp + 0x98 {var_38}].q = rax
+      rax = 0x550b00
+      [rsp + 0xa0 {var_38+0x8}].q = rax
+      rax = rsp + 0x98 {var_38}
+      [rsp {var_d0_9}].q = rax {var_38}
+      [rsp + 8 {var_c8_7}].q = 1
+      [rsp + 0x10 {var_c0_6}].q = 1
+      call(log.Println)
+      goto block13
+    block10:
+      rcx = [rsp + 0x38 {var_98_1}].q
+      goto block8
+    block11:
+      edx = 0x14
+      call(runtime.panicSliceAcap)
+      noreturn
+    block12:
+      [rsp {var_d0_2}].q = rcx
+      call(runtime.convT64)
+      rax = [rsp + 8 {var_c8_1}].q
+      [rsp + 0x88 {var_48_1}].q = rax
+      [rsp {var_d0_3}].q = 0
+      rcx = [rsp + 0x90 {var_40}].q
+      [rsp + 8 {var_c8_2}].q = rcx
+      rdx = [rsp + 0x38 {var_98_1}].q
+      [rsp + 0x10 {var_c0_2}].q = rdx
+      [rsp + 0x18 {var_b8_1}].q = 0x14
+      call(runtime.slicebytetostring)
+      rax = [rsp + 0x28 {var_a8}].q
+      rcx = [rsp + 0x20 {var_b0}].q
+      [rsp {var_d0_4}].q = rcx
+      [rsp + 8 {var_c8_3}].q = rax
+      call(runtime.convTstring)
+      rax = [rsp + 0x10 {var_c0_2}].q
+      xmm0 = 0
+      [rsp + 0xa8 {var_28}].o = xmm0
+      [rsp + 0xb8 {var_18_1}].o = xmm0
+      rcx = 0x4fab20
+      [rsp + 0xa8 {var_28}].q = rcx
+      rdx = [rsp + 0x88 {var_48_1}].q
+      [rsp + 0xb0 {var_28+0x8}].q = rdx
+      rdx = 0x4fb5e0
+      [rsp + 0xb8 {var_18_1}].q = rdx
+      [rsp + 0xc0 {var_18_1+0x8}].q = rax
+      rax = 0x531ace
+      [rsp {var_d0_5}].q = rax
+      [rsp + 8 {var_c8_3}].q = 0x15
+      rbx = rsp + 0xa8 {var_28}
+      [rsp + 0x10 {var_c0_2}].q = rbx {var_28}
+      [rsp + 0x18 {var_b8_2}].q = 2
+      [rsp + 0x20 {var_b0_1}].q = 2
+      call(log.Printf)
+      rax = [rsp + 0x38 {var_98_1}].q
+      [rsp {var_d0_6}].q = rax
+      call(runtime.convT64)
+      rax = [rsp + 8 {var_c8_3}].q
+      xmm0 = 0
+      [rsp + 0x98 {var_38}].o = xmm0
+      rcx = 0x4fab20
+      [rsp + 0x98 {var_38}].q = rcx
+      [rsp + 0xa0 {var_38+0x8}].q = rax
+      rax = 0x53265a
+      [rsp {var_d0_7}].q = rax
+      [rsp + 8 {var_c8_4}].q = 0x18
+      rdx = rsp + 0x98 {var_38}
+      [rsp + 0x10 {var_c0_2}].q = rdx {var_38}
+      [rsp + 0x18 {var_b8_3}].q = 1
+      [rsp + 0x20 {var_b0}].q = 1
+      call(log.Printf)
+      rax = [rsp + 0xd8 {arg_8}].q
+      rcx = [rax + 0x50].q
+      rdx = [rsp + 0xe0 {arg_10}].q
+      [rsp {var_d0_8}].q = rdx
+      rbx = [rsp + 0x90 {var_40}].q
+      [rsp + 8 {var_c8_5}].q = rbx
+      rsi = [rsp + 0x38 {var_98_1}].q
+      [rsp + 0x10 {var_c0_3}].q = rsi
+      [rsp + 0x18 {var_b8_4}].q = 0x14
+      call(rcx)
+      if ([rsp + 0x28].q == 0) block14 else block15
+    block13:
+      call(runtime.deferreturn)
+      rbp = [rsp + 0xc8 {__saved_rbp}].q
+      rsp = rsp + 0xd0
+      <return> jump(pop)
+    block14:
+      rax = [rsp + 0x90 {var_40}].q
+      goto block6
+    block15:
+      xmm0 = 0
+      [rsp + 0x98 {var_38}].o = xmm0
+      rax = 0x4fb5e0
+      [rsp + 0x98 {var_38}].q = rax
+      rax = 0x550b10
+      [rsp + 0xa0 {var_38+0x8}].q = rax
+      rax = rsp + 0x98 {var_38}
+      [rsp {var_d0_8}].q = rax {var_38}
+      [rsp + 8 {var_c8_6}].q = 1
+      [rsp + 0x10 {var_c0_4}].q = 1
+      call(log.Println)
+      goto block13
+  "mlil": |-
+    block1:
+      rcx_12 = [fsbase - 8].q
+      if (&var_50 u<= [rcx_12 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(arg1, arg2)
+      goto block1
+    block3:
+      rbp = &__saved_rbp
+      rax = arg_8
+      [rax].b & rax.al
+      var_90 = 0x18
+      rcx_1 = rax + 0x18
+      var_78 = rcx_1
+      rcx_2 = arg_10
+      var_60 = rcx_2
+      rdx = &var_90
+      runtime.deferprocStack(arg1, arg2, rdx, rcx_2)
+      if (false) block4 else block5
+    block4:
+      runtime.deferreturn(arg1, arg2, 0)
+      return rax_10
+    block5:
+      var_d0 = 0x4fb760
+      var_c8 = 0x14
+      var_c0 = 0x14
+      runtime.makeslice(rbp)
+      rax_1 = var_b8
+      var_40 = rax_1
+      goto block6
+    block6:
+      rcx_3 = arg_8
+      rdx_1 = [rcx_3 + 0x28].q
+      rbx_1 = arg_10
+      var_d0_1 = rbx_1
+      var_c8_1 = rax_1
+      var_c0_1 = 0x14
+      rdx_1()
+      rcx_4 = var_b0
+      var_98_1 = rcx_4
+      rax_2 = var_a0
+      rdx_2 = var_a8
+      if ([0x6130d0].q == rdx_2) block7 else block8
+    block7:
+      var_d0_9 = rdx_2
+      var_c8_1 = rax_2
+      rax_9 = [0x6130d8].q
+      var_c0_5 = rax_9
+      runtime.ifaceeq(rdi, rsi, rbp)
+      if (true) block9 else block10
+    block8:
+      if (rcx_4 u> 0x14) block11 else block12
+    block9:
+      zmm0_2 = 0
+      var_38 = zmm0_2
+      var_38:0.q = 0x4fb5e0
+      var_38:8.q = 0x550b00
+      var_c8_7 = 1
+      var_c0_6 = 1
+      log.Println(rdi, rsi, rdx_2, rcx_11, r8_5, r9_2)
+      goto block13
+    block10:
+      rcx_4 = var_98_1
+      goto block8
+    block11:
+      rdx_9 = 0x14
+      runtime.panicSliceAcap()
+      noreturn
+    block12:
+      var_d0_2 = rcx_4
+      runtime.convT64(rdi, rsi, rdx_2)
+      rax_3 = var_c8_1
+      var_48_1 = rax_3
+      var_d0_3 = 0
+      rcx_5 = var_40
+      var_c8_2 = rcx_5
+      rdx_3 = var_98_1
+      var_c0_2 = rdx_3
+      var_b8_1 = 0x14
+      runtime.slicebytetostring(rdi_1, rsi_1, tsc, zmm2, rdx_3, rcx_5, r8_1)
+      rax_4 = var_a8
+      rcx_6 = var_b0
+      var_d0_4 = rcx_6
+      var_c8_3 = rax_4
+      runtime.convTstring(rdi_2, rsi_2)
+      rax_5 = var_c0_2
+      zmm0_1 = 0
+      var_28 = zmm0_1
+      var_18_1 = zmm0_1
+      var_28:0.q = 0x4fab20
+      rdx_4 = var_48_1
+      var_28:8.q = rdx_4
+      var_18_1:0.q = 0x4fb5e0
+      var_18_1:8.q = rax_5
+      var_d0_5 = "Received %d bytes: %s_cgo_unsete…"
+      var_b8_2 = 2
+      var_b0_1 = 2
+      log.Printf(rdi_3, rsi_3, rdx_4, rcx_7, r8_2)
+      rax_6 = var_98_1
+      var_d0_6 = rax_6
+      runtime.convT64(rdi_4, rsi_4, rdx_5)
+      zmm0_1 = 0
+      var_38 = zmm0_1
+      var_38:0.q = 0x4fab20
+      var_38:8.q = 0x15
+      var_d0_7 = "Writing %d bytes of data", requi…"
+      var_c8_4 = 0x18
+      var_b8_3 = 1
+      var_b0 = 1
+      log.Printf(rdi_5, rsi_5, rdx_6, rcx_8, r8_3)
+      rax_7 = arg_8
+      rcx_9 = [rax_7 + 0x50].q
+      rdx_7 = arg_10
+      var_d0_8 = rdx_7
+      rbx_2 = var_40
+      var_c8_5 = rbx_2
+      rsi_6 = var_98_1
+      var_c0_3 = rsi_6
+      var_b8_4 = 0x14
+      rcx_9()
+      if (var_a8 == 0) block14 else block15
+    block13:
+      runtime.deferreturn(rdi_7, rsi_8, rax_8.al)
+      return rax_8
+    block14:
+      rax_1 = var_40
+      goto block6
+    block15:
+      zmm0_1 = 0
+      var_38 = zmm0_1
+      var_38:0.q = 0x4fb5e0
+      var_38:8.q = 0x550b10
+      var_c8_6 = 1
+      var_c0_4 = 1
+      log.Println(rdi_6, rsi_7, rdx_8, rcx_10, r8_4, r9_1)
+      goto block13
+"main.main":
+  "hlil": |-
+    void* rcx_7
+    int64_t rdx
+    int64_t rsi
+    uint64_t rdi
+    int64_t r8
+    int64_t r9
+    while (true)
+        void* fsbase
+        rcx_7 = *(fsbase - 8)
+        if (&__return_addr u> *(rcx_7 + 0x10))
+            break
+        rdx, rsi, rdi, r8, r9 = runtime.morestack_noctxt(rdi, rsi)
+    int64_t __saved_rbp
+    int64_t* rbp = &__saved_rbp
+    int64_t rdx_1
+    int64_t rsi_1
+    int64_t* rdi_1
+    int64_t r8_1
+    int64_t r9_1
+    int128_t zmm0
+    rdx_1, rsi_1, rdi_1, r8_1, r9_1, zmm0 = net.Listen(rdi, rsi, rdx, rcx_7, r8, r9)
+    void** var_60
+    int64_t var_50
+    int128_t var_18
+    if (var_50 != 0)
+        var_18 = 0
+        var_18.q = 0x4fb5e0
+        var_18:8.q = 0x550b20
+        log.Fatalln(rdi_1, rsi_1, rdx_1, var_60, r8_1, r9_1)
+        noreturn
+    int64_t tsc
+    if (var_60 != go.itab.*net.TCPListener,net.Listener)
+        int512_t zmm2
+        runtime.panicdottypeI(rdi_1, rsi_1, go.itab.*net.TCPListener,net.Listener, rbp, tsc, zmm2)
+        noreturn
+    int64_t rcx_2
+    int64_t* rdx_2
+    int64_t rsi_2
+    uint64_t rdi_2
+    int64_t r8_2
+    int64_t r9_2
+    rcx_2, rdx_2, rsi_2, rdi_2, r8_2, r9_2 = time.Now()
+    int64_t rsi_3
+    uint64_t rdi_3
+    int64_t r8_3
+    void* r9_3
+    rsi_3, rdi_3, r8_3, r9_3 = time.Time.Add(rdi_2, rsi_2, rdx_2, rcx_2, r8_2, r9_2)
+    int64_t* var_58
+    int64_t rcx_4
+    int64_t rdx_4
+    int64_t rsi_4
+    int64_t* rdi_4
+    int64_t r8_4
+    int64_t r9_4
+    int128_t zmm0_1
+    rcx_4, rdx_4, rsi_4, rdi_4, r8_4, r9_4, zmm0_1 = net.(*TCPListener).SetDeadline(rdi_3, rsi_3, var_50, var_58, r8_3, r9_3, tsc, var_58, var_60, var_58, var_50)
+    var_18 = 0
+    var_18.q = 0x4fb5e0
+    var_18:8.q = 0x550b30
+    log.Println(rdi_4, rsi_4, rdx_4, rcx_4, r8_4, r9_4)
+    int64_t* rdi_5
+    int64_t r8_5
+    int64_t r9_5
+    rdi_5, r8_5, r9_5 = *(var_60 + 0x18)()
+    var_50
+    var_18 = 0
+    var_18.q = 0x4fb5e0
+    var_18:8.q = 0x550b40
+    int64_t rcx_6
+    int64_t rdx_6
+    int16_t* rsi_6
+    void* rdi_6
+    int64_t r8_6
+    int64_t r9_6
+    int128_t zmm0_3
+    rcx_6, rdx_6, rsi_6, rdi_6, r8_6, r9_6, zmm0_3 = log.Println(rdi_5, &var_18, var_50, 1, r8_5, r9_5)
+    if (var_50 != 0)
+        var_18 = 0
+        var_18.q = 0x4fb5e0
+        var_18:8.q = 0x550b50
+        log.Fatalln(rdi_6, rsi_6, rdx_6, rcx_6, r8_6, r9_6)
+        noreturn
+    return main.echo(rdi_6, rsi_6, rbp)
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      if (rsp u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x80
+      [rsp + 0x78 {__saved_rbp}].q = rbp
+      rbp = rsp + 0x78 {__saved_rbp}
+      rax = 0x52eba9
+      [rsp {var_80}].q = rax
+      [rsp + 8 {var_78}].q = 3
+      rax = 0x52eede
+      [rsp + 0x10 {var_70}].q = rax
+      [rsp + 0x18 {var_68}].q = 6
+      call(net.Listen)
+      rax = [rsp + 0x28 {var_58}].q
+      [rsp + 0x58 {var_28}].q = rax
+      rcx = [rsp + 0x20 {var_60}].q
+      [rsp + 0x40 {var_40}].q = rcx
+      if ([rsp + 0x30].q != 0) block4 else block5
+    block4:
+      xmm0 = 0
+      [rsp + 0x68 {var_18}].o = xmm0
+      rax = 0x4fb5e0
+      [rsp + 0x68 {var_18}].q = rax
+      rcx = 0x550b20
+      [rsp + 0x70 {var_18+0x8}].q = rcx
+      rcx = rsp + 0x68 {var_18}
+      [rsp {var_80}].q = rcx {var_18}
+      [rsp + 8 {var_78_5}].q = 1
+      [rsp + 0x10 {var_70_4}].q = 1
+      call(log.Fatalln)
+      noreturn
+    block5:
+      rdx = 0x553c80
+      if (rcx != rdx) block6 else block7
+    block6:
+      [rsp {var_80_4}].q = rcx
+      rax = 0x51ee20
+      [rsp + 8 {var_78_6}].q = rax
+      rax = 0x50a140
+      [rsp + 0x10 {var_70_5}].q = rax
+      call(runtime.panicdottypeI)
+      noreturn
+    block7:
+      call(time.Now)
+      [rsp + 0x18 {var_68_1}].q = 0x5f5e100
+      call(time.Time.Add)
+      rax = [rsp + 0x20 {var_60}].q
+      rcx = [rsp + 0x28 {var_58}].q
+      rdx = [rsp + 0x30 {var_50}].q
+      rbx = [rsp + 0x58 {var_28}].q
+      [rsp {var_80_1}].q = rbx
+      [rsp + 8 {var_78_1}].q = rax
+      [rsp + 0x10 {var_70_1}].q = rcx
+      [rsp + 0x18 {var_68_2}].q = rdx
+      call(net.(*TCPListener).SetDeadline)
+      xmm0 = 0
+      [rsp + 0x68 {var_18}].o = xmm0
+      rax = 0x4fb5e0
+      [rsp + 0x68 {var_18}].q = rax
+      rcx = 0x550b30
+      [rsp + 0x70 {var_18+0x8}].q = rcx
+      rcx = rsp + 0x68 {var_18}
+      [rsp {var_80_1}].q = rcx {var_18}
+      [rsp + 8 {var_78_1}].q = 1
+      [rsp + 0x10 {var_70_1}].q = 1
+      call(log.Println)
+      rax = [rsp + 0x40 {var_40}].q
+      rax = [rax + 0x18].q
+      rcx = [rsp + 0x58 {var_28}].q
+      [rsp {var_80_2}].q = rcx
+      call(rax)
+      rax = [rsp + 8 {var_78_1}].q
+      [rsp + 0x48 {var_38}].q = rax
+      rcx = [rsp + 0x10 {var_70_1}].q
+      [rsp + 0x60 {var_20}].q = rcx
+      rdx = [rsp + 0x18 {var_68_2}].q
+      [rsp + 0x50 {var_30}].q = rdx
+      rdx
+      xmm0 = 0
+      [rsp + 0x68 {var_18}].o = xmm0
+      rbx = 0x4fb5e0
+      [rsp + 0x68 {var_18}].q = rbx
+      rsi = 0x550b40
+      [rsp + 0x70 {var_18+0x8}].q = rsi
+      rsi = rsp + 0x68 {var_18}
+      [rsp {var_80_2}].q = rsi {var_18}
+      [rsp + 8 {var_78_2}].q = 1
+      [rsp + 0x10 {var_70_2}].q = 1
+      call(log.Println)
+      rax = [rsp + 0x50 {var_30}].q
+      if (rax != 0) block8 else block9
+    block8:
+      xmm0 = 0
+      [rsp + 0x68 {var_18}].o = xmm0
+      rax = 0x4fb5e0
+      [rsp + 0x68 {var_18}].q = rax
+      rax = 0x550b50
+      [rsp + 0x70 {var_18+0x8}].q = rax
+      rax = rsp + 0x68 {var_18}
+      [rsp {var_80_2}].q = rax {var_18}
+      [rsp + 8 {var_78_4}].q = 1
+      [rsp + 0x10 {var_70_3}].q = 1
+      call(log.Fatalln)
+      noreturn
+    block9:
+      rax = [rsp + 0x48 {var_38}].q
+      [rsp {var_80_3}].q = rax
+      rax = [rsp + 0x60 {var_20}].q
+      [rsp + 8 {var_78_3}].q = rax
+      call(main.echo)
+      rbp = [rsp + 0x78 {__saved_rbp}].q
+      rsp = rsp - -0x80
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rcx_7 = [fsbase - 8].q
+      if (&__return_addr u<= [rcx_7 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(rdi, rsi)
+      goto block1
+    block3:
+      rbp = &__saved_rbp
+      var_80 = 0x52eba9
+      var_78 = 3
+      var_70 = ":20080<-chanAnswerArabicAugustBr…"
+      var_68 = 6
+      net.Listen(rdi, rsi, rdx, rcx_7, r8, r9)
+      rax = var_58
+      var_28 = rax
+      rcx_1 = var_60
+      var_40 = rcx_1
+      if (var_50 != 0) block4 else block5
+    block4:
+      zmm0 = 0
+      var_18 = zmm0
+      var_18:0.q = 0x4fb5e0
+      var_18:8.q = 0x550b20
+      var_78_5 = 1
+      var_70_4 = 1
+      log.Fatalln(rdi_1, rsi_1, rdx_1, rcx_1, r8_1, r9_1)
+      noreturn
+    block5:
+      if (rcx_1 != 0x553c80) block6 else block7
+    block6:
+      var_80_4 = rcx_1
+      var_78_6 = 0x51ee20
+      var_70_5 = 0x50a140
+      runtime.panicdottypeI(rdi_1, rsi_1, 0x553c80, rbp, tsc, zmm2)
+      noreturn
+    block7:
+      time.Now()
+      var_68_1 = 0x5f5e100
+      time.Time.Add(rdi_2, rsi_2, rdx_2, rcx_2, r8_2, r9_2)
+      rax_1 = var_60
+      rcx_3 = var_58
+      rdx_3 = var_50
+      rbx = var_28
+      var_80_1 = rbx
+      var_78_1 = rax_1
+      var_70_1 = rcx_3
+      var_68_2 = rdx_3
+      net.(*TCPListener).SetDeadline(rdi_3, rsi_3, rdx_3, rcx_3, r8_3, r9_3, tsc, var_80_1, var_78_1, var_70_1, var_68_2)
+      zmm0_1 = 0
+      var_18 = zmm0_1
+      var_18:0.q = 0x4fb5e0
+      var_18:8.q = 0x550b30
+      log.Println(rdi_4, rsi_4, rdx_4, rcx_4, r8_4, r9_4)
+      rax_2 = var_40
+      rax_3 = [rax_2 + 0x18].q
+      rcx_5 = var_28
+      var_80_2 = rcx_5
+      rax_3()
+      rdx_5 = var_68_2
+      var_30 = rdx_5
+      rdx_5
+      zmm0_2 = 0
+      var_18 = zmm0_2
+      var_18:0.q = 0x4fb5e0
+      var_18:8.q = 0x550b40
+      rsi_5 = &var_18
+      var_78_2 = 1
+      var_70_2 = 1
+      log.Println(rdi_5, rsi_5, rdx_5, 1, r8_5, r9_5)
+      rax_4 = var_30
+      if (rax_4 != 0) block8 else block9
+    block8:
+      zmm0_3 = 0
+      var_18 = zmm0_3
+      var_18:0.q = 0x4fb5e0
+      var_18:8.q = 0x550b50
+      var_78_4 = 1
+      var_70_3 = 1
+      log.Fatalln(rdi_6, rsi_6, rdx_6, rcx_6, r8_6, r9_6)
+      noreturn
+    block9:
+      var_80_3 = 1
+      var_78_3 = 1
+      main.echo(rdi_6, rsi_6, rbp)
+      return rax_5

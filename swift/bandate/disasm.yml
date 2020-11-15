@@ -1,0 +1,1014 @@
+"$s6binary5parse4textAA8DateInfoVSS_tF":
+  "asm": |
+    $s6binary5parse4textAA8DateInfoVSS_tF:
+      push    rbp
+      mov     rbp, rsp
+      push    r13
+      sub     rsp, 0x158
+      xor     ecx, ecx
+      mov     edx, ecx
+      xor     ecx, ecx
+      lea     r8, [rbp-0x40]
+      mov     [rbp-0x80], rdi
+      mov     rdi, r8
+      mov     [rbp-0x88], rsi
+      mov     esi, ecx
+      mov     r8d, 0x10
+      mov     [rbp-0x90], rdx
+      mov     rdx, r8
+      mov     [rbp-0x98], rax
+      mov     [rbp-0x9c], ecx
+      mov     [rbp-0xa8], r8
+      call    memset@plt
+      lea     rax, [rbp-0x48]
+      mov     rdi, rax
+      mov     esi, [rbp-0x9c]
+      mov     edx, 8
+      call    memset@plt
+      lea     rax, [rbp-0x58]
+      mov     rdi, rax
+      mov     esi, [rbp-0x9c]
+      mov     rdx, [rbp-0xa8]
+      call    memset@plt
+      mov     rax, [rbp-0x80]
+      mov     [rbp-0x40], rax
+      mov     rdx, [rbp-0x88]
+      mov     [rbp-0x38], rdx
+      mov     rdi, [rbp-0x90]
+      call    $s10Foundation13DateFormatterCMa@plt
+      mov     r13, rax
+      mov     [rbp-0xb0], rdx
+      call    $s10Foundation13DateFormatterCACycfC@plt
+      mov     rdx, rax
+      lea     rdi, [mem1]; "yyyy-MM-dd"
+      mov     esi, 0xa
+      mov     edx, 1
+      mov     [rbp-0xb8], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [rbp-0xb8]
+      mov     rdi, [rsi]
+      mov     [rbp-0xc0], rdi
+      mov     rdi, rax
+      mov     rsi, rdx
+      mov     r13, [rbp-0xb8]
+      mov     rax, [rbp-0xc0]
+      call    [rax+0x2e0]
+      mov     rax, [rbp-0xb8]
+      mov     rdx, [rax]
+      mov     rdi, [rbp-0x80]
+      mov     rsi, [rbp-0x88]
+      mov     r13, rax
+      call    [rdx+0x288]
+      mov     rsi, [rbp-0xb8]
+      test    dl, 1
+      mov     [rbp-0xc8], rax
+      jne     block2
+    block1:
+      mov     rax, [rbp-0xc8]
+      movq    xmm0, rax
+      movsd   [rbp-0xd0], xmm0
+      jmp     block3
+    block2:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem2]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem3]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem4]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0xc
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block3:
+      movsd   xmm0, [rbp-0xd0]
+      xor     edi, edi
+      movsd   [rbp-0x48], xmm0
+      movsd   [rbp-0xd8], xmm0
+      call    $s10Foundation8CalendarV10identifierA2C10IdentifierO_tcfC@plt
+      mov     cl, al
+      and     cl, 1
+      mov     [rbp-0x58], cl
+      mov     [rbp-0x50], rdx
+      movzx   esi, al
+      mov     edi, 2
+      movsd   xmm0, [rbp-0xd8]
+      mov     [rbp-0xe0], rdx
+      mov     [rbp-0xe1], al
+      call    $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF@plt
+      mov     rdx, rax
+      mov     cl, [rbp-0xe1]
+      movzx   esi, cl
+      mov     edi, 7
+      movsd   xmm0, [rbp-0xd8]
+      mov     rdx, [rbp-0xe0]
+      mov     [rbp-0xf0], rax
+      call    $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF@plt
+      mov     rdx, rax
+      mov     cl, [rbp-0xe1]
+      movzx   esi, cl
+      mov     edi, 3
+      movsd   xmm0, [rbp-0xd8]
+      mov     rdx, [rbp-0xe0]
+      mov     [rbp-0xf8], rax
+      call    $s10Foundation8CalendarV9component_4fromSiAC9ComponentO_AA4DateVtF@plt
+      mov     rdx, rax
+      mov     rdx, [rbp-0xf0]
+      dec     rdx
+      seto    cl
+      test    cl, 1
+      mov     [rbp-0x100], rax
+      mov     [rbp-0x108], rdx
+      jne     block6
+    block4:
+      mov     rax, [rbp-0xb8]
+      mov     rcx, [rax]
+      mov     r13, rax
+      call    [rcx+0x470]
+      mov     rdi, [rbp-0x108]
+      mov     rsi, rax
+      mov     [rbp-0x110], rax
+      call    $sSayxSicigSS_Tg5@plt
+      mov     [rbp-0x68], rax
+      mov     [rbp-0x60], rdx
+      mov     rdi, [rbp-0x68]
+      mov     rsi, [rbp-0x60]
+      mov     rax, [rbp-0xf8]
+      dec     rax
+      seto    r8b
+      test    r8b, 1
+      mov     [rbp-0x118], rdi
+      mov     [rbp-0x120], rsi
+      mov     [rbp-0x128], rax
+      jne     block7
+    block5:
+      mov     rax, [rbp-0xb8]
+      mov     rcx, [rax]
+      mov     rcx, [rcx+0x4d0]
+      mov     r13, rax
+      call    rcx
+      mov     rdi, [rbp-0x128]
+      mov     rsi, rax
+      mov     [rbp-0x130], rax
+      call    $sSayxSicigSS_Tg5@plt
+      mov     [rbp-0x78], rax
+      mov     [rbp-0x70], rdx
+      mov     rdx, [rbp-0x78]
+      mov     rcx, [rbp-0x70]
+      lea     rax, [rbp-0x30]
+      mov     rdi, [rbp-0x118]
+      mov     rsi, [rbp-0x120]
+      mov     r8, [rbp-0x100]
+      call    $s6binary8DateInfoV5month7weekday3dayACSS_SSSitcfC
+      mov     rdi, [rbp-0x130]
+      call    swift_release@plt
+      mov     rdi, [rbp-0x110]
+      call    swift_release@plt
+      mov     rdi, [rbp-0xe0]
+      call    swift_release@plt
+      mov     rdi, [rbp-0xb8]
+      call    swift_release@plt
+      mov     rax, [rbp-0x10]
+      mov     rcx, [rbp-0x98]
+      mov     [rcx+0x20], rax
+      movups  xmm0, [rbp-0x30]
+      movups  xmm1, [rbp-0x20]
+      movups  [rcx+0x10], xmm1
+      movups  [rcx], xmm0
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xf0]
+      mov     rax, [rbp-0xf8]
+      mov     rax, [rbp-0x100]
+      add     rsp, 0x158
+      pop     r13
+      pop     rbp
+      ret
+    block6:
+      ud2
+    block7:
+      ud2
+"$s6binary5reply4dateyAA8DateInfoV_tF":
+  "asm": |
+    $s6binary5reply4dateyAA8DateInfoV_tF:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x300
+      xor     esi, esi
+      lea     rax, [rbp-0x38]
+      mov     [rbp-0x40], rdi
+      mov     rdi, rax
+      mov     edx, 8
+      call    memset@plt
+      mov     rax, [rbp-0x40]
+      mov     [rbp-0x38], rax
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem1]; "That's a "
+      mov     esi, 9
+      mov     ecx, 1
+      mov     [rbp-0x48], rdx
+      mov     edx, ecx
+      mov     [rbp-0x50], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [rbp-0x40]
+      mov     rdi, [rsi+0x10]
+      mov     r8, [rsi+0x18]
+      mov     [rbp-0x58], rdi
+      mov     rdi, r8
+      mov     [rbp-0x60], rax
+      mov     [rbp-0x68], rdx
+      mov     [rbp-0x70], r8
+      call    swift_bridgeObjectRetain@plt
+      mov     rdi, [rbp-0x60]
+      mov     rsi, [rbp-0x68]
+      mov     rdx, [rbp-0x58]
+      mov     rcx, [rbp-0x70]
+      mov     [rbp-0x78], rax
+      call    $sSS1poiyS2S_SStFZ@plt
+      mov     rdi, [rbp-0x70]
+      mov     [rbp-0x80], rax
+      mov     [rbp-0x88], rdx
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x68]
+      call    swift_bridgeObjectRelease@plt
+      lea     rdi, [mem2]; " in "
+      mov     esi, 4
+      mov     edx, 1
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x80]
+      mov     rsi, [rbp-0x88]
+      mov     [rbp-0x90], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x90]
+      call    $sSS1poiyS2S_SStFZ@plt
+      mov     rdi, [rbp-0x90]
+      mov     [rbp-0x98], rax
+      mov     [rbp-0xa0], rdx
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x88]
+      call    swift_bridgeObjectRelease@plt
+      mov     rax, [rbp-0x40]
+      mov     rdx, [rax]
+      mov     rcx, [rax+8]
+      mov     rdi, rcx
+      mov     [rbp-0xa8], rdx
+      mov     [rbp-0xb0], rcx
+      call    swift_bridgeObjectRetain@plt
+      mov     rdi, [rbp-0x98]
+      mov     rsi, [rbp-0xa0]
+      mov     rdx, [rbp-0xa8]
+      mov     rcx, [rbp-0xb0]
+      mov     [rbp-0xb8], rax
+      call    $sSS1poiyS2S_SStFZ@plt
+      mov     rdi, [rbp-0xb0]
+      mov     [rbp-0xc0], rax
+      mov     [rbp-0xc8], rdx
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0xa0]
+      call    swift_bridgeObjectRelease@plt
+      lea     rdi, [mem3]
+      mov     esi, 1
+      mov     edx, 1
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0xc0]
+      mov     rsi, [rbp-0xc8]
+      mov     [rbp-0xd0], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0xd0]
+      call    $sSS1poiyS2S_SStFZ@plt
+      mov     rdi, [rbp-0xd0]
+      mov     [rbp-0xd8], rax
+      mov     [rbp-0xe0], rdx
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0xc8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rax, [$sSSN]
+      mov     rcx, [rbp-0x48]
+      mov     [rcx+0x18], rax
+      mov     rax, [rbp-0xd8]
+      mov     [rcx], rax
+      mov     rax, [rbp-0xe0]
+      mov     [rcx+8], rax
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0xe8], rax
+      mov     [rbp-0xf0], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x50]
+      mov     rsi, [rbp-0xe8]
+      mov     rcx, [rbp-0xf0]
+      mov     [rbp-0xf8], rdx
+      mov     rdx, rcx
+      mov     rcx, rax
+      mov     r8, [rbp-0xf8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0xf8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0xf0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x50]
+      call    swift_release@plt
+      mov     rax, [rbp-0x40]
+      mov     rdi, [rax]
+      mov     rcx, [rax+8]
+      mov     [rbp-0x100], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x108], rcx
+      call    swift_bridgeObjectRetain@plt
+      lea     rdi, [mem4]; "February"
+      mov     esi, 8
+      mov     edx, 1
+      mov     [rbp-0x110], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x100]
+      mov     rsi, [rbp-0x108]
+      mov     [rbp-0x118], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x118]
+      call    $sSS2eeoiySbSS_SStFZ@plt
+      mov     rdi, [rbp-0x118]
+      mov     [rbp-0x119], al
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x108]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x40]
+      call    $s6binary8DateInfoVWOr
+      mov     r9b, [rbp-0x119]
+      test    r9b, 1
+      jne     block2
+    block1:
+      jmp     block3
+    block2:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-8], rcx
+      cmp     [rbp-8], 0x19
+      sete    dl
+      mov     [rbp-0x11a], dl
+      jmp     block4
+    block3:
+      xor     eax, eax
+      mov     [rbp-0x11a], al
+      jmp     block4
+    block4:
+      mov     al, [rbp-0x11a]
+      mov     rdi, [rbp-0x40]
+      mov     [rbp-0x11b], al
+      call    $s6binary8DateInfoVWOs
+      mov     cl, [rbp-0x11b]
+      test    cl, 1
+      jne     block6
+    block5:
+      jmp     block7
+    block6:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem5]; "It's George's birthday!"
+      mov     esi, 0x17
+      mov     ecx, 1
+      mov     [rbp-0x128], rdx
+      mov     edx, ecx
+      mov     [rbp-0x130], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x128]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x138], rax
+      mov     [rbp-0x140], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x130]
+      mov     rsi, [rbp-0x138]
+      mov     r8, [rbp-0x140]
+      mov     [rbp-0x148], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x148]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x148]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x140]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x130]
+      call    swift_release@plt
+      jmp     block42
+    block7:
+      mov     rax, [rbp-0x40]
+      mov     rdi, [rax]
+      mov     rcx, [rax+8]
+      mov     [rbp-0x150], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x158], rcx
+      call    swift_bridgeObjectRetain@plt
+      lea     rdi, [mem6]; "June"
+      mov     esi, 4
+      mov     edx, 1
+      mov     [rbp-0x160], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x150]
+      mov     rsi, [rbp-0x158]
+      mov     [rbp-0x168], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x168]
+      call    $sSS2eeoiySbSS_SStFZ@plt
+      mov     rdi, [rbp-0x168]
+      mov     [rbp-0x169], al
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x158]
+      call    swift_bridgeObjectRelease@plt
+      mov     al, [rbp-0x169]
+      test    al, 1
+      jne     block9
+    block8:
+      jmp     block16
+    block9:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-0x28], rcx
+      cmp     [rbp-0x28], 0x12
+      jne     block11
+    block10:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem7]; "It's Paul's birthday!"
+      mov     esi, 0x15
+      mov     ecx, 1
+      mov     [rbp-0x178], rdx
+      mov     edx, ecx
+      mov     [rbp-0x180], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x178]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x188], rax
+      mov     [rbp-0x190], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x180]
+      mov     rsi, [rbp-0x188]
+      mov     r8, [rbp-0x190]
+      mov     [rbp-0x198], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x198]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x198]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x190]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x180]
+      call    swift_release@plt
+      jmp     block15
+    block11:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-0x30], rcx
+      cmp     [rbp-0x30], 0x17
+      jne     block13
+    block12:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem8]; "It's Stuart's birthday!"
+      mov     esi, 0x17
+      mov     ecx, 1
+      mov     [rbp-0x1a0], rdx
+      mov     edx, ecx
+      mov     [rbp-0x1a8], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x1a0]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x1b0], rax
+      mov     [rbp-0x1b8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x1a8]
+      mov     rsi, [rbp-0x1b0]
+      mov     r8, [rbp-0x1b8]
+      mov     [rbp-0x1c0], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x1c0]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x1c0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1b8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1a8]
+      call    swift_release@plt
+      jmp     block14
+    block13:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem9]; "June is a good month."
+      mov     esi, 0x15
+      mov     ecx, 1
+      mov     [rbp-0x1c8], rdx
+      mov     edx, ecx
+      mov     [rbp-0x1d0], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x1c8]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x1d8], rax
+      mov     [rbp-0x1e0], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x1d0]
+      mov     rsi, [rbp-0x1d8]
+      mov     r8, [rbp-0x1e0]
+      mov     [rbp-0x1e8], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x1e8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x1e8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1e0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1d0]
+      call    swift_release@plt
+    block14:
+      jmp     block15
+    block15:
+      jmp     block41
+    block16:
+      mov     rax, [rbp-0x40]
+      mov     rdi, [rax]
+      mov     rcx, [rax+8]
+      mov     [rbp-0x1f0], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x1f8], rcx
+      call    swift_bridgeObjectRetain@plt
+      lea     rdi, [mem10]; "July"
+      mov     esi, 4
+      mov     edx, 1
+      mov     [rbp-0x200], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x1f0]
+      mov     rsi, [rbp-0x1f8]
+      mov     [rbp-0x208], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x208]
+      call    $sSS2eeoiySbSS_SStFZ@plt
+      mov     rdi, [rbp-0x208]
+      mov     [rbp-0x209], al
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1f8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x40]
+      call    $s6binary8DateInfoVWOr
+      mov     r8b, [rbp-0x209]
+      test    r8b, 1
+      jne     block18
+    block17:
+      jmp     block19
+    block18:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-0x10], rcx
+      cmp     [rbp-0x10], 7
+      sete    dl
+      mov     [rbp-0x20a], dl
+      jmp     block20
+    block19:
+      xor     eax, eax
+      mov     [rbp-0x20a], al
+      jmp     block20
+    block20:
+      mov     al, [rbp-0x20a]
+      mov     rdi, [rbp-0x40]
+      mov     [rbp-0x20b], al
+      call    $s6binary8DateInfoVWOs
+      mov     cl, [rbp-0x20b]
+      test    cl, 1
+      jne     block22
+    block21:
+      jmp     block23
+    block22:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem11]; "It's Ringo's birthday!"
+      mov     esi, 0x16
+      mov     ecx, 1
+      mov     [rbp-0x218], rdx
+      mov     edx, ecx
+      mov     [rbp-0x220], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x218]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x228], rax
+      mov     [rbp-0x230], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x220]
+      mov     rsi, [rbp-0x228]
+      mov     r8, [rbp-0x230]
+      mov     [rbp-0x238], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x238]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x238]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x230]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x220]
+      call    swift_release@plt
+      jmp     block40
+    block23:
+      mov     rax, [rbp-0x40]
+      mov     rdi, [rax]
+      mov     rcx, [rax+8]
+      mov     [rbp-0x240], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x248], rcx
+      call    swift_bridgeObjectRetain@plt
+      lea     rdi, [mem12]; "October"
+      mov     esi, 7
+      mov     edx, 1
+      mov     [rbp-0x250], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x240]
+      mov     rsi, [rbp-0x248]
+      mov     [rbp-0x258], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x258]
+      call    $sSS2eeoiySbSS_SStFZ@plt
+      mov     rdi, [rbp-0x258]
+      mov     [rbp-0x259], al
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x248]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x40]
+      call    $s6binary8DateInfoVWOr
+      mov     r8b, [rbp-0x259]
+      test    r8b, 1
+      jne     block25
+    block24:
+      jmp     block26
+    block25:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-0x18], rcx
+      cmp     [rbp-0x18], 9
+      sete    dl
+      mov     [rbp-0x25a], dl
+      jmp     block27
+    block26:
+      xor     eax, eax
+      mov     [rbp-0x25a], al
+      jmp     block27
+    block27:
+      mov     al, [rbp-0x25a]
+      mov     rdi, [rbp-0x40]
+      mov     [rbp-0x25b], al
+      call    $s6binary8DateInfoVWOs
+      mov     cl, [rbp-0x25b]
+      test    cl, 1
+      jne     block29
+    block28:
+      jmp     block30
+    block29:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem13]; "It's John's birthday!"
+      mov     esi, 0x15
+      mov     ecx, 1
+      mov     [rbp-0x268], rdx
+      mov     edx, ecx
+      mov     [rbp-0x270], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x268]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x278], rax
+      mov     [rbp-0x280], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x270]
+      mov     rsi, [rbp-0x278]
+      mov     r8, [rbp-0x280]
+      mov     [rbp-0x288], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x288]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x288]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x280]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x270]
+      call    swift_release@plt
+      jmp     block39
+    block30:
+      mov     rax, [rbp-0x40]
+      mov     rdi, [rax]
+      mov     rcx, [rax+8]
+      mov     [rbp-0x290], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x298], rcx
+      call    swift_bridgeObjectRetain@plt
+      lea     rdi, [mem14]; "November"
+      mov     esi, 8
+      mov     edx, 1
+      mov     [rbp-0x2a0], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x290]
+      mov     rsi, [rbp-0x298]
+      mov     [rbp-0x2a8], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x2a8]
+      call    $sSS2eeoiySbSS_SStFZ@plt
+      mov     rdi, [rbp-0x2a8]
+      mov     [rbp-0x2a9], al
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x298]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x40]
+      call    $s6binary8DateInfoVWOr
+      mov     r8b, [rbp-0x2a9]
+      test    r8b, 1
+      jne     block32
+    block31:
+      jmp     block33
+    block32:
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rax+0x20]
+      mov     [rbp-0x20], rcx
+      cmp     [rbp-0x20], 0x18
+      sete    dl
+      mov     [rbp-0x2aa], dl
+      jmp     block34
+    block33:
+      xor     eax, eax
+      mov     [rbp-0x2aa], al
+      jmp     block34
+    block34:
+      mov     al, [rbp-0x2aa]
+      mov     rdi, [rbp-0x40]
+      mov     [rbp-0x2ab], al
+      call    $s6binary8DateInfoVWOs
+      mov     cl, [rbp-0x2ab]
+      test    cl, 1
+      jne     block36
+    block35:
+      jmp     block37
+    block36:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem15]; "It's Pete's birthday!"
+      mov     esi, 0x15
+      mov     ecx, 1
+      mov     [rbp-0x2b8], rdx
+      mov     edx, ecx
+      mov     [rbp-0x2c0], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x2b8]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x2c8], rax
+      mov     [rbp-0x2d0], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x2c0]
+      mov     rsi, [rbp-0x2c8]
+      mov     r8, [rbp-0x2d0]
+      mov     [rbp-0x2d8], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x2d8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x2d8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x2d0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x2c0]
+      call    swift_release@plt
+      jmp     block38
+    block37:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem16]; "What a boring day."
+      mov     esi, 0x12
+      mov     ecx, 1
+      mov     [rbp-0x2e0], rdx
+      mov     edx, ecx
+      mov     [rbp-0x2e8], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x2e0]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x2f0], rax
+      mov     [rbp-0x2f8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x2e8]
+      mov     rsi, [rbp-0x2f0]
+      mov     r8, [rbp-0x2f8]
+      mov     [rbp-0x300], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x300]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x300]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x2f8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x2e8]
+      call    swift_release@plt
+    block38:
+      jmp     block39
+    block39:
+      jmp     block40
+    block40:
+      jmp     block41
+    block41:
+      jmp     block42
+    block42:
+      add     rsp, 0x300
+      pop     rbp
+      ret
+"main":
+  "asm": |
+    main:
+      push    rbp
+      mov     rbp, rsp
+      push    r13
+      sub     rsp, 0x148
+      mov     [rbp-0x7c], edi
+      mov     [rbp-0x88], rsi
+      call    $ss11CommandLineO9argumentsSaySSGvgZ@plt
+      mov     rdi, rax
+      mov     [rbp-0x90], rax
+      call    $sSa5countSivgSS_Tg5@plt
+      mov     rdi, [rbp-0x90]
+      mov     [rbp-0x98], rax
+      call    swift_release@plt
+      mov     rax, [rbp-0x98]
+      cmp     rax, 2
+      sete    cl
+      xor     cl, 0xff
+      test    cl, 1
+      jne     block2
+    block1:
+      jmp     block3
+    block2:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem1]; "USAGE: ./bandate [date]"
+      mov     esi, 0x17
+      mov     ecx, 1
+      mov     [rbp-0xa0], rdx
+      mov     edx, ecx
+      mov     [rbp-0xa8], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0xa0]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0xb0], rax
+      mov     [rbp-0xb8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0xa8]
+      mov     rsi, [rbp-0xb0]
+      mov     r8, [rbp-0xb8]
+      mov     [rbp-0xc0], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0xc0]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0xc0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0xb8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0xa8]
+      call    swift_release@plt
+      mov     edi, 1
+      call    exit@plt
+    block3:
+      call    $ss11CommandLineO9argumentsSaySSGvgZ@plt
+      mov     [rbp-0x60], rax
+      mov     rcx, [rbp-0x60]
+      mov     [rbp-0x78], rcx
+      lea     rcx, [rbp-0x70]
+      lea     rdi, [$sSaySSGMD]
+      mov     [rbp-0xc8], rax
+      mov     [rbp-0xd0], rcx
+      call    __swift_instantiateConcreteTypeFromMangledName
+      mov     [rbp-0xd8], rax
+      call    $sSaySSGSayxGSKsWl
+      lea     rcx, [rbp-0x78]
+      mov     rdx, [rbp-0xd0]
+      mov     [rbp-0xe0], rax
+      mov     rax, rdx
+      mov     rdi, [rbp-0xd8]
+      mov     rsi, [rbp-0xe0]
+      mov     r13, rcx
+      call    $sSKsE4last7ElementQzSgvg@plt
+      mov     rax, [rbp-0x70]
+      mov     rcx, [rbp-0x68]
+      mov     rdi, [rbp-0xc8]
+      mov     [rbp-0xe8], rax
+      mov     [rbp-0xf0], rcx
+      call    swift_release@plt
+      mov     rax, [rbp-0xf0]
+      cmp     rax, 0
+      je      block5
+    block4:
+      mov     rax, [rbp-0xe8]
+      mov     rcx, [rbp-0xf0]
+      mov     [rbp-0xf8], rax
+      mov     [rbp-0x100], rcx
+      jmp     block12
+    block5:
+      jmp     block6
+    block6:
+      jmp     block7
+    block7:
+      jmp     block8
+    block8:
+      jmp     block9
+    block9:
+      jmp     block10
+    block10:
+      jmp     block11
+    block11:
+      lea     rdi, [mem2]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem3]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem4]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3f
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+    block12:
+      mov     rax, [rbp-0x100]
+      mov     rcx, [rbp-0xf8]
+      lea     rdx, [rbp-0x58]
+      mov     [rbp-0x108], rax
+      mov     rax, rdx
+      mov     rdi, rcx
+      mov     rsi, [rbp-0x108]
+      call    $s6binary5parse4textAA8DateInfoVSS_tF
+      mov     rdi, [rbp-0x108]
+      call    swift_bridgeObjectRelease@plt
+      lea     rax, [$s6binary4dateAA8DateInfoVvp]
+      mov     rcx, rax
+      lea     rdx, [rbp-0x58]
+      mov     rdi, rcx
+      mov     rsi, rdx
+      mov     ecx, 0x28
+      mov     rdx, rcx
+      mov     [rbp-0x110], rax
+      mov     [rbp-0x118], rcx
+      call    memcpy@plt
+      lea     rax, [rbp-0x30]
+      mov     rcx, rax
+      mov     rdx, [rbp-0x110]
+      mov     rdi, rcx
+      mov     rsi, rdx
+      mov     rdx, [rbp-0x118]
+      mov     [rbp-0x120], rax
+      call    memcpy@plt
+      mov     rdi, [rbp-0x120]
+      call    $s6binary5reply4dateyAA8DateInfoV_tF
+      xor     eax, eax
+      add     rsp, 0x148
+      pop     r13
+      pop     rbp
+      ret

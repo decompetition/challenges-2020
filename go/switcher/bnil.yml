@@ -1,0 +1,344 @@
+"main.compute":
+  "hlil": |-
+    int16_t* rcx_3
+    int64_t rdx
+    int128_t* rsi
+    int64_t* rdi
+    while (true)
+        void* fsbase
+        rcx_3 = *(fsbase - 8)
+        if (&__return_addr u> *(rcx_3 + 0x10))
+            break
+        rdx, rsi, rdi = runtime.morestack_noctxt(rdi.d, rsi)
+    int64_t rsi_1
+    int32_t rdi_1
+    int16_t* r8
+    int64_t r9
+    rsi_1, rdi_1, r8, r9 = runtime.stringtoslicebyte(rdi, rsi, rdx, rcx_3)
+    void* var_40
+    int64_t* var_38
+    bytes.Map(rdi_1, rsi_1, var_38, var_40, r8, r9)
+    return var_40
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      if (rsp u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x60
+      [rsp + 0x58 {__saved_rbp}].q = rbp
+      rbp = rsp + 0x58 {__saved_rbp}
+      rax = rsp + 0x38 {var_28}
+      [rsp].q = rax {var_28}
+      rax = [rsp + 0x68 {arg1}].q
+      [rsp + 8 {var_58}].q = rax
+      rax = [rsp + 0x70 {arg2}].q
+      [rsp + 0x10 {var_50}].q = rax
+      call(runtime.stringtoslicebyte)
+      rax = [rsp + 0x18 {var_48}].q
+      rcx = [rsp + 0x20 {var_40}].q
+      rdx = [rsp + 0x28 {var_38}].q
+      rbx = 0x4c97d0
+      [rsp {var_60}].q = rbx
+      [rsp + 8 {var_58_1}].q = rax
+      [rsp + 0x10 {var_50_1}].q = rcx
+      [rsp + 0x18 {var_48_1}].q = rdx
+      call(bytes.Map)
+      rax = [rsp + 0x20 {var_40}].q
+      rcx = [rsp + 0x28 {var_38}].q
+      rdx = [rsp + 0x30 {var_30}].q
+      [rsp + 0x78 {arg_18}].q = rax
+      [rsp + 0x80 {arg_20}].q = rcx
+      [rsp + 0x88 {arg_28}].q = rdx
+      rbp = [rsp + 0x58 {__saved_rbp}].q
+      rsp = rsp + 0x60
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rcx_3 = [fsbase - 8].q
+      if (&__return_addr u<= [rcx_3 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(rdi.edi, rsi)
+      goto block1
+    block3:
+      rax = arg1
+      var_58 = rax
+      rax_1 = arg2
+      var_50 = rax_1
+      runtime.stringtoslicebyte(rdi, rsi, rdx, rcx_3)
+      rax_2 = var_48
+      rcx_1 = var_40
+      rdx_1 = var_38
+      var_60 = 0x4c97d0
+      var_58_1 = rax_2
+      var_50_1 = rcx_1
+      var_48_1 = rdx_1
+      bytes.Map(rdi_1, rsi_1, rdx_1, rcx_1, r8, r9)
+      rax_3 = var_40
+      rcx_2 = var_38
+      rdx_2 = var_30
+      arg_18 = rax_3
+      arg_20 = rcx_2
+      arg_28 = rdx_2
+      return rax_3
+"main.compute.func1":
+  "hlil": |-
+    if (arg1 s>= 0x41 && arg1 s<= 0x5a)
+        int64_t rcx_3 = sx.q(arg1 + 0xffffffcc)
+        return zx.q(((arg1 + 0xffffffcc) - ((((0x9d89d89e * rcx_3) s>> 0x24).d - (rcx_3 s>> 0x3f).d) * 0x1a)) + 0x41)
+    if (arg1 s>= 0x61 && arg1 s<= 0x7a)
+        int64_t rcx = sx.q(arg1 + 0xffffffbc)
+        return zx.q(((arg1 + 0xffffffbc) - ((((0x9d89d89e * rcx) s>> 0x24).d - (rcx s>> 0x3f).d) * 0x1a)) + 0x61)
+    return zx.q(arg1 + 0xfffffff6)
+  "llil": |-
+    block1:
+      eax = [rsp + 8 {arg1}].d
+      if (eax s< 0x41) block2 else block3
+    block2:
+      if (eax s< 0x61) block4 else block5
+    block3:
+      if (eax s<= 0x5a) block6 else block2
+    block4:
+      eax = eax - 0xa
+      [rsp + 0x10 {arg_10}].d = eax
+      <return> jump(pop)
+    block5:
+      if (eax s<= 0x7a) block7 else block4
+    block6:
+      eax = eax - 0x34
+      rcx = sx.q(eax)
+      rdx = rcx
+      rcx = rcx s>> 0x3f
+      ebx = 0x9d89d89e
+      rbx = rbx * rdx
+      rbx = rbx s>> 0x24
+      ebx = ebx - ecx
+      ecx = ebx * 0x1a
+      eax = eax - ecx
+      eax = eax + 0x41
+      [rsp + 0x10 {arg_10}].d = eax
+      <return> jump(pop)
+    block7:
+      eax = eax - 0x44
+      rcx = sx.q(eax)
+      edx = 0x9d89d89e
+      rdx = rdx * rcx
+      rdx = rdx s>> 0x24
+      rcx = rcx s>> 0x3f
+      edx = edx - ecx
+      ecx = edx * 0x1a
+      eax = eax - ecx
+      eax = eax + 0x61
+      [rsp + 0x10 {arg_10}].d = eax
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rax_7 = arg1
+      if (rax_7 s< 0x41) block2 else block3
+    block2:
+      if (rax_7 s< 0x61) block4 else block5
+    block3:
+      if (rax_7 s<= 0x5a) block6 else block2
+    block4:
+      rax = zx.q(rax_7 + 0xfffffff6)
+      arg_10 = rax.eax
+      return rax
+    block5:
+      if (rax_7 s<= 0x7a) block7 else block4
+    block6:
+      rax_4 = rax_7 + 0xffffffcc
+      rcx_3 = sx.q(rax_4)
+      rdx_3 = rcx_3
+      rcx_4 = (rcx_3 s>> 0x3f).d
+      rbx = 0x9d89d89e * rdx_3
+      rbx_1 = (rbx s>> 0x24).d
+      rbx_2 = rbx_1 - rcx_4
+      rcx_5 = rbx_2 * 0x1a
+      rax_5 = rax_4 - rcx_5
+      rax_6 = zx.q(rax_5 + 0x41)
+      arg_10 = rax_6.eax
+      return rax_6
+    block7:
+      rax_1 = rax_7 + 0xffffffbc
+      rcx = sx.q(rax_1)
+      rdx = 0x9d89d89e * rcx
+      rdx_1 = (rdx s>> 0x24).d
+      rcx_1 = (rcx s>> 0x3f).d
+      rdx_2 = rdx_1 - rcx_1
+      rcx_2 = rdx_2 * 0x1a
+      rax_2 = rax_1 - rcx_2
+      rax_3 = zx.q(rax_2 + 0x61)
+      arg_10 = rax_3.eax
+      return rax_3
+"main.main":
+  "hlil": |-
+    void* rcx_5
+    int64_t rdx
+    int64_t r8
+    while (true)
+        void* fsbase
+        rcx_5 = *(fsbase - 8)
+        if (&__return_addr u> *(rcx_5 + 0x10))
+            break
+        rdx, arg2, arg1, r8 = runtime.morestack_noctxt(arg1.d, arg2)
+    void* rax = *os.Args
+    int64_t rax_2
+    if (*0x55f5f8 s>= 2)
+        *(rax + 0x18)
+        *(rax + 0x10)
+        int16_t* rsi
+        int64_t* rdi
+        int64_t r8_1
+        rsi, rdi, r8_1 = main.compute(arg1, arg2)
+        char* var_58
+        int64_t var_48
+        int64_t rsi_1
+        int64_t rdi_1
+        int64_t tsc
+        int128_t zmm0_1
+        rsi_1, rdi_1, zmm0_1 = runtime.slicebytetostring(rdi, rsi, tsc, var_48, var_58, r8_1)
+        int64_t rcx_4
+        int64_t rdx_2
+        int64_t rsi_2
+        void* rdi_2
+        int64_t r8_2
+        rcx_4, rdx_2, rsi_2, rdi_2, r8_2 = runtime.convTstring(rdi_1, rsi_1)
+        int128_t var_28
+        var_28.q = 0x49f200
+        int64_t var_50
+        var_28:8.q = var_50
+        *os.Stdout
+        rax_2 = fmt.Fprintln(rdi_2, rsi_2, rdx_2, rcx_4, r8_2)
+    else
+        int128_t var_18
+        var_18.q = 0x49f200
+        var_18:8.q = 0x4da100
+        *os.Stdout
+        rax_2 = fmt.Fprintln(arg1, arg2, rdx, rcx_5, r8)
+    return rax_2
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      if (rsp u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x68
+      [rsp + 0x60 {__saved_rbp}].q = rbp
+      rbp = rsp + 0x60 {__saved_rbp}
+      rax = [0x55f5f0].q
+      if ([0x55f5f8].q s>= 2) block4 else block5
+    block4:
+      rcx = [rax + 0x18].q
+      rax = [rax + 0x10].q
+      [rsp {var_68_1}].q = rax
+      [rsp + 8 {var_60_1}].q = rcx
+      call(main.compute)
+      rax = [rsp + 0x18 {var_50}].q
+      rcx = [rsp + 0x10 {var_58}].q
+      rdx = [rsp + 0x20 {var_48}].q
+      [rsp {var_68_2}].q = 0
+      [rsp + 8 {var_60_2}].q = rcx
+      [rsp + 0x10 {var_58_1}].q = rax
+      [rsp + 0x18 {var_50_2}].q = rdx
+      call(runtime.slicebytetostring)
+      rax = [rsp + 0x20 {var_48}].q
+      rcx = [rsp + 0x28 {var_40}].q
+      [rsp {var_68_3}].q = rax
+      [rsp + 8 {var_60_3}].q = rcx
+      call(runtime.convTstring)
+      rax = [rsp + 0x10 {var_58_1}].q
+      xmm0 = 0
+      [rsp + 0x40 {var_28}].o = xmm0
+      rcx = 0x49f200
+      [rsp + 0x40 {var_28}].q = rcx
+      [rsp + 0x48 {var_28+0x8}].q = rax
+      rax = [0x55f210].q
+      rcx = 0x4db6e0
+      [rsp {var_68_4}].q = rcx
+      [rsp + 8 {var_60_4}].q = rax
+      rax = rsp + 0x40 {var_28}
+      [rsp + 0x10 {var_58_1}].q = rax {var_28}
+      [rsp + 0x18 {var_50_3}].q = 1
+      [rsp + 0x20 {var_48_2}].q = 1
+      call(fmt.Fprintln)
+      goto block6
+    block5:
+      xmm0 = 0
+      [rsp + 0x50 {var_18}].o = xmm0
+      rax = 0x49f200
+      [rsp + 0x50 {var_18}].q = rax
+      rax = 0x4da100
+      [rsp + 0x58 {var_18+0x8}].q = rax
+      rax = [0x55f210].q
+      rcx = 0x4db6e0
+      [rsp {var_68}].q = rcx
+      [rsp + 8 {var_60}].q = rax
+      rax = rsp + 0x50 {var_18}
+      [rsp + 0x10 {var_58}].q = rax {var_18}
+      [rsp + 0x18 {var_50_1}].q = 1
+      [rsp + 0x20 {var_48_1}].q = 1
+      call(fmt.Fprintln)
+      goto block6
+    block6:
+      rbp = [rsp + 0x60 {__saved_rbp}].q
+      rsp = rsp + 0x68
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rcx_5 = [fsbase - 8].q
+      if (&__return_addr u<= [rcx_5 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(arg1.edi, arg2)
+      goto block1
+    block3:
+      rax = [0x55f5f0].q
+      if ([0x55f5f8].q s>= 2) block4 else block5
+    block4:
+      rcx_1 = [rax + 0x18].q
+      rax_3 = [rax + 0x10].q
+      var_68_1 = rax_3
+      var_60_1 = rcx_1
+      main.compute(arg1, arg2)
+      rax_4 = var_50
+      rcx_2 = var_58
+      rdx_1 = var_48
+      var_68_2 = 0
+      var_60_2 = rcx_2
+      var_58_1 = rax_4
+      var_50_2 = rdx_1
+      runtime.slicebytetostring(rdi, rsi, tsc, rdx_1, rcx_2, r8_1)
+      rax_5 = var_48
+      rcx_3 = var_40
+      var_68_3 = rax_5
+      var_60_3 = rcx_3
+      runtime.convTstring(rdi_1, rsi_1)
+      rax_6 = var_58_1
+      zmm0_1 = 0
+      var_28 = zmm0_1
+      var_28:0.q = 0x49f200
+      var_28:8.q = rax_6
+      rax_7 = [0x55f210].q
+      var_68_4 = 0x4db6e0
+      var_60_4 = rax_7
+      var_50_3 = 1
+      var_48_2 = 1
+      fmt.Fprintln(rdi_2, rsi_2, rdx_2, rcx_4, r8_2)
+      goto block6
+    block5:
+      zmm0 = 0
+      var_18 = zmm0
+      var_18:0.q = 0x49f200
+      var_18:8.q = 0x4da100
+      rax_1 = [0x55f210].q
+      var_68 = 0x4db6e0
+      var_60 = rax_1
+      var_50_1 = 1
+      var_48_1 = 1
+      fmt.Fprintln(arg1, arg2, rdx, rcx_5, r8)
+      goto block6
+    block6:
+      return rax_2

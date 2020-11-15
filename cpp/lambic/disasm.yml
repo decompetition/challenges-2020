@@ -1,0 +1,669 @@
+"_ZZ4mainENKUlP4BeerE5_clES0_":
+  "asm": |
+    _ZZ4mainENKUlP4BeerE5_clES0_:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x40
+      mov     [rbp-0x38], rdi
+      mov     [rbp-0x40], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-8], rax
+      xor     eax, eax
+      mov     rax, [rbp-0x38]
+      mov     rdx, [rax]
+      lea     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv
+      mov     rax, [rbp-0x40]
+      lea     rdx, [rax+0x20]
+      lea     rax, [rbp-0x30]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_@plt.sec
+      lea     rax, [rbp-0x30]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, [rbp-0x38]
+      mov     rdx, [rax+8]
+      lea     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE4_clEv
+      mov     rax, [rbp-0x40]
+      lea     rdx, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_@plt.sec
+      lea     rax, [rbp-0x30]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, [rbp-0x40]
+      mov     [rax+0x40], 0
+      lea     rsi, [mem1]; "You brew up a "
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rdx, rax
+      mov     rax, [rbp-0x40]
+      add     rax, 0x20
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      lea     rsi, [mem2]; " called "
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rdx, rax
+      mov     rax, [rbp-0x40]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      lea     rsi, [mem3]; ".\n"
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-8]
+      xor     rax, fs:[0x28]
+      je      block2
+    block1:
+      call    __stack_chk_fail@plt.sec
+    block2:
+      leave
+      ret
+"_ZZ4mainENKUlP4BeerE7_clES0_":
+  "asm": |
+    _ZZ4mainENKUlP4BeerE7_clES0_:
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x38
+      mov     [rbp-0x38], rdi
+      mov     [rbp-0x40], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      lea     rsi, [mem1]; "You sell your "
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rdx, [rbp-0x40]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      mov     esi, 0x20
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@plt.sec
+      mov     rdx, rax
+      mov     rax, [rbp-0x40]
+      add     rax, 0x20
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      lea     rsi, [mem2]; " for $"
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rdx, rax
+      mov     rax, [rbp-0x40]
+      mov     eax, [rax+0x40]
+      imul    eax, eax, 0x64
+      add     eax, 0x384
+      mov     esi, eax
+      mov     rdi, rdx
+      call    _ZNSolsEi@plt.sec
+      lea     rsi, [mem3]; ".\n"
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-0x38]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE3endEv
+      mov     rbx, rax
+      mov     rax, [rbp-0x38]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE5beginEv
+      mov     rcx, rax
+      lea     rax, [rbp-0x40]
+      mov     rdx, rax
+      mov     rsi, rbx
+      mov     rdi, rcx
+      call    _ZSt4findIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEES3_ET_S9_S9_RKT0_
+      mov     [rbp-0x28], rax
+      mov     rax, [rbp-0x38]
+      mov     rbx, [rax]
+      lea     rdx, [rbp-0x28]
+      lea     rax, [rbp-0x20]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZN9__gnu_cxx17__normal_iteratorIPKP4BeerSt6vectorIS2_SaIS2_EEEC2IPS2_EERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameISB_SA_E7__valueES7_E6__typeEEE
+      mov     rax, [rbp-0x20]
+      mov     rsi, rax
+      mov     rdi, rbx
+      call    _ZNSt6vectorIP4BeerSaIS1_EE5eraseEN9__gnu_cxx17__normal_iteratorIPKS1_S3_EE
+      mov     rbx, [rbp-0x40]
+      test    rbx, rbx
+      je      block2
+    block1:
+      mov     rdi, rbx
+      call    _ZN4BeerD2Ev
+      mov     esi, 0x48
+      mov     rdi, rbx
+      call    _ZdlPvm@plt.sec
+    block2:
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block4
+    block3:
+      call    __stack_chk_fail@plt.sec
+    block4:
+      add     rsp, 0x38
+      pop     rbx
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE0_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE0_clEv:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x10
+      mov     [rbp-8], rdi
+      lea     rsi, [mem1]; "That's not an option.\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      leave
+      ret
+"_ZZ4mainENKUlvE1_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE1_clEv:
+      push    rbp
+      mov     rbp, rsp
+      push    r12
+      push    rbx
+      sub     rsp, 0x20
+      mov     [rbp-0x28], rdi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      mov     [rbp-0x1c], 1
+      lea     rax, [rbp-0x1c]
+      mov     r12, rax
+      mov     rax, [rbp-0x28]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE3endEv
+      mov     rbx, rax
+      mov     rax, [rbp-0x28]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE5beginEv
+      mov     rdx, r12
+      mov     rsi, rbx
+      mov     rdi, rax
+      call    _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE1_clEvEUlS3_E_ET0_T_SC_SB_
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block2
+    block1:
+      call    __stack_chk_fail@plt.sec
+    block2:
+      add     rsp, 0x20
+      pop     rbx
+      pop     r12
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE2_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE2_clEv:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x20
+      mov     [rbp-0x18], rdi
+      lea     rsi, [mem1]; "Choose a beer:\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE1_clEv
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax+8]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE_clEv
+      mov     [rbp-8], rax
+      cmp     [rbp-8], 0
+      je      block3
+    block1:
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax+0x10]
+      mov     rdi, rax
+      call    _ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv
+      cmp     [rbp-8], rax
+      ja      block3
+    block2:
+      mov     eax, 1
+      jmp     block4
+    block3:
+      mov     eax, 0
+    block4:
+      test    al, al
+      je      block6
+    block5:
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax+0x10]
+      mov     rdx, [rbp-8]
+      sub     rdx, 1
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EEixEm
+      mov     rax, [rax]
+      jmp     block7
+    block6:
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax+0x18]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE0_clEv
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax+0x20]
+      mov     rdi, rax
+      call    _ZNKSt8functionIFP4BeervEEclEv
+    block7:
+      leave
+      ret
+"_ZZ4mainENKUlvE3_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE3_clEv:
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x28
+      mov     [rbp-0x28], rdi
+      mov     [rbp-0x30], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      lea     rsi, [mem1]; "What sort of beer is this?\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     [rbp-0x20], 0
+    block1:
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv
+      cmp     [rbp-0x20], rax
+      setb    al
+      test    al, al
+      je      block3
+    block2:
+      mov     edi, 4
+      call    _ZSt4setwi
+      mov     esi, eax
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw@plt.sec
+      mov     rdx, rax
+      mov     rax, [rbp-0x20]
+      add     rax, 1
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNSolsEm@plt.sec
+      lea     rsi, [mem2]; ") "
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rbx, rax
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax]
+      mov     rdx, [rbp-0x20]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm
+      mov     rsi, rax
+      mov     rdi, rbx
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      mov     esi, 0xa
+      mov     rdi, rax
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@plt.sec
+      add     [rbp-0x20], 1
+      jmp     block1
+    block3:
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax+8]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE_clEv
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax+0x10]
+      mov     rax, [rax]
+      test    rax, rax
+      je      block6
+    block4:
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax+0x10]
+      mov     rbx, [rax]
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv
+      cmp     rbx, rax
+      ja      block6
+    block5:
+      mov     eax, 1
+      jmp     block7
+    block6:
+      mov     eax, 0
+    block7:
+      test    al, al
+      je      block9
+    block8:
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax]
+      mov     rdx, [rbp-0x30]
+      mov     rdx, [rdx+0x10]
+      mov     rdx, [rdx]
+      sub     rdx, 1
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm
+      mov     rdx, rax
+      mov     rax, [rbp-0x28]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS4_@plt.sec
+      jmp     block10
+    block9:
+      mov     rax, [rbp-0x30]
+      mov     rax, [rax+0x18]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE0_clEv
+      mov     rax, [rbp-0x30]
+      mov     rdx, [rax+0x20]
+      mov     rax, [rbp-0x28]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv
+    block10:
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block12
+    block11:
+      call    __stack_chk_fail@plt.sec
+    block12:
+      mov     rax, [rbp-0x28]
+      add     rsp, 0x28
+      pop     rbx
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE4_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE4_clEv:
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x28
+      mov     [rbp-0x28], rdi
+      mov     [rbp-0x30], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      mov     rax, [rbp-0x28]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@plt.sec
+      lea     rsi, [mem1]; "What's this beer called?\n> "
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-0x28]
+      mov     rsi, rax
+      lea     rdi, [_ZSt3cin]
+      call    _ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      jmp     block2
+    block1:
+      endbr64
+      mov     rbx, rax
+      mov     rax, [rbp-0x28]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, rbx
+      mov     rdi, rax
+      call    _Unwind_Resume@plt.sec
+    block2:
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block4
+    block3:
+      call    __stack_chk_fail@plt.sec
+    block4:
+      mov     rax, [rbp-0x28]
+      add     rsp, 0x28
+      pop     rbx
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE6_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE6_clEv:
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x18
+      mov     [rbp-0x18], rdi
+      lea     rsi, [mem1]; "A week goes by...\n\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE3endEv
+      mov     rbx, rax
+      mov     rax, [rbp-0x18]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE5beginEv
+      mov     rsi, rbx
+      mov     rdi, rax
+      call    _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE6_clEvEUlS3_E_ET0_T_SC_SB_
+      add     rsp, 0x18
+      pop     rbx
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE8_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE8_clEv:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x10
+      mov     [rbp-8], rdi
+      lea     rsi, [mem1]; "And one for the road!\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     edi, 0
+      call    exit@plt.sec
+"_ZZ4mainENKUlvE9_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE9_clEv:
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x48
+      mov     [rbp-0x48], rdi
+      mov     [rbp-0x50], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      lea     rsi, [mem1]; "What would you like to do thi..."
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      lea     rsi, [mem2]; "   1) Create a Beer\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      lea     rsi, [mem3]; "   2) View your Beers\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      lea     rsi, [mem4]; "   3) Sell a Beer\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      lea     rsi, [mem5]; "   4) Drink some Beer\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      lea     rsi, [mem6]; "   5) Exit\n"
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-0x50]
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    _ZZ4mainENKUlvE_clEv
+      mov     [rbp-0x38], rax
+      cmp     [rbp-0x38], 0
+      je      block14
+    block1:
+      cmp     [rbp-0x38], 5
+      ja      block14
+    block2:
+      cmp     [rbp-0x38], 1
+      jne     block4
+    block3:
+      mov     edi, 0x48
+      call    _Znwm@plt.sec
+      mov     rbx, rax
+      mov     [rbx], 0
+      mov     [rbx+8], 0
+      mov     [rbx+0x10], 0
+      mov     [rbx+0x18], 0
+      mov     [rbx+0x20], 0
+      mov     [rbx+0x28], 0
+      mov     [rbx+0x30], 0
+      mov     [rbx+0x38], 0
+      mov     [rbx+0x40], 0
+      mov     rdi, rbx
+      call    _ZN4BeerC1Ev
+      mov     [rbp-0x40], rbx
+      mov     rax, [rbp-0x50]
+      mov     rax, [rax+8]
+      lea     rdx, [rbp-0x40]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt6vectorIP4BeerSaIS1_EE9push_backERKS1_
+      mov     rax, [rbp-0x50]
+      mov     rcx, [rax+0x10]
+      lea     rax, [rbp-0x30]
+      lea     rdx, [rbp-0x40]
+      mov     rsi, rcx
+      mov     rdi, rax
+      call    _ZSt4bindIRZ4mainEUlP4BeerE5_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_
+      lea     rdx, [rbp-0x30]
+      mov     rax, [rbp-0x48]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE5_S5_EEvvEET_
+      jmp     block15
+    block4:
+      cmp     [rbp-0x38], 5
+      jne     block6
+    block5:
+      mov     rax, [rbp-0x48]
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2IZ4mainEUlvE8_vvEET_
+      jmp     block15
+    block6:
+      mov     rax, [rbp-0x50]
+      mov     rax, [rax+8]
+      mov     rdi, rax
+      call    _ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv
+      test    rax, rax
+      sete    al
+      test    al, al
+      je      block8
+    block7:
+      mov     rax, [rbp-0x48]
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE_vvEET_
+      jmp     block15
+    block8:
+      cmp     [rbp-0x38], 2
+      jne     block10
+    block9:
+      mov     rax, [rbp-0x50]
+      mov     rax, [rax+0x20]
+      mov     rdx, rax
+      mov     rax, [rbp-0x48]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE0_vvEET_
+      jmp     block15
+    block10:
+      cmp     [rbp-0x38], 3
+      jne     block12
+    block11:
+      mov     rax, [rbp-0x50]
+      mov     rax, [rax+0x28]
+      mov     rdi, rax
+      call    _ZNKSt8functionIFP4BeervEEclEv
+      mov     [rbp-0x40], rax
+      mov     rax, [rbp-0x50]
+      mov     rcx, [rax+0x30]
+      lea     rax, [rbp-0x30]
+      lea     rdx, [rbp-0x40]
+      mov     rsi, rcx
+      mov     rdi, rax
+      call    _ZSt4bindIRZ4mainEUlP4BeerE7_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_
+      lea     rdx, [rbp-0x30]
+      mov     rax, [rbp-0x48]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE7_S5_EEvvEET_
+      jmp     block15
+    block12:
+      cmp     [rbp-0x38], 4
+      jne     block14
+    block13:
+      mov     rax, [rbp-0x48]
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE1_vvEET_
+      jmp     block15
+    block14:
+      mov     rax, [rbp-0x48]
+      mov     rdi, rax
+      call    _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE2_vvEET_
+    block15:
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block17
+    block16:
+      call    __stack_chk_fail@plt.sec
+    block17:
+      mov     rax, [rbp-0x48]
+      add     rsp, 0x48
+      pop     rbx
+      pop     rbp
+      ret
+"_ZZ4mainENKUlvE_clEv":
+  "asm": |
+    _ZZ4mainENKUlvE_clEv:
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x10
+      mov     [rbp-8], rdi
+      lea     rsi, [mem1]; "> "
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rax, [rbp-8]
+      mov     rax, [rax]
+      mov     rsi, rax
+      lea     rdi, [_ZSt3cin]
+      call    _ZNSirsERm@plt.sec
+      lea     rdi, [mem2]
+      call    _ZNKSt9basic_iosIcSt11char_traitsIcEE3eofEv@plt.sec
+      test    al, al
+      je      block2
+    block1:
+      mov     esi, 0xa
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c@plt.sec
+      mov     edi, 2
+      call    exit@plt.sec
+    block2:
+      mov     esi, 0
+      lea     rdi, [mem2]
+      call    _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate@plt.sec
+      mov     edx, 0xa
+      mov     esi, 0x64
+      lea     rdi, [_ZSt3cin]
+      call    _ZNSi6ignoreEli@plt.sec
+      mov     rax, [rbp-8]
+      mov     rax, [rax]
+      mov     rax, [rax]
+      leave
+      ret

@@ -1,0 +1,1379 @@
+"_ZZ4mainENKUlP4BeerE5_clES0_":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    void var_38
+    std::function<std::__cxx...td::allocator<char> > ()>::operator()(&var_38, *arg1)
+    __gnu_cxx::__normal_iterator<Beer**, std::vector<Beer*, std::allocator<Beer*> > >* rsi
+    std::__cxx11::basic_stri...r>, std::allocator<char> >::operator=(rsi + 0x20)
+    std::__cxx11::basic_stri...std::allocator<char> >::~basic_string()
+    *(arg1 + 8)
+    main::'lambda4'()::operator()(&var_38)
+    std::__cxx11::basic_stri...r>, std::allocator<char> >::operator=(rsi)
+    std::__cxx11::basic_stri...std::allocator<char> >::~basic_string()
+    *(rsi + 0x40) = 0
+    std::basic_ostream<char, std::char_traits<char> >* rax_12 = std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::operator<<<std::char_traits<char> >(std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::operator<<<std::char_traits<char> >(std::cout, "You brew up a "), rsi + 0x20), " called "), rsi)
+    std::operator<<<std::char_traits<char> >(rax_12, 0x8057)
+    int64_t rax_14 = rax ^ *(fsbase + 0x28)
+    if (rax_14 == 0)
+        return rax_14
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x40
+      [rbp - 0x38 {var_40}].q = rdi
+      [rbp - 0x40 {var_48}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 8 {var_10}].q = rax
+      eax = 0
+      rax = [rbp - 0x38 {var_40}].q
+      rdx = [rax].q
+      rax = rbp - 0x30 {var_38}
+      rsi = rdx
+      rdi = rax {var_38}
+      call(_ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv)
+      rax = [rbp - 0x40 {var_48}].q
+      rdx = rax + 0x20
+      rax = rbp - 0x30 {var_38}
+      rsi = rax {var_38}
+      rdi = rdx
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_)
+      rax = rbp - 0x30 {var_38}
+      rdi = rax {var_38}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev)
+      rax = [rbp - 0x38 {var_40}].q
+      rdx = [rax + 8].q
+      rax = rbp - 0x30 {var_38}
+      rsi = rdx
+      rdi = rax {var_38}
+      call(_ZZ4mainENKUlvE4_clEv)
+      rax = [rbp - 0x40 {var_48}].q
+      rdx = rbp - 0x30 {var_38}
+      rsi = rdx {var_38}
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_)
+      rax = rbp - 0x30 {var_38}
+      rdi = rax {var_38}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev)
+      rax = [rbp - 0x40 {var_48}].q
+      [rax + 0x40].d = 0
+      rsi = 0x80a5
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rdx = rax
+      rax = [rbp - 0x40 {var_48}].q
+      rax = rax + 0x20
+      rsi = rax
+      rdi = rdx
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      rsi = 0x804e
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rdx = rax
+      rax = [rbp - 0x40 {var_48}].q
+      rsi = rax
+      rdi = rdx
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      rsi = 0x8057
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 8 {var_10}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block2 else block3
+    block2:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block3:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_40 = arg1
+      var_48 = rsi
+      rax = [fsbase + 0x28].q
+      var_10 = rax
+      rax_1 = var_40
+      rdx = [rax_1].q
+      rsi_1 = rdx
+      rdi = &var_38
+      _ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv(rdi, rsi_1)
+      rax_2 = var_48
+      rdx_1 = rax_2 + 0x20
+      rdi_1 = rdx_1
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_(rdi_1)
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev()
+      rax_3 = var_40
+      rdx_2 = [rax_3 + 8].q
+      rsi_2 = rdx_2
+      rdi_2 = &var_38
+      _ZZ4mainENKUlvE4_clEv(rdi_2)
+      rax_4 = var_48
+      rdi_3 = rax_4
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEaSEOS4_(rdi_3)
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev()
+      rax_5 = var_48
+      [rax_5 + 0x40].d = 0
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "You brew up a ")
+      rdx_3 = rax_6
+      rax_7 = var_48
+      rax_8 = rax_7 + 0x20
+      rsi_3 = rax_8
+      rdi_4 = rdx_3
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(rdi_4, rsi_3)
+      rdi_5 = rax_9
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(rdi_5, " called ")
+      rdx_4 = rax_10
+      rax_11 = var_48
+      rsi_4 = rax_11
+      rdi_6 = rdx_4
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(rdi_6, rsi_4)
+      rdi_7 = rax_12
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(rdi_7, 0x8057)
+      rax_13 = var_10
+      rax_14 = rax_13 ^ [fsbase + 0x28].q
+      if (rax_14 == 0) block2 else block3
+    block2:
+      return rax_14
+    block3:
+      __stack_chk_fail()
+      noreturn
+"_ZZ4mainENKUlP4BeerE7_clES0_":
+  "hlil": |-
+    __gnu_cxx::__normal_iterator<Beer**, std::vector<Beer*, std::allocator<Beer*> > >* rsi
+    __gnu_cxx::__normal_iterator<Beer**, std::vector<Beer*, std::allocator<Beer*> > >* var_48 = rsi
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    std::basic_ostream<char, std::char_traits<char> >* rax_7 = std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::operator<<<std::char_traits<char> >(std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::operator<<<std::char_traits<char> >(std::cout, "You sell your "), var_48), 0x20), var_48 + 0x20)
+    *(var_48 + 0x40)
+    std::operator<<<std::char_traits<char> >(std::ostream::operator<<(std::operator<<<std::char_traits<char> >(rax_7, " for $")), 0x8057)
+    int64_t rax_20 = std::find<__gnu_cxx::__n...r*, std::allocator<Beer*> > >, Beer*>(std::vector<Beer*, std::allocator<Beer*> >::begin(*arg1), std::vector<Beer*, std::allocator<Beer*> >::end(*arg1), &var_48)
+    int64_t var_30 = rax_20
+    int64_t* rbx_1 = *arg1
+    int64_t var_28
+    _ZN9__gnu_cxx17__normal_...e_sameISB_SA_E7__valueES7_E6__typeEEE(&var_28, &var_30)
+    std::vector<Beer*, std::allocator<Beer*> >::erase(rbx_1)
+    __gnu_cxx::__normal_iterator<Beer**, std::vector<Beer*, std::allocator<Beer*> > >* rbx_2 = var_48
+    if (rbx_2 != 0)
+        Beer::~Beer(rbx_2)
+        operator delete(rbx_2, 0x48)
+    int64_t rax_24 = rax ^ *(fsbase + 0x28)
+    if (rax_24 == 0)
+        return rax_24
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x38
+      [rbp - 0x38 {var_40}].q = rdi
+      [rbp - 0x40 {var_48}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rsi = 0x80c8
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rdx = [rbp - 0x40 {var_48}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      esi = 0x20
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c)
+      rdx = rax
+      rax = [rbp - 0x40 {var_48}].q
+      rax = rax + 0x20
+      rsi = rax
+      rdi = rdx
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      rsi = 0x80d7
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rdx = rax
+      rax = [rbp - 0x40 {var_48}].q
+      eax = [rax + 0x40].d
+      eax = eax * 0x64
+      eax = eax + 0x384
+      esi = eax
+      rdi = rdx
+      call(_ZNSolsEi)
+      rsi = 0x8057
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 0x38 {var_40}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE3endEv)
+      rbx = rax
+      rax = [rbp - 0x38 {var_40}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE5beginEv)
+      rcx = rax
+      rax = rbp - 0x40 {var_48}
+      rdx = rax {var_48}
+      rsi = rbx
+      rdi = rcx
+      call(_ZSt4findIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEES3_ET_S9_S9_RKT0_)
+      [rbp - 0x28 {var_30}].q = rax
+      rax = [rbp - 0x38 {var_40}].q
+      rbx = [rax].q
+      rdx = rbp - 0x28 {var_30}
+      rax = rbp - 0x20 {var_28}
+      rsi = rdx {var_30}
+      rdi = rax {var_28}
+      call(_ZN9__gnu_cxx17__normal_iteratorIPKP4BeerSt6vectorIS2_SaIS2_EEEC2IPS2_EERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameISB_SA_E7__valueES7_E6__typeEEE)
+      rax = [rbp - 0x20 {var_28}].q
+      rsi = rax
+      rdi = rbx
+      call(_ZNSt6vectorIP4BeerSaIS1_EE5eraseEN9__gnu_cxx17__normal_iteratorIPKS1_S3_EE)
+      rbx = [rbp - 0x40 {var_48}].q
+      if (rbx == 0) block2 else block3
+    block2:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block4 else block5
+    block3:
+      rdi = rbx
+      call(_ZN4BeerD2Ev)
+      esi = 0x48
+      rdi = rbx
+      call(_ZdlPvm)
+      goto block2
+    block4:
+      rsp = rsp + 0x38
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block5:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_40 = arg1
+      var_48 = rsi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = 0
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "You sell your ")
+      rdx = var_48
+      rsi_1 = rdx
+      rdi = rax_2
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(rdi, rsi_1)
+      rdi_1 = rax_3
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c(rdi_1, 0x20)
+      rdx_1 = rax_4
+      rax_5 = var_48
+      rax_6 = rax_5 + 0x20
+      rsi_2 = rax_6
+      rdi_2 = rdx_1
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(rdi_2, rsi_2)
+      rdi_3 = rax_7
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(rdi_3, " for $")
+      rdx_2 = rax_8
+      rax_9 = var_48
+      rax_10 = [rax_9 + 0x40].d
+      rax_11 = rax_10 * 0x64
+      rax_12 = rax_11 + 0x384
+      rsi_3 = zx.q(rax_12)
+      rdi_4 = rdx_2
+      _ZNSolsEi(rdi_4)
+      rdi_5 = rax_13
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(rdi_5, 0x8057)
+      rax_14 = var_40
+      rax_15 = [rax_14].q
+      rdi_6 = rax_15
+      _ZNSt6vectorIP4BeerSaIS1_EE3endEv(rdi_6)
+      rbx = rax_16
+      rax_17 = var_40
+      rax_18 = [rax_17].q
+      rdi_7 = rax_18
+      _ZNSt6vectorIP4BeerSaIS1_EE5beginEv(rdi_7)
+      rcx = rax_19
+      rdx_3 = &var_48
+      rsi_4 = rbx
+      rdi_8 = rcx
+      _ZSt4findIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEES3_ET_S9_S9_RKT0_(rdi_8, rsi_4, rdx_3)
+      var_30 = rax_20
+      rax_21 = var_40
+      rbx_1 = [rax_21].q
+      rsi_5 = &var_30
+      rdi_9 = &var_28
+      _ZN9__gnu_cxx17__normal_iteratorIPKP4BeerSt6vectorIS2_SaIS2_EEEC2IPS2_EERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameISB_SA_E7__valueES7_E6__typeEEE(rdi_9, rsi_5)
+      rax_22 = var_28
+      rsi_6 = rax_22
+      rdi_10 = rbx_1
+      _ZNSt6vectorIP4BeerSaIS1_EE5eraseEN9__gnu_cxx17__normal_iteratorIPKS1_S3_EE(rdi_10)
+      rbx_2 = var_48
+      if (rbx_2 == 0) block2 else block3
+    block2:
+      rax_23 = var_20
+      rax_24 = rax_23 ^ [fsbase + 0x28].q
+      if (rax_24 == 0) block4 else block5
+    block3:
+      rdi_11 = rbx_2
+      _ZN4BeerD2Ev(rdi_11)
+      rdi_12 = rbx_2
+      _ZdlPvm(rdi_12, 0x48)
+      goto block2
+    block4:
+      return rax_24
+    block5:
+      __stack_chk_fail()
+      noreturn
+"_ZZ4mainENKUlvE0_clEv":
+  "hlil": |-
+    return std::operator<<<std::char_traits<char> >(std::cout, "That's not an option.\n")
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x10
+      [rbp - 8 {var_10}].q = rdi
+      rsi = 0x8027
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_10 = rdi
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "That's not an option.\n")
+      return rax
+"_ZZ4mainENKUlvE1_clEv":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    int32_t var_24 = 1
+    int64_t* rdi
+    std::for_each<__gnu_cxx:...:operator()() const::'lambda'(Beer*)>(std::vector<Beer*, std::allocator<Beer*> >::begin(*rdi), std::vector<Beer*, std::allocator<Beer*> >::end(*rdi), &var_24)
+    int64_t rax_8 = rax ^ *(fsbase + 0x28)
+    if (rax_8 == 0)
+        return rax_8
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(r12)
+      push(rbx)
+      rsp = rsp - 0x20
+      [rbp - 0x28 {var_30}].q = rdi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      [rbp - 0x1c {var_24}].d = 1
+      rax = rbp - 0x1c {var_24}
+      r12 = rax {var_24}
+      rax = [rbp - 0x28 {var_30}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE3endEv)
+      rbx = rax
+      rax = [rbp - 0x28 {var_30}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE5beginEv)
+      rdx = r12 {var_24}
+      rsi = rbx
+      rdi = rax
+      call(_ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE1_clEvEUlS3_E_ET0_T_SC_SB_)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block2 else block3
+    block2:
+      rsp = rsp + 0x20
+      rbx = pop
+      r12 = pop
+      rbp = pop
+      <return> jump(pop)
+    block3:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_30 = rdi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      var_24 = 1
+      rax_1 = var_30
+      rax_2 = [rax_1].q
+      rdi_1 = rax_2
+      _ZNSt6vectorIP4BeerSaIS1_EE3endEv(rdi_1)
+      rbx = rax_3
+      rax_4 = var_30
+      rax_5 = [rax_4].q
+      rdi_2 = rax_5
+      _ZNSt6vectorIP4BeerSaIS1_EE5beginEv(rdi_2)
+      rdx = &var_24
+      rsi = rbx
+      rdi_3 = rax_6
+      _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE1_clEvEUlS3_E_ET0_T_SC_SB_(rdi_3, rsi, rdx)
+      rax_7 = var_20
+      rax_8 = rax_7 ^ [fsbase + 0x28].q
+      if (rax_8 == 0) block2 else block3
+    block2:
+      return rax_8
+    block3:
+      __stack_chk_fail()
+      noreturn
+"_ZZ4mainENKUlvE2_clEv":
+  "hlil": |-
+    std::operator<<<std::char_traits<char> >(std::cout, "Choose a beer:\n")
+    int64_t* rdi
+    *rdi
+    main::'lambda1'()::operator()()
+    int64_t rax_4 = main::'lambda'()::operator()(*(rdi + 8))
+    int64_t rax_7
+    char rax_8
+    if (rax_4 != 0)
+        rax_7 = std::vector<Beer*, std::allocator<Beer*> >::size(*(rdi + 0x10))
+        if (rax_4 u<= rax_7)
+            rax_8 = 1
+    if (rax_4 == 0 || (rax_4 != 0 && rax_4 u> rax_7))
+        rax_8 = 0
+    int64_t rax_12
+    if (rax_8 == 0)
+        *(rdi + 0x18)
+        main::'lambda0'()::operator()()
+        rax_12 = std::function<Beer* ()>::operator()(*(rdi + 0x20))
+    else
+        rax_12 = *std::vector<Beer*, std::allocator<Beer*> >::operator[](*(rdi + 0x10), rax_4 - 1)
+    return rax_12
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x20
+      [rbp - 0x18 {var_20}].q = rdi
+      rsi = 0x805a
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE1_clEv)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax + 8].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE_clEv)
+      [rbp - 8 {var_10}].q = rax
+      if ([rbp - 8].q == 0) block2 else block3
+    block2:
+      eax = 0
+      goto block4
+    block3:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax + 0x10].q
+      rdi = rax
+      call(_ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv)
+      if ([rbp - 8].q u> rax) block2 else block5
+    block4:
+      if (al == 0) block6 else block7
+    block5:
+      eax = 1
+      goto block4
+    block6:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax + 0x18].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE0_clEv)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax + 0x20].q
+      rdi = rax
+      call(_ZNKSt8functionIFP4BeervEEclEv)
+      goto block8
+    block7:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax + 0x10].q
+      rdx = [rbp - 8 {var_10}].q
+      rdx = rdx - 1
+      rsi = rdx
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EEixEm)
+      rax = [rax].q
+      goto block8
+    block8:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_20 = rdi
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "Choose a beer:\n")
+      rax = var_20
+      rax_1 = [rax].q
+      rdi_1 = rax_1
+      _ZZ4mainENKUlvE1_clEv()
+      rax_2 = var_20
+      rax_3 = [rax_2 + 8].q
+      rdi_2 = rax_3
+      _ZZ4mainENKUlvE_clEv(rdi_2)
+      var_10 = rax_4
+      if (var_10 == 0) block2 else block3
+    block2:
+      rax_8 = 0
+      goto block4
+    block3:
+      rax_5 = var_20
+      rax_6 = [rax_5 + 0x10].q
+      rdi_3 = rax_6
+      _ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv(rdi_3)
+      if (var_10 u> rax_7) block2 else block5
+    block4:
+      if (rax_8 == 0) block6 else block7
+    block5:
+      rax_8 = 1
+      goto block4
+    block6:
+      rax_13 = var_20
+      rax_14 = [rax_13 + 0x18].q
+      rdi_5 = rax_14
+      _ZZ4mainENKUlvE0_clEv()
+      rax_15 = var_20
+      rax_16 = [rax_15 + 0x20].q
+      rdi_6 = rax_16
+      _ZNKSt8functionIFP4BeervEEclEv(rdi_6)
+      goto block8
+    block7:
+      rax_9 = var_20
+      rax_10 = [rax_9 + 0x10].q
+      rdx_1 = var_10
+      rdx_2 = rdx_1 - 1
+      rsi_1 = rdx_2
+      rdi_4 = rax_10
+      _ZNSt6vectorIP4BeerSaIS1_EEixEm(rdi_4, rsi_1)
+      rax_12 = [rax_11].q
+      goto block8
+    block8:
+      return rax_12
+"_ZZ4mainENKUlvE3_clEv":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    std::operator<<<std::char_traits<char> >(std::cout, "What sort of beer is this?\n")
+    int64_t var_28 = 0
+    int64_t* rsi
+    while (true)
+        int64_t rax_4 = std::vector<std::__cxx11...ar>, std::allocator<char> > > >::size(*rsi)
+        var_28 - rax_4
+        rax_4.b = var_28 u< rax_4
+        if (rax_4.b == 0)
+            break
+        std::operator<<<std::char_traits<char> >(std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::operator<<<std::char_traits<char> >(std::ostream::operator<<(std::operator<<<char, std::char_traits<char> >(std::cout, zx.q(std::setw(4)))), 0x8086), std::vector<std::__cxx11...td::allocator<char> > > >::operator[](*rsi, var_28)), 0xa)
+        var_28 = var_28 + 1
+    main::'lambda'()::operator()(*(rsi + 8))
+    int64_t rax_24
+    char rax_25
+    int64_t rbx_2
+    if (**(rsi + 0x10) != 0)
+        rbx_2 = **(rsi + 0x10)
+        rax_24 = std::vector<std::__cxx11...ar>, std::allocator<char> > > >::size(*rsi)
+        if (rbx_2 u<= rax_24)
+            rax_25 = 1
+    if (**(rsi + 0x10) == 0 || (**(rsi + 0x10) != 0 && rbx_2 u> rax_24))
+        rax_25 = 0
+    __gnu_cxx::__normal_iterator<Beer**, std::vector<Beer*, std::allocator<Beer*> > >* rdi
+    if (rax_25 == 0)
+        *(rsi + 0x18)
+        main::'lambda0'()::operator()()
+        std::function<std::__cxx...td::allocator<char> > ()>::operator()(rdi, *(rsi + 0x20))
+    else
+        std::vector<std::__cxx11...td::allocator<char> > > >::operator[](*rsi, **(rsi + 0x10) - 1)
+        std::__cxx11::basic_stri... std::allocator<char> >::basic_string(rdi)
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return rdi
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x28
+      [rbp - 0x28 {var_30}].q = rdi
+      [rbp - 0x30 {var_38}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rsi = 0x806a
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      [rbp - 0x20 {var_28}].q = 0
+      goto block2
+    block2:
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv)
+      temp0.q = [rbp - 0x20 {var_28}].q
+      [rbp - 0x20 {var_28}].q - rax
+      flag:c = temp0.q u< rax
+      al = flag:c
+      if (al == 0) block3 else block4
+    block3:
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax + 8].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE_clEv)
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax + 0x10].q
+      rax = [rax].q
+      if (rax == 0) block5 else block6
+    block4:
+      edi = 4
+      call(_ZSt4setwi)
+      esi = eax
+      rdi = 0xe040
+      call(_ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw)
+      rdx = rax
+      rax = [rbp - 0x20 {var_28}].q
+      rax = rax + 1
+      rsi = rax
+      rdi = rdx
+      call(_ZNSolsEm)
+      rsi = 0x8086
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rbx = rax
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax].q
+      rdx = [rbp - 0x20 {var_28}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm)
+      rsi = rax
+      rdi = rbx
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      esi = 0xa
+      rdi = rax
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c)
+      [rbp - 0x20 {var_28}].q = [rbp - 0x20 {var_28}].q + 1
+      goto block2
+    block5:
+      eax = 0
+      goto block7
+    block6:
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax + 0x10].q
+      rbx = [rax].q
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv)
+      if (rbx u> rax) block5 else block8
+    block7:
+      if (al == 0) block9 else block10
+    block8:
+      eax = 1
+      goto block7
+    block9:
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax + 0x18].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE0_clEv)
+      rax = [rbp - 0x30 {var_38}].q
+      rdx = [rax + 0x20].q
+      rax = [rbp - 0x28 {var_30}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv)
+      goto block11
+    block10:
+      rax = [rbp - 0x30 {var_38}].q
+      rax = [rax].q
+      rdx = [rbp - 0x30 {var_38}].q
+      rdx = [rdx + 0x10].q
+      rdx = [rdx].q
+      rdx = rdx - 1
+      rsi = rdx
+      rdi = rax
+      call(_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm)
+      rdx = rax
+      rax = [rbp - 0x28 {var_30}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS4_)
+      goto block11
+    block11:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block12 else block13
+    block12:
+      rax = [rbp - 0x28 {var_30}].q
+      rsp = rsp + 0x28
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block13:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_30 = rdi
+      var_38 = rsi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = 0
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "What sort of beer is this?\n")
+      var_28 = 0
+      goto block2
+    block2:
+      rax_2 = var_38
+      rax_3 = [rax_2].q
+      rdi_1 = rax_3
+      _ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv(rdi_1)
+      temp0_1 = var_28
+      var_28 - rax_4
+      c_1 = temp0_1 u< rax_4
+      rax_4.al = c_1
+      if (rax_4.al == 0) block3 else block4
+    block3:
+      rax_15 = var_38
+      rax_16 = [rax_15 + 8].q
+      rdi_7 = rax_16
+      _ZZ4mainENKUlvE_clEv(rdi_7)
+      rax_17 = var_38
+      rax_18 = [rax_17 + 0x10].q
+      rax_19 = [rax_18].q
+      if (rax_19 == 0) block5 else block6
+    block4:
+      _ZSt4setwi(4)
+      rsi_1 = zx.q(rax_5)
+      _ZStlsIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_St5_Setw(0xe040, rsi_1)
+      rdx_1 = rax_6
+      rax_7 = var_28
+      rax_8 = rax_7 + 1
+      rsi_2 = rax_8
+      rdi_2 = rdx_1
+      _ZNSolsEm(rdi_2)
+      rdi_3 = rax_9
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(rdi_3, 0x8086)
+      rbx_1 = rax_10
+      rax_11 = var_38
+      rax_12 = [rax_11].q
+      rdx_2 = var_28
+      rsi_3 = rdx_2
+      rdi_4 = rax_12
+      _ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm(rdi_4, rsi_3)
+      rsi_4 = rax_13
+      rdi_5 = rbx_1
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(rdi_5, rsi_4)
+      rdi_6 = rax_14
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c(rdi_6, 0xa)
+      var_28 = var_28 + 1
+      goto block2
+    block5:
+      rax_25 = 0
+      goto block7
+    block6:
+      rax_20 = var_38
+      rax_21 = [rax_20 + 0x10].q
+      rbx_2 = [rax_21].q
+      rax_22 = var_38
+      rax_23 = [rax_22].q
+      rdi_8 = rax_23
+      _ZNKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE4sizeEv(rdi_8)
+      if (rbx_2 u> rax_24) block5 else block8
+    block7:
+      if (rax_25 == 0) block9 else block10
+    block8:
+      rax_25 = 1
+      goto block7
+    block9:
+      rax_30 = var_38
+      rax_31 = [rax_30 + 0x18].q
+      rdi_11 = rax_31
+      _ZZ4mainENKUlvE0_clEv()
+      rax_32 = var_38
+      rdx_8 = [rax_32 + 0x20].q
+      rax_33 = var_30
+      rsi_7 = rdx_8
+      rdi_12 = rax_33
+      _ZNKSt8functionIFNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEvEEclEv(rdi_12, rsi_7)
+      goto block11
+    block10:
+      rax_26 = var_38
+      rax_27 = [rax_26].q
+      rdx_3 = var_38
+      rdx_4 = [rdx_3 + 0x10].q
+      rdx_5 = [rdx_4].q
+      rdx_6 = rdx_5 - 1
+      rsi_5 = rdx_6
+      rdi_9 = rax_27
+      _ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEixEm(rdi_9, rsi_5)
+      rdx_7 = rax_28
+      rax_29 = var_30
+      rsi_6 = rdx_7
+      rdi_10 = rax_29
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1ERKS4_(rdi_10)
+      goto block11
+    block11:
+      rax_34 = var_20
+      rax_35 = rax_34 ^ [fsbase + 0x28].q
+      if (rax_35 == 0) block12 else block13
+    block12:
+      rax_36 = var_30
+      return rax_36
+    block13:
+      __stack_chk_fail()
+      noreturn
+"_ZZ4mainENKUlvE4_clEv":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    std::__cxx11::basic_stri... std::allocator<char> >::basic_string()
+    std::operator<<<std::char_traits<char> >(std::cout, "What's this beer called?\n> ")
+    std::getline<char, std::..._traits<char>, std::allocator<char> >(std::cin, arg1)
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return arg1
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x28
+      [rbp - 0x28 {var_30}].q = rdi
+      [rbp - 0x30 {var_38}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rax = [rbp - 0x28 {var_30}].q
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev)
+      rsi = 0x8089
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 0x28 {var_30}].q
+      rsi = rax
+      rdi = 0xe160
+      call(_ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      goto block2
+    block2:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block3 else block4
+    block3:
+      rax = [rbp - 0x28 {var_30}].q
+      rsp = rsp + 0x28
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block4:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_30 = arg1
+      var_38 = rsi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = var_30
+      rdi = rax_1
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev()
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "What's this beer called?\n> ")
+      rax_2 = var_30
+      rsi_1 = rax_2
+      _ZSt7getlineIcSt11char_traitsIcESaIcEERSt13basic_istreamIT_T0_ES7_RNSt7__cxx1112basic_stringIS4_S5_T1_EE(0xe160, rsi_1)
+      goto block2
+    block2:
+      rax_3 = var_20
+      rax_4 = rax_3 ^ [fsbase + 0x28].q
+      if (rax_4 == 0) block3 else block4
+    block3:
+      rax_5 = var_30
+      return rax_5
+    block4:
+      __stack_chk_fail()
+      noreturn
+"_ZZ4mainENKUlvE6_clEv":
+  "hlil": |-
+    std::operator<<<std::char_traits<char> >(std::cout, "A week goes by...\n\n")
+    int64_t* rdi
+    int64_t rax_2 = std::vector<Beer*, std::allocator<Beer*> >::end(*rdi)
+    int64_t rax_5
+    int64_t rdx
+    rax_5, rdx = std::vector<Beer*, std::allocator<Beer*> >::begin(*rdi)
+    return std::for_each<__gnu_cxx:...:operator()() const::'lambda'(Beer*)>(rax_5, rax_2, rdx)
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x18
+      [rbp - 0x18 {var_20}].q = rdi
+      rsi = 0x80b4
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE3endEv)
+      rbx = rax
+      rax = [rbp - 0x18 {var_20}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE5beginEv)
+      rsi = rbx
+      rdi = rax
+      call(_ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE6_clEvEUlS3_E_ET0_T_SC_SB_)
+      rsp = rsp + 0x18
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_20 = rdi
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "A week goes by...\n\n")
+      rax = var_20
+      rax_1 = [rax].q
+      rdi_1 = rax_1
+      _ZNSt6vectorIP4BeerSaIS1_EE3endEv(rdi_1)
+      rbx = rax_2
+      rax_3 = var_20
+      rax_4 = [rax_3].q
+      rdi_2 = rax_4
+      _ZNSt6vectorIP4BeerSaIS1_EE5beginEv(rdi_2)
+      rsi = rbx
+      rdi_3 = rax_5
+      _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPP4BeerSt6vectorIS3_SaIS3_EEEEZZ4mainENKUlvE6_clEvEUlS3_E_ET0_T_SC_SB_(rdi_3, rsi, rdx)
+      return rax_6
+"_ZZ4mainENKUlvE8_clEv":
+  "hlil": |-
+    std::operator<<<std::char_traits<char> >(std::cout, "And one for the road!\n")
+    exit(0)
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp
+      rsp = rsp - 0x10
+      [rbp - 8 {var_10}].q = rdi
+      rsi = 0x80de
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      edi = 0
+      call(exit)
+      noreturn
+  "mlil": |-
+    block1:
+      var_8 = rbp
+      var_10 = rdi
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "And one for the road!\n")
+      exit(0)
+      noreturn
+"_ZZ4mainENKUlvE9_clEv":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    std::operator<<<std::char_traits<char> >(std::cout, "What would you like to do this w…")
+    std::operator<<<std::char_traits<char> >(std::cout, "   1) Create a Beer\n")
+    std::operator<<<std::char_traits<char> >(std::cout, "   2) View your Beers\n")
+    std::operator<<<std::char_traits<char> >(std::cout, "   3) Sell a Beer\n")
+    std::operator<<<std::char_traits<char> >(std::cout, "   4) Drink some Beer\n")
+    std::operator<<<std::char_traits<char> >(std::cout, "   5) Exit\n")
+    int64_t* rsi
+    int64_t rax_4 = main::'lambda'()::operator()(*rsi)
+    void* rdi
+    if (rax_4 == 0)
+        label_30fd:
+        std::function<void ()>::...r()() const::'lambda2'(), void, void>(rdi)
+    else
+        if (rax_4 u> 5)
+            goto label_30fd
+        int64_t var_48
+        void var_38
+        if (rax_4 == 1)
+            int64_t rax_5 = operator new(0x48)
+            *rax_5 = 0
+            *(rax_5 + 8) = 0
+            *(rax_5 + 0x10) = 0
+            *(rax_5 + 0x18) = 0
+            *(rax_5 + 0x20) = 0
+            *(rax_5 + 0x28) = 0
+            *(rax_5 + 0x30) = 0
+            *(rax_5 + 0x38) = 0
+            *(rax_5 + 0x40) = 0
+            Beer::Beer(rax_5)
+            var_48 = rax_5
+            std::vector<Beer*, std::allocator<Beer*> >::push_back(*(rsi + 8))
+            _ZSt4bindIRZ4mainEUlP4Be...EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_(&var_38, *(rsi + 0x10), &var_48)
+            std::function<void ()>::...lambda5'(Beer*) (Beer*)>, void, void>(rdi)
+        else if (rax_4 == 5)
+            std::function<void ()>::function<main::'lambda8'(), void, void>(rdi)
+        else
+            int64_t rax_13
+            rax_13.b = std::vector<Beer*, std::allocator<Beer*> >::size(*(rsi + 8)) == 0
+            if (rax_13.b != 0)
+                std::function<void ()>::...or()() const::'lambda'(), void, void>(rdi)
+            else if (rax_4 == 2)
+                *(rsi + 0x20)
+                std::function<void ()>::...r()() const::'lambda0'(), void, void>(rdi)
+            else if (rax_4 == 3)
+                var_48 = std::function<Beer* ()>::operator()(*(rsi + 0x28))
+                _ZSt4bindIRZ4mainEUlP4Be...EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_(&var_38, *(rsi + 0x30), &var_48)
+                std::function<void ()>::...lambda7'(Beer*) (Beer*)>, void, void>(rdi)
+            else
+                if (rax_4 != 4)
+                    goto label_30fd
+                std::function<void ()>::...r()() const::'lambda1'(), void, void>(rdi)
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return rdi
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x48
+      [rbp - 0x48 {var_50}].q = rdi
+      [rbp - 0x50 {var_58}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rsi = 0x8140
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsi = 0x8166
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsi = 0x817b
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsi = 0x8192
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsi = 0x81a5
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rsi = 0x81bc
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 0x50 {var_58}].q
+      rax = [rax].q
+      rdi = rax
+      call(_ZZ4mainENKUlvE_clEv)
+      [rbp - 0x38 {var_40}].q = rax
+      if ([rbp - 0x38].q == 0) block2 else block3
+    block2:
+      rax = [rbp - 0x48 {var_50}].q
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE2_vvEET_)
+      goto block4
+    block3:
+      if ([rbp - 0x38].q u> 5) block2 else block5
+    block4:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block6 else block7
+    block5:
+      if ([rbp - 0x38].q != 1) block8 else block9
+    block6:
+      rax = [rbp - 0x48 {var_50}].q
+      rsp = rsp + 0x48
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block7:
+      call(__stack_chk_fail)
+      noreturn
+    block8:
+      if ([rbp - 0x38].q != 5) block10 else block11
+    block9:
+      edi = 0x48
+      call(_Znwm)
+      rbx = rax
+      [rbx].q = 0
+      [rbx + 8].q = 0
+      [rbx + 0x10].q = 0
+      [rbx + 0x18].q = 0
+      [rbx + 0x20].q = 0
+      [rbx + 0x28].q = 0
+      [rbx + 0x30].q = 0
+      [rbx + 0x38].q = 0
+      [rbx + 0x40].q = 0
+      rdi = rbx
+      call(_ZN4BeerC1Ev)
+      [rbp - 0x40 {var_48}].q = rbx
+      rax = [rbp - 0x50 {var_58}].q
+      rax = [rax + 8].q
+      rdx = rbp - 0x40 {var_48}
+      rsi = rdx {var_48}
+      rdi = rax
+      call(_ZNSt6vectorIP4BeerSaIS1_EE9push_backERKS1_)
+      rax = [rbp - 0x50 {var_58}].q
+      rcx = [rax + 0x10].q
+      rax = rbp - 0x30 {var_38}
+      rdx = rbp - 0x40 {var_48}
+      rsi = rcx
+      rdi = rax {var_38}
+      call(_ZSt4bindIRZ4mainEUlP4BeerE5_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_)
+      rdx = rbp - 0x30 {var_38}
+      rax = [rbp - 0x48 {var_50}].q
+      rsi = rdx {var_38}
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE5_S5_EEvvEET_)
+      goto block4
+    block10:
+      rax = [rbp - 0x50 {var_58}].q
+      rax = [rax + 8].q
+      rdi = rax
+      call(_ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv)
+      al = rax == 0
+      if (al == 0) block12 else block13
+    block11:
+      rax = [rbp - 0x48 {var_50}].q
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2IZ4mainEUlvE8_vvEET_)
+      goto block4
+    block12:
+      if ([rbp - 0x38].q != 2) block14 else block15
+    block13:
+      rax = [rbp - 0x48 {var_50}].q
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE_vvEET_)
+      goto block4
+    block14:
+      if ([rbp - 0x38].q != 3) block16 else block17
+    block15:
+      rax = [rbp - 0x50 {var_58}].q
+      rax = [rax + 0x20].q
+      rdx = rax
+      rax = [rbp - 0x48 {var_50}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE0_vvEET_)
+      goto block4
+    block16:
+      if ([rbp - 0x38].q != 4) block2 else block18
+    block17:
+      rax = [rbp - 0x50 {var_58}].q
+      rax = [rax + 0x28].q
+      rdi = rax
+      call(_ZNKSt8functionIFP4BeervEEclEv)
+      [rbp - 0x40 {var_48}].q = rax
+      rax = [rbp - 0x50 {var_58}].q
+      rcx = [rax + 0x30].q
+      rax = rbp - 0x30 {var_38}
+      rdx = rbp - 0x40 {var_48}
+      rsi = rcx
+      rdi = rax {var_38}
+      call(_ZSt4bindIRZ4mainEUlP4BeerE7_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_)
+      rdx = rbp - 0x30 {var_38}
+      rax = [rbp - 0x48 {var_50}].q
+      rsi = rdx {var_38}
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE7_S5_EEvvEET_)
+      goto block4
+    block18:
+      rax = [rbp - 0x48 {var_50}].q
+      rdi = rax
+      call(_ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE1_vvEET_)
+      goto block4
+  "mlil": |-
+    block1:
+      var_50 = rdi
+      var_58 = rsi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = 0
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "What would you like to do this w…")
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "   1) Create a Beer\n")
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "   2) View your Beers\n")
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "   3) Sell a Beer\n")
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "   4) Drink some Beer\n")
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, "   5) Exit\n")
+      rax_2 = var_58
+      rax_3 = [rax_2].q
+      rdi_1 = rax_3
+      _ZZ4mainENKUlvE_clEv(rdi_1)
+      var_40 = rax_4
+      if (var_40 == 0) block2 else block3
+    block2:
+      rax_24 = var_50
+      rdi_14 = rax_24
+      _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE2_vvEET_(rdi_14)
+      goto block4
+    block3:
+      if (var_40 u> 5) block2 else block5
+    block4:
+      rax_25 = var_20
+      rax_26 = rax_25 ^ [fsbase + 0x28].q
+      if (rax_26 == 0) block6 else block7
+    block5:
+      if (var_40 != 1) block8 else block9
+    block6:
+      rax_27 = var_50
+      return rax_27
+    block7:
+      __stack_chk_fail()
+      noreturn
+    block8:
+      if (var_40 != 5) block10 else block11
+    block9:
+      _Znwm(0x48)
+      rbx_1 = rax_5
+      [rbx_1].q = 0
+      [rbx_1 + 8].q = 0
+      [rbx_1 + 0x10].q = 0
+      [rbx_1 + 0x18].q = 0
+      [rbx_1 + 0x20].q = 0
+      [rbx_1 + 0x28].q = 0
+      [rbx_1 + 0x30].q = 0
+      [rbx_1 + 0x38].q = 0
+      [rbx_1 + 0x40].q = 0
+      rdi_2 = rbx_1
+      _ZN4BeerC1Ev(rdi_2)
+      var_48 = rbx_1
+      rax_6 = var_58
+      rax_7 = [rax_6 + 8].q
+      rdi_3 = rax_7
+      _ZNSt6vectorIP4BeerSaIS1_EE9push_backERKS1_(rdi_3)
+      rax_8 = var_58
+      rcx_1 = [rax_8 + 0x10].q
+      rdx_1 = &var_48
+      rsi_1 = rcx_1
+      rdi_4 = &var_38
+      _ZSt4bindIRZ4mainEUlP4BeerE5_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_(rdi_4, rsi_1, rdx_1)
+      rax_9 = var_50
+      rdi_5 = rax_9
+      _ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE5_S5_EEvvEET_(rdi_5)
+      goto block4
+    block10:
+      rax_11 = var_58
+      rax_12 = [rax_11 + 8].q
+      rdi_7 = rax_12
+      _ZNKSt6vectorIP4BeerSaIS1_EE4sizeEv(rdi_7)
+      rax_13.al = rax_13 == 0
+      if (rax_13.al == 0) block12 else block13
+    block11:
+      rax_10 = var_50
+      rdi_6 = rax_10
+      _ZNSt8functionIFvvEEC2IZ4mainEUlvE8_vvEET_(rdi_6)
+      goto block4
+    block12:
+      if (var_40 != 2) block14 else block15
+    block13:
+      rax_14 = var_50
+      rdi_8 = rax_14
+      _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE_vvEET_(rdi_8)
+      goto block4
+    block14:
+      if (var_40 != 3) block16 else block17
+    block15:
+      rax_15 = var_58
+      rax_16 = [rax_15 + 0x20].q
+      rdx_2 = rax_16
+      rax_17 = var_50
+      rsi_2 = rdx_2
+      rdi_9 = rax_17
+      _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE0_vvEET_(rdi_9)
+      goto block4
+    block16:
+      if (var_40 != 4) block2 else block18
+    block17:
+      rax_18 = var_58
+      rax_19 = [rax_18 + 0x28].q
+      rdi_10 = rax_19
+      _ZNKSt8functionIFP4BeervEEclEv(rdi_10)
+      var_48 = rax_20
+      rax_21 = var_58
+      rcx_2 = [rax_21 + 0x30].q
+      rdx_3 = &var_48
+      rsi_3 = rcx_2
+      rdi_11 = &var_38
+      _ZSt4bindIRZ4mainEUlP4BeerE7_JRS1_EENSt12_Bind_helperIXsrSt5__or_IJSt11is_integralINSt5decayIT_E4typeEESt7is_enumISB_EEE5valueES9_JDpT0_EE4typeEOS9_DpOSG_(rdi_11, rsi_3, rdx_3)
+      rax_22 = var_50
+      rdi_12 = rax_22
+      _ZNSt8functionIFvvEEC2ISt5_BindIFZ4mainEUlP4BeerE7_S5_EEvvEET_(rdi_12)
+      goto block4
+    block18:
+      rax_23 = var_50
+      rdi_13 = rax_23
+      _ZNSt8functionIFvvEEC2IZZ4mainENKUlvE9_clEvEUlvE1_vvEET_(rdi_13)
+      goto block4
+"_ZZ4mainENKUlvE_clEv":
+  "hlil": |-
+    std::operator<<<std::char_traits<char> >(std::cout, 0x8024)
+    *arg1
+    std::istream::operator>>(std::cin)
+    if (std::basic_ios<char, std::char_traits<char> >::eof() == 0)
+        std::basic_ios<char, std::char_traits<char> >::clear(0xe170)
+        std::istream::ignore(std::cin, 0x64)
+        return **arg1
+    std::operator<<<std::char_traits<char> >(std::cout, 0xa)
+    exit(2)
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x10
+      [rbp - 8 {var_10}].q = rdi
+      rsi = 0x8024
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rax = [rbp - 8 {var_10}].q
+      rax = [rax].q
+      rsi = rax
+      rdi = 0xe160
+      call(_ZNSirsERm)
+      rdi = 0xe170
+      call(_ZNKSt9basic_iosIcSt11char_traitsIcEE3eofEv)
+      if (al == 0) block2 else block3
+    block2:
+      esi = 0
+      rdi = 0xe170
+      call(_ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate)
+      edx = 0xa
+      esi = 0x64
+      rdi = 0xe160
+      call(_ZNSi6ignoreEli)
+      rax = [rbp - 8 {var_10}].q
+      rax = [rax].q
+      rax = [rax].q
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block3:
+      esi = 0xa
+      rdi = 0xe040
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c)
+      edi = 2
+      call(exit)
+      noreturn
+  "mlil": |-
+    block1:
+      var_10 = arg1
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0xe040, 0x8024)
+      rax = var_10
+      rax_1 = [rax].q
+      rsi = rax_1
+      _ZNSirsERm(0xe160)
+      rdi = 0xe170
+      _ZNKSt9basic_iosIcSt11char_traitsIcEE3eofEv()
+      if (rax_2 == 0) block2 else block3
+    block2:
+      rsi_1 = 0
+      _ZNSt9basic_iosIcSt11char_traitsIcEE5clearESt12_Ios_Iostate(0xe170)
+      rdx = 0xa
+      _ZNSi6ignoreEli(0xe160, 0x64)
+      rax_3 = var_10
+      rax_4 = [rax_3].q
+      rax_5 = [rax_4].q
+      return rax_5
+    block3:
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_c(0xe040, 0xa)
+      exit(2)
+      noreturn

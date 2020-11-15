@@ -1,0 +1,369 @@
+"main.main":
+  "hlil": |-
+    int64_t r8
+    int64_t r9
+    void* fsbase
+    while (&__return_addr u<= *(*(fsbase - 8) + 0x10))
+        arg2, arg1, r8, r9 = runtime.morestack_noctxt(arg1, arg2, arg3)
+    void* var_8 = arg3
+    int64_t* rbp = &var_8
+    void* rdx = *os.Args
+    if (*0x561588 u<= 1)
+        runtime.panicIndex(rbp)
+        noreturn
+    int64_t* rcx_2 = *(rdx + 0x18)
+    int64_t rcx_3
+    int64_t rdx_1
+    int64_t rsi
+    int64_t* rdi_1
+    int64_t r8_1
+    void** r9_1
+    rcx_3, rdx_1, rsi, rdi_1, r8_1, r9_1 = runtime.newobject(strconv.Atoi(arg1, arg2, rdx, rcx_2, r8, r9, rbp, *(rdx + 0x10), rcx_2))
+    if (*runtime.writeBarrier != 0)
+        runtime.gcWriteBarrier(rcx_2, rsi, rdx_1, rcx_3, r8_1, rcx_2)
+        rdi_1 = rcx_2 + 8
+        runtime.gcWriteBarrier(rdi_1, rsi, rdx_1, rcx_2 + 8, r8_1, rcx_2)
+    else
+        *rcx_2 = rcx_2
+        *(rcx_2 + 8) = rcx_2
+    *(rcx_2 + 0x28) = 0
+    int64_t rsi_1
+    int64_t* rdi_2
+    int64_t r8_2
+    void** r9_2
+    rsi_1, rdi_2, r8_2, r9_2 = container/list.(*List).PushFront(rdi_1, rsi, 0x4db520, 0x49f9e0, r8_1, rbp, r9_1, rcx_2, 0x49f9e0)
+    int64_t rsi_2
+    void* rdi_3
+    int64_t r8_3
+    int128_t zmm0
+    rsi_2, rdi_3, r8_3, zmm0 = container/list.(*List).PushFront(rdi_2, rsi_1, 0x4db528, 0x49f9e0, r8_2, rbp, r9_2, rcx_2, 0x49f9e0)
+    int64_t var_60
+    int64_t rax_4 = var_60
+    int64_t* rcx_4 = rcx_2
+    int64_t rdx_2 = 0
+    while (rdx_2 s< rax_4)
+        int64_t* rbx_2
+        if (*(rcx_4 + 0x28) != 0)
+            rbx_2 = *rcx_4
+        else
+            rbx_2 = nullptr
+        void* rsi_4 = *rbx_2
+        int64_t rdi_5 = *(rbx_2 + 0x10)
+        if (rdi_5 == 0 || (rdi_5 != 0 && rsi_4 == rdi_5))
+            rsi_4 = nullptr
+        int64_t* rdi_6 = *(rbx_2 + 0x18)
+        int64_t* rbx_3 = *(rbx_2 + 0x20)
+        if (rdi_6 != 0x49f9e0)
+            runtime.panicdottypeE(rdi_6, rbp)
+            noreturn
+        *rbx_3
+        int64_t* rdi_7 = *(rsi_4 + 0x18)
+        int64_t rsi_5 = *(rsi_4 + 0x20)
+        if (rdi_7 != 0x49f9e0)
+            runtime.panicdottypeE(rdi_7, rbp)
+            noreturn
+        *rsi_5
+        int64_t rsi_3
+        int64_t* rdi_4
+        int64_t r8_4
+        void** r9_3
+        rsi_3, rdi_4, r8_4, r9_3 = runtime.convT64(rdi_7)
+        rsi_2, rdi_3, r8_3, zmm0 = container/list.(*List).PushFront(rdi_4, rsi_3, 0x49f9e0, rcx_2, r8_4, rbp, r9_3, rcx_2, 0x49f9e0)
+        rdx_2 = rdx_2 + 1
+        rax_4 = var_60
+        rcx_4 = rcx_2
+    void* rax_6
+    if (*(rcx_4 + 0x28) != 0)
+        rax_6 = *rcx_4
+    else
+        rax_6 = nullptr
+    int64_t rcx_6 = *(rax_6 + 0x20)
+    int128_t var_18
+    var_18.q = *(rax_6 + 0x18)
+    var_18:8.q = rcx_6
+    *os.Stdout
+    return fmt.Fprintln(rdi_3, rsi_2, rdx_2, rcx_6, r8_3)
+  "llil": |-
+    block1:
+      rcx = [fsbase - 8].q
+      if (rsp u<= [rcx + 0x10].q) block2 else block3
+    block2:
+      call(runtime.morestack_noctxt)
+      goto block1
+    block3:
+      rsp = rsp - 0x70
+      [rsp + 0x68 {var_8}].q = rbp
+      rbp = rsp + 0x68 {var_8}
+      rcx = [0x561588].q
+      rdx = [0x561580].q
+      if (rcx u<= 1) block4 else block5
+    block4:
+      eax = 1
+      call(runtime.panicIndex)
+      noreturn
+    block5:
+      rax = [rdx + 0x10].q
+      rcx = [rdx + 0x18].q
+      [rsp {var_70}].q = rax
+      [rsp + 8 {var_68}].q = rcx
+      call(strconv.Atoi)
+      rax = [rsp + 0x10 {var_60}].q
+      [rsp + 0x40 {var_30}].q = rax
+      rcx = 0x4ac940
+      [rsp {var_70_1}].q = rcx
+      call(runtime.newobject)
+      rax = [rsp + 8 {var_68}].q
+      if ([0x57cbc0].d != 0) block6 else block7
+    block6:
+      rdi = rax
+      call(runtime.gcWriteBarrier)
+      rcx = rax + 8
+      rdi = rcx
+      call(runtime.gcWriteBarrier)
+      goto block8
+    block7:
+      [rax].q = rax
+      [rax + 8].q = rax
+      goto block8
+    block8:
+      [rsp + 0x50 {var_20}].q = rax
+      [rax + 0x28].q = 0
+      [rsp {var_70_2}].q = rax
+      rcx = 0x49f9e0
+      [rsp + 8 {var_68}].q = rcx
+      rdx = 0x4db520
+      [rsp + 0x10 {var_60_1}].q = rdx
+      call(container/list.(*List).PushFront)
+      rax = [rsp + 0x50 {var_20}].q
+      [rsp {var_70_3}].q = rax
+      rcx = 0x49f9e0
+      [rsp + 8 {var_68}].q = rcx
+      rdx = 0x4db528
+      [rsp + 0x10 {var_60_2}].q = rdx
+      call(container/list.(*List).PushFront)
+      rax = [rsp + 0x40 {var_30}].q
+      rcx = [rsp + 0x50 {var_20}].q
+      edx = 0
+      goto block9
+    block9:
+      if (rdx s>= rax) block10 else block11
+    block10:
+      if ([rcx + 0x28].q != 0) block12 else block13
+    block11:
+      if ([rcx + 0x28].q != 0) block14 else block15
+    block12:
+      rax = [rcx].q
+      goto block16
+    block13:
+      eax = 0
+      goto block16
+    block14:
+      rbx = [rcx].q
+      goto block17
+    block15:
+      ebx = 0
+      goto block17
+    block16:
+      rcx = [rax + 0x20].q
+      rax = [rax + 0x18].q
+      xmm0 = 0
+      [rsp + 0x58 {var_18}].o = xmm0
+      [rsp + 0x58 {var_18}].q = rax
+      [rsp + 0x60 {var_18+0x8}].q = rcx
+      rax = [0x5611d0].q
+      rcx = 0x4dcf40
+      [rsp {var_70_6}].q = rcx
+      [rsp + 8 {var_68_1}].q = rax
+      rax = rsp + 0x58 {var_18}
+      [rsp + 0x10 {var_60_3}].q = rax {var_18}
+      [rsp + 0x18 {var_58}].q = 1
+      [rsp + 0x20 {var_50}].q = 1
+      call(fmt.Fprintln)
+      rbp = [rsp + 0x68 {var_8}].q
+      rsp = rsp + 0x70
+      <return> jump(pop)
+    block17:
+      rsi = [rbx].q
+      rdi = [rbx + 0x10].q
+      if (rdi == 0) block18 else block19
+    block18:
+      esi = 0
+      goto block20
+    block19:
+      if (rsi == rdi) block18 else block20
+    block20:
+      rdi = [rbx + 0x18].q
+      rbx = [rbx + 0x20].q
+      r8 = 0x49f9e0
+      if (rdi != r8) block21 else block22
+    block21:
+      [rsp {var_70_8}].q = rdi
+      [rsp + 8 {var_68_3}].q = r8
+      rax = 0x4a6a80
+      [rsp + 0x10 {var_60_5}].q = rax
+      call(runtime.panicdottypeE)
+      noreturn
+    block22:
+      rbx = [rbx].q
+      rdi = [rsi + 0x18].q
+      rsi = [rsi + 0x20].q
+      if (rdi == r8) block23 else block24
+    block23:
+      [rsp + 0x48 {var_28_1}].q = rdx
+      rbx = rbx + [rsi].q
+      [rsp {var_70_4}].q = rbx
+      call(runtime.convT64)
+      rax = [rsp + 8 {var_68}].q
+      rcx = [rsp + 0x50 {var_20}].q
+      [rsp {var_70_5}].q = rcx
+      rdx = 0x49f9e0
+      [rsp + 8 {var_68}].q = rdx
+      [rsp + 0x10 {var_60_3}].q = rax
+      call(container/list.(*List).PushFront)
+      rax = [rsp + 0x48 {var_28_1}].q
+      rdx = rax + 1
+      rax = [rsp + 0x40 {var_30}].q
+      rcx = [rsp + 0x50 {var_20}].q
+      goto block9
+    block24:
+      goto block25
+    block25:
+      [rsp {var_70_7}].q = rdi
+      [rsp + 8 {var_68_2}].q = r8
+      rax = 0x4a6a80
+      [rsp + 0x10 {var_60_4}].q = rax
+      call(runtime.panicdottypeE)
+      noreturn
+  "mlil": |-
+    block1:
+      rcx_8 = [fsbase - 8].q
+      if (&__return_addr u<= [rcx_8 + 0x10].q) block2 else block3
+    block2:
+      runtime.morestack_noctxt(arg1, arg2, arg3)
+      goto block1
+    block3:
+      var_8 = arg3
+      rbp = &var_8
+      rcx_1 = [0x561588].q
+      rdx = [0x561580].q
+      if (rcx_1 u<= 1) block4 else block5
+    block4:
+      rax_10 = 1
+      runtime.panicIndex(rbp)
+      noreturn
+    block5:
+      rax = [rdx + 0x10].q
+      rcx_2 = [rdx + 0x18].q
+      var_70 = rax
+      var_68 = rcx_2
+      strconv.Atoi(arg1, arg2, rdx, rcx_2, r8, r9, rbp, var_70, var_68)
+      rax_1 = var_60
+      var_30 = rax_1
+      var_70_1 = 0x4ac940
+      runtime.newobject(rdi)
+      rax_2 = var_68
+      if ([0x57cbc0].d != 0) block6 else block7
+    block6:
+      rdi_8 = rax_2
+      runtime.gcWriteBarrier(rdi_8, rsi, rdx_1, rcx_3, r8_1, rax_2)
+      rcx_7 = rax_2 + 8
+      rdi_1 = rcx_7
+      runtime.gcWriteBarrier(rdi_1, rsi, rdx_1, rcx_7, r8_1, rax_2)
+      goto block8
+    block7:
+      [rax_2].q = rax_2
+      [rax_2 + 8].q = rax_2
+      goto block8
+    block8:
+      var_20 = rax_2
+      [rax_2 + 0x28].q = 0
+      var_70_2 = rax_2
+      var_60_1 = 0x4db520
+      container/list.(*List).PushFront(rdi_1, rsi, 0x4db520, 0x49f9e0, r8_1, rbp, r9_1, var_70_2, 0x49f9e0)
+      rax_3 = var_20
+      var_70_3 = rax_3
+      var_60_2 = 0x4db528
+      container/list.(*List).PushFront(rdi_2, rsi_1, 0x4db528, 0x49f9e0, r8_2, rbp, r9_2, var_70_3, 0x49f9e0)
+      rax_4 = var_30
+      rcx_4 = var_20
+      rdx_2 = 0
+      goto block9
+    block9:
+      if (rdx_2 s>= rax_4) block10 else block11
+    block10:
+      if ([rcx_4 + 0x28].q != 0) block12 else block13
+    block11:
+      if ([rcx_4 + 0x28].q != 0) block14 else block15
+    block12:
+      rax_6 = [rcx_4].q
+      goto block16
+    block13:
+      rax_6 = nullptr
+      goto block16
+    block14:
+      rbx_2 = [rcx_4].q
+      goto block17
+    block15:
+      rbx_2 = nullptr
+      goto block17
+    block16:
+      rcx_6 = [rax_6 + 0x20].q
+      rax_7 = [rax_6 + 0x18].q
+      zmm0 = 0
+      var_18 = zmm0
+      var_18:0.q = rax_7
+      var_18:8.q = rcx_6
+      rax_8 = [0x5611d0].q
+      var_70_6 = 0x4dcf40
+      var_68_1 = rax_8
+      var_58 = 1
+      var_50 = 1
+      fmt.Fprintln(rdi_3, rsi_2, rdx_2, rcx_6, r8_3)
+      rbp_1 = var_8
+      return rax_9
+    block17:
+      rsi_4 = [rbx_2].q
+      rdi_5 = [rbx_2 + 0x10].q
+      if (rdi_5 == 0) block18 else block19
+    block18:
+      rsi_4 = nullptr
+      goto block20
+    block19:
+      if (rsi_4 == rdi_5) block18 else block20
+    block20:
+      rdi_6 = [rbx_2 + 0x18].q
+      rbx_3 = [rbx_2 + 0x20].q
+      if (rdi_6 != 0x49f9e0) block21 else block22
+    block21:
+      var_70_8 = rdi_6
+      var_68_3 = 0x49f9e0
+      var_60_5 = 0x4a6a80
+      runtime.panicdottypeE(rdi_6, rbp)
+      noreturn
+    block22:
+      rbx_4 = [rbx_3].q
+      rdi_7 = [rsi_4 + 0x18].q
+      rsi_5 = [rsi_4 + 0x20].q
+      if (rdi_7 == 0x49f9e0) block23 else block24
+    block23:
+      var_28_1 = rdx_2
+      rbx_1 = rbx_4 + [rsi_5].q
+      var_70_4 = rbx_1
+      runtime.convT64(rdi_7)
+      rcx_5 = var_20
+      var_70_5 = rcx_5
+      var_60_3 = 0x49f9e0
+      container/list.(*List).PushFront(rdi_4, rsi_3, 0x49f9e0, rcx_5, r8_4, rbp, r9_3, var_70_5, 0x49f9e0)
+      rax_5 = var_28_1
+      rdx_2 = rax_5 + 1
+      rax_4 = var_30
+      rcx_4 = var_20
+      goto block9
+    block24:
+      goto block25
+    block25:
+      var_70_7 = rdi_7
+      var_68_2 = 0x49f9e0
+      var_60_4 = 0x4a6a80
+      runtime.panicdottypeE(rdi_7, rbp)
+      noreturn

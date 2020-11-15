@@ -1,0 +1,1380 @@
+"$s6binary5checkySbSSF":
+  "asm": |
+    $s6binary5checkySbSSF:
+      push    rbp
+      mov     rbp, rsp
+      push    r13
+      sub     rsp, 0x1a8
+      xor     eax, eax
+      lea     rcx, [rbp-0x18]
+      mov     [rbp-0x80], rdi
+      mov     rdi, rcx
+      mov     [rbp-0x88], rsi
+      mov     esi, eax
+      mov     ecx, 0x10
+      mov     rdx, rcx
+      mov     [rbp-0x8c], eax
+      mov     [rbp-0x98], rcx
+      call    memset@plt
+      lea     rcx, [rbp-0x20]
+      mov     rdi, rcx
+      mov     esi, [rbp-0x8c]
+      mov     ecx, 8
+      mov     rdx, rcx
+      mov     [rbp-0xa0], rcx
+      call    memset@plt
+      lea     rcx, [rbp-0x28]
+      mov     rdi, rcx
+      mov     esi, [rbp-0x8c]
+      mov     rdx, [rbp-0xa0]
+      call    memset@plt
+      lea     rcx, [rbp-0x48]
+      mov     rdi, rcx
+      mov     esi, [rbp-0x8c]
+      mov     edx, 0x20
+      call    memset@plt
+      lea     rcx, [rbp-0x58]
+      mov     rdi, rcx
+      mov     esi, [rbp-0x8c]
+      mov     rdx, [rbp-0x98]
+      call    memset@plt
+      lea     rcx, [rbp-0x60]
+      mov     rdi, rcx
+      mov     esi, [rbp-0x8c]
+      mov     rdx, [rbp-0xa0]
+      call    memset@plt
+      mov     rcx, [rbp-0x80]
+      mov     [rbp-0x18], rcx
+      mov     rdx, [rbp-0x88]
+      mov     [rbp-0x10], rdx
+      mov     rdi, rdx
+      call    swift_bridgeObjectRetain@plt
+      mov     rdi, [rbp-0x80]
+      mov     rsi, [rbp-0x88]
+      mov     [rbp-0xa8], rax
+      call    $sSS10FoundationE19_bridgeToObjectiveCAA8NSStringCyF@plt
+      mov     rcx, [rax]
+      mov     r13, rax
+      mov     [rbp-0xb0], rax
+      call    [rcx+0x120]
+      mov     rcx, rax
+      mov     rdi, [rbp-0xb0]
+      mov     [rbp-0xb8], rax
+      call    swift_release@plt
+      mov     rdi, [rbp-0x88]
+      call    swift_bridgeObjectRelease@plt
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      movabs  rax, -0x8000000000000000
+      mov     rcx, [rbp-0xb8]
+      cmp     rcx, rax
+      jne     block2
+    block1:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0xb9], cl
+      jmp     block3
+    block2:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0xb9], cl
+    block3:
+      mov     al, [rbp-0xb9]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block5
+    block4:
+      jmp     block6
+    block5:
+      mov     rax, [rbp-0xb8]
+      jmp     block9
+    block6:
+      mov     rax, [rbp-0xb8]
+      cqo
+      mov     ecx, 2
+      idiv    rcx
+      sub     rcx, rdx
+      seto    sil
+      test    sil, 1
+      mov     [rbp-0xc8], rcx
+      jne     block55
+    block7:
+      mov     rax, [rbp-0xc8]
+      mov     [rbp-0x20], rax
+      mov     [rbp-0x28], 0
+      mov     rcx, [rbp-0xb8]
+      mov     rcx, [rbp-0xb8]
+      cmp     rcx, 0xc
+      jl      block10
+    block8:
+      jmp     block11
+    block9:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem1]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem2]; "Division results in an overfl..."
+      mov     r8d, 0x36
+      mov     r9d, eax
+      lea     r10, [mem3]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3404
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block10:
+      mov     rax, [rbp-0xb8]
+      mov     cl, 1
+      mov     [rbp-0xc9], cl
+      jmp     block12
+    block11:
+      mov     eax, 0x13
+      mov     rcx, [rbp-0xb8]
+      cmp     rax, rcx
+      setl    dl
+      mov     [rbp-0xc9], dl
+    block12:
+      mov     al, [rbp-0xc9]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block14
+    block13:
+      jmp     block15
+    block14:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0xca], cl
+      jmp     block54
+    block15:
+      mov     rdi, [rbp-0x88]
+      call    swift_bridgeObjectRetain@plt
+      mov     rdi, [rbp-0x80]
+      mov     rsi, [rbp-0x88]
+      mov     [rbp-0xd8], rax
+      call    $sSS12makeIteratorSS0B0VyF@plt
+      mov     [rbp-0x48], rax
+      mov     [rbp-0x40], rdx
+      mov     [rbp-0x38], rcx
+      mov     [rbp-0x30], r8
+      mov     rax, [rbp-0xb8]
+    block16:
+      lea     r13, [rbp-0x48]
+      call    $sSS8IteratorV4nextSJSgyF@plt
+      mov     rcx, [rbp-0xb8]
+      cmp     rdx, 0
+      mov     [rbp-0xe0], rax
+      mov     [rbp-0xe8], rdx
+      je      block46
+    block17:
+      mov     rax, [rbp-0xe0]
+      mov     rcx, [rbp-0xe8]
+      mov     [rbp-0xf0], rax
+      mov     [rbp-0xf8], rcx
+      mov     rax, [rbp-0xf8]
+      mov     rcx, [rbp-0xf0]
+      mov     [rbp-0x58], rcx
+      mov     [rbp-0x50], rax
+      mov     rdi, rcx
+      mov     rsi, rax
+      mov     [rbp-0x100], rax
+      call    $sSJ10asciiValues5UInt8VSgvg@plt
+      mov     [rbp-0x70], ax
+      mov     dl, [rbp-0x70]
+      mov     r8b, [rbp-0x6f]
+      mov     rcx, [rbp-0xb8]
+      test    r8b, 1
+      mov     [rbp-0x101], dl
+      jne     block19
+    block18:
+      mov     al, [rbp-0x101]
+      mov     [rbp-0x102], al
+      jmp     block20
+    block19:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem1]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem4]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem5]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3c
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block20:
+      mov     al, [rbp-0x102]
+      mov     [rbp-0x78], al
+      lea     rcx, [rbp-0x68]
+      lea     rdx, [rbp-0x78]
+      mov     [rbp-0x110], rcx
+      mov     [rbp-0x118], rdx
+      call    $sS2is17FixedWidthIntegersWl
+      mov     [rbp-0x120], rax
+      call    $sS2iSZsWl
+      mov     [rbp-0x128], rax
+      call    $ss5UInt8VABSzsWl
+      mov     rcx, [$sSiN]
+      mov     rdx, [$ss5UInt8VN]
+      mov     rsi, [rbp-0x110]
+      mov     [rbp-0x130], rax
+      mov     rax, rsi
+      mov     rdi, [rbp-0x118]
+      mov     rsi, rcx
+      mov     r8, [rbp-0x120]
+      mov     [rbp-0x138], rcx
+      mov     rcx, r8
+      mov     r8, [rbp-0x128]
+      mov     r9, [rbp-0x130]
+      mov     r13, [rbp-0x138]
+      call    $sSZss17FixedWidthIntegerRzrlEyxqd__cSzRd__lufC@plt
+      mov     rax, [rbp-0x68]
+      sub     rax, 0x30
+      seto    r10b
+      test    r10b, 1
+      mov     [rbp-0x140], rax
+      jne     block56
+    block21:
+      mov     rax, [rbp-0x140]
+      mov     [rbp-0x60], rax
+      mov     rcx, [rbp-0xb8]
+      cmp     rax, 0
+      jge     block23
+    block22:
+      mov     rax, [rbp-0xb8]
+      mov     cl, 1
+      mov     [rbp-0x141], cl
+      jmp     block24
+    block23:
+      mov     eax, 9
+      mov     rcx, [rbp-0x140]
+      cmp     rax, rcx
+      setl    dl
+      mov     rax, [rbp-0xb8]
+      mov     [rbp-0x141], dl
+    block24:
+      mov     al, [rbp-0x141]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block26
+    block25:
+      jmp     block27
+    block26:
+      mov     rdi, [rbp-0x100]
+      call    swift_bridgeObjectRelease@plt
+      lea     rdi, [rbp-0x48]
+      call    $sSS8IteratorVWOh
+      mov     rcx, [rbp-0xb8]
+      xor     edx, edx
+      mov     [rbp-0xca], dl
+      jmp     block54
+    block27:
+      mov     rax, [rbp-0x140]
+      imul    rax, [rbp-0x20]
+      seto    cl
+      test    cl, 1
+      mov     [rbp-0x150], rax
+      jne     block57
+    block28:
+      mov     rax, [rbp-0x150]
+      mov     [rbp-0x60], rax
+      mov     rcx, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      movabs  rax, -0x8000000000000000
+      mov     rcx, [rbp-0x150]
+      cmp     rcx, rax
+      jne     block30
+    block29:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x151], cl
+      jmp     block31
+    block30:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x151], cl
+    block31:
+      mov     al, [rbp-0x151]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block33
+    block32:
+      jmp     block34
+    block33:
+      mov     rax, [rbp-0xb8]
+      jmp     block36
+    block34:
+      mov     rax, [rbp-0x150]
+      cqo
+      mov     ecx, 0xa
+      idiv    rcx
+      add     rax, [rbp-0x28]
+      seto    sil
+      test    sil, 1
+      mov     [rbp-0x160], rax
+      jne     block58
+    block35:
+      mov     rax, [rbp-0x160]
+      mov     [rbp-0x28], rax
+      mov     rcx, [rbp-0xb8]
+      jmp     block37
+    block36:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem1]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem6]; "Division results in an overfl..."
+      mov     r8d, 0x1f
+      mov     r9d, eax
+      lea     r10, [mem3]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3321
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block37:
+      mov     rax, [rbp-0xb8]
+      movabs  rax, -0x8000000000000000
+      mov     rcx, [rbp-0x150]
+      cmp     rcx, rax
+      jne     block39
+    block38:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x161], cl
+      jmp     block40
+    block39:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x161], cl
+    block40:
+      mov     al, [rbp-0x161]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block42
+    block41:
+      jmp     block43
+    block42:
+      mov     rax, [rbp-0xb8]
+      jmp     block45
+    block43:
+      mov     rax, [rbp-0x150]
+      cqo
+      mov     ecx, 0xa
+      idiv    rcx
+      mov     rcx, [rbp-0x160]
+      add     rcx, rdx
+      seto    sil
+      test    sil, 1
+      mov     [rbp-0x170], rcx
+      jne     block59
+    block44:
+      mov     rax, [rbp-0x170]
+      mov     [rbp-0x28], rax
+      mov     rcx, [rbp-0x20]
+      xor     rcx, 3
+      mov     [rbp-0x20], rcx
+      mov     rdi, [rbp-0x100]
+      call    swift_bridgeObjectRelease@plt
+      mov     rax, [rbp-0xb8]
+      jmp     block16
+    block45:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem1]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem2]; "Division results in an overfl..."
+      mov     r8d, 0x36
+      mov     r9d, eax
+      lea     r10, [mem3]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3404
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block46:
+      lea     rdi, [rbp-0x48]
+      call    $sSS8IteratorVWOh
+      mov     rcx, [rbp-0x28]
+      mov     rdx, [rbp-0xb8]
+      mov     [rbp-0x178], rcx
+      mov     rax, [rbp-0xb8]
+      movabs  rax, -0x8000000000000000
+      mov     rcx, [rbp-0x178]
+      cmp     rcx, rax
+      jne     block48
+    block47:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x179], cl
+      jmp     block49
+    block48:
+      mov     rax, [rbp-0xb8]
+      xor     ecx, ecx
+      mov     [rbp-0x179], cl
+    block49:
+      mov     al, [rbp-0x179]
+      mov     rcx, [rbp-0xb8]
+      test    al, 1
+      jne     block51
+    block50:
+      jmp     block52
+    block51:
+      mov     rax, [rbp-0xb8]
+      jmp     block53
+    block52:
+      mov     rax, [rbp-0x178]
+      cqo
+      mov     ecx, 0xa
+      idiv    rcx
+      cmp     rdx, 0
+      sete    sil
+      mov     rcx, [rbp-0xb8]
+      mov     [rbp-0xca], sil
+      jmp     block54
+    block53:
+      mov     rax, [rbp-0xb8]
+      mov     rax, [rbp-0xb8]
+      lea     rdi, [mem1]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem2]; "Division results in an overfl..."
+      mov     r8d, 0x36
+      mov     r9d, eax
+      lea     r10, [mem3]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3404
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      mov     rcx, [rbp-0xb8]
+    block54:
+      mov     al, [rbp-0xca]
+      mov     rcx, [rbp-0xb8]
+      add     rsp, 0x1a8
+      pop     r13
+      pop     rbp
+      ret
+    block55:
+      ud2
+    block56:
+      ud2
+    block57:
+      ud2
+    block58:
+      ud2
+    block59:
+      ud2
+"$s6binary5typesySSSgSSF":
+  "asm": |
+    $s6binary5typesySSSgSSF:
+      push    rbp
+      mov     rbp, rsp
+      push    r14
+      push    r13
+      push    rbx
+      sub     rsp, 0x178
+      xor     eax, eax
+      lea     rcx, [rbp-0x28]
+      mov     [rbp-0xc0], rdi
+      mov     rdi, rcx
+      mov     [rbp-0xc8], rsi
+      mov     esi, eax
+      mov     ecx, 0x10
+      mov     rdx, rcx
+      mov     [rbp-0xcc], eax
+      mov     [rbp-0xd8], rcx
+      call    memset@plt
+      lea     rcx, [rbp-0x38]
+      mov     rdi, rcx
+      mov     esi, [rbp-0xcc]
+      mov     rdx, [rbp-0xd8]
+      call    memset@plt
+      lea     rcx, [rbp-0x88]
+      mov     rdi, rcx
+      mov     esi, [rbp-0xcc]
+      mov     rdx, [rbp-0xd8]
+      call    memset@plt
+      lea     rcx, [rbp-0x98]
+      mov     rdi, rcx
+      mov     esi, [rbp-0xcc]
+      mov     rdx, [rbp-0xd8]
+      call    memset@plt
+      mov     rcx, [rbp-0xc0]
+      mov     [rbp-0x28], rcx
+      mov     rdx, [rbp-0xc8]
+      mov     [rbp-0x20], rdx
+      call    $s6binary6StaticV3mapSaySS_SStGvau
+      xor     esi, esi
+      mov     ecx, esi
+      mov     rdx, rax
+      mov     rdi, rdx
+      lea     rsi, [rbp-0x50]
+      mov     edx, 0x20
+      mov     [rbp-0xe0], rax
+      call    swift_beginAccess@plt
+      mov     rax, [rbp-0xe0]
+      mov     rcx, [rax]
+      mov     rdx, rcx
+      mov     rdi, rdx
+      mov     [rbp-0xe8], rcx
+      call    swift_retain@plt
+      lea     rdi, [rbp-0x50]
+      mov     [rbp-0xf0], rax
+      call    swift_endAccess@plt
+      mov     rax, [rbp-0xe8]
+      mov     [rbp-0x58], rax
+      lea     rcx, [rbp-0x38]
+      lea     rdi, [$sSaySS_SStGMD]
+      mov     [rbp-0xf8], rcx
+      call    __swift_instantiateConcreteTypeFromMangledName
+      mov     [rbp-0x100], rax
+      call    $sSaySS_SStGSayxGSlsWl
+      lea     rcx, [rbp-0x58]
+      mov     rdx, [rbp-0xf8]
+      mov     [rbp-0x108], rax
+      mov     rax, rdx
+      mov     rdi, [rbp-0x100]
+      mov     rsi, [rbp-0x108]
+      mov     r13, rcx
+      call    $sSlss16IndexingIteratorVyxG0B0RtzrlE04makeB0ACyF@plt
+    block1:
+      lea     rax, [rbp-0x78]
+      lea     rdi, [$ss16IndexingIteratorVySaySS_SStGGMD]
+      mov     [rbp-0x110], rax
+      call    __swift_instantiateConcreteTypeFromMangledName
+      lea     rcx, [rbp-0x38]
+      mov     rdx, [rbp-0x110]
+      mov     [rbp-0x118], rax
+      mov     rax, rdx
+      mov     rdi, [rbp-0x118]
+      mov     r13, rcx
+      call    $ss16IndexingIteratorV4next7ElementQzSgyF@plt
+      mov     rax, [rbp-0x78]
+      mov     rcx, [rbp-0x70]
+      mov     rdx, [rbp-0x68]
+      mov     rsi, [rbp-0x60]
+      cmp     rcx, 0
+      mov     [rbp-0x120], rax
+      mov     [rbp-0x128], rcx
+      mov     [rbp-0x130], rdx
+      mov     [rbp-0x138], rsi
+      je      block6
+    block2:
+      mov     rax, [rbp-0x120]
+      mov     rcx, [rbp-0x128]
+      mov     rdx, [rbp-0x130]
+      mov     rsi, [rbp-0x138]
+      mov     [rbp-0x140], rax
+      mov     [rbp-0x148], rcx
+      mov     [rbp-0x150], rdx
+      mov     [rbp-0x158], rsi
+      mov     rax, [rbp-0x158]
+      mov     rcx, [rbp-0x150]
+      mov     rdx, [rbp-0x148]
+      mov     rsi, [rbp-0x140]
+      mov     rdi, [$sSSN]
+      mov     r8, [$sSSSTsWP]
+      mov     r9, [$sSJSQsWP]
+      mov     [rbp-0x88], rsi
+      mov     [rbp-0x80], rdx
+      mov     [rbp-0x98], rcx
+      mov     [rbp-0x90], rax
+      mov     r10, [rbp-0xc0]
+      mov     [rbp-0xa8], r10
+      mov     r11, [rbp-0xc8]
+      mov     [rbp-0xa0], r11
+      mov     [rbp-0xb8], rsi
+      mov     [rbp-0xb0], rdx
+      lea     rsi, [rbp-0xb8]
+      lea     rbx, [rbp-0xa8]
+      mov     [rbp-0x160], rdi
+      mov     rdi, rsi
+      mov     rsi, [rbp-0x160]
+      mov     r14, [rbp-0x160]
+      mov     [rbp-0x168], rdx
+      mov     rdx, r14
+      mov     [rbp-0x170], rcx
+      mov     rcx, r8
+      mov     r13, rbx
+      mov     [rbp-0x178], rax
+      call    $sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF@plt
+      test    al, 1
+      jne     block4
+    block3:
+      jmp     block5
+    block4:
+      mov     rdi, [rbp-0x168]
+      call    swift_bridgeObjectRelease@plt
+      lea     rdi, [rbp-0x38]
+      call    $ss16IndexingIteratorVySaySS_SStGGWOh
+      mov     rcx, [rbp-0x170]
+      mov     rdx, [rbp-0x178]
+      mov     [rbp-0x180], rcx
+      mov     [rbp-0x188], rdx
+      jmp     block7
+    block5:
+      mov     rdi, [rbp-0x178]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x168]
+      call    swift_bridgeObjectRelease@plt
+      jmp     block1
+    block6:
+      lea     rdi, [rbp-0x38]
+      call    $ss16IndexingIteratorVySaySS_SStGGWOh
+      xor     ecx, ecx
+      mov     edx, ecx
+      mov     rsi, rdx
+      mov     [rbp-0x180], rsi
+      mov     [rbp-0x188], rdx
+    block7:
+      mov     rax, [rbp-0x188]
+      mov     rcx, [rbp-0x180]
+      mov     [rbp-0x190], rax
+      mov     rax, rcx
+      mov     rdx, [rbp-0x190]
+      add     rsp, 0x178
+      pop     rbx
+      pop     r13
+      pop     r14
+      pop     rbp
+      ret
+"main":
+  "asm": |
+    main:
+      push    rbp
+      mov     rbp, rsp
+      push    r13
+      push    r12
+      sub     rsp, 0x3b0
+      mov     rcx, [$sSJN]
+      mov     rdx, [$sSJSHsWP]
+      xor     r8d, r8d
+      xorps   xmm0, xmm0
+      movaps  [rbp-0x30], xmm0
+      mov     [rbp-0x20], 0
+      xor     r9d, r9d
+      mov     r10d, r9d
+      lea     r11, [rbp-0xb8]
+      mov     [rbp-0x144], edi
+      mov     rdi, r11
+      mov     [rbp-0x150], rsi
+      mov     esi, r8d
+      mov     r11d, 8
+      mov     [rbp-0x158], rdx
+      mov     rdx, r11
+      mov     [rbp-0x160], rax
+      mov     [rbp-0x168], rcx
+      mov     [rbp-0x170], r10
+      call    memset@plt
+      mov     rdi, [rbp-0x168]
+      mov     rsi, [rbp-0x168]
+      mov     rdx, [rbp-0x158]
+      call    $sS2Dyxq_GycfC@plt
+      mov     [$s6binary3rotSDyS2JGvp], rax
+      jmp     block1
+    block1:
+      jmp     block2
+    block2:
+      mov     [rbp-0x48], 0
+      mov     [rbp-0x50], 0x5e
+      mov     rdi, [rbp-0x48]
+      mov     rsi, [rbp-0x50]
+      call    $sSn15uncheckedBoundsSnyxGx5lower_x5uppert_tcfCSi_Tg5@plt
+      mov     [rbp-0x40], rax
+      mov     [rbp-0x38], rdx
+      mov     rax, [rbp-0x40]
+      mov     rcx, [rbp-0x38]
+      mov     [rbp-0x60], rax
+      mov     [rbp-0x58], rcx
+      mov     rdi, [rbp-0x60]
+      mov     rsi, [rbp-0x58]
+      call    $sSlss16IndexingIteratorVyxG0B0RtzrlE04makeB0ACyFSnySiG_Tg5@plt
+      mov     [rbp-0x30], rax
+      mov     [rbp-0x28], rdx
+      mov     [rbp-0x20], rcx
+      mov     rax, [rbp-0x170]
+      mov     [rbp-0x178], rax
+    block3:
+      mov     rax, [rbp-0x178]
+      lea     r13, [rbp-0x30]
+      mov     [rbp-0x180], rax
+      call    $ss16IndexingIteratorV4next7ElementQzSgyFSnySiG_Tg5@plt
+      mov     [rbp-0x70], rax
+      and     dl, 1
+      mov     [rbp-0x68], dl
+      mov     rax, [rbp-0x70]
+      mov     cl, [rbp-0x68]
+      test    cl, 1
+      mov     [rbp-0x188], rax
+      jne     block5
+    block4:
+      mov     rax, [rbp-0x188]
+      mov     [rbp-0x190], rax
+      jmp     block7
+    block5:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem1]; "Thirteen sweaters @ $35.95: $..."
+      mov     esi, 0x23
+      mov     ecx, 1
+      mov     [rbp-0x198], rdx
+      mov     edx, ecx
+      mov     [rbp-0x1a0], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x198]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x1a8], rax
+      mov     [rbp-0x1b0], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x1a0]
+      mov     rsi, [rbp-0x1a8]
+      mov     r8, [rbp-0x1b0]
+      mov     [rbp-0x1b8], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x1b8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x1b8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1b0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1a0]
+      call    swift_release@plt
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem2]; "Enter payment: "
+      mov     esi, 0xf
+      mov     r9d, 1
+      mov     [rbp-0x1c0], rdx
+      mov     edx, r9d
+      mov     [rbp-0x1c8], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      xor     r9d, r9d
+      mov     esi, r9d
+      mov     rcx, [$sSSN]
+      mov     rdi, [rbp-0x1c0]
+      mov     [rdi+0x18], rcx
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      lea     rdi, [mem3]
+      mov     edx, 1
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     [rbp-0x1d0], rax
+      mov     [rbp-0x1d8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     rdi, [rbp-0x1c8]
+      mov     rsi, rax
+      mov     [rbp-0x1e0], rdx
+      mov     rcx, [rbp-0x1d0]
+      mov     r8, [rbp-0x1d8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x1e0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1d8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x1c8]
+      call    swift_release@plt
+      call    $ss8readLine16strippingNewlineSSSgSb_tFfA_
+      movzx   edi, al
+      call    $ss8readLine16strippingNewlineSSSgSb_tF@plt
+      cmp     rdx, 0
+      mov     [rbp-0x1e8], rdx
+      mov     [rbp-0x1f0], rax
+      je      block27
+    block6:
+      mov     rax, [rbp-0x1f0]
+      mov     rcx, [rbp-0x1e8]
+      mov     [rbp-0x1f8], rax
+      mov     [rbp-0x200], rcx
+      jmp     block34
+    block7:
+      mov     rax, [rbp-0x190]
+      mov     [rbp-0xb8], rax
+      mov     [rbp-0x208], rax
+      call    $s6binary6StaticV3txtSaySJGvau
+      xor     ecx, ecx
+      mov     rdx, rax
+      mov     rdi, rdx
+      lea     rsi, [rbp-0xd0]
+      mov     edx, 0x20
+      mov     [rbp-0x210], rax
+      call    swift_beginAccess@plt
+      mov     rax, [rbp-0x210]
+      mov     rsi, [rax]
+      mov     rdi, [rbp-0x208]
+      call    $sSayxSicigSJ_Tg5@plt
+      mov     [rbp-0xe0], rax
+      mov     [rbp-0xd8], rdx
+      mov     rax, [rbp-0xe0]
+      mov     rcx, [rbp-0xd8]
+      lea     rdi, [rbp-0xd0]
+      mov     [rbp-0x218], rax
+      mov     [rbp-0x220], rcx
+      call    swift_endAccess@plt
+      call    $s6binary6StaticV3txtSaySJGvau
+      mov     [rbp-0x228], rax
+      jmp     block8
+    block8:
+      jmp     block9
+    block9:
+      xor     eax, eax
+      test    al, 1
+      jne     block11
+    block10:
+      jmp     block12
+    block11:
+      jmp     block14
+    block12:
+      mov     rax, [rbp-0x208]
+      add     rax, 0x2f
+      seto    cl
+      test    cl, 1
+      mov     [rbp-0x230], rax
+      jne     block65
+    block13:
+      jmp     block17
+    block14:
+      jmp     block15
+    block15:
+      jmp     block16
+    block16:
+      sub     rsp, 0x30
+      lea     rdi, [mem4]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem5]; "Division results in an overfl..."
+      mov     r8d, 0x1f
+      mov     r9d, eax
+      lea     r10, [mem6]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3321
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      add     rsp, 0x30
+    block17:
+      movabs  rax, -0x8000000000000000
+      mov     rcx, [rbp-0x230]
+      cmp     rcx, rax
+      jne     block19
+    block18:
+      xor     eax, eax
+      mov     [rbp-0x231], al
+      jmp     block20
+    block19:
+      xor     eax, eax
+      mov     [rbp-0x231], al
+      jmp     block20
+    block20:
+      mov     al, [rbp-0x231]
+      test    al, 1
+      jne     block22
+    block21:
+      jmp     block23
+    block22:
+      jmp     block24
+    block23:
+      mov     rax, [rbp-0x180]
+      xor     ecx, ecx
+      mov     rdx, [rbp-0x230]
+      mov     [rbp-0x240], rax
+      mov     rax, rdx
+      cqo
+      mov     esi, 0x5e
+      idiv    rsi
+      mov     rsi, [rbp-0x228]
+      mov     rdi, rsi
+      lea     rsi, [rbp-0xf8]
+      mov     r8d, 0x20
+      mov     [rbp-0x248], rdx
+      mov     rdx, r8
+      call    swift_beginAccess@plt
+      mov     rcx, [rbp-0x228]
+      mov     rsi, [rcx]
+      mov     rdi, [rbp-0x248]
+      call    $sSayxSicigSJ_Tg5@plt
+      mov     [rbp-0x108], rax
+      mov     [rbp-0x100], rdx
+      mov     rax, [rbp-0x108]
+      mov     rcx, [rbp-0x100]
+      lea     rdi, [rbp-0xf8]
+      mov     [rbp-0x250], rax
+      mov     [rbp-0x258], rcx
+      call    swift_endAccess@plt
+      lea     rax, [$s6binary3rotSDyS2JGvp]
+      xor     r9d, r9d
+      mov     ecx, r9d
+      mov     rdx, [rbp-0x250]
+      mov     [rbp-0x118], rdx
+      mov     rdx, [rbp-0x258]
+      mov     [rbp-0x110], rdx
+      mov     rsi, [rbp-0x218]
+      mov     [rbp-0x128], rsi
+      mov     rdi, [rbp-0x220]
+      mov     [rbp-0x120], rdi
+      mov     rdi, rax
+      lea     rsi, [rbp-0x140]
+      mov     edx, 0x21
+      call    swift_beginAccess@plt
+      lea     rax, [rbp-0x118]
+      lea     rcx, [rbp-0x128]
+      lea     rdi, [$sSDyS2JGMD]
+      mov     [rbp-0x260], rax
+      mov     [rbp-0x268], rcx
+      call    __swift_instantiateConcreteTypeFromMangledName
+      mov     rdi, [rbp-0x260]
+      mov     rsi, [rbp-0x268]
+      mov     rdx, rax
+      lea     r13, [$s6binary3rotSDyS2JGvp]
+      call    $sSDyq_Sgxcis@plt
+      lea     rdi, [rbp-0x140]
+      call    swift_endAccess@plt
+      mov     rax, [rbp-0x240]
+      mov     [rbp-0x178], rax
+      jmp     block3
+    block24:
+      jmp     block25
+    block25:
+      jmp     block26
+    block26:
+      sub     rsp, 0x30
+      lea     rdi, [mem4]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem7]; "Division results in an overfl..."
+      mov     r8d, 0x36
+      mov     r9d, eax
+      lea     r10, [mem6]; "/home/build-user/build/buildb..."
+      mov     [rsp], r10
+      mov     [rsp+8], 0x60
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x3404
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      add     rsp, 0x30
+    block27:
+      jmp     block28
+    block28:
+      jmp     block29
+    block29:
+      jmp     block30
+    block30:
+      jmp     block31
+    block31:
+      jmp     block32
+    block32:
+      jmp     block33
+    block33:
+      sub     rsp, 0x30
+      lea     rdi, [mem4]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem8]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem9]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x56
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      add     rsp, 0x30
+    block34:
+      mov     rax, [rbp-0x200]
+      mov     rcx, [rbp-0x1f8]
+      mov     [$s6binary5inputSSvp], rcx
+      mov     [mem10], rax
+      mov     rdi, [$s6binary5inputSSvp]
+      mov     rsi, [mem10]
+      call    $s6binary5checkySbSSF
+      test    al, 1
+      jne     block36
+    block35:
+      jmp     block62
+    block36:
+      mov     rdi, [$s6binary5inputSSvp]
+      mov     rsi, [mem10]
+      call    $s6binary5typesySSSgSSF
+      mov     rdi, rax
+      mov     rsi, rdx
+      mov     [rbp-0x270], rax
+      mov     [rbp-0x278], rdx
+      call    $sSSSgWOy
+      mov     rdi, [rbp-0x270]
+      mov     rsi, [rbp-0x278]
+      call    $sSSSgWOy
+      mov     rax, [rbp-0x270]
+      mov     [rbp-0x80], rax
+      mov     rcx, [rbp-0x278]
+      mov     [rbp-0x78], rcx
+      mov     rdi, rax
+      mov     rsi, rcx
+      call    $sSSSgWOy
+      mov     rax, [rbp-0x270]
+      mov     [rbp-0x90], rax
+      mov     rcx, [rbp-0x278]
+      mov     [rbp-0x88], rcx
+      cmp     [rbp-0x88], 0
+      je      block38
+    block37:
+      lea     rax, [rbp-0x90]
+      mov     rdi, rax
+      call    $sSSWOh
+      mov     cl, 1
+      mov     [rbp-0x279], cl
+      jmp     block39
+    block38:
+      xor     eax, eax
+      mov     [rbp-0x279], al
+    block39:
+      mov     al, [rbp-0x279]
+      mov     rdi, [rbp-0x270]
+      mov     rsi, [rbp-0x278]
+      mov     [rbp-0x27a], al
+      call    $sSSSgWOe
+      mov     al, [rbp-0x27a]
+      test    al, 1
+      jne     block41
+    block40:
+      jmp     block61
+    block41:
+      mov     rax, [rbp-0x278]
+      cmp     rax, 0
+      je      block43
+    block42:
+      mov     rax, [rbp-0x270]
+      mov     rcx, [rbp-0x278]
+      mov     [rbp-0x288], rax
+      mov     [rbp-0x290], rcx
+      jmp     block50
+    block43:
+      jmp     block44
+    block44:
+      jmp     block45
+    block45:
+      jmp     block46
+    block46:
+      jmp     block47
+    block47:
+      jmp     block48
+    block48:
+      jmp     block49
+    block49:
+      sub     rsp, 0x30
+      lea     rdi, [mem4]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem8]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem9]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x5b
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      add     rsp, 0x30
+    block50:
+      mov     rax, [rbp-0x290]
+      mov     rcx, [rbp-0x288]
+      mov     rdx, [rbp-0x180]
+      mov     [rbp-0xa0], rcx
+      mov     [rbp-0x98], rax
+      mov     rax, rsp
+      mov     rcx, rsp
+      mov     rsi, rcx
+      add     rsi, -0x20
+      mov     rsp, rsi
+      lea     rdi, [$s6binaryS2JXEfU_]
+      mov     [rcx-0x10], rdi
+      mov     [rcx-8], 0
+      mov     [rbp-0x298], rdx
+      mov     [rbp-0x2a0], rax
+      mov     [rbp-0x2a8], rsi
+      call    $sS2SSlsWl
+      lea     rdi, [$sS2Js5Error_pIggozo_S2JsAA_pIegnrzo_TRTA]
+      mov     rdx, [$sSSN]
+      mov     rcx, [$sSJN]
+      lea     r13, [rbp-0xa0]
+      mov     rsi, [rbp-0x2a8]
+      mov     r8, rax
+      mov     r12, [rbp-0x298]
+      call    $sSlsE3mapySayqd__Gqd__7ElementQzKXEKlF@plt
+      cmp     r12, 0
+      mov     [rbp-0x2b0], rax
+      jne     block64
+    block51:
+      mov     rax, [rbp-0x2b0]
+      mov     rcx, [rbp-0x2a0]
+      mov     rsp, rcx
+      lea     rdi, [rbp-0xa0]
+      mov     [rbp-0x2b8], rax
+      call    $sSSWOh
+      mov     rcx, [rbp-0x2b8]
+      mov     [rbp-0xb0], rcx
+      lea     rcx, [rbp-0xb0]
+      lea     rdi, [$sSaySJGMD]
+      mov     [rbp-0x2c0], rax
+      mov     [rbp-0x2c8], rcx
+      call    __swift_instantiateConcreteTypeFromMangledName
+      mov     [rbp-0x2d0], rax
+      call    $sSaySJGSayxGSTsWl
+      mov     rdi, [rbp-0x2c8]
+      mov     rsi, [rbp-0x2d0]
+      mov     rdx, rax
+      call    $sSSySSxcSTRzSJ7ElementRtzlufC@plt
+      mov     rdi, rax
+      mov     rsi, rdx
+      mov     [rbp-0x2d8], rax
+      mov     [rbp-0x2e0], rdx
+      call    $sSSSgWOy
+      mov     rdi, [rbp-0x80]
+      mov     rsi, [rbp-0x78]
+      mov     rax, [rbp-0x2d8]
+      mov     [rbp-0x80], rax
+      mov     rcx, [rbp-0x2e0]
+      mov     [rbp-0x78], rcx
+      call    $sSSSgWOe
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      mov     rcx, [rbp-0x2e0]
+      cmp     rcx, 0
+      mov     [rbp-0x2e8], rax
+      mov     [rbp-0x2f0], rdx
+      je      block53
+    block52:
+      mov     rax, [rbp-0x2d8]
+      mov     rcx, [rbp-0x2e0]
+      mov     [rbp-0x2f8], rax
+      mov     [rbp-0x300], rcx
+      jmp     block60
+    block53:
+      jmp     block54
+    block54:
+      jmp     block55
+    block55:
+      jmp     block56
+    block56:
+      jmp     block57
+    block57:
+      jmp     block58
+    block58:
+      jmp     block59
+    block59:
+      sub     rsp, 0x30
+      lea     rdi, [mem4]; "Fatal error"
+      mov     esi, 0xb
+      mov     eax, 2
+      mov     edx, eax
+      lea     rcx, [mem8]; "Unexpectedly found nil while ..."
+      mov     r8d, 0x39
+      mov     r9d, eax
+      lea     r10, [mem9]; "/mnt/source.swift"
+      mov     [rsp], r10
+      mov     [rsp+8], 0x11
+      mov     [rsp+0x10], 2
+      mov     [rsp+0x18], 0x5c
+      mov     [rsp+0x20], 1
+      call    $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF@plt
+      add     rsp, 0x30
+    block60:
+      mov     rax, [rbp-0x300]
+      mov     rcx, [rbp-0x2f8]
+      lea     rdi, [mem11]; " payment accepted."
+      mov     esi, 0x12
+      mov     edx, 1
+      mov     [rbp-0x308], rax
+      mov     [rbp-0x310], rcx
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rdi, [rbp-0x310]
+      mov     rsi, [rbp-0x308]
+      mov     [rbp-0x318], rdx
+      mov     rdx, rax
+      mov     rcx, [rbp-0x318]
+      call    $sSS1poiyS2S_SStFZ@plt
+      mov     rdi, [rbp-0x318]
+      mov     [rbp-0x320], rax
+      mov     [rbp-0x328], rdx
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x308]
+      call    swift_bridgeObjectRelease@plt
+      mov     rax, [$sSSN]
+      mov     rcx, [rbp-0x2f0]
+      mov     [rcx+0x18], rax
+      mov     rax, [rbp-0x320]
+      mov     [rcx], rax
+      mov     rax, [rbp-0x328]
+      mov     [rcx+8], rax
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x330], rax
+      mov     [rbp-0x338], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x2e8]
+      mov     rsi, [rbp-0x330]
+      mov     rcx, [rbp-0x338]
+      mov     [rbp-0x340], rdx
+      mov     rdx, rcx
+      mov     rcx, rax
+      mov     r8, [rbp-0x340]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x340]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x338]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x2e8]
+      call    swift_release@plt
+      xor     edi, edi
+      call    exit@plt
+    block61:
+      mov     rdi, [rbp-0x270]
+      mov     rsi, [rbp-0x278]
+      call    $sSSSgWOe
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem12]; "ERROR: Unrecognized PAN."
+      mov     esi, 0x18
+      mov     ecx, 1
+      mov     [rbp-0x348], rdx
+      mov     edx, ecx
+      mov     [rbp-0x350], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x348]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x358], rax
+      mov     [rbp-0x360], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x350]
+      mov     rsi, [rbp-0x358]
+      mov     r8, [rbp-0x360]
+      mov     [rbp-0x368], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x368]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x368]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x360]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x350]
+      call    swift_release@plt
+      lea     rdi, [rbp-0x80]
+      call    $sSSSgWOh
+      jmp     block63
+    block62:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem13]; "ERROR: Invalid input."
+      mov     esi, 0x15
+      mov     ecx, 1
+      mov     [rbp-0x370], rdx
+      mov     edx, ecx
+      mov     [rbp-0x378], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x370]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x380], rax
+      mov     [rbp-0x388], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x378]
+      mov     rsi, [rbp-0x380]
+      mov     r8, [rbp-0x388]
+      mov     [rbp-0x390], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x390]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x390]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x388]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x378]
+      call    swift_release@plt
+    block63:
+      mov     edi, 1
+      call    $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5@plt
+      lea     rdi, [mem14]; "Try your cardigan."
+      mov     esi, 0x12
+      mov     ecx, 1
+      mov     [rbp-0x398], rdx
+      mov     edx, ecx
+      mov     [rbp-0x3a0], rax
+      call    $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC@plt
+      mov     rsi, [$sSSN]
+      mov     rdi, [rbp-0x398]
+      mov     [rdi+0x18], rsi
+      mov     [rdi], rax
+      mov     [rdi+8], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA0_
+      mov     [rbp-0x3a8], rax
+      mov     [rbp-0x3b0], rdx
+      call    $ss5print_9separator10terminatoryypd_S2StFfA1_
+      mov     rdi, [rbp-0x3a0]
+      mov     rsi, [rbp-0x3a8]
+      mov     r8, [rbp-0x3b0]
+      mov     [rbp-0x3b8], rdx
+      mov     rdx, r8
+      mov     rcx, rax
+      mov     r8, [rbp-0x3b8]
+      call    $ss5print_9separator10terminatoryypd_S2StF@plt
+      mov     rdi, [rbp-0x3b8]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x3b0]
+      call    swift_bridgeObjectRelease@plt
+      mov     rdi, [rbp-0x3a0]
+      call    swift_release@plt
+      xor     eax, eax
+      lea     rsp, [rbp-0x10]
+      pop     r12
+      pop     r13
+      pop     rbp
+      ret
+    block64:
+      xor     eax, eax
+      mov     ecx, eax
+      mov     rdx, [rbp-0x2a0]
+      mov     rsp, rdx
+    block65:
+      ud2

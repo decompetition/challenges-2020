@@ -1,0 +1,124 @@
+"main.main":
+  "asm": |
+    main.main:
+      mov     rcx, fs:[-8]
+      lea     rax, [rsp-8]
+      cmp     rax, [rcx+0x10]
+      jbe     block11
+    block1:
+      sub     rsp, 0x88
+      mov     [rsp+0x80], rbp
+      lea     rbp, [rsp+0x80]
+      mov     rcx, [mem1]
+      mov     rdx, [os.Args]
+      cmp     rcx, 1
+      jbe     block10
+    block2:
+      mov     rax, [rdx+0x18]
+      mov     rcx, [rdx+0x10]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      call    strconv.Atoi
+      mov     rax, [rsp+0x10]
+      movabs  rcx, -0x1111111111111111
+      imul    rcx, rax
+      movabs  rdx, 0x888888888888888
+      add     rcx, rdx
+      movabs  rdx, 0x1111111111111110
+      cmp     rcx, rdx
+      jbe     block9
+    block3:
+      movabs  rcx, -0x5555555555555555
+      imul    rcx, rax
+      movabs  rdx, 0x2aaaaaaaaaaaaaaa
+      add     rcx, rdx
+      movabs  rdx, 0x5555555555555554
+      cmp     rcx, rdx
+      jbe     block8
+    block4:
+      movabs  rcx, -0x3333333333333333
+      imul    rcx, rax
+      movabs  rdx, 0x1999999999999999
+      add     rcx, rdx
+      movabs  rdx, 0x3333333333333332
+      cmp     rcx, rdx
+      ja      block7
+    block5:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x50], xmm0
+      lea     rax, [mem2]
+      mov     [rsp+0x50], rax
+      lea     rax, [mem3]; "Blue"
+      mov     [rsp+0x58], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x50]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+    block6:
+      mov     rbp, [rsp+0x80]
+      add     rsp, 0x88
+      ret
+    block7:
+      mov     [rsp], rax
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      xorps   xmm0, xmm0
+      movups  [rsp+0x40], xmm0
+      lea     rcx, [mem4]
+      mov     [rsp+0x40], rcx
+      mov     [rsp+0x48], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x40]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      jmp     block6
+    block8:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x60], xmm0
+      lea     rax, [mem2]
+      mov     [rsp+0x60], rax
+      lea     rax, [mem5]; "Yellow"
+      mov     [rsp+0x68], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x60]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      jmp     block6
+    block9:
+      xorps   xmm0, xmm0
+      movups  [rsp+0x70], xmm0
+      lea     rax, [mem2]
+      mov     [rsp+0x70], rax
+      lea     rax, [mem6]; "Green"
+      mov     [rsp+0x78], rax
+      mov     rax, [os.Stdout]
+      lea     rcx, [go.itab.*os.File,io.Writer]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rax, [rsp+0x70]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 1
+      mov     [rsp+0x20], 1
+      call    fmt.Fprintln
+      jmp     block6
+    block10:
+      mov     eax, 1
+      call    runtime.panicIndex
+    block11:
+      call    runtime.morestack_noctxt
+      jmp     main.main

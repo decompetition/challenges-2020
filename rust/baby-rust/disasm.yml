@@ -1,0 +1,224 @@
+"_ZN6source4mainE":
+  "asm": |
+    _ZN6source4mainE:
+      sub     rsp, 0x1c8
+      mov     [rsp+0x1af], 0
+      lea     rdi, [rsp+0x50]
+      call    [mem1]
+      jmp     block2
+    block1:
+      mov     rdi, [rsp+0x1b0]
+      call    _Unwind_Resume@plt
+      ud2
+    block2:
+      lea     rdi, [rsp+0x38]
+      lea     rsi, [rsp+0x50]
+      mov     edx, 1
+      call    _ZN4core4iter6traits8iterator8Iterator3nthE
+      jmp     block3
+    block3:
+      xor     eax, eax
+      mov     ecx, eax
+      mov     [rsp+0x1af], 1
+      cmp     [rsp+0x38], 0
+      mov     edx, 1
+      cmovbe  rdx, rcx
+      cmp     rdx, 1
+      je      block7
+    block4:
+      jmp     block6
+    block5:
+      lea     rdi, [rsp+0x50]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block1
+    block6:
+      mov     rsi, [mem2]
+      mov     rcx, [mem3]; "Thanks. This was unexpected, ..."
+      xor     eax, eax
+      mov     r8d, eax
+      lea     rdi, [rsp+0x178]
+      mov     edx, 1
+      call    _ZN4core3fmt9Arguments6new_v1E
+      jmp     block26
+    block7:
+      mov     [rsp+0x1af], 0
+      mov     rax, [rsp+0x48]
+      mov     [rsp+0x80], rax
+      movups  xmm0, [rsp+0x38]
+      movaps  [rsp+0x70], xmm0
+      mov     rsi, [mem4]
+      mov     rcx, [mem3]; "Thanks. This was unexpected, ..."
+      xor     edx, edx
+      mov     r8d, edx
+      lea     rdi, [rsp+0x88]
+      mov     edx, 1
+      call    _ZN4core3fmt9Arguments6new_v1E
+      jmp     block8
+    block8:
+      lea     rax, [_ZN3std2io5stdio6_printE]
+      lea     rdi, [rsp+0x88]
+      call    rax
+      jmp     block10
+    block9:
+      lea     rdi, [rsp+0x70]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block31
+    block10:
+      lea     rdi, [rsp+0x70]
+      call    _ZN65_$LT$alloc..string..String$u20$as$u20$core..ops..deref..Deref$GT$5derefE
+      mov     [rsp+0x30], rdx
+      mov     [rsp+0x28], rax
+      jmp     block11
+    block11:
+      mov     rdi, [rsp+0x28]
+      mov     rsi, [rsp+0x30]
+      call    _ZN4core3str21_$LT$impl$u20$str$GT$5parseE
+      mov     [rsp+0x20], rax
+      jmp     block12
+    block12:
+      mov     rax, [rsp+0x20]
+      mov     [rsp+0x1c0], rax
+      mov     rcx, [rsp+0x1c0]
+      mov     [rsp+0xc0], rcx
+      movzx   edx, [rsp+0xc0]
+      mov     ecx, edx
+      test    cl, 1
+      je      block16
+    block13:
+      jmp     block14
+    block14:
+      mov     rsi, [mem5]
+      mov     rcx, [mem3]; "Thanks. This was unexpected, ..."
+      xor     eax, eax
+      mov     r8d, eax
+      lea     rdi, [rsp+0x118]
+      mov     edx, 1
+      call    _ZN4core3fmt9Arguments6new_v1E
+      jmp     block20
+    block15:
+      ud2
+    block16:
+      mov     eax, [rsp+0xc4]
+      mov     [rsp+0xcc], eax
+      mov     rsi, [mem6]
+      lea     rcx, [rsp+0xcc]
+      mov     [rsp+0x110], rcx
+      mov     rdi, [rsp+0x110]
+      lea     rcx, [_ZN4core3fmt3num3imp52_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$3fmtE]
+      mov     [rsp+0x18], rsi
+      mov     rsi, rcx
+      call    _ZN4core3fmt10ArgumentV13newE
+      mov     [rsp+0x10], rdx
+      mov     [rsp+8], rax
+      jmp     block17
+    block17:
+      mov     rax, [rsp+8]
+      mov     [rsp+0x100], rax
+      mov     rcx, [rsp+0x10]
+      mov     [rsp+0x108], rcx
+      lea     rdi, [rsp+0xd0]
+      mov     edx, 2
+      lea     rcx, [rsp+0x100]
+      mov     r8d, 1
+      mov     rsi, [rsp+0x18]
+      call    _ZN4core3fmt9Arguments6new_v1E
+      jmp     block18
+    block18:
+      lea     rax, [_ZN3std2io5stdio6_printE]
+      lea     rdi, [rsp+0xd0]
+      call    rax
+      jmp     block19
+    block19:
+      jmp     block22
+    block20:
+      lea     rax, [_ZN3std2io5stdio6_printE]
+      lea     rdi, [rsp+0x118]
+      call    rax
+      jmp     block21
+    block21:
+      jmp     block22
+    block22:
+      mov     rsi, [mem7]
+      mov     rcx, [mem3]; "Thanks. This was unexpected, ..."
+      xor     eax, eax
+      mov     r8d, eax
+      lea     rdi, [rsp+0x148]
+      mov     edx, 1
+      call    _ZN4core3fmt9Arguments6new_v1E
+      jmp     block23
+    block23:
+      lea     rax, [_ZN3std2io5stdio6_printE]
+      lea     rdi, [rsp+0x148]
+      call    rax
+      jmp     block24
+    block24:
+      lea     rdi, [rsp+0x70]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block25
+    block25:
+      jmp     block36
+    block26:
+      lea     rax, [_ZN3std2io5stdio6_printE]
+      lea     rdi, [rsp+0x178]
+      call    rax
+      jmp     block27
+    block27:
+      jmp     block36
+    block28:
+      mov     [rsp+0x1af], 0
+      add     rsp, 0x1c8
+      ret
+    block29:
+      test    [rsp+0x1af], 1
+      je      block5
+    block30:
+      mov     [rsp+0x1af], 0
+      lea     rax, [rsp+0x38]
+      mov     rdi, rax
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block5
+    block31:
+      xor     eax, eax
+      mov     ecx, eax
+      cmp     [rsp+0x38], 0
+      mov     edx, 1
+      cmovbe  rdx, rcx
+      cmp     rdx, 1
+      je      block29
+    block32:
+      jmp     block5
+    block33:
+      lea     rdi, [rsp+0x50]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block28
+    block34:
+      test    [rsp+0x1af], 1
+      je      block33
+    block35:
+      mov     [rsp+0x1af], 0
+      lea     rdi, [rsp+0x38]
+      call    _ZN4core3ptr13drop_in_placeE
+      jmp     block33
+    block36:
+      xor     eax, eax
+      mov     ecx, eax
+      cmp     [rsp+0x38], 0
+      mov     edx, 1
+      cmovbe  rdx, rcx
+      cmp     rdx, 1
+      je      block34
+    block37:
+      jmp     block33
+    block38:
+      mov     [rsp+0x1b0], rax
+      mov     [rsp+0x1b8], edx
+      jmp     block5
+    block39:
+      mov     [rsp+0x1b0], rax
+      mov     [rsp+0x1b8], edx
+      jmp     block31
+    block40:
+      mov     [rsp+0x1b0], rax
+      mov     [rsp+0x1b8], edx
+      jmp     block9
+    block41:

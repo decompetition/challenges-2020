@@ -1,0 +1,121 @@
+"is_prime":
+  "asm": |
+    is_prime:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      mov     [rbp-0x14], edi
+      cmp     [rbp-0x14], 1
+      jg      block2
+    block1:
+      mov     eax, 0
+      jmp     block15
+    block2:
+      cmp     [rbp-0x14], 2
+      je      block4
+    block3:
+      cmp     [rbp-0x14], 3
+      jne     block5
+    block4:
+      mov     eax, 1
+      jmp     block15
+    block5:
+      mov     eax, [rbp-0x14]
+      and     eax, 1
+      test    eax, eax
+      je      block7
+    block6:
+      mov     ecx, [rbp-0x14]
+      movsxd  rax, ecx
+      imul    rax, rax, 0x55555556
+      shr     rax, 0x20
+      mov     rdx, rax
+      mov     eax, ecx
+      sar     eax, 0x1f
+      mov     esi, edx
+      sub     esi, eax
+      mov     eax, esi
+      mov     edx, eax
+      add     edx, edx
+      add     edx, eax
+      mov     eax, ecx
+      sub     eax, edx
+      test    eax, eax
+      jne     block8
+    block7:
+      mov     eax, 0
+      jmp     block15
+    block8:
+      mov     [rbp-4], 5
+      jmp     block13
+    block9:
+      mov     eax, [rbp-0x14]
+      cdq
+      idiv    [rbp-4]
+      mov     eax, edx
+      test    eax, eax
+      je      block11
+    block10:
+      mov     eax, [rbp-4]
+      lea     ecx, [rax+2]
+      mov     eax, [rbp-0x14]
+      cdq
+      idiv    ecx
+      mov     eax, edx
+      test    eax, eax
+      jne     block12
+    block11:
+      mov     eax, 0
+      jmp     block15
+    block12:
+      add     [rbp-4], 6
+    block13:
+      mov     eax, [rbp-4]
+      imul    eax, eax
+      cmp     [rbp-0x14], eax
+      jg      block9
+    block14:
+      mov     eax, 1
+    block15:
+      pop     rbp
+      ret
+"main":
+  "asm": |
+    main:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x20
+      mov     [rbp-0x14], edi
+      mov     [rbp-0x20], rsi
+      cmp     [rbp-0x14], 2
+      je      block2
+    block1:
+      mov     rax, [rbp-0x20]
+      mov     rdx, [rax]
+      mov     rax, [stderr]
+      lea     rsi, [mem1]; "USAGE: %s <num>\n"
+      mov     rdi, rax
+      mov     eax, 0
+      call    fprintf@plt.sec
+      mov     edi, 1
+      call    exit@plt.sec
+    block2:
+      mov     rax, [rbp-0x20]
+      add     rax, 8
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    atoi@plt.sec
+      mov     [rbp-4], eax
+      mov     eax, [rbp-4]
+      mov     edi, eax
+      call    is_prime
+      mov     edx, eax
+      mov     eax, [rbp-4]
+      mov     esi, eax
+      lea     rdi, [mem2]; "is_prime(%d) = %d\n"
+      mov     eax, 0
+      call    printf@plt.sec
+      mov     eax, 0
+      leave
+      ret

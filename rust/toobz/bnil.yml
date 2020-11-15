@@ -1,0 +1,722 @@
+"_ZN46_$LT$source..ISpew$u20$as$u20$source..Spew$GT$4spew17h0dc91de81bdf5676E":
+  "hlil": |-
+    int64_t var_58 = arg2
+    int64_t rax_1
+    int64_t rdx_1
+    rax_1, rdx_1 = core::fmt::ArgumentV1::new::h615299650f3bd196(&var_58)
+    int64_t var_18 = rax_1
+    void var_48
+    core::fmt::Arguments::new_v1::hcedb6f7f059fe400(&var_48, 0x4e788, 1, &var_18, 1)
+    return std::io::stdio::_print::h21df25b67368e792(&var_48)
+  "llil": |-
+    block1:
+      rsp = rsp - 0x78
+      [rsp + 0x20 {var_58}].q = rsi
+      [rsp + 0x28 {var_50}].q = rdx
+      rax = rsp + 0x20 {var_58}
+      [rsp + 0x70 {var_8}].q = rax {var_58}
+      rax = [rsp + 0x70 {var_8}].q {var_58}
+      [rsp + 0x18 {var_60}].q = rdi
+      rdi = rax {var_58}
+      rsi = 0x14560
+      call(_ZN4core3fmt10ArgumentV13new17h615299650f3bd196E)
+      [rsp + 0x10 {var_68}].q = rax
+      [rsp + 8 {var_70}].q = rdx
+      rax = 0x4e788
+      rcx = [rsp + 0x10 {var_68}].q
+      [rsp + 0x60 {var_18}].q = rcx
+      rdx = [rsp + 8 {var_70}].q
+      [rsp + 0x68 {var_10}].q = rdx
+      rsi = rsp + 0x60 {var_18}
+      rdi = rsp + 0x30 {var_48}
+      [rsp {var_78}].q = rsi {var_18}
+      rsi = rax
+      eax = 1
+      rdx = rax
+      rcx = [rsp {var_78}].q {var_18}
+      r8 = rax
+      call(_ZN4core3fmt9Arguments6new_v117hcedb6f7f059fe400E)
+      rdi = rsp + 0x30 {var_48}
+      call([0x50df8].q)
+      rsp = rsp + 0x78
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_58 = arg2
+      var_50 = rdx
+      var_8 = &var_58
+      rax = var_8
+      var_60 = arg1
+      rdi = rax
+      rsi = 0x14560
+      _ZN4core3fmt10ArgumentV13new17h615299650f3bd196E(rdi)
+      var_68 = rax_1
+      var_70 = rdx_1
+      rcx = var_68
+      var_18 = rcx
+      rdx_2 = var_70
+      var_10 = rdx_2
+      rdi_1 = &var_48
+      var_78 = &var_18
+      rcx_1 = var_78
+      _ZN4core3fmt9Arguments6new_v117hcedb6f7f059fe400E(rdi_1, 0x4e788, 1, rcx_1, 1)
+      rdi_2 = &var_48
+      _ZN3std2io5stdio6_print17h21df25b67368e792E(rdi_2)
+      return rax_2
+"_ZN46_$LT$source..ISuck$u20$as$u20$source..Suck$GT$4suck17h32ecaeaa3209495aE":
+  "hlil": |-
+    int64_t var_48
+    alloc::string::String::new::hff13c8ec75caf963(&var_48)
+    int64_t* var_18 = std::io::stdio::stdin::h2d20577a523ddedb()
+    void var_30
+    int64_t rdx_1
+    int64_t rsi_1
+    rdx_1, rsi_1 = _$LT$std..io..stdio..Std...T$::read_to_string::h39bd9020185ce5f0(&var_30, &var_18, &var_48)
+    core::result::Result$LT$T$C$E$GT$::unwrap::h90c4805fd7a75cbf(&var_30, rsi_1, rdx_1)
+    core::ptr::real_drop_in_place::hc28dba8ed9982e82(&var_18)
+    *arg1 = var_48
+    int64_t var_40
+    *(arg1 + 8) = var_40
+    int64_t var_38
+    *(arg1 + 0x10) = var_38
+    return arg1
+  "llil": |-
+    block1:
+      rsp = rsp - 0x68
+      rax = rdi
+      rcx = rsp + 0x20 {var_48}
+      [rsp + 0x18 {var_50}].q = rdi
+      rdi = rcx {var_48}
+      [rsp + 0x10 {var_58}].q = rax
+      call(_ZN5alloc6string6String3new17hff13c8ec75caf963E)
+      goto block2
+    block2:
+      rax = 0x1c4c0
+      call(rax)
+      [rsp + 8 {var_60}].q = rax
+      goto block3
+    block3:
+      rax = [rsp + 8 {var_60}].q
+      [rsp + 0x50 {var_18}].q = rax
+      rcx = 0x1c5b0
+      rdi = rsp + 0x38 {var_30}
+      rsi = rsp + 0x50 {var_18}
+      rdx = rsp + 0x20 {var_48}
+      call(rcx)
+      goto block4
+    block4:
+      rdi = rsp + 0x38 {var_30}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE)
+      goto block5
+    block5:
+      rdi = rsp + 0x50 {var_18}
+      call(_ZN4core3ptr18real_drop_in_place17hc28dba8ed9982e82E)
+      goto block6
+    block6:
+      rax = [rsp + 0x20 {var_48}].q
+      rcx = [rsp + 0x18 {var_50}].q
+      [rcx].q = rax
+      rax = [rsp + 0x28 {var_40}].q
+      [rcx + 8].q = rax
+      rax = [rsp + 0x30 {var_38}].q
+      [rcx + 0x10].q = rax
+      rax = [rsp + 0x10 {var_58}].q
+      rsp = rsp + 0x68
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rax = arg1
+      var_50 = arg1
+      rdi = &var_48
+      var_58 = rax
+      _ZN5alloc6string6String3new17hff13c8ec75caf963E(rdi)
+      goto block2
+    block2:
+      _ZN3std2io5stdio5stdin17h2d20577a523ddedbE()
+      var_60 = rax_1
+      goto block3
+    block3:
+      rax_2 = var_60
+      var_18 = rax_2
+      rdi_1 = &var_30
+      rsi = &var_18
+      rdx = &var_48
+      _ZN55_$LT$std..io..stdio..Stdin$u20$as$u20$std..io..Read$GT$14read_to_string17h39bd9020185ce5f0E(rdi_1, rsi, rdx)
+      goto block4
+    block4:
+      rdi_2 = &var_30
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE(rdi_2, rsi_1, rdx_1)
+      goto block5
+    block5:
+      rdi_3 = &var_18
+      _ZN4core3ptr18real_drop_in_place17hc28dba8ed9982e82E(rdi_3)
+      goto block6
+    block6:
+      rax_3 = var_48
+      rcx = var_50
+      [rcx].q = rax_3
+      rax_4 = var_40
+      [rcx + 8].q = rax_4
+      rax_5 = var_38
+      [rcx + 0x10].q = rax_5
+      rax_6 = var_58
+      return rax_6
+"_ZN46_$LT$source..TSpew$u20$as$u20$source..Spew$GT$4spew17haecce55ae8345c10E":
+  "hlil": |-
+    void var_50
+    std::net::tcp::TcpStream::connect::hcdd42243c6834c31(&var_50, arg1)
+    int32_t var_54 = core::result::Result$LT$T$C$E$GT$::unwrap::hea0d45072c87d345(&var_50)
+    void var_38
+    int64_t rdx_2
+    int64_t rsi_2
+    rdx_2, rsi_2 = _$LT$std..net..tcp..TcpS.....Write$GT$::write::hd3cf6ac1fe77ca85(&var_38, &var_54, arg2, arg3)
+    int64_t rax_3 = core::result::Result$LT$T$C$E$GT$::unwrap::h90c4805fd7a75cbf(&var_38, rsi_2, rdx_2)
+    core::ptr::real_drop_in_place::ha0e2e15d20c0101b()
+    return rax_3
+  "llil": |-
+    block1:
+      rsp = rsp - 0x88
+      rax = rsp + 0x38 {var_50}
+      [rsp + 0x28 {var_60}].q = rdi
+      rdi = rax {var_50}
+      rax = [rsp + 0x28 {var_60}].q
+      [rsp + 0x20 {var_68}].q = rsi
+      rsi = rax
+      [rsp + 0x18 {var_70}].q = rdx
+      call(_ZN3std3net3tcp9TcpStream7connect17hcdd42243c6834c31E)
+      goto block2
+    block2:
+      rdi = rsp + 0x38 {var_50}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17hea0d45072c87d345E)
+      [rsp + 0x34 {var_54}].d = eax
+      rax = [rsp + 0x20 {var_68}].q
+      [rsp + 0x78 {var_10}].q = rax
+      rcx = [rsp + 0x18 {var_70}].q
+      [rsp + 0x80 {var_8}].q = rcx
+      rdx = [rsp + 0x78 {var_10}].q
+      rcx = [rsp + 0x80 {var_8}].q
+      [rsp + 0x10 {var_78}].q = rdx
+      [rsp + 8 {var_80}].q = rcx
+      rax = 0x1ceb0
+      rdi = rsp + 0x50 {var_38}
+      rsi = rsp + 0x34 {var_54}
+      rdx = [rsp + 0x10 {var_78}].q
+      rcx = [rsp + 8 {var_80}].q
+      call(rax)
+      goto block3
+    block3:
+      rdi = rsp + 0x50 {var_38}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE)
+      goto block4
+    block4:
+      rdi = rsp + 0x34 {var_54}
+      call(_ZN4core3ptr18real_drop_in_place17ha0e2e15d20c0101bE)
+      rsp = rsp + 0x88
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_60 = arg1
+      rdi = &var_50
+      rax = var_60
+      var_68 = arg2
+      rsi = rax
+      var_70 = arg3
+      _ZN3std3net3tcp9TcpStream7connect17hcdd42243c6834c31E(rdi, rsi)
+      goto block2
+    block2:
+      rdi_1 = &var_50
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17hea0d45072c87d345E(rdi_1)
+      var_54 = rax_1
+      rax_2 = var_68
+      var_10 = rax_2
+      rcx = var_70
+      var_8 = rcx
+      rdx = var_10
+      rcx_1 = var_8
+      var_78 = rdx
+      var_80 = rcx_1
+      rdi_2 = &var_38
+      rsi_1 = &var_54
+      rdx_1 = var_78
+      rcx_2 = var_80
+      _ZN59_$LT$std..net..tcp..TcpStream$u20$as$u20$std..io..Write$GT$5write17hd3cf6ac1fe77ca85E(rdi_2, rsi_1, rdx_1, rcx_2)
+      goto block3
+    block3:
+      rdi_3 = &var_38
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE(rdi_3, rsi_2, rdx_2)
+      goto block4
+    block4:
+      _ZN4core3ptr18real_drop_in_place17ha0e2e15d20c0101bE()
+      return rax_3
+"_ZN46_$LT$source..TSuck$u20$as$u20$source..Suck$GT$4suck17haed9ab3fb025b7adE":
+  "hlil": |-
+    void var_68
+    std::net::tcp::TcpListener::accept::hc529cecdcac762fd(&var_68, arg2)
+    int32_t var_90
+    core::result::Result$LT$T$C$E$GT$::unwrap::h284d7f7d33470470(&var_90, &var_68)
+    int32_t var_94 = var_90
+    int64_t var_40
+    alloc::string::String::new::hff13c8ec75caf963(&var_40)
+    void var_28
+    int64_t rdx_1
+    int64_t rsi_2
+    rdx_1, rsi_2 = std::io::Read::read_to_string::h3849684957d098b2(&var_28, &var_94, &var_40)
+    core::result::Result$LT$T$C$E$GT$::unwrap::h90c4805fd7a75cbf(&var_28, rsi_2, rdx_1)
+    *arg1 = var_40
+    int64_t var_38
+    *(arg1 + 8) = var_38
+    int64_t var_30
+    *(arg1 + 0x10) = var_30
+    core::ptr::real_drop_in_place::ha0e2e15d20c0101b()
+    return arg1
+  "llil": |-
+    block1:
+      rsp = rsp - 0xa8
+      rax = rdi
+      rcx = rsp + 0x40 {var_68}
+      [rsp + 8 {var_a0}].q = rdi
+      rdi = rcx {var_68}
+      [rsp {var_a8}].q = rax
+      call([0x50b28].q)
+      goto block2
+    block2:
+      rdi = rsp + 0x18 {var_90}
+      rsi = rsp + 0x40 {var_68}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h284d7f7d33470470E)
+      eax = [rsp + 0x18 {var_90}].d
+      [rsp + 0x14 {var_94}].d = eax
+      rdi = rsp + 0x68 {var_40}
+      call(_ZN5alloc6string6String3new17hff13c8ec75caf963E)
+      goto block3
+    block3:
+      rdi = rsp + 0x80 {var_28}
+      rsi = rsp + 0x14 {var_94}
+      rdx = rsp + 0x68 {var_40}
+      call(_ZN3std2io4Read14read_to_string17h3849684957d098b2E)
+      goto block4
+    block4:
+      rdi = rsp + 0x80 {var_28}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE)
+      goto block5
+    block5:
+      rax = [rsp + 0x68 {var_40}].q
+      rcx = [rsp + 8 {var_a0}].q
+      [rcx].q = rax
+      rax = [rsp + 0x70 {var_38}].q
+      [rcx + 8].q = rax
+      rax = [rsp + 0x78 {var_30}].q
+      [rcx + 0x10].q = rax
+      rdi = rsp + 0x14 {var_94}
+      call(_ZN4core3ptr18real_drop_in_place17ha0e2e15d20c0101bE)
+      rax = [rsp {var_a8}].q
+      rsp = rsp + 0xa8
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rax = arg1
+      var_a0 = arg1
+      rdi = &var_68
+      var_a8 = rax
+      _ZN3std3net3tcp11TcpListener6accept17hc529cecdcac762fdE(rdi, arg2)
+      goto block2
+    block2:
+      rdi_1 = &var_90
+      rsi = &var_68
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h284d7f7d33470470E(rdi_1, rsi)
+      rax_1 = var_90
+      var_94 = rax_1
+      rdi_2 = &var_40
+      _ZN5alloc6string6String3new17hff13c8ec75caf963E(rdi_2)
+      goto block3
+    block3:
+      rdi_3 = &var_28
+      rsi_1 = &var_94
+      rdx = &var_40
+      _ZN3std2io4Read14read_to_string17h3849684957d098b2E(rdi_3, rsi_1, rdx)
+      goto block4
+    block4:
+      rdi_4 = &var_28
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h90c4805fd7a75cbfE(rdi_4, rsi_2, rdx_1)
+      goto block5
+    block5:
+      rax_2 = var_40
+      rcx = var_a0
+      [rcx].q = rax_2
+      rax_3 = var_38
+      [rcx + 8].q = rax_3
+      rax_4 = var_30
+      [rcx + 0x10].q = rax_4
+      _ZN4core3ptr18real_drop_in_place17ha0e2e15d20c0101bE()
+      rax_5 = var_a8
+      return rax_5
+"_ZN6source5ISpew3new17he72d9929306f37eaE":
+  "hlil": "return "
+  "llil": |-
+    block1:
+      <return> jump(pop)
+  "mlil": "block1:\n  return "
+"_ZN6source5ISuck3new17h49f34745f03fe2b1E":
+  "hlil": "return "
+  "llil": |-
+    block1:
+      <return> jump(pop)
+  "mlil": "block1:\n  return "
+"_ZN6source5TSpew3new17h085cceb755d092edE":
+  "hlil": |-
+    void var_18
+    alloc::str::_$LT$impl$u2...$str$GT$::to_owned::hd0bb78770af16b04(&var_18, "127.0.0.1:-", 0xa)
+    int64_t var_30
+    _$LT$alloc..string..Stri...F$str$GT$$GT$::add::h392f83cccbc6e911(&var_30, &var_18, arg2, arg3)
+    *arg1 = var_30
+    int64_t var_28
+    *(arg1 + 8) = var_28
+    int64_t var_20
+    *(arg1 + 0x10) = var_20
+    return arg1
+  "llil": |-
+    block1:
+      rsp = rsp - 0x58
+      rax = rdi
+      rcx = 0x3a068
+      r8 = rsp + 0x40 {var_18}
+      [rsp + 0x20 {var_38}].q = rdi
+      rdi = r8 {var_18}
+      [rsp + 0x18 {var_40}].q = rsi
+      rsi = rcx
+      ecx = 0xa
+      [rsp + 0x10 {var_48}].q = rdx
+      rdx = rcx
+      [rsp + 8 {var_50}].q = rax
+      call(_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hd0bb78770af16b04E)
+      rdi = rsp + 0x28 {var_30}
+      rsi = rsp + 0x40 {var_18}
+      rdx = [rsp + 0x18 {var_40}].q
+      rcx = [rsp + 0x10 {var_48}].q
+      call(_ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3add17h392f83cccbc6e911E)
+      rax = [rsp + 0x28 {var_30}].q
+      rcx = [rsp + 0x20 {var_38}].q
+      [rcx].q = rax
+      rax = [rsp + 0x30 {var_28}].q
+      [rcx + 8].q = rax
+      rax = [rsp + 0x38 {var_20}].q
+      [rcx + 0x10].q = rax
+      rax = [rsp + 8 {var_50}].q
+      rsp = rsp + 0x58
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      rax = arg1
+      var_38 = arg1
+      rdi = &var_18
+      var_40 = arg2
+      var_48 = arg3
+      var_50 = rax
+      _ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hd0bb78770af16b04E(rdi, "127.0.0.1:-", 0xa)
+      rdi_1 = &var_30
+      rsi = &var_18
+      rdx = var_40
+      rcx = var_48
+      _ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3add17h392f83cccbc6e911E(rdi_1, rsi, rdx, rcx)
+      rax_1 = var_30
+      rcx_1 = var_38
+      [rcx_1].q = rax_1
+      rax_2 = var_28
+      [rcx_1 + 8].q = rax_2
+      rax_3 = var_20
+      [rcx_1 + 0x10].q = rax_3
+      rax_4 = var_50
+      return rax_4
+"_ZN6source5TSuck3new17h6cee0b11623e1d34E":
+  "hlil": |-
+    void var_48
+    alloc::str::_$LT$impl$u2...$str$GT$::to_owned::hd0bb78770af16b04(&var_48, "127.0.0.1:-", 0xa)
+    int64_t var_60
+    _$LT$alloc..string..Stri...F$str$GT$$GT$::add::h392f83cccbc6e911(&var_60, &var_48, arg1, arg2)
+    int64_t var_18 = var_60
+    void var_30
+    std::net::tcp::TcpListener::bind::h3a9bc72dd6fe33d7(&var_30, &var_18)
+    return zx.q(core::result::Result$LT$T$C$E$GT$::unwrap::h101b8885c637fe14(&var_30))
+  "llil": |-
+    block1:
+      rsp = rsp - 0x88
+      rax = 0x3a068
+      rcx = rsp + 0x40 {var_48}
+      [rsp + 0x18 {var_70}].q = rdi
+      rdi = rcx {var_48}
+      [rsp + 0x10 {var_78}].q = rsi
+      rsi = rax
+      edx = 0xa
+      call(_ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hd0bb78770af16b04E)
+      rdi = rsp + 0x28 {var_60}
+      rsi = rsp + 0x40 {var_48}
+      rdx = [rsp + 0x18 {var_70}].q
+      rcx = [rsp + 0x10 {var_78}].q
+      call(_ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3add17h392f83cccbc6e911E)
+      rax = [rsp + 0x28 {var_60}].q
+      [rsp + 0x70 {var_18}].q = rax
+      rax = [rsp + 0x30 {var_58}].q
+      [rsp + 0x78 {var_10}].q = rax
+      rax = [rsp + 0x38 {var_50}].q
+      [rsp + 0x80 {var_8}].q = rax
+      rdi = rsp + 0x58 {var_30}
+      rsi = rsp + 0x70 {var_18}
+      call(_ZN3std3net3tcp11TcpListener4bind17h3a9bc72dd6fe33d7E)
+      rdi = rsp + 0x58 {var_30}
+      call(_ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h101b8885c637fe14E)
+      [rsp + 0xc {var_7c}].d = eax
+      eax = [rsp + 0xc {var_7c}].d
+      [rsp + 0x24 {var_64}].d = eax
+      eax = [rsp + 0x24 {var_64}].d
+      rsp = rsp + 0x88
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_70 = arg1
+      rdi = &var_48
+      var_78 = arg2
+      _ZN5alloc3str56_$LT$impl$u20$alloc..borrow..ToOwned$u20$for$u20$str$GT$8to_owned17hd0bb78770af16b04E(rdi, "127.0.0.1:-", 0xa)
+      rdi_1 = &var_60
+      rsi = &var_48
+      rdx = var_70
+      rcx = var_78
+      _ZN78_$LT$alloc..string..String$u20$as$u20$core..ops..arith..Add$LT$$RF$str$GT$$GT$3add17h392f83cccbc6e911E(rdi_1, rsi, rdx, rcx)
+      rax = var_60
+      var_18 = rax
+      rax_1 = var_58
+      var_10 = rax_1
+      rax_2 = var_50
+      var_8 = rax_2
+      rdi_2 = &var_30
+      rsi_1 = &var_18
+      _ZN3std3net3tcp11TcpListener4bind17h3a9bc72dd6fe33d7E(rdi_2, rsi_1)
+      rdi_3 = &var_30
+      _ZN4core6result19Result$LT$T$C$E$GT$6unwrap17h101b8885c637fe14E(rdi_3)
+      var_7c = rax_3
+      rax_4 = var_7c
+      var_64 = rax_4
+      rax_5 = zx.q(var_64)
+      return rax_5
+"_ZN6source8new_spew17ha724055772a54e0dE":
+  "hlil": |-
+    int64_t var_38 = arg1
+    int64_t* var_28
+    if ((core::cmp::impls::_$LT$i...$u20$$RF$A$GT$::eq::h45cd6af8ebe576f4(&var_38, 0x4e798) & 1) != 0)
+        var_28 = alloc::alloc::exchange_malloc::h86173ce4d444adda(0, 1)
+    else
+        int64_t var_18
+        source::TSpew::new::h085cceb755d092ed(&var_18, var_38, arg2)
+        int64_t* rax_3 = alloc::alloc::exchange_malloc::h86173ce4d444adda(0x18, 8)
+        *rax_3 = var_18
+        int64_t var_10
+        *(rax_3 + 8) = var_10
+        int64_t var_8
+        *(rax_3 + 0x10) = var_8
+        var_28 = rax_3
+    return var_28
+  "llil": |-
+    block1:
+      rsp = rsp - 0x58
+      rax = 0x4e798
+      [rsp + 0x20 {var_38}].q = rdi
+      [rsp + 0x28 {var_30}].q = rsi
+      rdi = rsp + 0x20 {var_38}
+      rsi = rax
+      call(_ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eq17h45cd6af8ebe576f4E)
+      [rsp + 0x1f {var_39}].b = al
+      al = [rsp + 0x1f {var_39}].b
+      if (al & 0x1 != 0) block2 else block3
+    block2:
+      rdi = [rsp + 0x20 {var_38}].q
+      rsi = [rsp + 0x28 {var_30}].q
+      call(_ZN6source5ISpew3new17he72d9929306f37eaE)
+      eax = 0
+      edi = eax
+      esi = 1
+      call(_ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE)
+      [rsp + 0x10 {var_48_1}].q = rax
+      rax = 0x4e7e8
+      rcx = [rsp + 0x10 {var_48_1}].q
+      [rsp + 0x30 {var_28}].q = rcx
+      [rsp + 0x38 {var_20}].q = rax
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax = [rsp + 0x30 {var_28}].q
+      rdx = [rsp + 0x38 {var_20}].q
+      rsp = rsp + 0x58
+      <return> jump(pop)
+    block5:
+      rsi = [rsp + 0x20 {var_38}].q
+      rdx = [rsp + 0x28 {var_30}].q
+      rdi = rsp + 0x40 {var_18}
+      call(_ZN6source5TSpew3new17h085cceb755d092edE)
+      goto block6
+    block6:
+      edi = 0x18
+      esi = 8
+      call(_ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE)
+      rcx = rax
+      rdx = [rsp + 0x40 {var_18}].q
+      [rax].q = rdx
+      rdx = [rsp + 0x48 {var_10}].q
+      [rax + 8].q = rdx
+      rdx = [rsp + 0x50 {var_8}].q
+      [rax + 0x10].q = rdx
+      [rsp + 8 {var_50_1}].q = rcx
+      rax = 0x4e808
+      rcx = [rsp + 8 {var_50_1}].q
+      [rsp + 0x30 {var_28}].q = rcx
+      [rsp + 0x38 {var_20}].q = rax
+      goto block4
+  "mlil": |-
+    block1:
+      var_38 = arg1
+      var_30 = arg2
+      rdi = &var_38
+      _ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eq17h45cd6af8ebe576f4E(rdi, 0x4e798)
+      var_39 = rax
+      rax = var_39
+      if ((rax & 1) != 0) block2 else block3
+    block2:
+      rdi_2 = var_38
+      rsi_1 = var_30
+      _ZN6source5ISpew3new17he72d9929306f37eaE()
+      _ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE(0, 1)
+      var_48_1 = rax_1
+      rcx = var_48_1
+      var_28 = rcx
+      var_20 = 0x4e7e8
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax_2 = var_28
+      rdx_2 = var_20
+      return rax_2
+    block5:
+      rsi = var_38
+      rdx_1 = var_30
+      rdi_1 = &var_18
+      _ZN6source5TSpew3new17h085cceb755d092edE(rdi_1, rsi, rdx_1)
+      goto block6
+    block6:
+      _ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE(0x18, 8)
+      rcx_1 = rax_3
+      rdx_3 = var_18
+      [rax_3].q = rdx_3
+      rdx_4 = var_10
+      [rax_3 + 8].q = rdx_4
+      rdx_5 = var_8
+      [rax_3 + 0x10].q = rdx_5
+      var_50_1 = rcx_1
+      rcx_2 = var_50_1
+      var_28 = rcx_2
+      var_20 = 0x4e808
+      goto block4
+"_ZN6source8new_suck17h30ebdc04375d3e13E":
+  "hlil": |-
+    int64_t var_20 = arg1
+    int32_t* var_10
+    if ((core::cmp::impls::_$LT$i...$u20$$RF$A$GT$::eq::h45cd6af8ebe576f4(&var_20, 0x4e798) & 1) != 0)
+        var_10 = alloc::alloc::exchange_malloc::h86173ce4d444adda(0, 1)
+    else
+        int32_t rax_1 = source::TSuck::new::h6cee0b11623e1d34(var_20, arg2)
+        int32_t* rax_4 = alloc::alloc::exchange_malloc::h86173ce4d444adda(4, 4)
+        *rax_4 = rax_1
+        var_10 = rax_4
+    return var_10
+  "llil": |-
+    block1:
+      rsp = rsp - 0x38
+      rax = 0x4e798
+      [rsp + 0x18 {var_20}].q = rdi
+      [rsp + 0x20 {var_18}].q = rsi
+      rdi = rsp + 0x18 {var_20}
+      rsi = rax
+      call(_ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eq17h45cd6af8ebe576f4E)
+      [rsp + 0x17 {var_21}].b = al
+      al = [rsp + 0x17 {var_21}].b
+      if (al & 0x1 != 0) block2 else block3
+    block2:
+      rdi = [rsp + 0x18 {var_20}].q
+      rsi = [rsp + 0x20 {var_18}].q
+      call(_ZN6source5ISuck3new17h49f34745f03fe2b1E)
+      eax = 0
+      edi = eax
+      esi = 1
+      call(_ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE)
+      [rsp + 8 {var_30_1}].q = rax
+      rax = 0x4e7a8
+      rcx = [rsp + 8 {var_30_1}].q
+      [rsp + 0x28 {var_10}].q = rcx
+      [rsp + 0x30 {var_8}].q = rax
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax = [rsp + 0x28 {var_10}].q
+      rdx = [rsp + 0x30 {var_8}].q
+      rsp = rsp + 0x38
+      <return> jump(pop)
+    block5:
+      rdi = [rsp + 0x18 {var_20}].q
+      rsi = [rsp + 0x20 {var_18}].q
+      call(_ZN6source5TSuck3new17h6cee0b11623e1d34E)
+      [rsp + 0x10 {var_28_1}].d = eax
+      goto block6
+    block6:
+      eax = 4
+      rdi = rax
+      rsi = rax
+      call(_ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE)
+      rcx = rax
+      edx = [rsp + 0x10 {var_28_1}].d
+      [rax].d = edx
+      [rsp {var_38_1}].q = rcx
+      rax = 0x4e7c8
+      rcx = [rsp {var_38_1}].q
+      [rsp + 0x28 {var_10}].q = rcx
+      [rsp + 0x30 {var_8}].q = rax
+      goto block4
+  "mlil": |-
+    block1:
+      var_20 = arg1
+      var_18 = arg2
+      rdi = &var_20
+      _ZN4core3cmp5impls69_$LT$impl$u20$core..cmp..PartialEq$LT$$RF$B$GT$$u20$for$u20$$RF$A$GT$2eq17h45cd6af8ebe576f4E(rdi, 0x4e798)
+      var_21 = rax
+      rax = var_21
+      if ((rax & 1) != 0) block2 else block3
+    block2:
+      rdi_2 = var_20
+      rsi_1 = var_18
+      _ZN6source5ISuck3new17h49f34745f03fe2b1E()
+      _ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE(0, 1)
+      var_30_1 = rax_2
+      rcx = var_30_1
+      var_10 = rcx
+      var_8 = 0x4e7a8
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax_3 = var_10
+      rdx_1 = var_8
+      return rax_3
+    block5:
+      rdi_1 = var_20
+      rsi = var_18
+      _ZN6source5TSuck3new17h6cee0b11623e1d34E(rdi_1, rsi)
+      var_28_1 = rax_1
+      goto block6
+    block6:
+      _ZN5alloc5alloc15exchange_malloc17h86173ce4d444addaE(4, 4)
+      rcx_1 = rax_4
+      rdx_2 = var_28_1
+      [rax_4].d = rdx_2
+      var_38_1 = rcx_1
+      rcx_2 = var_38_1
+      var_10 = rcx_2
+      var_8 = 0x4e7c8
+      goto block4

@@ -1,0 +1,980 @@
+"_Z4findc":
+  "hlil": |-
+    void* fsbase
+    int64_t rax_1 = *(fsbase + 0x28)
+    int64_t var_20 = 0
+    while (true)
+        if (var_20 u> 4)
+            std::ostream::operator<<(std::operator<<<std::char_traits<char> >(std::cerr, "Chaos and corruption!"))
+            exit(1)
+            noreturn
+        char rsi
+        if (std::__cxx11::basic_stri...s<char>, std::allocator<char> >::find((var_20 << 5).b - 0x60, zx.q(sx.d(rsi))) != -1)
+            break
+        var_20 = var_20 + 1
+    std::make_tuple<uint64_t&, uint64_t&>(arg1)
+    if ((rax_1 ^ *(fsbase + 0x28)) == 0)
+        return arg1
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x30
+      [rbp - 0x28 {var_30}].q = rdi
+      eax = esi
+      [rbp - 0x2c {var_34}].b = al
+      rax = [fsbase + 0x28].q
+      [rbp - 8 {var_10}].q = rax
+      eax = 0
+      [rbp - 0x18 {var_20}].q = 0
+      goto block2
+    block2:
+      rax = [rbp - 0x18 {var_20}].q
+      if (rax u> 4) block3 else block4
+    block3:
+      rsi = 0x4008
+      rdi = 0x6160
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      rdx = rax
+      rax = [0x5fd0].q
+      rsi = rax
+      rdi = rdx
+      call(_ZNSolsEPFRSoS_E)
+      edi = 1
+      call(exit)
+      noreturn
+    block4:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax << 5
+      rdx = rax
+      rax = 0x62a0
+      rcx = rdx + rax
+      eax = sx.d([rbp - 0x2c {var_34}].b)
+      edx = 0
+      esi = eax
+      rdi = rcx
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4findEcm)
+      [rbp - 0x10 {var_18_1}].q = rax
+      rax = [rbp - 0x10 {var_18_1}].q
+      if (rax == -1) block5 else block6
+    block5:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax + 1
+      [rbp - 0x18 {var_20}].q = rax
+      goto block2
+    block6:
+      rax = [rbp - 0x28 {var_30}].q
+      rdx = rbp - 0x10 {var_18}
+      rcx = rbp - 0x18
+      rsi = rcx
+      rdi = rax
+      call(_ZSt10make_tupleIJRmS0_EESt5tupleIJDpNSt17__decay_and_stripIT_E6__typeEEEDpOS3_)
+      rax = [rbp - 8 {var_10}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block7 else block8
+    block7:
+      rax = [rbp - 0x28 {var_30}].q
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block8:
+      goto block9
+    block9:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_30 = arg1
+      rax = rsi
+      var_34 = rax
+      rax_1 = [fsbase + 0x28].q
+      var_10 = rax_1
+      rax_2 = 0
+      var_20 = 0
+      goto block2
+    block2:
+      rax_3 = var_20
+      if (rax_3 u> 4) block3 else block4
+    block3:
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x6160, "Chaos and corruption!")
+      rdx_3 = rax_14
+      rsi_2 = std::endl<char, std::char_traits<char> >
+      rdi_2 = rdx_3
+      _ZNSolsEPFRSoS_E(rdi_2)
+      exit(1)
+      noreturn
+    block4:
+      rax_4 = var_20
+      rax_5 = (rax_4 << 5).b
+      rdx_1 = rax_5
+      rcx_1 = rdx_1 - 0x60
+      rax_6 = sx.d(var_34)
+      rdx_2 = 0
+      rsi_1 = zx.q(rax_6)
+      rdi = rcx_1
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4findEcm(rdi, rsi_1)
+      var_18_1 = rax_7
+      rax_8 = var_18_1
+      if (rax_8 == -1) block5 else block6
+    block5:
+      rax_12 = var_20
+      rax_13 = rax_12 + 1
+      var_20 = rax_13
+      goto block2
+    block6:
+      rax_9 = var_30
+      rdi_1 = rax_9
+      _ZSt10make_tupleIJRmS0_EESt5tupleIJDpNSt17__decay_and_stripIT_E6__typeEEEDpOS3_(rdi_1)
+      rax_10 = var_10
+      rax_11 = rax_10 ^ [fsbase + 0x28].q
+      if (rax_11 == 0) block7 else block8
+    block7:
+      rax_15 = var_30
+      return rax_15
+    block8:
+      goto block9
+    block9:
+      __stack_chk_fail()
+      noreturn
+"_Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    std::__cxx11::basic_stri... std::allocator<char> >::basic_string()
+    int64_t var_28 = 0
+    while (true)
+        int64_t rax_3 = std::__cxx11::basic_stri...s<char>, std::allocator<char> >::size()
+        var_28 - rax_3
+        rax_3.b = var_28 u< rax_3
+        if (rax_3.b == 0)
+            break
+        char rax_6 = *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](arg2)
+        char rax_9
+        char rax_10
+        if (rax_6 != 0x6a)
+            rax_9 = *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](arg2)
+            if (rax_9 != 0x4a)
+                rax_10 = 0
+        if (rax_6 == 0x6a || (rax_6 != 0x6a && rax_9 == 0x4a))
+            rax_10 = 1
+        if (rax_10 != 0)
+            std::__cxx11::basic_stri...>, std::allocator<char> >::operator+=(arg1.b)
+        else
+            int32_t rax_16
+            rax_16.b = isalpha(sx.d(*std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](arg2))) != 0
+            if (rax_16.b != 0)
+                toupper(sx.d(*std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](arg2)))
+                std::__cxx11::basic_stri...>, std::allocator<char> >::operator+=(arg1.b)
+        var_28 = var_28 + 1
+    uint64_t rax_25
+    rax_25.b = zx.q(std::__cxx11::basic_stri...s<char>, std::allocator<char> >::size() & 1) == 1
+    if (rax_25.b != 0)
+        std::__cxx11::basic_stri...>, std::allocator<char> >::operator+=(arg1.b)
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return arg1
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x28
+      [rbp - 0x28 {var_30}].q = rdi
+      [rbp - 0x30 {var_38}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rax = [rbp - 0x28 {var_30}].q
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev)
+      [rbp - 0x20 {var_28}].q = 0
+      goto block2
+    block2:
+      rax = [rbp - 0x30 {var_38}].q
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv)
+      temp0.q = [rbp - 0x20 {var_28}].q
+      [rbp - 0x20 {var_28}].q - rax
+      flag:c = temp0.q u< rax
+      al = flag:c
+      if (al == 0) block3 else block4
+    block3:
+      rax = [rbp - 0x28 {var_30}].q
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv)
+      eax = eax & 0x1
+      al = rax == 1
+      if (al == 0) block5 else block6
+    block4:
+      rdx = [rbp - 0x20 {var_28}].q
+      rax = [rbp - 0x30 {var_38}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      if (al == 0x6a) block7 else block8
+    block5:
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block9 else block10
+    block6:
+      rax = [rbp - 0x28 {var_30}].q
+      esi = 0x58
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc)
+      goto block5
+    block7:
+      eax = 1
+      goto block11
+    block8:
+      rdx = [rbp - 0x20 {var_28}].q
+      rax = [rbp - 0x30 {var_38}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      if (al != 0x4a) block12 else block7
+    block9:
+      rax = [rbp - 0x28 {var_30}].q
+      rsp = rsp + 0x28
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block10:
+      call(__stack_chk_fail)
+      noreturn
+    block11:
+      if (al == 0) block13 else block14
+    block12:
+      eax = 0
+      goto block11
+    block13:
+      rdx = [rbp - 0x20 {var_28}].q
+      rax = [rbp - 0x30 {var_38}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      eax = sx.d(al)
+      edi = eax
+      call(isalpha)
+      al = eax != 0
+      if (al == 0) block15 else block16
+    block14:
+      rax = [rbp - 0x28 {var_30}].q
+      esi = 0x49
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc)
+      goto block15
+    block15:
+      [rbp - 0x20 {var_28}].q = [rbp - 0x20 {var_28}].q + 1
+      goto block2
+    block16:
+      rdx = [rbp - 0x20 {var_28}].q
+      rax = [rbp - 0x30 {var_38}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      eax = sx.d(al)
+      edi = eax
+      call(toupper)
+      edx = sx.d(al)
+      rax = [rbp - 0x28 {var_30}].q
+      esi = edx
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc)
+      goto block15
+  "mlil": |-
+    block1:
+      var_30 = arg1
+      var_38 = arg2
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = var_30
+      rdi = rax_1
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev()
+      var_28 = 0
+      goto block2
+    block2:
+      rax_2 = var_38
+      rdi_1 = rax_2
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv()
+      temp0_1 = var_28
+      var_28 - rax_3
+      c_1 = temp0_1 u< rax_3
+      rax_3.al = c_1
+      if (rax_3.al == 0) block3 else block4
+    block3:
+      rax_23 = var_30
+      rdi_10 = rax_23
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv()
+      rax_25 = zx.q(rax_24 & 1)
+      rax_25.al = rax_25 == 1
+      if (rax_25.al == 0) block5 else block6
+    block4:
+      rdx_1 = var_28
+      rax_4 = var_38
+      rsi = rdx_1
+      rdi_2 = rax_4
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_2)
+      rax_6 = [rax_5].b
+      if (rax_6 == 0x6a) block7 else block8
+    block5:
+      rax_27 = var_20
+      rax_28 = rax_27 ^ [fsbase + 0x28].q
+      if (rax_28 == 0) block9 else block10
+    block6:
+      rax_26 = var_30:0.b
+      rsi_6 = 0x58
+      rdi_11 = rax_26
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc(rdi_11)
+      goto block5
+    block7:
+      rax_10 = 1
+      goto block11
+    block8:
+      rdx_2 = var_28
+      rax_7 = var_38
+      rsi_1 = rdx_2
+      rdi_3 = rax_7
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_3)
+      rax_9 = [rax_8].b
+      if (rax_9 != 0x4a) block12 else block7
+    block9:
+      rax_29 = var_30
+      return rax_29
+    block10:
+      __stack_chk_fail()
+      noreturn
+    block11:
+      if (rax_10 == 0) block13 else block14
+    block12:
+      rax_10 = 0
+      goto block11
+    block13:
+      rdx_3 = var_28
+      rax_12 = var_38
+      rsi_3 = rdx_3
+      rdi_5 = rax_12
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_5)
+      rax_14 = [rax_13].b
+      rax_15 = sx.d(rax_14)
+      rdi_6 = rax_15
+      isalpha(rdi_6)
+      rax_16.al = rax_16 != 0
+      if (rax_16.al == 0) block15 else block16
+    block14:
+      rax_11 = var_30:0.b
+      rsi_2 = 0x49
+      rdi_4 = rax_11
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc(rdi_4)
+      goto block15
+    block15:
+      var_28 = var_28 + 1
+      goto block2
+    block16:
+      rdx_4 = var_28
+      rax_17 = var_38
+      rsi_4 = rdx_4
+      rdi_7 = rax_17
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_7)
+      rax_19 = [rax_18].b
+      rax_20 = sx.d(rax_19)
+      rdi_8 = rax_20
+      toupper(rdi_8)
+      rdx_5 = sx.d(rax_21)
+      rax_22 = var_30:0.b
+      rsi_5 = zx.q(rdx_5)
+      rdi_9 = rax_22
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc(rdi_9)
+      goto block15
+"_Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    void var_48
+    uint64_t rsi
+    clean(&var_48, rsi)
+    std::__cxx11::basic_stri... std::allocator<char> >::basic_string()
+    int32_t var_8c = 0
+    while (true)
+        int64_t rbx_1 = sx.q(var_8c)
+        int64_t rax_3 = std::__cxx11::basic_stri...s<char>, std::allocator<char> >::size()
+        rbx_1 - rax_3
+        rax_3.b = rbx_1 u< rax_3
+        if (rax_3.b == 0)
+            break
+        *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](&var_48)
+        void var_68
+        find(&var_68)
+        std::_Head_base<1ul, uint64_t, false>* rax_7 = std::get<0ul, uint64_t, uint64_t>(&var_68)
+        std::_Head_base<1ul, uint64_t, false>* rax_8 = std::get<1ul, uint64_t, uint64_t>(&var_68)
+        *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[](&var_48)
+        void var_58
+        find(&var_58)
+        std::_Head_base<1ul, uint64_t, false>* rax_13 = std::get<0ul, uint64_t, uint64_t>(&var_58)
+        std::_Head_base<1ul, uint64_t, false>* rax_14 = std::get<1ul, uint64_t, uint64_t>(&var_58)
+        if (*rax_7 == *rax_13)
+            int64_t rax_21
+            int64_t rdx_6
+            rdx_6:rax_21 = mulu.dp.q(*rax_8 + 1, -0x3333333333333333)
+            uint64_t rax_23 = rdx_6 u>> 2
+            *rax_8 = (*rax_8 + 1) - ((rax_23 << 2) + rax_23)
+            int64_t rax_29
+            int64_t rdx_11
+            rdx_11:rax_29 = mulu.dp.q(*rax_14 + 1, -0x3333333333333333)
+            uint64_t rax_31 = rdx_11 u>> 2
+            *rax_14 = (*rax_14 + 1) - ((rax_31 << 2) + rax_31)
+        else if (*rax_8 != *rax_14)
+            _ZSt4swapImENSt9enable_i...signableIS4_EEE5valueEvE4typeERS4_SE_(rax_8, rax_14)
+        else
+            int64_t rax_40
+            int64_t rdx_17
+            rdx_17:rax_40 = mulu.dp.q(*rax_7 + 1, -0x3333333333333333)
+            uint64_t rax_42 = rdx_17 u>> 2
+            *rax_7 = (*rax_7 + 1) - ((rax_42 << 2) + rax_42)
+            int64_t rax_48
+            int64_t rdx_22
+            rdx_22:rax_48 = mulu.dp.q(*rax_13 + 1, -0x3333333333333333)
+            uint64_t rax_50 = rdx_22 u>> 2
+            *rax_13 = (*rax_13 + 1) - ((rax_50 << 2) + rax_50)
+        *rax_8
+        *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[]((*rax_7 << 5) + UNFAIR)
+        std::__cxx11::basic_stri...>, std::allocator<char> >::operator+=(arg1.b)
+        *rax_14
+        *std::__cxx11::basic_stri...>, std::allocator<char> >::operator[]((*rax_13 << 5) + UNFAIR)
+        std::__cxx11::basic_stri...>, std::allocator<char> >::operator+=(arg1.b)
+        var_8c = var_8c + 2
+    std::__cxx11::basic_stri...std::allocator<char> >::~basic_string()
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return arg1
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x98
+      [rbp - 0x98 {var_a0}].q = rdi
+      [rbp - 0xa0 {var_a8}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      rax = rbp - 0x40 {var_48}
+      rdx = [rbp - 0xa0 {var_a8}].q
+      rsi = rdx
+      rdi = rax {var_48}
+      call(_Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE)
+      rax = [rbp - 0x98 {var_a0}].q
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev)
+      [rbp - 0x84 {var_8c}].d = 0
+      goto block2
+    block2:
+      eax = [rbp - 0x84 {var_8c}].d
+      rbx = sx.q(eax)
+      rax = rbp - 0x40 {var_48}
+      rdi = rax {var_48}
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv)
+      rbx - rax
+      flag:c = rbx u< rax
+      al = flag:c
+      if (al == 0) block3 else block4
+    block3:
+      rax = rbp - 0x40 {var_48}
+      rdi = rax {var_48}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev)
+      rax = [rbp - 0x18 {var_20}].q
+      rax = rax ^ [fsbase + 0x28].q
+      if (rax == 0) block5 else block6
+    block4:
+      eax = [rbp - 0x84 {var_8c}].d
+      rdx = sx.q(eax)
+      rax = rbp - 0x40 {var_48}
+      rsi = rdx
+      rdi = rax {var_48}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      edx = sx.d(al)
+      rax = rbp - 0x60 {var_68}
+      esi = edx
+      rdi = rax {var_68}
+      call(_Z4findc)
+      rax = rbp - 0x60 {var_68}
+      rdi = rax {var_68}
+      call(_ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_)
+      [rbp - 0x80 {var_88_1}].q = rax
+      rax = rbp - 0x60 {var_68}
+      rdi = rax {var_68}
+      call(_ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_)
+      [rbp - 0x78 {var_80_1}].q = rax
+      eax = [rbp - 0x84 {var_8c}].d
+      eax = eax + 1
+      rdx = sx.q(eax)
+      rax = rbp - 0x40 {var_48}
+      rsi = rdx
+      rdi = rax {var_48}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      edx = sx.d(al)
+      rax = rbp - 0x50 {var_58}
+      esi = edx
+      rdi = rax {var_58}
+      call(_Z4findc)
+      rax = rbp - 0x50 {var_58}
+      rdi = rax {var_58}
+      call(_ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_)
+      [rbp - 0x70 {var_78_1}].q = rax
+      rax = rbp - 0x50 {var_58}
+      rdi = rax {var_58}
+      call(_ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_)
+      [rbp - 0x68 {var_70_1}].q = rax
+      rax = [rbp - 0x80 {var_88_1}].q
+      rdx = [rax].q
+      rax = [rbp - 0x70 {var_78_1}].q
+      rax = [rax].q
+      if (rdx != rax) block7 else block8
+    block5:
+      rax = [rbp - 0x98 {var_a0}].q
+      rsp = rsp + 0x98
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block6:
+      goto block9
+    block7:
+      rax = [rbp - 0x78 {var_80_1}].q
+      rdx = [rax].q
+      rax = [rbp - 0x68 {var_70_1}].q
+      rax = [rax].q
+      if (rdx != rax) block10 else block11
+    block8:
+      rax = [rbp - 0x78 {var_80_1}].q
+      rax = [rax].q
+      rcx = rax + 1
+      rdx = -0x3333333333333333
+      rax = rcx
+      rdx:rax = mulu.dp.q(rax, rdx)
+      rax = rdx
+      rax = rax u>> 2
+      rdx = rax
+      rdx = rdx << 2
+      rdx = rdx + rax
+      rax = rcx
+      rax = rax - rdx
+      rdx = [rbp - 0x78 {var_80_1}].q
+      [rdx].q = rax
+      rax = [rbp - 0x68 {var_70_1}].q
+      rax = [rax].q
+      rcx = rax + 1
+      rdx = -0x3333333333333333
+      rax = rcx
+      rdx:rax = mulu.dp.q(rax, rdx)
+      rax = rdx
+      rax = rax u>> 2
+      rdx = rax
+      rdx = rdx << 2
+      rdx = rdx + rax
+      rax = rcx
+      rax = rax - rdx
+      rdx = [rbp - 0x68 {var_70_1}].q
+      [rdx].q = rax
+      goto block12
+    block9:
+      call(__stack_chk_fail)
+      noreturn
+    block10:
+      rdx = [rbp - 0x68 {var_70_1}].q
+      rax = [rbp - 0x78 {var_80_1}].q
+      rsi = rdx
+      rdi = rax
+      call(_ZSt4swapImENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS4_ESt18is_move_assignableIS4_EEE5valueEvE4typeERS4_SE_)
+      goto block12
+    block11:
+      rax = [rbp - 0x80 {var_88_1}].q
+      rax = [rax].q
+      rcx = rax + 1
+      rdx = -0x3333333333333333
+      rax = rcx
+      rdx:rax = mulu.dp.q(rax, rdx)
+      rax = rdx
+      rax = rax u>> 2
+      rdx = rax
+      rdx = rdx << 2
+      rdx = rdx + rax
+      rax = rcx
+      rax = rax - rdx
+      rdx = [rbp - 0x80 {var_88_1}].q
+      [rdx].q = rax
+      rax = [rbp - 0x70 {var_78_1}].q
+      rax = [rax].q
+      rcx = rax + 1
+      rdx = -0x3333333333333333
+      rax = rcx
+      rdx:rax = mulu.dp.q(rax, rdx)
+      rax = rdx
+      rax = rax u>> 2
+      rdx = rax
+      rdx = rdx << 2
+      rdx = rdx + rax
+      rax = rcx
+      rax = rax - rdx
+      rdx = [rbp - 0x70 {var_78_1}].q
+      [rdx].q = rax
+      goto block12
+    block12:
+      rax = [rbp - 0x80 {var_88_1}].q
+      rax = [rax].q
+      rax = rax << 5
+      rdx = rax
+      rax = 0x62a0
+      rdx = rdx + rax
+      rax = [rbp - 0x78 {var_80_1}].q
+      rax = [rax].q
+      rsi = rax
+      rdi = rdx
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      edx = sx.d(al)
+      rax = [rbp - 0x98 {var_a0}].q
+      esi = edx
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc)
+      rax = [rbp - 0x70 {var_78_1}].q
+      rax = [rax].q
+      rax = rax << 5
+      rdx = rax
+      rax = 0x62a0
+      rdx = rdx + rax
+      rax = [rbp - 0x68 {var_70_1}].q
+      rax = [rax].q
+      rsi = rax
+      rdi = rdx
+      call(_ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm)
+      eax = zx.d([rax].b)
+      edx = sx.d(al)
+      rax = [rbp - 0x98 {var_a0}].q
+      esi = edx
+      rdi = rax
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc)
+      [rbp - 0x84 {var_8c}].d = [rbp - 0x84 {var_8c}].d + 2
+      goto block2
+  "mlil": |-
+    block1:
+      var_a0 = arg1
+      var_a8 = rsi
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rdx = var_a8
+      rsi_1 = rdx
+      rdi = &var_48
+      _Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE(rdi, rsi_1)
+      rax_1 = var_a0
+      rdi_1 = rax_1
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev()
+      var_8c = 0
+      goto block2
+    block2:
+      rax_2 = var_8c
+      rbx_1 = sx.q(rax_2)
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv()
+      rbx_1 - rax_3
+      c_1 = rbx_1 u< rax_3
+      rax_3.al = c_1
+      if (rax_3.al == 0) block3 else block4
+    block3:
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev()
+      rax_70 = var_20
+      rax_71 = rax_70 ^ [fsbase + 0x28].q
+      if (rax_71 == 0) block5 else block6
+    block4:
+      rax_4 = var_8c
+      rdx_1 = sx.q(rax_4)
+      rsi_2 = rdx_1
+      rdi_2 = &var_48
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_2)
+      rax_6 = [rax_5].b
+      rdx_2 = sx.d(rax_6)
+      rsi_3 = zx.q(rdx_2)
+      rdi_3 = &var_68
+      _Z4findc(rdi_3)
+      rdi_4 = &var_68
+      _ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_(rdi_4)
+      var_88_1 = rax_7
+      rdi_5 = &var_68
+      _ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_(rdi_5)
+      var_80_1 = rax_8
+      rax_9 = var_8c
+      rax_10 = rax_9 + 1
+      rdx_3 = sx.q(rax_10)
+      rsi_4 = rdx_3
+      rdi_6 = &var_48
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_6)
+      rax_12 = [rax_11].b
+      rdx_4 = sx.d(rax_12)
+      rsi_5 = zx.q(rdx_4)
+      rdi_7 = &var_58
+      _Z4findc(rdi_7)
+      rdi_8 = &var_58
+      _ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_(rdi_8)
+      var_78_1 = rax_13
+      rdi_9 = &var_58
+      _ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_(rdi_9)
+      var_70_1 = rax_14
+      rax_15 = var_88_1
+      rdx_5 = [rax_15].q
+      rax_16 = var_78_1
+      rax_17 = [rax_16].q
+      if (rdx_5 != rax_17) block7 else block8
+    block5:
+      rax_72 = var_a0
+      return rax_72
+    block6:
+      goto block9
+    block7:
+      rax_34 = var_80_1
+      rdx_16 = [rax_34].q
+      rax_35 = var_70_1
+      rax_36 = [rax_35].q
+      if (rdx_16 != rax_36) block10 else block11
+    block8:
+      rax_18 = var_80_1
+      rax_19 = [rax_18].q
+      rcx_1 = rax_19 + 1
+      rax_20 = rcx_1
+      rdx_6:rax_21 = mulu.dp.q(rax_20, -0x3333333333333333)
+      rax_22 = rdx_6
+      rax_23 = rax_22 u>> 2
+      rdx_7 = rax_23
+      rdx_8 = rdx_7 << 2
+      rdx_9 = rdx_8 + rax_23
+      rax_24 = rcx_1
+      rax_25 = rax_24 - rdx_9
+      rdx_10 = var_80_1
+      [rdx_10].q = rax_25
+      rax_26 = var_70_1
+      rax_27 = [rax_26].q
+      rcx_2 = rax_27 + 1
+      rax_28 = rcx_2
+      rdx_11:rax_29 = mulu.dp.q(rax_28, -0x3333333333333333)
+      rax_30 = rdx_11
+      rax_31 = rax_30 u>> 2
+      rdx_12 = rax_31
+      rdx_13 = rdx_12 << 2
+      rdx_14 = rdx_13 + rax_31
+      rax_32 = rcx_2
+      rax_33 = rax_32 - rdx_14
+      rdx_15 = var_70_1
+      [rdx_15].q = rax_33
+      goto block12
+    block9:
+      __stack_chk_fail()
+      noreturn
+    block10:
+      rdx_27 = var_70_1
+      rax_53 = var_80_1
+      rsi_6 = rdx_27
+      rdi_10 = rax_53
+      _ZSt4swapImENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS4_ESt18is_move_assignableIS4_EEE5valueEvE4typeERS4_SE_(rdi_10, rsi_6)
+      goto block12
+    block11:
+      rax_37 = var_88_1
+      rax_38 = [rax_37].q
+      rcx_3 = rax_38 + 1
+      rax_39 = rcx_3
+      rdx_17:rax_40 = mulu.dp.q(rax_39, -0x3333333333333333)
+      rax_41 = rdx_17
+      rax_42 = rax_41 u>> 2
+      rdx_18 = rax_42
+      rdx_19 = rdx_18 << 2
+      rdx_20 = rdx_19 + rax_42
+      rax_43 = rcx_3
+      rax_44 = rax_43 - rdx_20
+      rdx_21 = var_88_1
+      [rdx_21].q = rax_44
+      rax_45 = var_78_1
+      rax_46 = [rax_45].q
+      rcx_4 = rax_46 + 1
+      rax_47 = rcx_4
+      rdx_22:rax_48 = mulu.dp.q(rax_47, -0x3333333333333333)
+      rax_49 = rdx_22
+      rax_50 = rax_49 u>> 2
+      rdx_23 = rax_50
+      rdx_24 = rdx_23 << 2
+      rdx_25 = rdx_24 + rax_50
+      rax_51 = rcx_4
+      rax_52 = rax_51 - rdx_25
+      rdx_26 = var_78_1
+      [rdx_26].q = rax_52
+      goto block12
+    block12:
+      rax_54 = var_88_1
+      rax_55 = [rax_54].q
+      rax_56 = rax_55 << 5
+      rdx_28 = rax_56
+      rdx_29 = rdx_28 + 0x62a0
+      rax_57 = var_80_1
+      rax_58 = [rax_57].q
+      rsi_7 = rax_58
+      rdi_11 = rdx_29
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_11)
+      rax_60 = [rax_59].b
+      rdx_30 = sx.d(rax_60)
+      rax_61 = var_a0:0.b
+      rsi_8 = zx.q(rdx_30)
+      rdi_12 = rax_61
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc(rdi_12)
+      rax_62 = var_78_1
+      rax_63 = [rax_62].q
+      rax_64 = rax_63 << 5
+      rdx_31 = rax_64
+      rdx_32 = rdx_31 + 0x62a0
+      rax_65 = var_70_1
+      rax_66 = [rax_65].q
+      rsi_9 = rax_66
+      rdi_13 = rdx_32
+      _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm(rdi_13)
+      rax_68 = [rax_67].b
+      rdx_33 = sx.d(rax_68)
+      rax_69 = var_a0:0.b
+      rsi_10 = zx.q(rdx_33)
+      rdi_14 = rax_69
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc(rdi_14)
+      var_8c = var_8c + 2
+      goto block2
+"main":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    if (arg1 != 2)
+        std::operator<<<std::char_traits<char> >(std::cerr, "USAGE: ./unfair [text]\n")
+        exit(1)
+        noreturn
+    std::allocator<char>::allocator()
+    void var_68
+    std::__cxx11::basic_stri...::basic_string<std::allocator<char> >(&var_68, *(arg2 + 8))
+    void var_48
+    crypt(&var_48)
+    std::ostream::operator<<(std::operator<<<char, st..._traits<char>, std::allocator<char> >(std::cout, &var_48))
+    std::__cxx11::basic_stri...std::allocator<char> >::~basic_string()
+    std::__cxx11::basic_stri...std::allocator<char> >::~basic_string()
+    std::allocator<char>::~allocator()
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return 0
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(rbx)
+      rsp = rsp - 0x78
+      [rbp - 0x74 {var_7c}].d = edi
+      [rbp - 0x80 {var_88}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 0x18 {var_20}].q = rax
+      eax = 0
+      if ([rbp - 0x74].d == 2) block2 else block3
+    block2:
+      rax = rbp - 0x61 {var_69}
+      rdi = rax {var_69}
+      call(_ZNSaIcEC1Ev)
+      rax = [rbp - 0x80 {var_88}].q
+      rax = rax + 8
+      rcx = [rax].q
+      rdx = rbp - 0x61 {var_69}
+      rax = rbp - 0x60 {var_68}
+      rsi = rcx
+      rdi = rax {var_68}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_)
+      rax = rbp - 0x40 {var_48}
+      rdx = rbp - 0x60 {var_68}
+      rsi = rdx {var_68}
+      rdi = rax {var_48}
+      call(_Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE)
+      rax = rbp - 0x40 {var_48}
+      rsi = rax {var_48}
+      rdi = 0x6040
+      call(_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE)
+      rdx = rax
+      rax = [0x5fd0].q
+      rsi = rax
+      rdi = rdx
+      call(_ZNSolsEPFRSoS_E)
+      rax = rbp - 0x40 {var_48}
+      rdi = rax {var_48}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev)
+      rax = rbp - 0x60 {var_68}
+      rdi = rax {var_68}
+      call(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev)
+      rax = rbp - 0x61 {var_69}
+      rdi = rax {var_69}
+      call(_ZNSaIcED1Ev)
+      eax = 0
+      rcx = [rbp - 0x18 {var_20}].q
+      rcx = rcx ^ [fsbase + 0x28].q
+      if (rcx == 0) block4 else block5
+    block3:
+      rsi = 0x401e
+      rdi = 0x6160
+      call(_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc)
+      edi = 1
+      call(exit)
+      noreturn
+    block4:
+      rsp = rsp + 0x78
+      rbx = pop
+      rbp = pop
+      <return> jump(pop)
+    block5:
+      goto block6
+    block6:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_7c = arg1
+      var_88 = arg2
+      rax = [fsbase + 0x28].q
+      var_20 = rax
+      rax_1 = 0
+      if (var_7c == 2) block2 else block3
+    block2:
+      _ZNSaIcEC1Ev()
+      rax_2 = var_88
+      rax_3 = rax_2 + 8
+      rcx = [rax_3].q
+      rsi = rcx
+      rdi = &var_68
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_(rdi, rsi)
+      rdi_1 = &var_48
+      _Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE(rdi_1)
+      rsi_1 = &var_48
+      _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE(0x6040, rsi_1)
+      rdx = rax_4
+      rsi_2 = std::endl<char, std::char_traits<char> >
+      rdi_2 = rdx
+      _ZNSolsEPFRSoS_E(rdi_2)
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev()
+      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev()
+      _ZNSaIcED1Ev()
+      rax_5 = 0
+      rcx_1 = var_20
+      rcx_2 = rcx_1 ^ [fsbase + 0x28].q
+      if (rcx_2 == 0) block4 else block5
+    block3:
+      _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(0x6160, "USAGE: ./unfair [text]\n")
+      exit(1)
+      noreturn
+    block4:
+      return 0
+    block5:
+      goto block6
+    block6:
+      __stack_chk_fail()
+      noreturn

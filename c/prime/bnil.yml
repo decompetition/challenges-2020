@@ -1,0 +1,283 @@
+"is_prime":
+  "hlil": |-
+    int64_t rax
+    if (arg1 s<= 1)
+        rax = 0
+    else
+        if (arg1 == 2 || arg1 == 3)
+            rax = 1
+        if (arg1 != 2 && arg1 != 3)
+            int32_t rsi_2
+            if ((arg1 & 1) != 0)
+                rsi_2 = ((sx.q(arg1) * 0x55555556) u>> 0x20).d - (arg1 s>> 0x1f)
+                if ((arg1 - (rsi_2 + rsi_2 + rsi_2)) != 0)
+                    int32_t var_c_1 = 5
+                    while (true)
+                        if (arg1 s<= var_c_1 * var_c_1)
+                            rax = 1
+                            break
+                        int32_t temp2_1
+                        int32_t temp3_1
+                        temp2_1:temp3_1 = sx.q(arg1)
+                        if (mods.dp.d(temp2_1:temp3_1, var_c_1) != 0)
+                            int32_t temp8_1
+                            int32_t temp9_1
+                            temp8_1:temp9_1 = sx.q(arg1)
+                            if (mods.dp.d(temp8_1:temp9_1, var_c_1 + 2) != 0)
+                                var_c_1 = var_c_1 + 6
+                                continue
+                        rax = 0
+                        break
+            if ((arg1 & 1) == 0 || ((arg1 & 1) != 0 && (arg1 - (rsi_2 + rsi_2 + rsi_2)) == 0))
+                rax = 0
+    return rax
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      [rbp - 0x14 {var_1c}].d = edi
+      if ([rbp - 0x14].d s> 1) block2 else block3
+    block2:
+      if ([rbp - 0x14].d == 2) block4 else block5
+    block3:
+      eax = 0
+      goto block6
+    block4:
+      eax = 1
+      goto block6
+    block5:
+      if ([rbp - 0x14].d != 3) block7 else block4
+    block6:
+      rbp = pop
+      <return> jump(pop)
+    block7:
+      eax = [rbp - 0x14 {var_1c}].d
+      eax = eax & 0x1
+      if (eax == 0) block8 else block9
+    block8:
+      eax = 0
+      goto block6
+    block9:
+      ecx = [rbp - 0x14 {var_1c}].d
+      rax = sx.q(ecx)
+      rax = rax * 0x55555556
+      rax = rax u>> 0x20
+      rdx = rax
+      eax = ecx
+      eax = eax s>> 0x1f
+      esi = edx
+      esi = esi - eax
+      eax = esi
+      edx = eax
+      edx = edx + edx
+      edx = edx + eax
+      eax = ecx
+      eax = eax - edx
+      if (eax != 0) block10 else block8
+    block10:
+      [rbp - 4 {var_c_1}].d = 5
+      goto block11
+    block11:
+      eax = [rbp - 4 {var_c_1}].d
+      eax = eax * eax
+      if ([rbp - 0x14].d s> eax) block12 else block13
+    block12:
+      eax = [rbp - 0x14 {var_1c}].d
+      temp2.d:temp3.d = sx.q(eax)
+      edx = temp2.d
+      eax = temp3.d
+      temp4.d = edx
+      temp5.d = eax
+      temp0.d = divs.dp.d(temp4.d:temp5.d, [rbp - 4 {var_c_1}].d)
+      temp6.d = edx
+      temp7.d = eax
+      temp1.d = mods.dp.d(temp6.d:temp7.d, [rbp - 4 {var_c_1}].d)
+      eax = temp0.d
+      edx = temp1.d
+      eax = edx
+      if (eax == 0) block14 else block15
+    block13:
+      eax = 1
+      goto block6
+    block14:
+      eax = 0
+      goto block6
+    block15:
+      eax = [rbp - 4 {var_c_1}].d
+      ecx = (rax + 2).d
+      eax = [rbp - 0x14 {var_1c}].d
+      temp8.d:temp9.d = sx.q(eax)
+      edx = temp8.d
+      eax = temp9.d
+      temp10.d = edx
+      temp11.d = eax
+      temp0.d = divs.dp.d(temp10.d:temp11.d, ecx)
+      temp12.d = edx
+      temp13.d = eax
+      temp1.d = mods.dp.d(temp12.d:temp13.d, ecx)
+      eax = temp0.d
+      edx = temp1.d
+      eax = edx
+      if (eax != 0) block16 else block14
+    block16:
+      [rbp - 4 {var_c_1}].d = [rbp - 4 {var_c_1}].d + 6
+      goto block11
+  "mlil": |-
+    block1:
+      var_1c = arg1
+      if (var_1c s> 1) block2 else block3
+    block2:
+      if (var_1c == 2) block4 else block5
+    block3:
+      rax = 0
+      goto block6
+    block4:
+      rax = 1
+      goto block6
+    block5:
+      if (var_1c != 3) block7 else block4
+    block6:
+      return rax
+    block7:
+      rax_1 = var_1c
+      rax_2 = rax_1 & 1
+      if (rax_2 == 0) block8 else block9
+    block8:
+      rax = 0
+      goto block6
+    block9:
+      rcx_1 = var_1c
+      rax_3 = sx.q(rcx_1)
+      rax_4 = rax_3 * 0x55555556
+      rax_5 = (rax_4 u>> 0x20).d
+      rdx_1 = rax_5
+      rax_6 = rcx_1
+      rax_7 = rax_6 s>> 0x1f
+      rsi_1 = rdx_1
+      rsi_2 = rsi_1 - rax_7
+      rax_8 = rsi_2
+      rdx_2 = rax_8
+      rdx_3 = rdx_2 + rdx_2
+      rdx_4 = rdx_3 + rax_8
+      rax_9 = rcx_1
+      rax_10 = rax_9 - rdx_4
+      if (rax_10 != 0) block10 else block8
+    block10:
+      var_c_1 = 5
+      goto block11
+    block11:
+      rax_18 = var_c_1
+      rax_19 = rax_18 * rax_18
+      if (var_1c s> rax_19) block12 else block13
+    block12:
+      rax_11 = var_1c
+      temp2_1:temp3_1 = sx.q(rax_11)
+      rdx_5 = temp2_1
+      rax_12 = temp3_1
+      temp6_1 = rdx_5
+      temp7_1 = rax_12
+      temp1_1 = mods.dp.d(temp6_1:temp7_1, var_c_1)
+      rdx_6 = temp1_1
+      rax_13 = rdx_6
+      if (rax_13 == 0) block14 else block15
+    block13:
+      rax = 1
+      goto block6
+    block14:
+      rax = 0
+      goto block6
+    block15:
+      rax_14 = var_c_1
+      rcx_2 = rax_14 + 2
+      rax_15 = var_1c
+      temp8_1:temp9_1 = sx.q(rax_15)
+      rdx_7 = temp8_1
+      rax_16 = temp9_1
+      temp12_1 = rdx_7
+      temp13_1 = rax_16
+      temp1_2 = mods.dp.d(temp12_1:temp13_1, rcx_2)
+      rdx_8 = temp1_2
+      rax_17 = rdx_8
+      if (rax_17 != 0) block16 else block14
+    block16:
+      var_c_1 = var_c_1 + 6
+      goto block11
+"main":
+  "hlil": |-
+    if (arg1 == 2)
+        int32_t rax_6 = atoi(*(arg2 + 8))
+        printf("is_prime(%d) = %d\n", zx.q(rax_6), zx.q(is_prime(rax_6)))
+        return 0
+    fprintf(*stderr, "USAGE: %s <num>\n", *arg2)
+    exit(1)
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x20
+      [rbp - 0x14 {var_1c}].d = edi
+      [rbp - 0x20 {var_28}].q = rsi
+      if ([rbp - 0x14].d == 2) block2 else block3
+    block2:
+      rax = [rbp - 0x20 {var_28}].q
+      rax = rax + 8
+      rax = [rax].q
+      rdi = rax
+      call(atoi)
+      [rbp - 4 {var_c}].d = eax
+      eax = [rbp - 4 {var_c}].d
+      edi = eax
+      call(is_prime)
+      edx = eax
+      eax = [rbp - 4 {var_c}].d
+      esi = eax
+      rdi = 0x2015
+      eax = 0
+      call(printf)
+      eax = 0
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block3:
+      rax = [rbp - 0x20 {var_28}].q
+      rdx = [rax].q
+      rax = [0x4020].q
+      rsi = 0x2004
+      rdi = rax
+      eax = 0
+      call(fprintf)
+      edi = 1
+      call(exit)
+      noreturn
+  "mlil": |-
+    block1:
+      var_1c = arg1
+      var_28 = arg2
+      if (var_1c == 2) block2 else block3
+    block2:
+      rax_3 = var_28
+      rax_4 = rax_3 + 8
+      rax_5 = [rax_4].q
+      rdi_1 = rax_5
+      atoi(rdi_1)
+      var_c = rax_6
+      rax_7 = var_c
+      rdi_2 = rax_7
+      is_prime(rdi_2)
+      rdx_1 = zx.q(rax_8)
+      rax_9 = var_c
+      rsi = zx.q(rax_9)
+      rax_10 = 0
+      printf("is_prime(%d) = %d\n", rsi, rdx_1)
+      rax_11 = 0
+      return 0
+    block3:
+      rax = var_28
+      rdx = [rax].q
+      rax_1 = [0x4020].q
+      rdi = rax_1
+      rax_2 = 0
+      fprintf(rdi, "USAGE: %s <num>\n", rdx)
+      exit(1)
+      noreturn

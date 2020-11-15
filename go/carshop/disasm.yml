@@ -1,0 +1,408 @@
+"main.(*CarShop).AddCar":
+  "asm": |
+    main.(*CarShop).AddCar:
+      mov     rcx, fs:[-8]
+      lea     rax, [rsp-0x110]
+      cmp     rax, [rcx+0x10]
+      jbe     block10
+    block1:
+      sub     rsp, 0x190
+      mov     [rsp+0x188], rbp
+      lea     rbp, [rsp+0x188]
+      mov     [rsp+0x80], 0
+      xorps   xmm0, xmm0
+      movups  [rsp+0x88], xmm0
+      movups  [rsp+0x98], xmm0
+      movups  [rsp+0xa8], xmm0
+      mov     rax, [rsp+0x1c0]
+      mov     [rsp], rax
+      mov     rax, [rsp+0x1c8]
+      mov     [rsp+8], rax
+      call    strconv.Atoi
+      mov     rax, [rsp+0x10]
+      mov     [rsp+0x40], rax
+      mov     rcx, [rsp+0x1d0]
+      mov     [rsp], rcx
+      mov     rcx, [rsp+0x1d8]
+      mov     [rsp+8], rcx
+      call    strconv.Atoi
+      mov     rax, [rsp+0x10]
+      mov     [rsp+0x48], rax
+      xorps   xmm0, xmm0
+      movups  [rsp+0x50], xmm0
+      movups  [rsp+0x60], xmm0
+      movups  [rsp+0x70], xmm0
+      lea     rdi, [rsp+0xb8]
+      lea     rdi, [rdi-0x30]
+      mov     [rsp-0x10], rbp
+      lea     rbp, [rsp-0x10]
+      call    mem1
+      mov     rbp, [rbp]
+      lea     rcx, [rsp+0xb8]
+      mov     [rsp+0x60], rcx
+      call    runtime.fastrand
+      mov     eax, [rsp]
+      mov     [rsp+0x5c], eax
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rcx, [rsp+0x50]
+      mov     [rsp+8], rcx
+      lea     rdx, [mem3]; "AuroraBrahmiCarianChakmaCommo..."
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 6
+      call    runtime.mapassign_faststr
+      mov     rax, [rsp+0x20]
+      mov     [rax], 0
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rcx, [rsp+0x50]
+      mov     [rsp+8], rcx
+      lea     rdx, [mem4]; "IndigoKaithiKhojkiLepchaLycia..."
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 6
+      call    runtime.mapassign_faststr
+      mov     rax, [rsp+0x20]
+      mov     [rax], 1
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rcx, [rsp+0x50]
+      mov     [rsp+8], rcx
+      lea     rdx, [mem5]; "CharcoalCherokeeCyrillicDuplo..."
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 8
+      call    runtime.mapassign_faststr
+      mov     rax, [rsp+0x20]
+      mov     [rax], 2
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rcx, [rsp+0x50]
+      mov     [rsp+8], rcx
+      lea     rdx, [mem6]; "JadeLisuMiaoModiNewaThai\n\tm=]..."
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 4
+      call    runtime.mapassign_faststr
+      mov     rax, [rsp+0x20]
+      mov     [rax], 3
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rcx, [rsp+0x50]
+      mov     [rsp+8], rcx
+      lea     rdx, [mem7]; "PlatinumTagbanwaTai_ThamTai_V..."
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], 8
+      call    runtime.mapassign_faststr
+      mov     rax, [rsp+0x20]
+      mov     [rax], 4
+      lea     rax, [mem2]
+      mov     [rsp], rax
+      lea     rax, [rsp+0x50]
+      mov     [rsp+8], rax
+      mov     rax, [rsp+0x1e0]
+      mov     [rsp+0x10], rax
+      mov     rax, [rsp+0x1e8]
+      mov     [rsp+0x18], rax
+      call    runtime.mapaccess1_faststr
+      mov     rax, [rsp+0x20]
+      mov     rax, [rax]
+      mov     rcx, [mem8]
+      mov     [rsp+0x80], rcx
+      movups  xmm0, [mem9]
+      movups  [rsp+0x88], xmm0
+      movups  xmm0, [mem10]
+      movups  [rsp+0x98], xmm0
+      movups  xmm0, [mem11]
+      movups  [rsp+0xa8], xmm0
+      mov     rcx, [rsp+0x1a0]
+      mov     [rsp+0x80], rcx
+      mov     rcx, [rsp+0x1a8]
+      mov     [rsp+0x88], rcx
+      mov     rcx, [rsp+0x1b0]
+      mov     [rsp+0x90], rcx
+      mov     rcx, [rsp+0x1b8]
+      mov     [rsp+0x98], rcx
+      mov     rcx, [rsp+0x40]
+      mov     [rsp+0xa0], rcx
+      mov     rcx, [rsp+0x48]
+      mov     [rsp+0xa8], rcx
+      mov     [rsp+0xb0], rax
+      mov     rax, [rsp+0x198]
+      mov     rcx, [rax+0x10]
+      mov     rdx, [rax+0x18]
+      mov     rbx, [rax+0x20]
+      lea     rsi, [rdx+1]
+      cmp     rsi, rbx
+      ja      block6
+    block2:
+      lea     rbx, [rdx+1]
+      mov     [rax+0x18], rbx
+      imul    rax, rdx, 0x38
+      lea     rdx, [rcx+rax]
+      cmp     [runtime.writeBarrier], 0
+      jne     block5
+    block3:
+      mov     rdx, [rsp+0x80]
+      mov     [rcx+rax], rdx
+      lea     rdx, [rcx+rax]
+      lea     rdx, [rdx+8]
+      movups  xmm0, [rsp+0x88]
+      movups  [rdx], xmm0
+      lea     rax, [rcx+rax]
+      lea     rax, [rax+0x18]
+      movups  xmm0, [rsp+0x98]
+      movups  [rax], xmm0
+      movups  xmm0, [rsp+0xa8]
+      movups  [rax+0x10], xmm0
+    block4:
+      mov     rbp, [rsp+0x188]
+      add     rsp, 0x190
+      ret
+    block5:
+      lea     rax, [mem12]
+      mov     [rsp], rax
+      mov     [rsp+8], rdx
+      lea     rax, [rsp+0x80]
+      mov     [rsp+0x10], rax
+      call    runtime.typedmemmove
+      jmp     block4
+    block6:
+      lea     rax, [mem12]
+      mov     [rsp], rax
+      mov     [rsp+8], rcx
+      mov     [rsp+0x10], rdx
+      mov     [rsp+0x18], rbx
+      mov     [rsp+0x20], rsi
+      call    runtime.growslice
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x30]
+      mov     rdx, [rsp+0x38]
+      mov     rbx, [rsp+0x198]
+      mov     [rbx+0x20], rdx
+      cmp     [runtime.writeBarrier], 0
+      jne     block9
+    block7:
+      mov     [rbx+0x10], rax
+    block8:
+      mov     rdx, rcx
+      mov     rcx, rax
+      mov     rax, rbx
+      jmp     block2
+    block9:
+      lea     rdi, [rbx+0x10]
+      call    runtime.gcWriteBarrier
+      jmp     block8
+    block10:
+      call    runtime.morestack_noctxt
+      jmp     main.(*CarShop).AddCar
+    block11:
+      int3
+"main.Car.String":
+  "asm": |
+    main.Car.String:
+      mov     rcx, fs:[-8]
+      lea     rax, [rsp-0x30]
+      cmp     rax, [rcx+0x10]
+      jbe     block2
+    block1:
+      sub     rsp, 0xb0
+      mov     [rsp+0xa8], rbp
+      lea     rbp, [rsp+0xa8]
+      mov     rax, [rsp+0xd8]
+      mov     [rsp], rax
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      mov     [rsp+0x50], rax
+      mov     rcx, [rsp+0xc0]
+      mov     rdx, [rsp+0xb8]
+      mov     [rsp], rdx
+      mov     [rsp+8], rcx
+      call    runtime.convTstring
+      mov     rax, [rsp+0x10]
+      mov     [rsp+0x48], rax
+      mov     rcx, [rsp+0xc8]
+      mov     rdx, [rsp+0xd0]
+      mov     [rsp], rcx
+      mov     [rsp+8], rdx
+      call    runtime.convTstring
+      mov     rax, [rsp+0x10]
+      mov     [rsp+0x40], rax
+      mov     rcx, [rsp+0xe8]
+      mov     [rsp], rcx
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      mov     [rsp+0x38], rax
+      mov     rcx, [rsp+0xe0]
+      mov     [rsp], rcx
+      call    runtime.convT64
+      mov     rax, [rsp+8]
+      lea     rdi, [rsp+0x58]
+      xorps   xmm0, xmm0
+      lea     rdi, [rdi-0x30]
+      mov     [rsp-0x10], rbp
+      lea     rbp, [rsp-0x10]
+      call    mem1
+      mov     rbp, [rbp]
+      lea     rcx, [mem2]
+      mov     [rsp+0x58], rcx
+      mov     rdx, [rsp+0x50]
+      mov     [rsp+0x60], rdx
+      lea     rdx, [mem3]
+      mov     [rsp+0x68], rdx
+      mov     rbx, [rsp+0x48]
+      mov     [rsp+0x70], rbx
+      mov     [rsp+0x78], rdx
+      mov     rdx, [rsp+0x40]
+      mov     [rsp+0x80], rdx
+      lea     rdx, [mem4]
+      mov     [rsp+0x88], rdx
+      mov     rdx, [rsp+0x38]
+      mov     [rsp+0x90], rdx
+      mov     [rsp+0x98], rcx
+      mov     [rsp+0xa0], rax
+      lea     rax, [mem5]; "{%d %s %s (%s, %d miles)} usi..."
+      mov     [rsp], rax
+      mov     [rsp+8], 0x19
+      lea     rax, [rsp+0x58]
+      mov     [rsp+0x10], rax
+      mov     [rsp+0x18], 5
+      mov     [rsp+0x20], 5
+      call    fmt.Sprintf
+      mov     rax, [rsp+0x28]
+      mov     rcx, [rsp+0x30]
+      mov     [rsp+0xf0], rax
+      mov     [rsp+0xf8], rcx
+      mov     rbp, [rsp+0xa8]
+      add     rsp, 0xb0
+      ret
+    block2:
+      call    runtime.morestack_noctxt
+      jmp     main.Car.String
+    block3:
+      int3
+"main.CarShop.SearchCar":
+  "asm": |
+    main.CarShop.SearchCar:
+      mov     rcx, fs:[-8]
+      cmp     rsp, [rcx+0x10]
+      jbe     block13
+    block1:
+      add     rsp, -0x80
+      mov     [rsp+0x78], rbp
+      lea     rbp, [rsp+0x78]
+      lea     rax, [mem1]
+      mov     [rsp], rax
+      call    runtime.newobject
+      mov     rax, [rsp+8]
+      mov     rcx, [rsp+0xa0]
+      mov     rdx, [rsp+0x98]
+      test    rcx, rcx
+      jle     block8
+    block2:
+      mov     [rsp+0x38], rax
+      mov     [rsp+0x28], rcx
+      mov     rbx, [rsp+0xb8]
+      xor     esi, esi
+      jmp     block4
+    block3:
+      add     rdx, 0x38
+    block4:
+      mov     [rsp+0x30], rdx
+      mov     [rsp+0x20], rsi
+      mov     rdi, [rdx]
+      mov     [rsp+0x40], rdi
+      movups  xmm0, [rdx+8]
+      movups  [rsp+0x48], xmm0
+      movups  xmm0, [rdx+0x18]
+      movups  [rsp+0x58], xmm0
+      movups  xmm0, [rdx+0x28]
+      movups  [rsp+0x68], xmm0
+      cmp     [runtime.writeBarrier], 0
+      jne     block12
+    block5:
+      mov     rdi, [rsp+0x40]
+      mov     [rax], rdi
+      movups  xmm0, [rsp+0x48]
+      movups  [rax+8], xmm0
+      movups  xmm0, [rsp+0x58]
+      movups  [rax+0x18], xmm0
+      movups  xmm0, [rsp+0x68]
+      movups  [rax+0x28], xmm0
+    block6:
+      mov     rdi, [rax+0x10]
+      cmp     [rax+0x18], rbx
+      je      block9
+    block7:
+      inc     rsi
+      cmp     rsi, rcx
+      jl      block3
+    block8:
+      mov     [rsp+0xc0], 0
+      mov     rbp, [rsp+0x78]
+      sub     rsp, -0x80
+      ret
+    block9:
+      mov     rax, [rsp+0xb0]
+      mov     [rsp], rax
+      mov     [rsp+8], rdi
+      mov     [rsp+0x10], rbx
+      call    runtime.memequal
+      cmp     [rsp+0x18], 0
+      jne     block11
+    block10:
+      mov     rax, [rsp+0x38]
+      mov     rcx, [rsp+0x28]
+      mov     rdx, [rsp+0x30]
+      mov     rbx, [rsp+0xb8]
+      mov     rsi, [rsp+0x20]
+      jmp     block7
+    block11:
+      mov     rax, [rsp+0x38]
+      mov     [rsp+0xc0], rax
+      mov     rbp, [rsp+0x78]
+      sub     rsp, -0x80
+      ret
+    block12:
+      lea     rcx, [mem1]
+      mov     [rsp], rcx
+      mov     [rsp+8], rax
+      lea     rcx, [rsp+0x40]
+      mov     [rsp+0x10], rcx
+      call    runtime.typedmemmove
+      mov     rax, [rsp+0x38]
+      mov     rcx, [rsp+0x28]
+      mov     rdx, [rsp+0x30]
+      mov     rbx, [rsp+0xb8]
+      mov     rsi, [rsp+0x20]
+      jmp     block6
+    block13:
+      call    runtime.morestack_noctxt
+      jmp     main.CarShop.SearchCar
+    block14:
+      int3
+"main.Color.String":
+  "asm": |
+    main.Color.String:
+      sub     rsp, 0x68
+      mov     [rsp+0x60], rbp
+      lea     rbp, [rsp+0x60]
+      lea     rdi, [rsp+0x10]
+      lea     rsi, [mem1]; "Aurora"
+      mov     [rsp-0x10], rbp
+      lea     rbp, [rsp-0x10]
+      call    mem2
+      mov     rbp, [rbp]
+      mov     rax, [rsp+0x70]
+      cmp     rax, 5
+      jae     block2
+    block1:
+      shl     rax, 4
+      mov     rcx, [rsp+rax+0x10]
+      mov     rax, [rsp+rax+0x18]
+      mov     [rsp+0x78], rcx
+      mov     [rsp+0x80], rax
+      mov     rbp, [rsp+0x60]
+      add     rsp, 0x68
+      ret
+    block2:
+      mov     ecx, 5
+      call    runtime.panicIndex
+      int3

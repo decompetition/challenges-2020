@@ -1,0 +1,170 @@
+"main":
+  "hlil": |-
+    if (arg1 s> 2)
+        sum(arg1, arg2)
+    return 0
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x10
+      [rbp - 4 {var_c}].d = edi
+      [rbp - 0x10 {var_18}].q = rsi
+      if ([rbp - 4].d s> 2) block2 else block3
+    block2:
+      rdx = [rbp - 0x10 {var_18}].q
+      eax = [rbp - 4 {var_c}].d
+      rsi = rdx
+      edi = eax
+      call(sum)
+      eax = 0
+      goto block4
+    block3:
+      eax = 0
+      goto block4
+    block4:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_c = arg1
+      var_18 = arg2
+      if (var_c s> 2) block2 else block3
+    block2:
+      rdx = var_18
+      rax_1 = var_c
+      rsi = rdx
+      rdi = rax_1
+      sum(rdi, rsi)
+      rax_2 = 0
+      goto block4
+    block3:
+      rax = 0
+      goto block4
+    block4:
+      return 0
+"sum":
+  "hlil": |-
+    char rax_3 = atoi(*(arg2 + 8))
+    printf("SIZE: %d\n", zx.q(rax_3))
+    int64_t rax_6
+    if (rax_3 u<= 0xf7)
+        void var_108
+        memset(&var_108, 0, 0xf7)
+        memcpy(&var_108, *(arg2 + 0x10), sx.q(atoi(*(arg2 + 8))))
+        rax_6 = printf("Got: %s\n", &var_108)
+    else
+        rax_6 = puts("Too long!")
+    return rax_6
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x110
+      [rbp - 0x104 {var_10c}].d = edi
+      [rbp - 0x110 {var_118}].q = rsi
+      rax = [rbp - 0x110 {var_118}].q
+      rax = rax + 8
+      rax = [rax].q
+      rdi = rax
+      call(atoi)
+      [rbp - 1 {var_9}].b = al
+      eax = zx.d([rbp - 1 {var_9}].b)
+      esi = eax
+      rdi = 0x40201b
+      eax = 0
+      call(printf)
+      if ([rbp - 1].b u<= -9) block2 else block3
+    block2:
+      rax = rbp - 0x100 {var_108}
+      edx = 0xf7
+      esi = 0
+      rdi = rax {var_108}
+      call(memset)
+      rax = [rbp - 0x110 {var_118}].q
+      rax = rax + 8
+      rax = [rax].q
+      rdi = rax
+      call(atoi)
+      rdx = sx.q(eax)
+      rax = [rbp - 0x110 {var_118}].q
+      rax = rax + 0x10
+      rcx = [rax].q
+      rax = rbp - 0x100 {var_108}
+      rsi = rcx
+      rdi = rax {var_108}
+      call(memcpy)
+      rax = rbp - 0x100 {var_108}
+      rsi = rax {var_108}
+      rdi = 0x40202f
+      eax = 0
+      call(printf)
+      goto block4
+    block3:
+      rdi = 0x402025
+      call(puts)
+      goto block4
+    block4:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_10c = arg1
+      var_118 = arg2
+      rax = var_118
+      rax_1 = rax + 8
+      rax_2 = [rax_1].q
+      rdi = rax_2
+      atoi(rdi)
+      var_9 = rax_3
+      rax_4 = zx.d(var_9)
+      rsi = zx.q(rax_4)
+      rax_5 = 0
+      printf("SIZE: %d\n", rsi)
+      if (var_9 u<= 0xf7) block2 else block3
+    block2:
+      rdi_1 = &var_108
+      memset(rdi_1, 0, 0xf7)
+      rax_7 = var_118
+      rax_8 = rax_7 + 8
+      rax_9 = [rax_8].q
+      rdi_2 = rax_9
+      atoi(rdi_2)
+      rdx_1 = sx.q(rax_10)
+      rax_11 = var_118
+      rax_12 = rax_11 + 0x10
+      rcx_1 = [rax_12].q
+      rsi_1 = rcx_1
+      rdi_3 = &var_108
+      memcpy(rdi_3, rsi_1, rdx_1)
+      rsi_2 = &var_108
+      rax_13 = 0
+      printf("Got: %s\n", rsi_2)
+      goto block4
+    block3:
+      puts("Too long!")
+      goto block4
+    block4:
+      return rax_6
+"win":
+  "hlil": |-
+    puts("How did you get here??")
+    exit(0x2a)
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp
+      rdi = 0x402004
+      call(puts)
+      edi = 0x2a
+      call(exit)
+      noreturn
+  "mlil": |-
+    block1:
+      var_8 = rbp
+      puts("How did you get here??")
+      exit(0x2a)
+      noreturn

@@ -1,0 +1,1064 @@
+"$s6binary5cleanyS2SF":
+  "hlil": |-
+    int64_t var_20
+    memset(&var_20, 0, 0x10)
+    int64_t var_30
+    memset(&var_30, 0, 0x10)
+    var_20 = arg1
+    int64_t rax
+    int64_t rdx_1
+    rax, rdx_1 = $sSS10uppercasedSSyF(arg1, arg2, arg2, arg1)
+    swift_bridgeObjectRetain(rdx_1)
+    swift_bridgeObjectRetain(rdx_1)
+    var_30 = rax
+    int64_t var_40 = rax
+    int64_t rax_3
+    int64_t rdx_3
+    rax_3, rdx_3 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x1d4f, 2, 1, rax, 1)
+    int64_t var_50 = rax_3
+    char rax_4 = $sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF(&var_50, $sSSN, $sSSN, $sSSSTsWP, $sSSSTsWP, $sSJSQsWP)
+    $sSSWOh(&var_50)
+    $sSSWOh(&var_40)
+    if ((rax_4 & 1) != 0)
+        swift_bridgeObjectRelease(rdx_1)
+        $sSmsE11removeFirstyySiF(2, $sSSN, $sS2SSmsWl(), &var_30)
+    else
+        int64_t var_60 = rax
+        int64_t rax_8
+        int64_t rdx_6
+        rax_8, rdx_6 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("THE ", 4, 1, rdx_1)
+        int64_t var_70 = rax_8
+        char rax_9 = $sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF(&var_70, $sSSN, $sSSN, $sSSSTsWP, $sSSSTsWP, $sSJSQsWP)
+        $sSSWOh(&var_70)
+        $sSSWOh(&var_60)
+        if ((rax_9 & 1) != 0)
+            $sSmsE11removeFirstyySiF(4, $sSSN, $sS2SSmsWl(), &var_30)
+    int64_t rax_12 = var_30
+    swift_bridgeObjectRetain(rdx_1)
+    $sSSWOh(&var_30)
+    return rax_12
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(r13)
+      rsp = rsp - 0x108
+      eax = 0
+      rcx = rbp - 0x18 {var_20}
+      [rbp - 0x70 {var_78}].q = rdi
+      rdi = rcx {var_20}
+      [rbp - 0x78 {var_80}].q = rsi
+      esi = eax
+      ecx = 0x10
+      rdx = rcx
+      [rbp - 0x7c {var_84}].d = eax
+      [rbp - 0x88 {var_90}].q = rcx
+      call(memset)
+      rcx = rbp - 0x28 {var_30}
+      rdi = rcx {var_30}
+      esi = [rbp - 0x7c {var_84}].d
+      rdx = [rbp - 0x88 {var_90}].q
+      call(memset)
+      rcx = [rbp - 0x70 {var_78}].q
+      [rbp - 0x18 {var_20}].q = rcx
+      rdx = [rbp - 0x78 {var_80}].q
+      [rbp - 0x10 {var_18}].q = rdx
+      rdi = rcx
+      rsi = rdx
+      call($sSS10uppercasedSSyF)
+      rdi = rdx
+      [rbp - 0x90 {var_98}].q = rax
+      [rbp - 0x98 {var_a0}].q = rdx
+      call(swift_bridgeObjectRetain)
+      rdi = [rbp - 0x98 {var_a0}].q
+      [rbp - 0xa0 {var_a8}].q = rax
+      call(swift_bridgeObjectRetain)
+      rcx = [rbp - 0x90 {var_98}].q
+      [rbp - 0x28 {var_30}].q = rcx
+      rdx = [rbp - 0x98 {var_a0}].q
+      [rbp - 0x20 {var_28}].q = rdx
+      [rbp - 0x38 {var_40}].q = rcx
+      [rbp - 0x30 {var_38}].q = rdx
+      rdi = 0x1d4f
+      esi = 2
+      r8d = 1
+      edx = r8d
+      [rbp - 0xa8 {var_b0}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rcx = [0x6fc0].q
+      rsi = [0x6fd0].q
+      r9 = [0x6fd8].q
+      [rbp - 0x48 {var_50}].q = rax
+      [rbp - 0x40 {var_48}].q = rdx
+      rax = rbp - 0x48 {var_50}
+      rdx = rbp - 0x38 {var_40}
+      rdi = rax {var_50}
+      [rbp - 0xb0 {var_b8}].q = rsi
+      rsi = rcx
+      [rbp - 0xb8 {var_c0}].q = rdx {var_40}
+      rdx = rcx
+      rcx = [rbp - 0xb0 {var_b8}].q
+      r8 = [rbp - 0xb0 {var_b8}].q
+      r13 = [rbp - 0xb8 {var_c0}].q {var_40}
+      call($sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF)
+      rdi = rbp - 0x48 {var_50}
+      [rbp - 0xb9 {var_c1}].b = al
+      call($sSSWOh)
+      rdi = rbp - 0x38 {var_40}
+      [rbp - 0xc8 {var_d0}].q = rax
+      call($sSSWOh)
+      r10b = [rbp - 0xb9 {var_c1}].b
+      if (r10b & 0x1 != 0) block2 else block3
+    block2:
+      rdi = [rbp - 0x98 {var_a0}].q
+      call(swift_bridgeObjectRelease)
+      call($sS2SSmsWl)
+      rsi = [0x6fc0].q
+      rcx = rbp - 0x28 {var_30}
+      edi = 2
+      rdx = rax
+      r13 = rcx {var_30}
+      call($sSmsE11removeFirstyySiF)
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax = [rbp - 0x28 {var_30}].q
+      rcx = [rbp - 0x20 {var_28}].q
+      rdi = rcx
+      [rbp - 0xf0 {var_f8}].q = rax
+      [rbp - 0xf8 {var_100}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = rbp - 0x28 {var_30}
+      [rbp - 0x100 {var_108}].q = rax
+      call($sSSWOh)
+      rcx = [rbp - 0xf0 {var_f8}].q
+      [rbp - 0x108 {var_110}].q = rax
+      rax = rcx
+      rdx = [rbp - 0xf8 {var_100}].q
+      rsp = rsp + 0x108
+      r13 = pop
+      rbp = pop
+      <return> jump(pop)
+    block5:
+      rax = [rbp - 0x90 {var_98}].q
+      [rbp - 0x58 {var_60}].q = rax
+      rcx = [rbp - 0x98 {var_a0}].q
+      [rbp - 0x50 {var_58_1}].q = rcx
+      rdi = 0x1d52
+      esi = 4
+      edx = 1
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rcx = [0x6fc0].q
+      rsi = [0x6fd0].q
+      r9 = [0x6fd8].q
+      [rbp - 0x68 {var_70}].q = rax
+      [rbp - 0x60 {var_68_1}].q = rdx
+      rax = rbp - 0x68 {var_70}
+      rdx = rbp - 0x58 {var_60}
+      rdi = rax {var_70}
+      [rbp - 0xd0 {var_d8}].q = rsi
+      rsi = rcx
+      [rbp - 0xd8 {var_e0_1}].q = rdx {var_60}
+      rdx = rcx
+      rcx = [rbp - 0xd0 {var_d8}].q
+      r8 = [rbp - 0xd0 {var_d8}].q
+      r13 = [rbp - 0xd8 {var_e0_1}].q {var_60}
+      call($sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF)
+      rdi = rbp - 0x68 {var_70}
+      [rbp - 0xd9 {var_e1_1}].b = al
+      call($sSSWOh)
+      rdi = rbp - 0x58 {var_60}
+      [rbp - 0xe8 {var_f0_1}].q = rax
+      call($sSSWOh)
+      r10b = [rbp - 0xd9 {var_e1_1}].b
+      if (r10b & 0x1 != 0) block6 else block7
+    block6:
+      call($sS2SSmsWl)
+      rsi = [0x6fc0].q
+      rcx = rbp - 0x28 {var_30}
+      edi = 4
+      rdx = rax
+      r13 = rcx {var_30}
+      call($sSmsE11removeFirstyySiF)
+      goto block8
+    block7:
+      goto block9
+    block8:
+      goto block4
+    block9:
+      goto block8
+  "mlil": |-
+    block1:
+      var_78 = arg1
+      rdi = &var_20
+      var_80 = arg2
+      memset(rdi, 0, 0x10)
+      rdi_1 = &var_30
+      memset(rdi_1, 0, 0x10)
+      rcx = var_78
+      var_20 = rcx
+      rdx = var_80
+      var_18 = rdx
+      rdi_2 = rcx
+      rsi = rdx
+      $sSS10uppercasedSSyF(rdi_2, rsi, rdx, rcx)
+      rdi_3 = rdx_1
+      var_98 = rax
+      var_a0 = rdx_1
+      swift_bridgeObjectRetain(rdi_3)
+      rdi_4 = var_a0
+      var_a8 = rax_1
+      swift_bridgeObjectRetain(rdi_4)
+      rcx_1 = var_98
+      var_30 = rcx_1
+      rdx_2 = var_a0
+      var_28 = rdx_2
+      var_40 = rcx_1
+      var_38 = rdx_2
+      var_b0 = rax_2
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x1d4f, 2, 1, rcx_1, 1)
+      r9 = $sSJSQsWP
+      var_50 = rax_3
+      var_48 = rdx_3
+      rdi_5 = &var_50
+      rsi_1 = $sSSN
+      var_c0 = &var_40
+      rdx_4 = $sSSN
+      rcx_2 = $sSSSTsWP
+      r8 = $sSSSTsWP
+      r13 = var_c0
+      $sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF(rdi_5, rsi_1, rdx_4, rcx_2, r8, r9)
+      rdi_6 = &var_50
+      var_c1 = rax_4
+      $sSSWOh(rdi_6)
+      rdi_7 = &var_40
+      var_d0 = rax_5
+      $sSSWOh(rdi_7)
+      r10 = var_c1
+      if ((r10 & 1) != 0) block2 else block3
+    block2:
+      rdi_8 = var_a0
+      swift_bridgeObjectRelease(rdi_8)
+      $sS2SSmsWl()
+      rsi_2 = $sSSN
+      rcx_3 = &var_30
+      rdx_5 = rax_6
+      $sSmsE11removeFirstyySiF(2, rsi_2, rdx_5, rcx_3)
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax_12 = var_30
+      rcx_7 = var_28
+      rdi_12 = rcx_7
+      var_f8 = rax_12
+      var_100 = rcx_7
+      swift_bridgeObjectRetain(rdi_12)
+      rdi_13 = &var_30
+      var_108 = rax_13
+      $sSSWOh(rdi_13)
+      rcx_8 = var_f8
+      var_110 = rax_14
+      rax_15 = rcx_8
+      rdx_9 = var_100
+      return rax_15
+    block5:
+      rax_7 = var_98
+      var_60 = rax_7
+      rcx_4 = var_a0
+      var_58_1 = rcx_4
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("THE ", 4, 1, rcx_4)
+      r9_1 = $sSJSQsWP
+      var_70 = rax_8
+      var_68_1 = rdx_6
+      rdi_9 = &var_70
+      rsi_3 = $sSSN
+      var_e0_1 = &var_60
+      rdx_7 = $sSSN
+      rcx_5 = $sSSSTsWP
+      r8_1 = $sSSSTsWP
+      r13_1 = var_e0_1
+      $sSTsSQ7ElementRpzrlE6starts4withSbqd___tSTRd__AAQyd__ABRSlF(rdi_9, rsi_3, rdx_7, rcx_5, r8_1, r9_1)
+      rdi_10 = &var_70
+      var_e1_1 = rax_9
+      $sSSWOh(rdi_10)
+      rdi_11 = &var_60
+      var_f0_1 = rax_10
+      $sSSWOh(rdi_11)
+      r10_1 = var_e1_1
+      if ((r10_1 & 1) != 0) block6 else block7
+    block6:
+      $sS2SSmsWl()
+      rsi_4 = $sSSN
+      rcx_6 = &var_30
+      rdx_8 = rax_11
+      $sSmsE11removeFirstyySiF(4, rsi_4, rdx_8, rcx_6)
+      goto block8
+    block7:
+      goto block9
+    block8:
+      goto block4
+    block9:
+      goto block8
+"$s6binary5querySSyF":
+  "hlil": |-
+    int64_t rax
+    int64_t* rdx
+    rax, rdx = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+    int64_t rax_1
+    int64_t rdx_1
+    rax_1, rdx_1 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("What do you have there?", 0x17, 1, 1)
+    *(rdx + 0x18) = $sSSN
+    *rdx = rax_1
+    *(rdx + 8) = rdx_1
+    int64_t rax_2
+    int64_t rdx_2
+    rax_2, rdx_2 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+    int64_t rax_3
+    int64_t rdx_3
+    rax_3, rdx_3 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+    $ss5print_9separator10terminatoryypd_S2StF(rax, rax_2, rdx_2, rax_3, rdx_3)
+    swift_bridgeObjectRelease(rdx_3)
+    swift_bridgeObjectRelease(rdx_2)
+    swift_release(rax)
+    int64_t rax_5
+    int64_t rdx_5
+    rax_5, rdx_5 = $ss8readLine16strippingNewlineSSSgSb_tF(zx.q($ss8readLine16strippingNewlineSSSgSb_tFfA_()))
+    int64_t var_48
+    if (rdx_5 != 0)
+        var_48 = rax_5
+    else
+        $ss17_assertionFailure__...verOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0x10, 1)
+    return var_48
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x80
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x1d60
+      esi = 0x17
+      ecx = 1
+      [rbp - 8 {var_10}].q = rdx
+      edx = ecx
+      [rbp - 0x10 {var_18}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x6fc0].q
+      rdi = [rbp - 8 {var_10}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x18 {var_20}].q = rax
+      [rbp - 0x20 {var_28}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x10 {var_18}].q
+      rsi = [rbp - 0x18 {var_20}].q
+      r8 = [rbp - 0x20 {var_28}].q
+      [rbp - 0x28 {var_30}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x28 {var_30}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x28 {var_30}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x20 {var_28}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x10 {var_18}].q
+      call(swift_release)
+      call($ss8readLine16strippingNewlineSSSgSb_tFfA_)
+      edi = zx.d(al)
+      call($ss8readLine16strippingNewlineSSSgSb_tF)
+      cond:0 = rdx == 0
+      [rbp - 0x30 {var_38}].q = rdx
+      [rbp - 0x38 {var_40}].q = rax
+      if (cond:0) block2 else block3
+    block2:
+      goto block4
+    block3:
+      rax = [rbp - 0x38 {var_40}].q
+      rcx = [rbp - 0x30 {var_38}].q
+      [rbp - 0x40 {var_48}].q = rax
+      [rbp - 0x48 {var_50}].q = rcx
+      goto block5
+    block4:
+      goto block6
+    block5:
+      rax = [rbp - 0x48 {var_50}].q
+      rcx = [rbp - 0x40 {var_48}].q
+      [rbp - 0x50 {var_58}].q = rax
+      rax = rcx
+      rdx = [rbp - 0x50 {var_58}].q
+      rsp = rsp + 0x80
+      rbp = pop
+      <return> jump(pop)
+    block6:
+      goto block7
+    block7:
+      goto block8
+    block8:
+      goto block9
+    block9:
+      goto block10
+    block10:
+      rdi = 0x1d43
+      esi = 0xb
+      eax = 2
+      edx = eax
+      rcx = 0x1d90
+      r8d = 0x39
+      r9d = eax
+      r10 = 0x1d38
+      [rsp {var_88}].q = r10
+      [rsp + 8 {var_80}].q = 0xa
+      [rsp + 0x10 {var_78}].d = 2
+      [rsp + 0x18 {var_70}].q = 0x10
+      [rsp + 0x20 {var_68}].d = 1
+      call($ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF)
+      goto block5
+  "mlil": |-
+    block1:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_10 = rdx
+      var_18 = rax
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("What do you have there?", 0x17, 1, 1)
+      rdi = var_10
+      [rdi + 0x18].q = $sSSN
+      [rdi].q = rax_1
+      [rdi + 8].q = rdx_1
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_20 = rax_2
+      var_28 = rdx_2
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_1 = var_18
+      rsi = var_20
+      r8 = var_28
+      var_30 = rdx_3
+      rdx_4 = r8
+      rcx = rax_3
+      r8_1 = var_30
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_1, rsi, rdx_4, rcx, r8_1)
+      rdi_2 = var_30
+      swift_bridgeObjectRelease(rdi_2)
+      rdi_3 = var_28
+      swift_bridgeObjectRelease(rdi_3)
+      rdi_4 = var_18
+      swift_release(rdi_4)
+      $ss8readLine16strippingNewlineSSSgSb_tFfA_()
+      rdi_5 = zx.q(zx.d(rax_4))
+      $ss8readLine16strippingNewlineSSSgSb_tF(rdi_5)
+      cond:0 = rdx_5 == 0
+      var_38 = rdx_5
+      var_40 = rax_5
+      if (cond:0) block2 else block3
+    block2:
+      goto block4
+    block3:
+      rax_6 = var_40
+      rcx_1 = var_38
+      var_48 = rax_6
+      var_50 = rcx_1
+      goto block5
+    block4:
+      goto block6
+    block5:
+      rax_7 = var_50
+      rcx_2 = var_48
+      var_58 = rax_7
+      rax_8 = rcx_2
+      rdx_6 = var_58
+      return rax_8
+    block6:
+      goto block7
+    block7:
+      goto block8
+    block8:
+      goto block9
+    block9:
+      goto block10
+    block10:
+      $ss17_assertionFailure__4file4line5flagss5NeverOs12StaticStringV_A2HSus6UInt32VtF("Fatal error", 0xb, 2, "Unexpectedly found nil while unw…", 0x39, 2, "main.swift", 0xa, 2, 0x10, 1)
+      goto block5
+"$s6binary5setupShySSGyF":
+  "hlil": |-
+    int64_t var_18 = 0
+    var_18 = $sS2hyxGycfC($sSSN, $sSSSHsWP)
+    int64_t rax_1
+    int64_t rdx
+    rax_1, rdx = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x1cf6, 4, 0)
+    int64_t var_38 = rax_1
+    int64_t rax_2 = __swift_instantiateConcreteTypeFromMangledName($sShySSGMD)
+    void var_28
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_28, &var_38, rax_2, &var_18)
+    int64_t var_20
+    swift_bridgeObjectRelease(var_20)
+    int64_t rax_4
+    int64_t rdx_2
+    rax_4, rdx_2 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOTDOG", 6, 1)
+    int64_t var_58 = rax_4
+    void var_48
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_48, &var_58, rax_2)
+    int64_t var_40
+    swift_bridgeObjectRelease(var_40)
+    int64_t rax_6
+    int64_t rdx_4
+    rax_6, rdx_4 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOT DOG", 7, 1, 7)
+    int64_t var_78 = rax_6
+    void var_68
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_68, &var_78, rax_2)
+    int64_t var_60
+    swift_bridgeObjectRelease(var_60)
+    int64_t rax_8
+    int64_t rdx_6
+    rax_8, rdx_6 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOT-DOG", 7, 1)
+    int64_t var_98 = rax_8
+    void var_88
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_88, &var_98, rax_2)
+    int64_t var_80
+    swift_bridgeObjectRelease(var_80)
+    int64_t rax_10
+    int64_t rdx_8
+    rax_10, rdx_8 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("SAUSAGE", 7, 1)
+    int64_t var_b8 = rax_10
+    void var_a8
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_a8, &var_b8, rax_2)
+    int64_t var_a0
+    swift_bridgeObjectRelease(var_a0)
+    int64_t rax_12
+    int64_t rdx_10
+    rax_12, rdx_10 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("BRATWURST", 9, 1)
+    int64_t var_d8 = rax_12
+    void var_c8
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_c8, &var_d8, rax_2)
+    int64_t var_c0
+    swift_bridgeObjectRelease(var_c0)
+    int64_t rax_14
+    int64_t rdx_12
+    rax_14, rdx_12 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("FRANKFURTER", 0xb, 1)
+    int64_t var_f8 = rax_14
+    void var_e8
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_e8, &var_f8, rax_2)
+    int64_t var_e0
+    swift_bridgeObjectRelease(var_e0)
+    int64_t rax_16
+    int64_t rdx_14
+    rax_16, rdx_14 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("POLISH SAUSAGE", 0xe, 1)
+    int64_t var_118 = rax_16
+    void var_108
+    $sSh6insertySb8inserted_x17memberAfterInserttxnF(&var_108, &var_118, rax_2)
+    int64_t var_100
+    swift_bridgeObjectRelease(var_100)
+    int64_t rcx_1 = var_18
+    swift_bridgeObjectRetain(rcx_1)
+    $sShySSGWOh(&var_18)
+    return rcx_1
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      push(r13)
+      rsp = rsp - 0x158
+      [rbp - 0x10 {var_18}].q = 0
+      rdi = [0x6fc0].q
+      rsi = [0x6fc8].q
+      call($sS2hyxGycfC)
+      [rbp - 0x10 {var_18}].q = rax
+      rdi = 0x1cf6
+      esi = 4
+      edx = 0
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0x30 {var_38}].q = rax
+      [rbp - 0x28 {var_30}].q = rdx
+      rdi = 0x70a8
+      call(__swift_instantiateConcreteTypeFromMangledName)
+      rdi = rbp - 0x20 {var_28}
+      rsi = rbp - 0x30 {var_38}
+      rcx = rbp - 0x10 {var_18}
+      rdx = rax
+      r13 = rcx {var_18}
+      [rbp - 0x118 {var_120}].q = rax
+      [rbp - 0x120 {var_128}].q = rcx {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0x18 {var_20}].q
+      [rbp - 0x121 {var_129}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1cef
+      esi = 6
+      r8d = 1
+      edx = r8d
+      [rbp - 0x128 {var_130}].d = r8d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0x50 {var_58}].q = rax
+      [rbp - 0x48 {var_50}].q = rdx
+      rdi = rbp - 0x40 {var_48}
+      rsi = rbp - 0x50 {var_58}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0x38 {var_40}].q
+      [rbp - 0x129 {var_131}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1cfb
+      ecx = 7
+      rsi = rcx
+      edx = [rbp - 0x128 {var_130}].d
+      [rbp - 0x138 {var_140}].q = rcx
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0x70 {var_78}].q = rax
+      [rbp - 0x68 {var_70}].q = rdx
+      rdi = rbp - 0x60 {var_68}
+      rsi = rbp - 0x70 {var_78}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0x58 {var_60}].q
+      [rbp - 0x139 {var_141}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1d03
+      rsi = [rbp - 0x138 {var_140}].q
+      edx = [rbp - 0x128 {var_130}].d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0x90 {var_98}].q = rax
+      [rbp - 0x88 {var_90}].q = rdx
+      rdi = rbp - 0x80 {var_88}
+      rsi = rbp - 0x90 {var_98}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0x78 {var_80}].q
+      [rbp - 0x13a {var_142}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1d0b
+      rsi = [rbp - 0x138 {var_140}].q
+      edx = [rbp - 0x128 {var_130}].d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0xb0 {var_b8}].q = rax
+      [rbp - 0xa8 {var_b0}].q = rdx
+      rdi = rbp - 0xa0 {var_a8}
+      rsi = rbp - 0xb0 {var_b8}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0x98 {var_a0}].q
+      [rbp - 0x13b {var_143}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1d13
+      esi = 9
+      edx = [rbp - 0x128 {var_130}].d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0xd0 {var_d8}].q = rax
+      [rbp - 0xc8 {var_d0}].q = rdx
+      rdi = rbp - 0xc0 {var_c8}
+      rsi = rbp - 0xd0 {var_d8}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0xb8 {var_c0}].q
+      [rbp - 0x13c {var_144}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1d1d
+      esi = 0xb
+      edx = [rbp - 0x128 {var_130}].d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0xf0 {var_f8}].q = rax
+      [rbp - 0xe8 {var_f0}].q = rdx
+      rdi = rbp - 0xe0 {var_e8}
+      rsi = rbp - 0xf0 {var_f8}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0xd8 {var_e0}].q
+      [rbp - 0x13d {var_145}].b = al
+      call(swift_bridgeObjectRelease)
+      rdi = 0x1d29
+      esi = 0xe
+      edx = [rbp - 0x128 {var_130}].d
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      [rbp - 0x110 {var_118}].q = rax
+      [rbp - 0x108 {var_110}].q = rdx
+      rdi = rbp - 0x100 {var_108}
+      rsi = rbp - 0x110 {var_118}
+      rdx = [rbp - 0x118 {var_120}].q
+      r13 = [rbp - 0x120 {var_128}].q {var_18}
+      call($sSh6insertySb8inserted_x17memberAfterInserttxnF)
+      rdi = [rbp - 0xf8 {var_100}].q
+      [rbp - 0x13e {var_146}].b = al
+      call(swift_bridgeObjectRelease)
+      rcx = [rbp - 0x10 {var_18}].q
+      rdi = rcx
+      [rbp - 0x148 {var_150}].q = rcx
+      call(swift_bridgeObjectRetain)
+      rdi = [rbp - 0x120 {var_128}].q {var_18}
+      [rbp - 0x150 {var_158}].q = rax
+      call($sShySSGWOh)
+      rcx = [rbp - 0x148 {var_150}].q
+      [rbp - 0x158 {var_160}].q = rax
+      rax = rcx
+      rsp = rsp + 0x158
+      r13 = pop
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_18 = 0
+      rdi = $sSSN
+      rsi = $sSSSHsWP
+      $sS2hyxGycfC(rdi, rsi)
+      var_18 = rax
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC(0x1cf6, 4, 0)
+      var_38 = rax_1
+      var_30 = rdx
+      __swift_instantiateConcreteTypeFromMangledName(0x70a8)
+      rdi_1 = &var_28
+      rsi_1 = &var_38
+      rcx = &var_18
+      rdx_1 = rax_2
+      var_120 = rax_2
+      var_128 = &var_18
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_1, rsi_1, rdx_1, rcx)
+      rdi_2 = var_20
+      var_129 = rax_3
+      swift_bridgeObjectRelease(rdi_2)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOTDOG", 6, 1)
+      var_58 = rax_4
+      var_50 = rdx_2
+      rdi_3 = &var_48
+      rsi_2 = &var_58
+      rdx_3 = var_120
+      r13 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_3, rsi_2, rdx_3)
+      rdi_4 = var_40
+      var_131 = rax_5
+      swift_bridgeObjectRelease(rdi_4)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOT DOG", 7, 1, 7)
+      var_78 = rax_6
+      var_70 = rdx_4
+      rdi_5 = &var_68
+      rsi_3 = &var_78
+      rdx_5 = var_120
+      r13_1 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_5, rsi_3, rdx_5)
+      rdi_6 = var_60
+      var_141 = rax_7
+      swift_bridgeObjectRelease(rdi_6)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOT-DOG", 7, 1)
+      var_98 = rax_8
+      var_90 = rdx_6
+      rdi_7 = &var_88
+      rsi_4 = &var_98
+      rdx_7 = var_120
+      r13_2 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_7, rsi_4, rdx_7)
+      rdi_8 = var_80
+      var_142 = rax_9
+      swift_bridgeObjectRelease(rdi_8)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("SAUSAGE", 7, 1)
+      var_b8 = rax_10
+      var_b0 = rdx_8
+      rdi_9 = &var_a8
+      rsi_5 = &var_b8
+      rdx_9 = var_120
+      r13_3 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_9, rsi_5, rdx_9)
+      rdi_10 = var_a0
+      var_143 = rax_11
+      swift_bridgeObjectRelease(rdi_10)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("BRATWURST", 9, 1)
+      var_d8 = rax_12
+      var_d0 = rdx_10
+      rdi_11 = &var_c8
+      rsi_6 = &var_d8
+      rdx_11 = var_120
+      r13_4 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_11, rsi_6, rdx_11)
+      rdi_12 = var_c0
+      var_144 = rax_13
+      swift_bridgeObjectRelease(rdi_12)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("FRANKFURTER", 0xb, 1)
+      var_f8 = rax_14
+      var_f0 = rdx_12
+      rdi_13 = &var_e8
+      rsi_7 = &var_f8
+      rdx_13 = var_120
+      r13_5 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_13, rsi_7, rdx_13)
+      rdi_14 = var_e0
+      var_145 = rax_15
+      swift_bridgeObjectRelease(rdi_14)
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("POLISH SAUSAGE", 0xe, 1)
+      var_118 = rax_16
+      var_110 = rdx_14
+      rdi_15 = &var_108
+      rsi_8 = &var_118
+      rdx_15 = var_120
+      r13_6 = var_128
+      $sSh6insertySb8inserted_x17memberAfterInserttxnF(rdi_15, rsi_8, rdx_15)
+      rdi_16 = var_100
+      var_146 = rax_17
+      swift_bridgeObjectRelease(rdi_16)
+      rcx_1 = var_18
+      rdi_17 = rcx_1
+      var_150 = rcx_1
+      swift_bridgeObjectRetain(rdi_17)
+      rdi_18 = var_128
+      var_158 = rax_18
+      $sShySSGWOh(rdi_18)
+      rcx_2 = var_150
+      var_160 = rax_19
+      rax_20 = rcx_2
+      return rax_20
+"main":
+  "hlil": |-
+    *$s6binary7hotdogsShySSGvp = $s6binary5setupShySSGyF()
+    int64_t rax_1
+    int64_t rdx
+    rax_1, rdx = $s6binary5querySSyF()
+    int64_t rax_2
+    int64_t rdx_1
+    rax_2, rdx_1 = $s6binary5cleanyS2SF(rax_1, rdx)
+    swift_bridgeObjectRelease(rdx)
+    *$s6binary5foundSSvp = rax_2
+    *0x71c8 = rdx_1
+    *0x71c8
+    int64_t var_18 = *$s6binary5foundSSvp
+    if (($sSh8containsySbxF(&var_18, *$s6binary7hotdogsShySSGvp, $sSSN, $sSSSHsWP) & 1) != 0)
+        int64_t rax_7
+        int64_t* rdx_3
+        rax_7, rdx_3 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+        int64_t rax_8
+        int64_t rdx_4
+        rax_8, rdx_4 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOTDOG", 6, 1, 1)
+        *(rdx_3 + 0x18) = $sSSN
+        *rdx_3 = rax_8
+        *(rdx_3 + 8) = rdx_4
+        int64_t rax_9
+        int64_t rdx_5
+        rax_9, rdx_5 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+        int64_t rax_10
+        int64_t rdx_6
+        rax_10, rdx_6 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+        $ss5print_9separator10terminatoryypd_S2StF(rax_7, rax_9, rdx_5, rax_10, rdx_6)
+        swift_bridgeObjectRelease(rdx_6)
+        swift_bridgeObjectRelease(rdx_5)
+        swift_release(rax_7)
+    else
+        int64_t rax_11
+        int64_t* rdx_8
+        rax_11, rdx_8 = $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+        int64_t rax_12
+        int64_t rdx_9
+        rax_12, rdx_9 = $sSS21_builtinStringLite...8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("NOT HOTDOG", 0xa, 1, 1)
+        *(rdx_8 + 0x18) = $sSSN
+        *rdx_8 = rax_12
+        *(rdx_8 + 8) = rdx_9
+        int64_t rax_13
+        int64_t rdx_10
+        rax_13, rdx_10 = $ss5print_9separator10terminatoryypd_S2StFfA0_()
+        int64_t rax_14
+        int64_t rdx_11
+        rax_14, rdx_11 = $ss5print_9separator10terminatoryypd_S2StFfA1_()
+        $ss5print_9separator10terminatoryypd_S2StF(rax_11, rax_13, rdx_10, rax_14, rdx_11)
+        swift_bridgeObjectRelease(rdx_11)
+        swift_bridgeObjectRelease(rdx_10)
+        swift_release(rax_11)
+    return 0
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x90
+      [rbp - 0x14 {var_1c}].d = edi
+      [rbp - 0x20 {var_28}].q = rsi
+      call($s6binary5setupShySSGyF)
+      [0x71b8].q = rax
+      call($s6binary5querySSyF)
+      rdi = rax
+      rsi = rdx
+      [rbp - 0x28 {var_30}].q = rdx
+      call($s6binary5cleanyS2SF)
+      rdi = [rbp - 0x28 {var_30}].q
+      [rbp - 0x30 {var_38}].q = rax
+      [rbp - 0x38 {var_40}].q = rdx
+      call(swift_bridgeObjectRelease)
+      rdx = [0x6fc0].q
+      rcx = [0x6fc8].q
+      rax = [rbp - 0x30 {var_38}].q
+      [0x71c0].q = rax
+      rax = [rbp - 0x38 {var_40}].q
+      [0x71c8].q = rax
+      rsi = [0x71b8].q
+      rax = [0x71c0].q
+      rdi = [0x71c8].q
+      [rbp - 0x10 {var_18}].q = rax
+      [rbp - 8 {var_10}].q = rdi
+      rax = rbp - 0x10 {var_18}
+      rdi = rax {var_18}
+      call($sSh8containsySbxF)
+      if (al & 0x1 != 0) block2 else block3
+    block2:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x1cef
+      esi = 6
+      ecx = 1
+      [rbp - 0x40 {var_48_1}].q = rdx
+      edx = ecx
+      [rbp - 0x48 {var_50_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x6fc0].q
+      rdi = [rbp - 0x40 {var_48_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x50 {var_58_1}].q = rax
+      [rbp - 0x58 {var_60_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x48 {var_50_1}].q
+      rsi = [rbp - 0x50 {var_58_1}].q
+      r8 = [rbp - 0x58 {var_60_1}].q
+      [rbp - 0x60 {var_68_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x60 {var_68_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x60 {var_68_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x58 {var_60_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x48 {var_50_1}].q
+      call(swift_release)
+      goto block4
+    block3:
+      goto block5
+    block4:
+      eax = 0
+      rsp = rsp + 0x90
+      rbp = pop
+      <return> jump(pop)
+    block5:
+      edi = 1
+      call($ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5)
+      rdi = 0x1ce4
+      esi = 0xa
+      ecx = 1
+      [rbp - 0x68 {var_70_1}].q = rdx
+      edx = ecx
+      [rbp - 0x70 {var_78_1}].q = rax
+      call($sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC)
+      rsi = [0x6fc0].q
+      rdi = [rbp - 0x68 {var_70_1}].q
+      [rdi + 0x18].q = rsi
+      [rdi].q = rax
+      [rdi + 8].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA0_)
+      [rbp - 0x78 {var_80_1}].q = rax
+      [rbp - 0x80 {var_88_1}].q = rdx
+      call($ss5print_9separator10terminatoryypd_S2StFfA1_)
+      rdi = [rbp - 0x70 {var_78_1}].q
+      rsi = [rbp - 0x78 {var_80_1}].q
+      r8 = [rbp - 0x80 {var_88_1}].q
+      [rbp - 0x88 {var_90_1}].q = rdx
+      rdx = r8
+      rcx = rax
+      r8 = [rbp - 0x88 {var_90_1}].q
+      call($ss5print_9separator10terminatoryypd_S2StF)
+      rdi = [rbp - 0x88 {var_90_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x80 {var_88_1}].q
+      call(swift_bridgeObjectRelease)
+      rdi = [rbp - 0x70 {var_78_1}].q
+      call(swift_release)
+      goto block4
+  "mlil": |-
+    block1:
+      var_1c = arg1
+      var_28 = arg2
+      $s6binary5setupShySSGyF()
+      [0x71b8].q = rax
+      $s6binary5querySSyF()
+      rdi = rax_1
+      rsi = rdx
+      var_30 = rdx
+      $s6binary5cleanyS2SF(rdi, rsi)
+      rdi_1 = var_30
+      var_38 = rax_2
+      var_40 = rdx_1
+      swift_bridgeObjectRelease(rdi_1)
+      rdx_2 = $sSSN
+      rcx = $sSSSHsWP
+      rax_3 = var_38
+      [0x71c0].q = rax_3
+      rax_4 = var_40
+      [0x71c8].q = rax_4
+      rsi_1 = [0x71b8].q
+      rax_5 = [0x71c0].q
+      rdi_2 = [0x71c8].q
+      var_18 = rax_5
+      var_10 = rdi_2
+      rdi_3 = &var_18
+      $sSh8containsySbxF(rdi_3, rsi_1, rdx_2, rcx)
+      if ((rax_6 & 1) != 0) block2 else block3
+    block2:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_48_1 = rdx_3
+      var_50_1 = rax_7
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("HOTDOG", 6, 1, 1)
+      rdi_4 = var_48_1
+      [rdi_4 + 0x18].q = $sSSN
+      [rdi_4].q = rax_8
+      [rdi_4 + 8].q = rdx_4
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_58_1 = rax_9
+      var_60_1 = rdx_5
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_5 = var_50_1
+      rsi_2 = var_58_1
+      r8 = var_60_1
+      var_68_1 = rdx_6
+      rdx_7 = r8
+      rcx_1 = rax_10
+      r8_1 = var_68_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_5, rsi_2, rdx_7, rcx_1, r8_1)
+      rdi_6 = var_68_1
+      swift_bridgeObjectRelease(rdi_6)
+      rdi_7 = var_60_1
+      swift_bridgeObjectRelease(rdi_7)
+      rdi_8 = var_50_1
+      swift_release(rdi_8)
+      goto block4
+    block3:
+      goto block5
+    block4:
+      rax_15 = 0
+      return 0
+    block5:
+      $ss27_allocateUninitializedArrayySayxG_BptBwlFyp_Tg5(1)
+      var_70_1 = rdx_8
+      var_78_1 = rax_11
+      $sSS21_builtinStringLiteral17utf8CodeUnitCount7isASCIISSBp_BwBi1_tcfC("NOT HOTDOG", 0xa, 1, 1)
+      rdi_9 = var_70_1
+      [rdi_9 + 0x18].q = $sSSN
+      [rdi_9].q = rax_12
+      [rdi_9 + 8].q = rdx_9
+      $ss5print_9separator10terminatoryypd_S2StFfA0_()
+      var_80_1 = rax_13
+      var_88_1 = rdx_10
+      $ss5print_9separator10terminatoryypd_S2StFfA1_()
+      rdi_10 = var_78_1
+      rsi_3 = var_80_1
+      r8_2 = var_88_1
+      var_90_1 = rdx_11
+      rdx_12 = r8_2
+      rcx_2 = rax_14
+      r8_3 = var_90_1
+      $ss5print_9separator10terminatoryypd_S2StF(rdi_10, rsi_3, rdx_12, rcx_2, r8_3)
+      rdi_11 = var_90_1
+      swift_bridgeObjectRelease(rdi_11)
+      rdi_12 = var_88_1
+      swift_bridgeObjectRelease(rdi_12)
+      rdi_13 = var_78_1
+      swift_release(rdi_13)
+      goto block4

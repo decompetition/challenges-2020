@@ -1,0 +1,509 @@
+"_Z4findc":
+  "asm": |
+    _Z4findc:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x30
+      mov     [rbp-0x28], rdi
+      mov     eax, esi
+      mov     [rbp-0x2c], al
+      mov     rax, fs:[0x28]
+      mov     [rbp-8], rax
+      xor     eax, eax
+      mov     [rbp-0x18], 0
+    block1:
+      mov     rax, [rbp-0x18]
+      cmp     rax, 4
+      ja      block6
+    block2:
+      mov     rax, [rbp-0x18]
+      shl     rax, 5
+      mov     rdx, rax
+      lea     rax, [_ZL6UNFAIR]
+      lea     rcx, [rdx+rax]
+      movsx   eax, [rbp-0x2c]
+      mov     edx, 0
+      mov     esi, eax
+      mov     rdi, rcx
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4findEcm@plt.sec
+      mov     [rbp-0x10], rax
+      mov     rax, [rbp-0x10]
+      cmp     rax, -1
+      je      block5
+    block3:
+      mov     rax, [rbp-0x28]
+      lea     rdx, [rbp-0x10]
+      lea     rcx, [rbp-0x18]
+      mov     rsi, rcx
+      mov     rdi, rax
+      call    _ZSt10make_tupleIJRmS0_EESt5tupleIJDpNSt17__decay_and_stripIT_E6__typeEEEDpOS3_
+      mov     rax, [rbp-8]
+      xor     rax, fs:[0x28]
+      je      block8
+    block4:
+      jmp     block7
+    block5:
+      mov     rax, [rbp-0x18]
+      add     rax, 1
+      mov     [rbp-0x18], rax
+      jmp     block1
+    block6:
+      lea     rsi, [mem1]; "Chaos and corruption!"
+      lea     rdi, [_ZSt4cerr]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     rdx, rax
+      mov     rax, [_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNSolsEPFRSoS_E@plt.sec
+      mov     edi, 1
+      call    exit@plt.sec
+    block7:
+      call    __stack_chk_fail@plt.sec
+    block8:
+      mov     rax, [rbp-0x28]
+      leave
+      ret
+"_Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE":
+  "asm": |
+    _Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x28
+      mov     [rbp-0x28], rdi
+      mov     [rbp-0x30], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      mov     rax, [rbp-0x28]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@plt.sec
+      mov     [rbp-0x20], 0
+    block1:
+      mov     rax, [rbp-0x30]
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@plt.sec
+      cmp     [rbp-0x20], rax
+      setb    al
+      test    al, al
+      je      block11
+    block2:
+      mov     rdx, [rbp-0x20]
+      mov     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      cmp     al, 0x6a
+      je      block4
+    block3:
+      mov     rdx, [rbp-0x20]
+      mov     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      cmp     al, 0x4a
+      jne     block5
+    block4:
+      mov     eax, 1
+      jmp     block6
+    block5:
+      mov     eax, 0
+    block6:
+      test    al, al
+      je      block8
+    block7:
+      mov     rax, [rbp-0x28]
+      mov     esi, 0x49
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@plt.sec
+      jmp     block10
+    block8:
+      mov     rdx, [rbp-0x20]
+      mov     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   eax, al
+      mov     edi, eax
+      call    isalpha@plt.sec
+      test    eax, eax
+      setne   al
+      test    al, al
+      je      block10
+    block9:
+      mov     rdx, [rbp-0x20]
+      mov     rax, [rbp-0x30]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   eax, al
+      mov     edi, eax
+      call    toupper@plt.sec
+      movsx   edx, al
+      mov     rax, [rbp-0x28]
+      mov     esi, edx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@plt.sec
+    block10:
+      add     [rbp-0x20], 1
+      jmp     block1
+    block11:
+      mov     rax, [rbp-0x28]
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@plt.sec
+      and     eax, 1
+      cmp     rax, 1
+      sete    al
+      test    al, al
+      je      block14
+    block12:
+      mov     rax, [rbp-0x28]
+      mov     esi, 0x58
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@plt.sec
+      jmp     block14
+    block13:
+      endbr64
+      mov     rbx, rax
+      mov     rax, [rbp-0x28]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, rbx
+      mov     rdi, rax
+      call    _Unwind_Resume@plt.sec
+    block14:
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block16
+    block15:
+      call    __stack_chk_fail@plt.sec
+    block16:
+      mov     rax, [rbp-0x28]
+      add     rsp, 0x28
+      pop     rbx
+      pop     rbp
+      ret
+"_Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE":
+  "asm": |
+    _Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x98
+      mov     [rbp-0x98], rdi
+      mov     [rbp-0xa0], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      lea     rax, [rbp-0x40]
+      mov     rdx, [rbp-0xa0]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+      mov     rax, [rbp-0x98]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1Ev@plt.sec
+      mov     [rbp-0x84], 0
+    block1:
+      mov     eax, [rbp-0x84]
+      movsxd  rbx, eax
+      lea     rax, [rbp-0x40]
+      mov     rdi, rax
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE4sizeEv@plt.sec
+      cmp     rbx, rax
+      setb    al
+      test    al, al
+      je      block8
+    block2:
+      mov     eax, [rbp-0x84]
+      movsxd  rdx, eax
+      lea     rax, [rbp-0x40]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   edx, al
+      lea     rax, [rbp-0x60]
+      mov     esi, edx
+      mov     rdi, rax
+      call    _Z4findc
+      lea     rax, [rbp-0x60]
+      mov     rdi, rax
+      call    _ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_
+      mov     [rbp-0x80], rax
+      lea     rax, [rbp-0x60]
+      mov     rdi, rax
+      call    _ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_
+      mov     [rbp-0x78], rax
+      mov     eax, [rbp-0x84]
+      add     eax, 1
+      movsxd  rdx, eax
+      lea     rax, [rbp-0x40]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   edx, al
+      lea     rax, [rbp-0x50]
+      mov     esi, edx
+      mov     rdi, rax
+      call    _Z4findc
+      lea     rax, [rbp-0x50]
+      mov     rdi, rax
+      call    _ZSt3getILm0EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_
+      mov     [rbp-0x70], rax
+      lea     rax, [rbp-0x50]
+      mov     rdi, rax
+      call    _ZSt3getILm1EJmmEEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEOS4_
+      mov     [rbp-0x68], rax
+      mov     rax, [rbp-0x80]
+      mov     rdx, [rax]
+      mov     rax, [rbp-0x70]
+      mov     rax, [rax]
+      cmp     rdx, rax
+      jne     block4
+    block3:
+      mov     rax, [rbp-0x78]
+      mov     rax, [rax]
+      lea     rcx, [rax+1]
+      movabs  rdx, -0x3333333333333333
+      mov     rax, rcx
+      mul     rdx
+      mov     rax, rdx
+      shr     rax, 2
+      mov     rdx, rax
+      shl     rdx, 2
+      add     rdx, rax
+      mov     rax, rcx
+      sub     rax, rdx
+      mov     rdx, [rbp-0x78]
+      mov     [rdx], rax
+      mov     rax, [rbp-0x68]
+      mov     rax, [rax]
+      lea     rcx, [rax+1]
+      movabs  rdx, -0x3333333333333333
+      mov     rax, rcx
+      mul     rdx
+      mov     rax, rdx
+      shr     rax, 2
+      mov     rdx, rax
+      shl     rdx, 2
+      add     rdx, rax
+      mov     rax, rcx
+      sub     rax, rdx
+      mov     rdx, [rbp-0x68]
+      mov     [rdx], rax
+      jmp     block7
+    block4:
+      mov     rax, [rbp-0x78]
+      mov     rdx, [rax]
+      mov     rax, [rbp-0x68]
+      mov     rax, [rax]
+      cmp     rdx, rax
+      jne     block6
+    block5:
+      mov     rax, [rbp-0x80]
+      mov     rax, [rax]
+      lea     rcx, [rax+1]
+      movabs  rdx, -0x3333333333333333
+      mov     rax, rcx
+      mul     rdx
+      mov     rax, rdx
+      shr     rax, 2
+      mov     rdx, rax
+      shl     rdx, 2
+      add     rdx, rax
+      mov     rax, rcx
+      sub     rax, rdx
+      mov     rdx, [rbp-0x80]
+      mov     [rdx], rax
+      mov     rax, [rbp-0x70]
+      mov     rax, [rax]
+      lea     rcx, [rax+1]
+      movabs  rdx, -0x3333333333333333
+      mov     rax, rcx
+      mul     rdx
+      mov     rax, rdx
+      shr     rax, 2
+      mov     rdx, rax
+      shl     rdx, 2
+      add     rdx, rax
+      mov     rax, rcx
+      sub     rax, rdx
+      mov     rdx, [rbp-0x70]
+      mov     [rdx], rax
+      jmp     block7
+    block6:
+      mov     rdx, [rbp-0x68]
+      mov     rax, [rbp-0x78]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _ZSt4swapImENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS4_ESt18is_move_assignableIS4_EEE5valueEvE4typeERS4_SE_
+    block7:
+      mov     rax, [rbp-0x80]
+      mov     rax, [rax]
+      shl     rax, 5
+      mov     rdx, rax
+      lea     rax, [_ZL6UNFAIR]
+      add     rdx, rax
+      mov     rax, [rbp-0x78]
+      mov     rax, [rax]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   edx, al
+      mov     rax, [rbp-0x98]
+      mov     esi, edx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@plt.sec
+      mov     rax, [rbp-0x70]
+      mov     rax, [rax]
+      shl     rax, 5
+      mov     rdx, rax
+      lea     rax, [_ZL6UNFAIR]
+      add     rdx, rax
+      mov     rax, [rbp-0x68]
+      mov     rax, [rax]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEixEm@plt.sec
+      movzx   eax, [rax]
+      movsx   edx, al
+      mov     rax, [rbp-0x98]
+      mov     esi, edx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEpLEc@plt.sec
+      add     [rbp-0x84], 2
+      jmp     block1
+    block8:
+      lea     rax, [rbp-0x40]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, [rbp-0x18]
+      xor     rax, fs:[0x28]
+      je      block12
+    block9:
+      jmp     block11
+    block10:
+      endbr64
+      mov     rbx, rax
+      mov     rax, [rbp-0x98]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      lea     rax, [rbp-0x40]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      mov     rax, rbx
+      mov     rdi, rax
+      call    _Unwind_Resume@plt.sec
+    block11:
+      call    __stack_chk_fail@plt.sec
+    block12:
+      mov     rax, [rbp-0x98]
+      add     rsp, 0x98
+      pop     rbx
+      pop     rbp
+      ret
+"main":
+  "asm": |
+    main:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      push    rbx
+      sub     rsp, 0x78
+      mov     [rbp-0x74], edi
+      mov     [rbp-0x80], rsi
+      mov     rax, fs:[0x28]
+      mov     [rbp-0x18], rax
+      xor     eax, eax
+      cmp     [rbp-0x74], 2
+      je      block2
+    block1:
+      lea     rsi, [mem1]; "USAGE: ./unfair [text]\n"
+      lea     rdi, [_ZSt4cerr]
+      call    _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt.sec
+      mov     edi, 1
+      call    exit@plt.sec
+    block2:
+      lea     rax, [rbp-0x61]
+      mov     rdi, rax
+      call    _ZNSaIcEC1Ev@plt.sec
+      mov     rax, [rbp-0x80]
+      add     rax, 8
+      mov     rcx, [rax]
+      lea     rdx, [rbp-0x61]
+      lea     rax, [rbp-0x60]
+      mov     rsi, rcx
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_
+      lea     rax, [rbp-0x40]
+      lea     rdx, [rbp-0x60]
+      mov     rsi, rdx
+      mov     rdi, rax
+      call    _Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+      lea     rax, [rbp-0x40]
+      mov     rsi, rax
+      lea     rdi, [_ZSt4cout]
+      call    _ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKNSt7__cxx1112basic_stringIS4_S5_T1_EE@plt.sec
+      mov     rdx, rax
+      mov     rax, [_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_]
+      mov     rsi, rax
+      mov     rdi, rdx
+      call    _ZNSolsEPFRSoS_E@plt.sec
+      lea     rax, [rbp-0x40]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      lea     rax, [rbp-0x60]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      lea     rax, [rbp-0x61]
+      mov     rdi, rax
+      call    _ZNSaIcED1Ev@plt.sec
+      mov     eax, 0
+      mov     rcx, [rbp-0x18]
+      xor     rcx, fs:[0x28]
+      je      block10
+    block3:
+      jmp     block9
+    block4:
+      endbr64
+      mov     rbx, rax
+      lea     rax, [rbp-0x40]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      jmp     block6
+    block5:
+      endbr64
+      mov     rbx, rax
+    block6:
+      lea     rax, [rbp-0x60]
+      mov     rdi, rax
+      call    _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev@plt.sec
+      jmp     block8
+    block7:
+      endbr64
+      mov     rbx, rax
+    block8:
+      lea     rax, [rbp-0x61]
+      mov     rdi, rax
+      call    _ZNSaIcED1Ev@plt.sec
+      mov     rax, rbx
+      mov     rdi, rax
+      call    _Unwind_Resume@plt.sec
+    block9:
+      call    __stack_chk_fail@plt.sec
+    block10:
+      add     rsp, 0x78
+      pop     rbx
+      pop     rbp
+      ret

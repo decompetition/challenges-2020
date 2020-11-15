@@ -1,0 +1,81 @@
+"foo":
+  "asm": |
+    foo:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      mov     [rbp-4], edi
+      mov     [rbp-8], esi
+      jmp     block5
+    block1:
+      mov     eax, [rbp-4]
+      cmp     eax, [rbp-8]
+      jle     block3
+    block2:
+      mov     eax, [rbp-8]
+      sub     [rbp-4], eax
+      jmp     block5
+    block3:
+      mov     eax, [rbp-4]
+      cmp     eax, [rbp-8]
+      jge     block5
+    block4:
+      mov     eax, [rbp-4]
+      sub     [rbp-8], eax
+    block5:
+      mov     eax, [rbp-4]
+      cmp     eax, [rbp-8]
+      jne     block1
+    block6:
+      mov     eax, [rbp-4]
+      pop     rbp
+      ret
+"main":
+  "asm": |
+    main:
+      endbr64
+      push    rbp
+      mov     rbp, rsp
+      sub     rsp, 0x20
+      mov     [rbp-0x14], edi
+      mov     [rbp-0x20], rsi
+      cmp     [rbp-0x14], 3
+      je      block2
+    block1:
+      mov     rax, [rbp-0x20]
+      mov     rdx, [rax]
+      mov     rax, [stderr]
+      lea     rsi, [mem1]; "USAGE: %s <num1> <num2>\n"
+      mov     rdi, rax
+      mov     eax, 0
+      call    fprintf@plt.sec
+      mov     edi, 1
+      call    exit@plt.sec
+    block2:
+      mov     rax, [rbp-0x20]
+      add     rax, 8
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    atoi@plt.sec
+      mov     [rbp-8], eax
+      mov     rax, [rbp-0x20]
+      add     rax, 0x10
+      mov     rax, [rax]
+      mov     rdi, rax
+      call    atoi@plt.sec
+      mov     [rbp-4], eax
+      mov     edx, [rbp-4]
+      mov     eax, [rbp-8]
+      mov     esi, edx
+      mov     edi, eax
+      call    foo
+      mov     ecx, eax
+      mov     edx, [rbp-4]
+      mov     eax, [rbp-8]
+      mov     esi, eax
+      lea     rdi, [mem2]; "foo(%d, %d) = %d\n"
+      mov     eax, 0
+      call    printf@plt.sec
+      mov     eax, 0
+      leave
+      ret

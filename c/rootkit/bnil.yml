@@ -1,0 +1,263 @@
+"alloc_task":
+  "hlil": |-
+    int64_t* rax = malloc(0x18)
+    *(rax + 0x10) = malloc(strlen(arg1) + 1)
+    strcpy(*(rax + 0x10), arg1)
+    *(rax + 8) = arg2
+    *rax = arg3
+    return rax
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x30
+      [rbp - 0x18 {var_20}].q = rdi
+      [rbp - 0x1c {var_24}].d = esi
+      [rbp - 0x28 {var_30}].q = rdx
+      edi = 0x18
+      call(malloc)
+      [rbp - 8 {var_10}].q = rax
+      rax = [rbp - 0x18 {var_20}].q
+      rdi = rax
+      call(strlen)
+      rax = rax + 1
+      rdi = rax
+      call(malloc)
+      rdx = rax
+      rax = [rbp - 8 {var_10}].q
+      [rax + 0x10].q = rdx
+      rax = [rbp - 8 {var_10}].q
+      rax = [rax + 0x10].q
+      rdx = [rbp - 0x18 {var_20}].q
+      rsi = rdx
+      rdi = rax
+      call(strcpy)
+      rax = [rbp - 8 {var_10}].q
+      edx = [rbp - 0x1c {var_24}].d
+      [rax + 8].d = edx
+      rax = [rbp - 8 {var_10}].q
+      rdx = [rbp - 0x28 {var_30}].q
+      [rax].q = rdx
+      rax = [rbp - 8 {var_10}].q
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+  "mlil": |-
+    block1:
+      var_20 = arg1
+      var_24 = arg2
+      var_30 = arg3
+      malloc(0x18)
+      var_10 = rax
+      rax_1 = var_20
+      rdi = rax_1
+      strlen(rdi)
+      rax_3 = rax_2 + 1
+      rdi_1 = rax_3
+      malloc(rdi_1)
+      rdx = rax_4
+      rax_5 = var_10
+      [rax_5 + 0x10].q = rdx
+      rax_6 = var_10
+      rax_7 = [rax_6 + 0x10].q
+      rdx_1 = var_20
+      rsi = rdx_1
+      rdi_2 = rax_7
+      strcpy(rdi_2, rsi)
+      rax_8 = var_10
+      rdx_2 = var_24
+      [rax_8 + 8].d = rdx_2
+      rax_9 = var_10
+      rdx_3 = var_30
+      [rax_9].q = rdx_3
+      rax_10 = var_10
+      return rax_10
+"find_rootkit":
+  "hlil": |-
+    int64_t* var_10 = arg1
+    int64_t rax_1
+    if (var_10 == 0)
+        rax_1 = 0xffffffff
+    else
+        while (true)
+            if (*(var_10 + 8) == 0x539 && strcmp(*(var_10 + 0x10), "h4x0r") == 0)
+                rax_1 = 1
+                break
+            var_10 = *var_10
+            if (var_10 == 0)
+                rax_1 = 0
+                break
+    return rax_1
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x10
+      [rbp - 8 {var_10}].q = rdi
+      if ([rbp - 8].q != 0) block2 else block3
+    block2:
+      rax = [rbp - 8 {var_10}].q
+      eax = [rax + 8].d
+      if (eax != 0x539) block4 else block5
+    block3:
+      eax = 0xffffffff
+      goto block6
+    block4:
+      rax = [rbp - 8 {var_10}].q
+      rax = [rax].q
+      [rbp - 8 {var_10}].q = rax
+      if ([rbp - 8].q != 0) block2 else block7
+    block5:
+      rax = [rbp - 8 {var_10}].q
+      rax = [rax + 0x10].q
+      rsi = 0x2004
+      rdi = rax
+      call(strcmp)
+      if (eax != 0) block4 else block8
+    block6:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block7:
+      eax = 0
+      goto block6
+    block8:
+      eax = 1
+      goto block6
+  "mlil": |-
+    block1:
+      var_10 = arg1
+      if (var_10 != 0) block2 else block3
+    block2:
+      rax_2 = var_10
+      rax_3 = [rax_2 + 8].d
+      if (rax_3 != 0x539) block4 else block5
+    block3:
+      rax_1 = 0xffffffff
+      goto block6
+    block4:
+      rax_7 = var_10
+      rax_8 = [rax_7].q
+      var_10 = rax_8
+      if (var_10 != 0) block2 else block7
+    block5:
+      rax_4 = var_10
+      rax_5 = [rax_4 + 0x10].q
+      rdi = rax_5
+      strcmp(rdi, "h4x0r")
+      if (rax_6 != 0) block4 else block8
+    block6:
+      return rax_1
+    block7:
+      rax_1 = 0
+      goto block6
+    block8:
+      rax_1 = 1
+      goto block6
+"main":
+  "hlil": |-
+    void* fsbase
+    int64_t rax = *(fsbase + 0x28)
+    int64_t* var_60 = nullptr
+    while (true)
+        int32_t var_68
+        void var_58
+        if (__isoc99_scanf("%s %d", &var_58, &var_68) != 2)
+            break
+        var_60 = alloc_task(&var_58, var_68, var_60)
+    printf("find_rootkit() = %d\n", zx.q(find_rootkit(var_60)))
+    if ((rax ^ *(fsbase + 0x28)) == 0)
+        return 0
+    __stack_chk_fail()
+    noreturn
+  "llil": |-
+    block1:
+      push(rbp)
+      rbp = rsp {__saved_rbp}
+      rsp = rsp - 0x70
+      [rbp - 0x64 {var_6c}].d = edi
+      [rbp - 0x70 {var_78}].q = rsi
+      rax = [fsbase + 0x28].q
+      [rbp - 8 {var_10}].q = rax
+      eax = 0
+      [rbp - 0x58 {var_60}].q = 0
+      goto block2
+    block2:
+      rdx = rbp - 0x60 {var_68}
+      rax = rbp - 0x50 {var_58}
+      rsi = rax {var_58}
+      rdi = 0x200a
+      eax = 0
+      call(__isoc99_scanf)
+      if (eax == 2) block3 else block4
+    block3:
+      ecx = [rbp - 0x60 {var_68}].d
+      rdx = [rbp - 0x58 {var_60}].q
+      rax = rbp - 0x50 {var_58}
+      esi = ecx
+      rdi = rax {var_58}
+      call(alloc_task)
+      [rbp - 0x58 {var_60}].q = rax
+      goto block2
+    block4:
+      rax = [rbp - 0x58 {var_60}].q
+      rdi = rax
+      call(find_rootkit)
+      [rbp - 0x5c {var_64}].d = eax
+      eax = [rbp - 0x5c {var_64}].d
+      esi = eax
+      rdi = 0x2010
+      eax = 0
+      call(printf)
+      eax = 0
+      rcx = [rbp - 8 {var_10}].q
+      rcx = rcx ^ [fsbase + 0x28].q
+      if (rcx == 0) block5 else block6
+    block5:
+      rsp = rbp
+      rbp = pop
+      <return> jump(pop)
+    block6:
+      call(__stack_chk_fail)
+      noreturn
+  "mlil": |-
+    block1:
+      var_6c = arg1
+      var_78 = arg2
+      rax = [fsbase + 0x28].q
+      var_10 = rax
+      rax_1 = 0
+      var_60 = nullptr
+      goto block2
+    block2:
+      rdx_1 = &var_68
+      rsi_1 = &var_58
+      rax_3 = 0
+      __isoc99_scanf("%s %d", rsi_1, rdx_1)
+      if (rax_4 == 2) block3 else block4
+    block3:
+      rcx_1 = var_68
+      rdx = var_60
+      rsi = rcx_1
+      rdi = &var_58
+      alloc_task(rdi, rsi, rdx)
+      var_60 = rax_2
+      goto block2
+    block4:
+      rax_5 = var_60
+      rdi_1 = rax_5
+      find_rootkit(rdi_1)
+      var_64 = rax_6
+      rax_7 = var_64
+      rsi_2 = zx.q(rax_7)
+      rax_8 = 0
+      printf("find_rootkit() = %d\n", rsi_2)
+      rax_9 = 0
+      rcx_2 = var_10
+      rcx_3 = rcx_2 ^ [fsbase + 0x28].q
+      if (rcx_3 == 0) block5 else block6
+    block5:
+      return 0
+    block6:
+      __stack_chk_fail()
+      noreturn
