@@ -54,7 +54,7 @@ class Tests(unittest.TestCase):
         proc = subprocess.Popen([deco.PATH], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Wait for sockets to bind...
-        time.sleep(0.02)
+        time.sleep(0.05)
 
         with connect(20080) as sock:
             sock.send(b'ping')
@@ -81,7 +81,7 @@ class Tests(unittest.TestCase):
         proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Wait for sockets to bind...
-        time.sleep(0.02)
+        time.sleep(0.05)
 
         with connect(20080) as sock:
             sock.send(b'abcdefghijklmnopqrstuvwxyz')

@@ -9,7 +9,7 @@ import deco
 class Tests(unittest.TestCase):
     def assertPRIME(self, a, b):
         result = deco.run([str(a)])
-        print(result)
+
         self.assertEqual(result.returncode, 0)
         self.assertEqual(result.stderr, '')
         expected = "is_prime(%d) = %d\n" % (a, b)

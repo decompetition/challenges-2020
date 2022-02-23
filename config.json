@@ -1,0 +1,264 @@
+{
+  "defaults": {
+    "folder":  "%r/%l/%n",
+    "source":  "%f/source%x",
+    "binary":  "%f/binary.out",
+    "starter": "%f/starter%x",
+    "disasm":  "%f/disasm.yml",
+    "tester":  "%f/test.py",
+
+    "container": "decompetition/builder-2020",
+    "builder":   "%r/%l/build.sh",
+    "options":   []
+  },
+
+  "binaries": {
+    "baby-c": {
+      "language": "c",
+      "value": 200,
+
+      "functions": [
+        "foo",
+        "main"
+      ]
+    },
+
+    "baby-cpp": {
+      "language": "cpp",
+      "value": 200,
+
+      "functions": [
+        "_Z5checkRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_",
+        "_Z5scoreRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+        "main"
+      ]
+    },
+
+    "baby-go": {
+      "language": "go",
+      "value": 200,
+
+      "functions": [
+        "main.main"
+      ]
+    },
+
+    "baby-rust": {
+      "language": "rust",
+      "value": 300,
+
+      "functions": [
+        "_ZN6source4main*"
+      ]
+    },
+
+    "baby-swift": {
+      "language": "swift",
+      "value": 300,
+
+      "functions": [
+        "$s6binary5cleanyS2SF",
+        "$s6binary5querySSyF",
+        "$s6binary5setupShySSGyF",
+        "main"
+      ]
+    },
+
+    "bandate": {
+      "language": "swift",
+      "value": 400,
+
+      "functions": [
+        "$s6binary5parse4textAA8DateInfoVSS_tF",
+        "$s6binary5reply4dateyAA8DateInfoV_tF",
+        "main"
+      ]
+    },
+
+    "batsounds": {
+      "language": "go",
+      "value": 300,
+
+      "functions": [
+        "main.echo",
+        "main.main"
+      ]
+    },
+
+    "bitesize": {
+      "language": "c",
+      "value": 100,
+
+      "functions": [
+        "sum",
+        "main",
+        "win"
+      ],
+
+      "builder": "c/bitesize/build.sh"
+    },
+
+    "cardigan": {
+      "language": "swift",
+      "value": 500,
+
+      "functions": [
+        "$s6binary5typesySSSgSSF",
+        "$s6binary5checkySbSSF",
+        "main"
+      ]
+    },
+
+    "carshop": {
+      "language": "go",
+      "value": 300,
+
+      "functions": [
+        "main.Car.String",
+        "main.Color.String",
+        "main.(*CarShop).AddCar",
+        "main.CarShop.SearchCar"
+      ]
+    },
+
+    "fabulous": {
+      "language": "go",
+      "value": 200,
+
+      "functions": [
+        "main.main"
+      ]
+    },
+
+    "habidasher": {
+      "language": "rust",
+      "value": 200,
+
+      "functions": [
+        "_ZN6source3foo17h*E",
+        "_ZN6source3bar17h*E",
+        "_ZN6source4main17h*E"
+      ]
+    },
+
+    "julie": {
+      "language": "go",
+      "value": 300,
+
+      "functions": [
+        "main.julie",
+        "main.main"
+      ]
+    },
+
+    "lambic": {
+      "language": "cpp",
+      "value": 400,
+
+      "functions": [
+        "_ZZ4mainENKUl*"
+      ]
+    },
+
+    "pedigree": {
+      "language": "cpp",
+      "value": 200,
+
+      "functions": [
+        "_ZN6PersonC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_",
+        "_ZNK6Person9ancestorsEv",
+        "_ZNK6Person11descendantsEv",
+        "_ZN6Person4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE"
+      ]
+    },
+
+    "prime": {
+      "language": "c",
+      "value": 100,
+
+      "functions": [
+        "is_prime",
+        "main"
+      ]
+    },
+
+    "rootkit": {
+      "language": "c",
+      "value": 100,
+
+      "functions": [
+        "alloc_task",
+        "find_rootkit",
+        "main"
+      ]
+    },
+
+    "s2ring": {
+      "language": "rust",
+      "value": 500,
+
+      "functions": [
+        "_ZN6source4find17h*E",
+        "_ZN6source4rand17h*E",
+        "_ZN6source4step17h*E",
+        "_ZN6source4main17h*E"
+      ]
+    },
+
+    "streamy": {
+      "language": "cpp",
+      "value": 400,
+
+      "functions": [
+        "_Z11get_istreamiPPc",
+        "_Z11get_ostreamiPPc",
+        "main"
+      ]
+    },
+
+    "switcher": {
+      "language": "go",
+      "value": 200,
+
+      "functions": [
+        "main.compute.func1",
+        "main.compute",
+        "main.main"
+      ]
+    },
+
+    "toobz": {
+      "language": "rust",
+      "value": 300,
+
+      "functions": [
+        "_ZN6source5*3new17h*E",
+        "*suck*",
+        "*spew*"
+      ]
+    },
+
+    "unfair": {
+      "language": "cpp",
+      "value": 200,
+
+      "functions": [
+        "_Z4findc",
+        "_Z5cleanRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+        "_Z5cryptRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE",
+        "main"
+      ]
+    },
+
+    "wolfgang": {
+      "language": "go",
+      "value": 300,
+
+      "functions": [
+        "main.step",
+        "main.main"
+      ]
+    }
+
+  }
+}
